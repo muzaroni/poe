@@ -1,27 +1,8 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import GuideDocument from '../../components/GuideDocument';
-import { guides, headingId, plainText } from '../../lib/guide';
-import type { Guide } from '../../types';
-
+import GuidePage from '../../components/GuidePage.astro';
+import { guides } from '../../lib/guide';
 export function getStaticPaths() {
-  return guides.map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));
+  return guides.filter((guide) => guide.kind !== 'article').map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));
 }
-const { guide } = Astro.props as { guide: Guide };
-const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
-const headings = (guide.content.content ?? []).filter((node) => node.type === 'heading' && Number(node.attrs?.level) === 2).map((node) => ({ title: plainText(node), id: headingId(plainText(node)) }));
 ---
-<BaseLayout title={guide.title} description={guide.subtitle}>
-  <div class="guide-shell shell">
-    <aside class="guide-nav" aria-label="On this page">
-      <div class="nav-label">ON THIS PAGE</div>
-      {headings.map((item, index) => <a href={`#${item.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{item.title}</a>)}
-    </aside>
-    <main class="guide-main">
-      <div class="guide-breadcrumb"><a href={base}>Builds</a><span> / </span><span>{guide.league}</span></div>
-      <div class="guide-hero"><span class="league-pill">{guide.league}</span><h1>{guide.title}</h1><p>{guide.subtitle}</p><div class="hero-meta">UPDATED {new Date(`${guide.updated}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).toUpperCase()} <span>·</span> PROGRESS SAVES ON THIS DEVICE</div></div>
-      <nav class="mobile-guide-nav" aria-label="Jump to section"><label for="section-jump">JUMP TO SECTION</label><select id="section-jump" onchange="if(this.value) location.hash=this.value"><option value="">Choose a section</option>{headings.map((item) => <option value={item.id}>{item.title}</option>)}</select></nav>
-      <GuideDocument content={guide.content} slug={guide.slug} client:load />
-    </main>
-  </div>
-</BaseLayout>
+<GuidePage guide={Astro.props.guide} />

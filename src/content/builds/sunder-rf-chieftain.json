@@ -2,8 +2,8 @@
   "slug": "sunder-rf-chieftain",
   "title": "Sunder Leveling into Pohx RF Swap",
   "subtitle": "Level with Sunder, then swap to Righteous Fire at Blood Aqueducts.",
-  "league": "3.28 · Chieftain",
-  "updated": "2026-03-05",
+  "league": "3.28",
+  "updated": "2026-10-17",
   "content": {
     "type": "doc",
     "content": [
@@ -18,7 +18,6 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -29,16 +28,19 @@
                       },
                       {
                         "type": "text",
-                        "text": "Pohx's RF guide",
                         "marks": [
                           {
                             "type": "link",
                             "attrs": {
                               "href": "https://pohx.net/",
-                              "target": "_blank"
+                              "target": "_blank",
+                              "rel": "noopener noreferrer nofollow",
+                              "class": null,
+                              "title": null
                             }
                           }
-                        ]
+                        ],
+                        "text": "Pohx's RF guide"
                       },
                       {
                         "type": "text",
@@ -166,7 +168,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/act1.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -174,7 +179,6 @@
         "content": [
           {
             "type": "listItem",
-            "attrs": {},
             "content": [
               {
                 "type": "paragraph",
@@ -207,22 +211,13 @@
           },
           {
             "type": "listItem",
-            "attrs": {},
             "content": [
               {
                 "type": "paragraph",
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ensure you have "
-                  },
-                  {
-                    "type": "text",
-                    "text": "R-R"
-                  },
-                  {
-                    "type": "text",
-                    "text": " linked somewhere before leaving town"
+                    "text": "Ensure you have R-R linked somewhere before leaving town"
                   }
                 ]
               }
@@ -241,7 +236,6 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -319,15 +313,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy "
-                  },
-                  {
-                    "type": "text",
-                    "text": "Stone Axe"
-                  },
-                  {
-                    "type": "text",
-                    "text": " for cheap"
+                    "text": " Buy Stone Axe for cheap"
                   }
                 ]
               }
@@ -344,15 +330,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy any "
-                  },
-                  {
-                    "type": "text",
-                    "text": "R-R"
-                  },
-                  {
-                    "type": "text",
-                    "text": " linked"
+                    "text": " Buy any R-R linked"
                   }
                 ]
               }
@@ -414,11 +392,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
-                  },
-                  {
-                    "type": "text",
-                    "text": "Quicksilver"
+                    "text": " Get Quicksilver"
                   }
                 ]
               }
@@ -557,15 +531,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy "
-                  },
-                  {
-                    "type": "text",
-                    "text": "Jade Amulet / Iron Ring"
-                  },
-                  {
-                    "type": "text",
-                    "text": " 3x "
+                    "text": " Buy Jade Amulet / Iron Ring 3x "
                   },
                   {
                     "type": "icon",
@@ -751,15 +717,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy 1-2x "
-                  },
-                  {
-                    "type": "text",
-                    "text": "Iron Rings"
-                  },
-                  {
-                    "type": "text",
-                    "text": " and 2x "
+                    "text": " Buy 1-2x Iron Rings and 2x "
                   },
                   {
                     "type": "gem",
@@ -886,7 +844,6 @@
       },
       {
         "type": "gemSetup",
-        "attrs": {},
         "content": [
           {
             "type": "heading",
@@ -1319,7 +1276,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/act2.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -1504,7 +1464,6 @@
       },
       {
         "type": "gemSetup",
-        "attrs": {},
         "content": [
           {
             "type": "taskList",
@@ -1753,7 +1712,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/act3.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -1767,7 +1729,6 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -1782,18 +1743,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Gloves / Helmet / Boots: 135 gold each "
-                      },
-                      {
-                        "type": "text",
-                        "text": "< BETTER OPTION"
+                        "text": "Gloves / Helmet / Boots: 135 gold each < BETTER OPTION"
                       }
                     ]
                   }
@@ -1846,7 +1802,6 @@
       },
       {
         "type": "gemSetup",
-        "attrs": {},
         "content": [
           {
             "type": "taskList",
@@ -2101,7 +2056,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/act4.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -2115,22 +2073,13 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Do Normal Lab once you reach "
-                      },
-                      {
-                        "type": "text",
-                        "text": "Crystal Veins"
-                      },
-                      {
-                        "type": "text",
-                        "text": " waypoint"
+                        "text": "Do Normal Lab once you reach Crystal Veins waypoint"
                       }
                     ]
                   }
@@ -2138,22 +2087,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Take Chieftain - "
-                      },
-                      {
-                        "type": "text",
-                        "text": "Tasalio, Cleansing Water"
-                      },
-                      {
-                        "type": "text",
-                        "text": " for first ascendancy"
+                        "text": "Take Chieftain - Tasalio, Cleansing Water for first ascendancy"
                       }
                     ]
                   }
@@ -2228,7 +2168,6 @@
       },
       {
         "type": "gemSetup",
-        "attrs": {},
         "content": [
           {
             "type": "taskList",
@@ -2472,7 +2411,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/act5.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -2486,7 +2428,6 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -2505,7 +2446,6 @@
       },
       {
         "type": "gemSetup",
-        "attrs": {},
         "content": [
           {
             "type": "taskList",
@@ -2749,7 +2689,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/act6.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -2956,26 +2899,13 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "For Righteous Fire look for "
-                      },
-                      {
-                        "type": "text",
-                        "text": "BBB"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
-                      },
-                      {
-                        "type": "text",
-                        "text": " links."
+                        "text": "For Righteous Fire look for BBBR links."
                       }
                     ]
                   }
@@ -2983,26 +2913,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "For Fire Trap look for "
-                      },
-                      {
-                        "type": "text",
-                        "text": "GGG"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
-                      },
-                      {
-                        "type": "text",
-                        "text": " links."
+                        "text": "For Fire Trap look for GGGR links."
                       }
                     ]
                   }
@@ -3010,18 +2927,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Check wiki if needed: "
-                      },
-                      {
-                        "type": "text",
-                        "text": "Essence of Umbra Quest"
+                        "text": "Check wiki if needed: Essence of Umbra Quest"
                       }
                     ]
                   }
@@ -3059,7 +2971,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/act7.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -3073,26 +2988,13 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "For Righteous Fire look for "
-                      },
-                      {
-                        "type": "text",
-                        "text": "BBB"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
-                      },
-                      {
-                        "type": "text",
-                        "text": " links."
+                        "text": "For Righteous Fire look for BBBR links."
                       }
                     ]
                   }
@@ -3100,26 +3002,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "For Fire Trap look for "
-                      },
-                      {
-                        "type": "text",
-                        "text": "GGG"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
-                      },
-                      {
-                        "type": "text",
-                        "text": " links."
+                        "text": "For Fire Trap look for GGGR links."
                       }
                     ]
                   }
@@ -3127,18 +3016,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Check wiki if needed: "
-                      },
-                      {
-                        "type": "text",
-                        "text": "Essence of Artist Quest"
+                        "text": "Check wiki if needed: Essence of Artist Quest"
                       }
                     ]
                   }
@@ -3146,26 +3030,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "For Curse look for "
-                      },
-                      {
-                        "type": "text",
-                        "text": "BBB"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
-                      },
-                      {
-                        "type": "text",
-                        "text": " links. (AR/ES Base for easy color)"
+                        "text": "For Curse look for BBBR links. (AR/ES Base for easy color)"
                       }
                     ]
                   }
@@ -3173,30 +3044,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "For Movement look for "
-                      },
-                      {
-                        "type": "text",
-                        "text": "GG"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
-                      },
-                      {
-                        "type": "text",
-                        "text": "B"
-                      },
-                      {
-                        "type": "text",
-                        "text": " links. (AR/ES Base for easy color)"
+                        "text": "For Movement look for GGRB links. (AR/ES Base for easy color)"
                       }
                     ]
                   }
@@ -3234,7 +3088,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/act8.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -3248,7 +3105,6 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3263,7 +3119,6 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3376,7 +3231,6 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3391,7 +3245,6 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3406,7 +3259,6 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3421,30 +3273,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Remove points in "
-                      },
-                      {
-                        "type": "text",
-                        "text": "Red"
-                      },
-                      {
-                        "type": "text",
-                        "text": " and take "
-                      },
-                      {
-                        "type": "text",
-                        "text": "Green"
-                      },
-                      {
-                        "type": "text",
-                        "text": " on tree below."
+                        "text": "Remove points in Red and take Green on tree below."
                       }
                     ]
                   }
@@ -3458,7 +3293,10 @@
         "type": "image",
         "attrs": {
           "src": "/images/sunder-rf/final.png",
-          "alt": "Guide screenshot"
+          "alt": "Guide screenshot",
+          "title": null,
+          "width": null,
+          "height": null
         }
       },
       {
@@ -3472,7 +3310,6 @@
             "content": [
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3487,7 +3324,6 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3502,7 +3338,6 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3517,7 +3352,6 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
@@ -3532,22 +3366,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Righteous Fire - "
-                      },
-                      {
-                        "type": "text",
-                        "text": "BBB"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
+                        "text": "Righteous Fire - BBBR"
                       }
                     ]
                   }
@@ -3555,22 +3380,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Fire Trap - "
-                      },
-                      {
-                        "type": "text",
-                        "text": "GGG"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
+                        "text": "Fire Trap - GGGR"
                       }
                     ]
                   }
@@ -3578,22 +3394,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Curse - "
-                      },
-                      {
-                        "type": "text",
-                        "text": "BBB"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
+                        "text": "Curse - BBBR"
                       }
                     ]
                   }
@@ -3601,26 +3408,13 @@
               },
               {
                 "type": "listItem",
-                "attrs": {},
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Movement - "
-                      },
-                      {
-                        "type": "text",
-                        "text": "GG"
-                      },
-                      {
-                        "type": "text",
-                        "text": "R"
-                      },
-                      {
-                        "type": "text",
-                        "text": "B"
+                        "text": "Movement - GGRB"
                       }
                     ]
                   }
@@ -3854,7 +3648,6 @@
       },
       {
         "type": "gemSetup",
-        "attrs": {},
         "content": [
           {
             "type": "taskList",
@@ -4227,7 +4020,6 @@
         "content": [
           {
             "type": "listItem",
-            "attrs": {},
             "content": [
               {
                 "type": "paragraph",
@@ -4242,7 +4034,6 @@
           },
           {
             "type": "listItem",
-            "attrs": {},
             "content": [
               {
                 "type": "paragraph",
@@ -4257,7 +4048,6 @@
           },
           {
             "type": "listItem",
-            "attrs": {},
             "content": [
               {
                 "type": "paragraph",
@@ -4274,7 +4064,6 @@
       },
       {
         "type": "gemSetup",
-        "attrs": {},
         "content": [
           {
             "type": "taskList",
@@ -4636,7 +4425,18 @@
       },
       {
         "type": "horizontalRule"
+      },
+      {
+        "type": "paragraph"
       }
     ]
-  }
+  },
+  "tags": [
+    "chieftain",
+    "sunder",
+    "righteous fire",
+    "leveling"
+  ],
+  "kind": "build",
+  "ascendancy": "Chieftain"
 }

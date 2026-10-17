@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import HeaderSearch from '../components/HeaderSearch';
+import GemInfo from '../components/GemInfo';
 const { title, description = 'Visual Path of Exile build guides' } = Astro.props;
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
@@ -13,8 +15,9 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     <title>{title} · Muzaroni PoE</title>
   </head>
   <body>
-    <header class="site-header"><div class="shell header-inner"><a class="brand" href={base}><span class="brand-mark">M</span><span>MUZARONI <small>PATH OF EXILE GUIDES</small></span></a><nav><a href={base}>All builds</a><a href={`${base}editor/`}>Editor</a></nav></div></header>
+    <header class="site-header"><div class="shell header-inner"><a class="brand" href={base}><img class="brand-logo" src={`${base}images/branding/muzdevoto.gif`} alt="" width="40" height="40" /><span>MUZARONI <small>PATH OF EXILE GUIDES</small></span></a><HeaderSearch base={base} client:load /><nav><a href={base}>Library</a><a href={`${base}editor/`}>Editor</a></nav></div></header>
     <slot />
+    <GemInfo client:load />
     <footer class="site-footer"><div class="shell">Fan made Path of Exile guides. Not affiliated with Grinding Gear Games.</div></footer>
   </body>
 </html>

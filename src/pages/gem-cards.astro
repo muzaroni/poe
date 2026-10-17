@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WikiGemCard from '../components/WikiGemCard.astro';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const variants = [
+  { id: 'compact', name: '01 · Compact', description: 'A small text card with just the essentials.' },
+  { id: 'reference', name: '02 · Reference', description: 'A structured card with a colored edge and clear information rows.' },
+  { id: 'item', name: '03 · Game inspired', description: 'Centered headings and subtle dividers, inspired by an item tooltip.' },
+];
+---
+<BaseLayout title="Gem info card designs" description="Local gem tooltip design comparison">
+  <main class="card-preview shell">
+    <div class="home-kicker">DESIGN PREVIEW</div>
+    <h1>Gem info cards</h1>
+    <section id="wiki" class="preferred-design">
+      <h2>Full gem panel · Wiki inspired</h2>
+      <p class="intro">The gem icon sits beside its name. This fuller panel includes requirements, costs, description, stats, and quality effects.</p>
+      <p class="data-note">Frostblink values checked against the current wiki. These are level ranges, not values pinned to a particular guide league.</p>
+      <div class="preferred-grid"><WikiGemCard /><div class="preferred-context"><h3>Try it in a guide</h3>
+        <div class="paragraph-example">Keep <span class="dual-gem"><button id="dual-gem-trigger" class="dual-gem-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="full-gem-dialog" aria-describedby="compact-gem-preview"><img src={`${base}images/gems/frostblink.png`} width="22" height="22" alt="" />Frostblink</button><span id="compact-gem-preview" class="compact-gem-preview" role="tooltip"><span class="compact-gem-heading"><img src={`${base}images/gems/frostblink.png`} width="30" height="30" alt="" /><strong>Frostblink</strong></span><span class="compact-gem-tags">Spell · Movement · Cold · Travel</span><span class="compact-gem-summary">Instant teleport that deals cold damage and leaves chilled ground.</span><span class="compact-gem-hint">Click for full gem details</span></span></span> available as an independent utility gem.</div>
+        <p class="intro">Pause over the gem for a small preview. Click or tap for the full card. Press Escape or click outside to close it.</p>
+        <dialog id="full-gem-dialog" class="full-gem-dialog" aria-label="Frostblink full gem information"><button type="button" class="close-gem-card" aria-label="Close gem details">×</button><div class="full-gem-scroll"><WikiGemCard /></div></dialog>
+      </div></div>
+    </section>
+    <h2 class="earlier-designs">Earlier compact designs</h2>
+    <p class="intro">Three styles for the same information. Cards are shown open below; hover, focus, or tap the blue gem in each example to try it in a paragraph.</p>
+    <p class="data-note">Layout samples only. Descriptions are illustrative; gem requirements and other game stats will be verified before integration.</p>
+    <div class="design-grid">
+      {variants.map((variant) => <section class={`design style-${variant.id}`}>
+        <h2>{variant.name}</h2><p class="design-description">{variant.description}</p>
+        <div class="sample-card">
+          <div class="card-title">Frostblink</div>
+          <div class="card-tags">Spell · Movement · Travel · Cold</div>
+          <div class="card-rule"></div>
+          <div class="card-meta"><span>Active skill gem</span><span class="level-placeholder">Required level <b>—</b></span></div>
+          <p class="card-description">Teleport a short distance, dealing cold damage around your departure and arrival points.</p>
+          <a class="wiki-link" href="https://www.poewiki.net/wiki/Frostblink" target="_blank" rel="noopener noreferrer">PoE Wiki <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="paragraph-example">Keep <span class="tooltip-anchor"><button class="gem-trigger" type="button" aria-expanded="false" aria-controls={`tooltip-${variant.id}`}>Frostblink</button><span class="hover-card" id={`tooltip-${variant.id}`} role="region" aria-label="Frostblink gem information"><span class="sample-card"><span class="card-title">Frostblink</span><span class="card-tags">Spell · Movement · Travel · Cold</span><span class="card-rule"></span><span class="card-meta"><span>Active skill gem</span><span>Required level <b>—</b></span></span><span class="card-description">Teleport a short distance, dealing cold damage around your departure and arrival points.</span><a class="wiki-link" href="https://www.poewiki.net/wiki/Frostblink" target="_blank" rel="noopener noreferrer">PoE Wiki ↗</a></span></span></span> available as an independent utility gem.</div>
+      </section>)}
+    </div>
+    <section class="color-check">
+      <h2>Same card, three gem colors</h2>
+      <p class="intro">Using the compact design to compare red, green, and blue.</p>
+      <div class="color-grid">
+        {[
+          {name: 'Sunder', color: 'red', tags: 'Attack · AoE · Slam · Melee', description: 'A melee slam that sends a wave of damage forward.'},
+          {name: 'Faster Attacks Support', color: 'green', tags: 'Attack · Support', description: 'Increases the attack speed of supported attack skills.'},
+          {name: 'Frostblink', color: 'blue', tags: 'Spell · Movement · Travel · Cold', description: 'A short teleport with cold damage around both endpoints.'},
+        ].map((gem) => <div class={`sample-card color-${gem.color}`}><div class="card-title">{gem.name}</div><div class="card-tags">{gem.tags}</div><p class="card-description">{gem.description}</p><a class="wiki-link" href={`https://www.poewiki.net/wiki/${encodeURIComponent(gem.name.replaceAll(' ', '_'))}`} target="_blank" rel="noopener noreferrer">PoE Wiki ↗</a></div>)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+<script>
+  const fullCard = document.querySelector<HTMLDialogElement>('#full-gem-dialog')!;
+  const gemTrigger = document.querySelector<HTMLButtonElement>('#dual-gem-trigger')!;
+  const compactPreview = document.querySelector<HTMLElement>('#compact-gem-preview')!;
+  let previewTimer: ReturnType<typeof setTimeout> | undefined;
+  function hideCompactPreview() { clearTimeout(previewTimer); compactPreview.classList.remove('is-visible'); }
+  function queueCompactPreview() {
+    hideCompactPreview();
+    if (fullCard.open) return;
+    previewTimer = setTimeout(() => compactPreview.classList.add('is-visible'), 350);
+  }
+  gemTrigger.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') queueCompactPreview(); });
+  gemTrigger.closest('.dual-gem')!.addEventListener('pointerleave', hideCompactPreview);
+  gemTrigger.addEventListener('focus', queueCompactPreview);
+  gemTrigger.addEventListener('blur', hideCompactPreview);
+  gemTrigger.addEventListener('click', () => {
+    hideCompactPreview();
+    fullCard.showModal();
+    gemTrigger.setAttribute('aria-expanded', 'true');
+    if (window.innerWidth > 650) {
+      const rect = gemTrigger.getBoundingClientRect();
+      const width = fullCard.getBoundingClientRect().width;
+      const height = fullCard.getBoundingClientRect().height;
+      const left = rect.right + width + 16 <= window.innerWidth ? rect.right + 12 : Math.max(12, rect.left - width - 12);
+      fullCard.style.left = `${left}px`;
+      fullCard.style.top = `${Math.min(Math.max(12, rect.top), Math.max(12, window.innerHeight - height - 12))}px`;
+    }
+  });
+  fullCard.querySelector('.close-gem-card')!.addEventListener('click', () => fullCard.close());
+  fullCard.addEventListener('click', (event) => { if (event.target === fullCard) { const rect = fullCard.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) fullCard.close(); } });
+  fullCard.addEventListener('close', () => { gemTrigger.setAttribute('aria-expanded', 'false'); hideCompactPreview(); fullCard.removeAttribute('style'); });
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hideCompactPreview(); });
+  document.querySelectorAll<HTMLButtonElement>('.gem-trigger').forEach((button) => {
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') !== 'true';
+      document.querySelectorAll('.gem-trigger').forEach((other) => other.setAttribute('aria-expanded', 'false'));
+      button.setAttribute('aria-expanded', String(open));
+    });
+    button.addEventListener('keydown', (event) => { if (event.key === 'Escape') { button.setAttribute('aria-expanded', 'false'); button.blur(); } });
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (!(event.target as Element).closest('.tooltip-anchor')) document.querySelectorAll('.gem-trigger').forEach((button) => button.setAttribute('aria-expanded', 'false'));
+  });
+</script>
+<style>
+  .card-preview { max-width: 1450px; padding-top: 30px; padding-bottom: 120px; }
+  .preferred-design { margin: 20px 0 45px; }
+  .preferred-grid { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 32px; align-items: start; }
+  .preferred-context h3 { color: var(--bright); font-family: var(--header-font); font-size: 20px; margin: 0; }
+  .dual-gem { position: relative; display: inline-block; }
+  .dual-gem-trigger { display: inline-flex; align-items: center; gap: 5px; color: #58a6ff; background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+  .dual-gem-trigger img { object-fit: contain; }
+  .dual-gem-trigger:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .dual-gem-trigger:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+  .compact-gem-preview { display: none; position: absolute; top: calc(100% + 7px); left: 0; width: 285px; max-width: calc(100vw - 40px); padding: 10px 12px; border: 1px solid #2d3f52; border-radius: 5px; background: #0c121a; box-shadow: 0 8px 25px #0009; z-index: 45; text-align: left; }
+  .compact-gem-preview.is-visible { display: block; }
+  .compact-gem-heading { display: flex; align-items: center; gap: 8px; color: #58a6ff; }
+  .compact-gem-heading strong { font-family: var(--header-font); font-size: 20px; font-weight: 550; }
+  .compact-gem-tags, .compact-gem-summary, .compact-gem-hint { display: block; line-height: 1.4; margin-top: 6px; }
+  .compact-gem-tags { color: #92a2b4; font-size: 11px; }
+  .compact-gem-summary { color: #c4cbd2; font-size: 13px; }
+  .compact-gem-hint { color: var(--accent-light); font-size: 11px; }
+  .full-gem-dialog { position: fixed; width: min(440px, calc(100vw - 24px)); max-width: none; max-height: calc(100dvh - 24px); padding: 0; border: 0; margin: auto; background: transparent; overflow: visible; color: inherit; }
+  .full-gem-dialog[style] { margin: 0; }
+  .full-gem-dialog::backdrop { background: #0006; }
+  .full-gem-scroll { max-height: calc(100dvh - 24px); overflow-y: auto; border-radius: 5px; }
+  .close-gem-card { position: absolute; right: 7px; top: 6px; z-index: 1; width: 26px; height: 26px; border: 1px solid #354554; border-radius: 4px; background: #101820; color: #d3dbe2; font-size: 22px; line-height: 1; cursor: pointer; }
+  @media (max-width: 650px) { .full-gem-dialog { position: fixed; inset: auto 0 0; width: 100%; margin: 0; max-height: 82dvh; } .full-gem-scroll { max-height: 82dvh; } .full-gem-scroll :global(.wiki-gem-card) { max-width: none; border-radius: 10px 10px 0 0; } .compact-gem-preview { display: none; } }
+  .icon-trigger { display: inline-flex; align-items: center; gap: 5px; vertical-align: baseline; }
+  .icon-trigger img { display: inline-block; object-fit: contain; align-self: center; }
+  .full-gem-hover { width: 440px; max-height: 72dvh; overflow-y: auto; }
+  .earlier-designs { margin-bottom: 16px; }
+  @media (max-width: 850px) { .preferred-grid { grid-template-columns: 1fr; gap: 20px; } }
+  h1 { font-size: 36px; font-weight: 650; color: var(--bright); margin: 8px 0 10px; }
+  h2 { font-size: 23px; font-weight: 750; color: var(--accent-light); margin: 0; }
+  .intro { max-width: 970px; font-size: 16px; color: #b2b9c0; margin: 8px 0; }
+  .data-note { font-size: 13px; color: #929aa3; margin: 12px 0 24px; }
+  .design-grid, .color-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: start; }
+  .design { min-width: 0; }
+  .design-description { font-size: 14px; color: #929aa3; min-height: 44px; margin: 7px 0 16px; }
+  .sample-card { --gem-color: #58a6ff; display: block; color: #c4cad0; background: #0e1218; border: 1px solid #2b3542; border-radius: 5px; padding: 13px 15px; box-shadow: 0 7px 22px #0005; font-size: 14px; line-height: 1.45; }
+  .card-title { display: block; font-family: var(--header-font); font-size: 21px; font-weight: 550; line-height: 1.2; color: var(--gem-color); }
+  .card-tags { display: block; color: #9aa7b5; font-size: 12px; margin-top: 5px; }
+  .card-rule { display: block; height: 1px; background: #29323e; margin: 10px 0; }
+  .card-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: #939eaa; }
+  .card-meta b { font-weight: 400; color: #cbd1d6; }
+  .card-description { display: block; margin: 9px 0 0; font-size: 14px; line-height: 1.5; color: #c2c9d0; }
+  .wiki-link { display: inline-block; color: var(--gem-color); font-size: 12px; margin-top: 10px; }
+  .wiki-link:hover { text-decoration: underline; }
+  .style-reference .sample-card { border-left: 3px solid var(--gem-color); border-radius: 3px; background: #10151c; padding: 15px; }
+  .style-reference .card-meta { display: grid; grid-template-columns: 1fr; gap: 5px; }
+  .style-reference .card-description { margin-top: 12px; }
+  .style-item .sample-card { text-align: center; border-color: #43536b; background: #090d13; border-radius: 0; }
+  .style-item .card-title { padding: 8px; margin: -13px -15px 0; background: #142035; }
+  .style-item .card-tags { margin-top: 9px; color: #9db6d5; }
+  .style-item .card-rule { width: 60%; margin-left: auto; margin-right: auto; }
+  .style-item .card-meta { display: grid; justify-content: center; gap: 3px; }
+  .paragraph-example { border-top: 1px solid #252d36; padding-top: 15px; margin-top: 23px; font-size: 18px; line-height: 1.6; color: #b9bdc1; }
+  .tooltip-anchor { position: relative; display: inline; }
+  .gem-trigger { color: #58a6ff; background: none; border: 0; padding: 0; font: inherit; cursor: help; }
+  .gem-trigger:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+  .hover-card { display: none; position: absolute; width: 320px; max-width: calc(100vw - 40px); top: 100%; left: -45px; padding-top: 9px; z-index: 45; }
+  .tooltip-anchor:hover .hover-card, .tooltip-anchor:focus-within .hover-card, .gem-trigger[aria-expanded="true"] + .hover-card { display: block; }
+  .hover-card .sample-card { box-shadow: 0 12px 35px #000b; }
+  .color-check { margin-top: 80px; }
+  .color-grid { margin-top: 18px; }
+  .color-red { --gem-color: #ff6655; }
+  .color-green { --gem-color: #65ed7f; }
+  .color-blue { --gem-color: #58a6ff; }
+  @media (max-width: 1050px) { .design-grid, .color-grid { grid-template-columns: 1fr; max-width: 650px; } .design { margin-bottom: 28px; } .design-description { min-height: 0; } .color-check { margin-top: 30px; } }
+  @media (max-width: 480px) { .hover-card { position: fixed; left: 15px; right: 15px; top: auto; bottom: 20px; width: auto; max-width: none; } }
+</style>

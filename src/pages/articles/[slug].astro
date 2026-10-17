@@ -1,0 +1,8 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { guides } from '../../lib/guide';
+export function getStaticPaths() {
+  return guides.filter((guide) => guide.kind === 'article').map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));
+}
+---
+<GuidePage guide={Astro.props.guide} />

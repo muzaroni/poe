@@ -1,0 +1,61 @@
+---
+interface Gem { name: string; color: string }
+interface Setup { title: string; groups: Gem[][]; change?: string }
+interface Props { variant: 'cards' | 'rows' | 'minimal'; act: string; setups: Setup[] }
+const { variant, act, setups } = Astro.props;
+---
+<div class={`act-example variant-${variant}`}>
+  <h3 class="act-title">{act}</h3>
+  <div class="setups">
+    {setups.map((setup) => <article class="setup">
+      <header><h4>{setup.title}</h4><span>{setup.groups.some((group) => group.length > 1) ? `${Math.max(...setup.groups.map((group) => group.length))}-link` : 'No links needed'}</span></header>
+      <div class="groups">
+        {setup.groups.map((group) => <ul class:list={['gem-group', { linked: group.length > 1 }]} aria-label={group.length > 1 ? 'Linked gems' : 'Independent gem'}>
+          {group.map((gem, index) => <li><span class="separator" aria-hidden="true">{index > 0 ? '+' : ''}</span><span class={`gem-name tone-${gem.color}`}>{gem.name}</span></li>)}
+        </ul>)}
+      </div>
+      {setup.change && <p class="change"><span>Changed:</span> {setup.change}</p>}
+    </article>)}
+  </div>
+</div>
+<style>
+  .act-example { margin: 16px 0; }
+  .act-title { font-size: 18px; color: #dbdedb; margin: 0 0 8px; }
+  .setups { display: grid; grid-template-columns: 1.25fr 1.15fr 1fr; gap: 8px; align-items: start; }
+  .setup { min-width: 0; padding: 10px 12px; }
+  .variant-cards .setup { background: #0e131a; border: 1px solid #28313e; border-radius: 4px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
+  h4 { font-family: 'Reddit Mono', monospace; font-size: 12px; font-weight: 400; color: #b3a575; margin: 0; text-transform: uppercase; letter-spacing: .05em; }
+  header > span { font-size: 11px; color: #84909b; white-space: nowrap; }
+  .gem-group { list-style: none; padding: 0; margin: 0; }
+  li { font-size: 18px; font-weight: 400; line-height: 1.35; position: relative; }
+  .tone-red { color: #ff6655; }
+  .tone-green { color: #65ed7f; }
+  .tone-blue { color: #58a6ff; }
+  .separator { display: none; }
+  .variant-cards .linked li { padding-left: 14px; }
+  .variant-cards .linked li::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; border-left: 1px solid #3a485c; }
+  .variant-cards .linked li:first-child::before { top: 50%; }
+  .variant-cards .linked li:last-child::before { bottom: 50%; }
+  .variant-cards .linked li::after { content: ''; position: absolute; left: 0; top: 50%; width: 9px; border-top: 1px solid #3a485c; }
+  .gem-group + .gem-group { margin-top: 6px; }
+  .variant-cards .linked + .gem-group { border-top: 1px solid #232b35; padding-top: 5px; }
+  .change { font-size: 12px; line-height: 1.4; color: #a8afb4; border-top: 1px solid #252c35; padding-top: 6px; margin: 7px 0 0; }
+  .change > span { color: var(--accent-light); }
+  .variant-rows .setups { display: block; border-top: 1px solid #272e36; }
+  .variant-rows .setup { display: grid; grid-template-columns: 135px minmax(0, 1fr); gap: 0 12px; padding: 7px 0; border-bottom: 1px solid #272e36; }
+  .variant-rows header { display: block; margin: 0; }
+  .variant-rows .groups { line-height: 1.35; }
+  .variant-rows .gem-group, .variant-rows li { display: inline; }
+  .variant-rows .gem-group + .gem-group { margin: 0; }
+  .variant-rows .gem-group + .gem-group::before { content: ', '; color: #c4c8cb; }
+  .variant-rows .separator { display: inline; color: #8a939b; margin: 0 4px; }
+  .variant-rows li:first-child .separator { display: none; }
+  .variant-rows .change { grid-column: 2; border: 0; padding: 0; margin-top: 3px; }
+  .variant-minimal .setup { padding: 8px 4px; border-top: 1px solid #28313a; }
+  .variant-minimal li { padding-left: 18px; }
+  .variant-minimal li::after { content: ''; position: absolute; left: 2px; top: .45em; width: 7px; height: 7px; border: 1px solid #6e7c8c; border-radius: 50%; background: #07090c; }
+  .variant-minimal .linked li:not(:last-child)::before { content: ''; position: absolute; left: 5px; top: .7em; height: 100%; border-left: 1px solid #3a485c; }
+  @media (max-width: 1080px) { .setups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 650px) { .setups { grid-template-columns: 1fr; } .variant-rows .setup { grid-template-columns: 1fr; gap: 5px; } .variant-rows .change { grid-column: 1; } }
+</style>

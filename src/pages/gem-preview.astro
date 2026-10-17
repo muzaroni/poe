@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GemMockup from '../components/GemMockup.astro';
+const gem = (name: string, color: string) => ({ name, color });
+const main = [gem('Sunder', 'red'), gem('Melee Physical Damage', 'red')];
+const movement = [gem('Leap Slam', 'red'), gem('Faster Attacks', 'green'), gem('Momentum', 'green')];
+const utility = [[gem('Blood Rage', 'green')], [gem('Intimidating Cry', 'red')]];
+const act3 = [
+  { title: 'Main damage', groups: [[...main, gem('Cruelty', 'red'), gem('Ruthless', 'red')]] },
+  { title: 'Movement', groups: [movement, [gem('Frostblink', 'blue')]] },
+  { title: 'Utility', groups: utility },
+];
+const act4 = [
+  { title: 'Main damage', groups: [[...main, gem('Fist of War', 'red'), gem('Ruthless', 'red')]], change: 'Added Fist of War · Removed Cruelty' },
+  { title: 'Movement', groups: [movement, [gem('Frostblink', 'blue')]] },
+  { title: 'Utility', groups: utility },
+];
+const options = [
+  { id: 'equipment', variant: 'cards' as const, title: 'Link cards', description: 'The equipment-card look, grouped by purpose. Connector lines mean linked gems. Frostblink sits separately below the movement link; utility gems have no connectors.' },
+  { id: 'rows', variant: 'rows' as const, title: 'Compact rows', description: 'The smallest footprint. Plus signs mean linked gems; commas separate independent gems or groups.' },
+  { id: 'minimal', variant: 'minimal' as const, title: 'Minimal linked list', description: 'The same grouping without card backgrounds. Connected dots form a link; standalone dots mean independent gems.' },
+];
+---
+<BaseLayout title="Gem display mockups" description="Local leveling gem layout comparison">
+  <main class="mockups shell">
+    <div class="home-kicker">DESIGN PREVIEW</div>
+    <h1>Compact gem setups, act by act</h1>
+    <p class="intro">Each layout shows the same two acts. Stable group names and gem order make progression easy to follow. Examples are illustrative; your guide content is unchanged.</p>
+    <nav class="option-nav" aria-label="Mockup options">{options.map((option, index) => <a href={`#${option.id}`}>0{index + 1} · {option.title}</a>)}</nav>
+    {options.map((option, index) => <section id={option.id}>
+      <div class="section-heading"><span>0{index + 1}</span><h2>{option.title}</h2></div>
+      <p class="description">{option.description}</p>
+      <GemMockup variant={option.variant} act="Act 3 · Current setup" setups={act3} />
+      <GemMockup variant={option.variant} act="Act 4 · Updated setup" setups={act4} />
+    </section>)}
+    <p class="preview-note">Level and quality can be shown when needed. They’re omitted here to keep leveling setups compact. Change notes appear only on the setup that changes.</p>
+  </main>
+</BaseLayout>
+<style>
+  .mockups { max-width: 1500px; padding-top: 24px; padding-bottom: 24px; }
+  h1 { font-size: clamp(28px, 3vw, 40px); line-height: 1.15; margin: 10px 0; color: var(--bright); }
+  .intro, .description { font-size: 14px; color: #929aa3; max-width: 1050px; margin: 8px 0 14px; }
+  .option-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 25px; }
+  .option-nav a { border: 1px solid #333024; color: var(--accent-light); border-radius: 4px; padding: 6px 10px; font-size: 14px; }
+  .option-nav a:hover { background: #19170e; }
+  section { margin-top: 30px; scroll-margin-top: 16px; }
+  .section-heading { display: flex; align-items: center; gap: 12px; }
+  .section-heading > span { color: #887a50; font-size: 13px; }
+  h2 { color: var(--accent-light); font-size: 25px; font-weight: 750; margin: 0; }
+  .preview-note { margin-top: 25px; color: #929aa3; font-size: 14px; border-top: 1px solid #252a31; padding-top: 12px; }
+</style>

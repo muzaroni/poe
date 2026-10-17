@@ -37,6 +37,9 @@ createServer(async (request, response) => {
   try {
     if (request.method === 'POST' && url.pathname === '/save') {
       const guide = JSON.parse((await readBody(request, 8 * 1024 * 1024)).toString('utf8'));
+      if (guide.kind != null && !['build', 'article'].includes(guide.kind)) throw new Error('Choose a build guide or article');
+      if (guide.tags != null && (!Array.isArray(guide.tags) || guide.tags.some((tag) => typeof tag !== 'string'))) throw new Error('Tags must be text');
+      guide.tags = [...new Set((guide.tags ?? []).map((tag) => tag.trim().replace(/\s+/g, ' ').toLowerCase()).filter(Boolean))];
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(guide.slug ?? '') || !guide.title?.trim() || guide.content?.type !== 'doc' || !Array.isArray(guide.content.content)) throw new Error('Guide needs a title, valid page address, and content');
       const output = path.join(builds, `${guide.slug}.json`);
       await mkdir(builds, { recursive: true });

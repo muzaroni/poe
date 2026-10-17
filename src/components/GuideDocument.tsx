@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import type { JSONContent } from '@tiptap/core';
 import { Check, Copy, ExternalLink } from 'lucide-react';
 import { assetUrl, headingId, plainText } from '../lib/guide';
+import GemLinkList, { gemLinkGroups } from './GemLinkList';
 
 type Props = { content: JSONContent; slug: string };
 
@@ -11,7 +12,7 @@ function hash(value: string) {
   return (result >>> 0).toString(36);
 }
 
-function ChecklistItem({ node, slug, section, path }: { node: JSONContent; slug: string; section: string; path: string }) {
+function ChecklistItem({ node, slug, section, path, gemSetup = false }: { node: JSONContent; slug: string; section: string; path: string; gemSetup?: boolean }) {
   const id = `${slug}:${hash(section + ':' + path + ':' + plainText(node))}`;
   const [checked, setChecked] = useState(false);
   useEffect(() => {
@@ -24,7 +25,7 @@ function ChecklistItem({ node, slug, section, path }: { node: JSONContent; slug:
   }
   return <li className={`reader-task ${checked ? 'is-done' : ''}`}>
     <label><input type="checkbox" checked={checked} onChange={toggle} aria-label={`Mark ${plainText(node)} complete`} />
-      <div>{(node.content ?? []).map((child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} />)}</div>
+      <div>{(node.content ?? []).map((child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup} />)}</div>
     </label>
   </li>;
 }
@@ -44,18 +45,19 @@ function Text({ node }: { node: JSONContent }) {
   for (const mark of node.marks ?? []) {
     if (mark.type === 'bold') value = <strong>{value}</strong>;
     if (mark.type === 'italic') value = <em>{value}</em>;
+    if (mark.type === 'textStyle' && mark.attrs?.color) value = <span style={{ color: String(mark.attrs.color) }}>{value}</span>;
     if (mark.type === 'code') value = <code>{value}</code>;
     if (mark.type === 'link') value = <a href={String(mark.attrs?.href ?? '#')} target="_blank" rel="noopener noreferrer">{value}<ExternalLink size={11} aria-hidden /></a>;
   }
   return <>{value}</>;
 }
 
-function Node({ node, slug, section, path }: { node: JSONContent; slug: string; section: string; path: string }) {
-  const children = (node.content ?? []).map((child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} />);
+function Node({ node, slug, section, path, gemSetup = false }: { node: JSONContent; slug: string; section: string; path: string; gemSetup?: boolean }) {
+  const children = (node.content ?? []).map((child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup || node.type === 'gemSetup'} />);
   const attrs = node.attrs ?? {};
   switch (node.type) {
     case 'text': return <Text node={node} />;
-    case 'paragraph': return <p>{children}</p>;
+    case 'paragraph': return gemSetup && gemLinkGroups(node) ? <GemLinkList node={node} renderInline={(child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} />} /> : <p>{children}</p>;
     case 'heading': {
       const level = Number(attrs.level ?? 2);
       const id = headingId(plainText(node));
@@ -66,8 +68,8 @@ function Node({ node, slug, section, path }: { node: JSONContent; slug: string; 
     case 'bulletList': return <ul className="prose-list">{children}</ul>;
     case 'orderedList': return <ol className="prose-list">{children}</ol>;
     case 'listItem': return <li>{children}</li>;
-    case 'taskList': return <ul className="reader-task-list">{(node.content ?? []).map((item, index) => <ChecklistItem key={index} node={item} slug={slug} section={section} path={`${path}.${index}`} />)}</ul>;
-    case 'gem': return <span className={`gem gem-${attrs.color ?? 'red'}`} title={`${attrs.color ?? ''} gem`}>{attrs.name}</span>;
+    case 'taskList': return <ul className={`reader-task-list ${gemSetup ? 'gem-link-grid' : ''}`}>{(node.content ?? []).map((item, index) => <ChecklistItem key={index} node={item} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup} />)}</ul>;
+    case 'gem': return <button type="button" className={`gem gem-${attrs.color ?? 'red'}`} data-gem-info={String(attrs.name ?? '')} aria-haspopup="dialog" aria-label={`${attrs.name}: gem details`}>{attrs.name}</button>;
     case 'icon': return <img className="inline-icon" src={assetUrl(String(attrs.src ?? ''))} alt="" />;
     case 'image': return <figure><img src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? 'Guide screenshot')} loading="lazy" /><figcaption>{attrs.alt && attrs.alt !== 'Guide screenshot' ? String(attrs.alt) : ''}</figcaption></figure>;
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;

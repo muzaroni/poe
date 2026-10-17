@@ -22,12 +22,19 @@ The Sunder → RF guide was imported from [the existing guide](https://muzaroni.
 - `npm run dev` — start the site and local save service
 - `npm run check` — check TypeScript and Astro components
 - `npm run build` — check and build the static site
+- `npm run refresh:gems` — refresh the locally bundled gem card data and icons from RePoE and the Path of Exile CDN
 
 The local save service listens only on `127.0.0.1:4322` and accepts requests from the local editor origin.
 
 ## Sources
 
 The guide text and images were imported from Muzaroni's existing guide. The gem picker is a local snapshot of released Path of Exile 1 gem names and colors from [RePoE's hosted export](https://repoe-fork.github.io/gems_minimal.json). Game data and artwork belong to Grinding Gear Games. This repository's software license is left for the owner to choose.
+
+## Gem cards
+
+Hover or focus a gem for a compact preview; click or tap it for the full card, including its icon, level selector, requirements, stats, and quality effects. Escape, the close button, or clicking outside closes the card. Opening a gem inside a checklist does not change its checkmark.
+
+Cards use a local [RePoE gem export](https://repoe-fork.github.io/gems.json) and locally stored Grinding Gear Games icons. Each card shows the snapshot's game version; it can differ from the guide's league. Refreshing data is a manual action and should be reviewed before publishing. Unknown gem names offer a wiki lookup instead of invented statistics.
 
 ## Fonts
 

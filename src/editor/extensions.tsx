@@ -3,13 +3,15 @@ import { NodeViewContent, NodeViewWrapper, ReactNodeViewRenderer, type NodeViewP
 import { X, Plus } from 'lucide-react';
 import Image from '@tiptap/extension-image';
 import { assetUrl } from '../lib/guide';
+import { useState } from 'react';
+import GuideDocument from '../components/GuideDocument';
 
 export const Gem = Node.create({
   name: 'gem', group: 'inline', inline: true, atom: true,
   addAttributes() { return { name: { default: '' }, color: { default: 'red' } }; },
   parseHTML() { return [{ tag: 'span[data-gem]' }]; },
   renderHTML({ HTMLAttributes }) { return ['span', mergeAttributes(HTMLAttributes, { 'data-gem': '', class: `gem gem-${HTMLAttributes.color}` }), HTMLAttributes.name]; },
-  addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper as="span" className={`gem gem-${node.attrs.color}`} contentEditable={false}>{node.attrs.name}</NodeViewWrapper>); },
+  addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper as="span" className={`gem gem-${node.attrs.color}`} contentEditable={false}><button type="button" className={`gem gem-${node.attrs.color}`} data-gem-info={node.attrs.name} aria-haspopup="dialog" aria-label={`${node.attrs.name}: gem details`}>{node.attrs.name}</button></NodeViewWrapper>); },
 });
 
 export const Icon = Node.create({
@@ -62,11 +64,20 @@ export const PobLinks = Node.create({
   addNodeView() { return ReactNodeViewRenderer(PobView); },
 });
 
+function GemSetupEditor({ node }: NodeViewProps) {
+  const [editing, setEditing] = useState(!JSON.stringify(node.toJSON()).includes('"type":"gem"'));
+  return <NodeViewWrapper className="gem-setup-editor">
+    <div className="gem-setup-controls" contentEditable={false}><span className="block-eyebrow">GEM SETUP</span><button type="button" onClick={() => setEditing(!editing)}>{editing ? 'Preview setup' : 'Edit setup'}</button></div>
+    <div contentEditable={false} hidden={editing} className="gem-setup-preview"><fieldset disabled><GuideDocument content={{ type: 'doc', content: [node.toJSON()] }} slug="editor-gem-preview" /></fieldset></div>
+    <div hidden={!editing} className="gem-setup-source"><p contentEditable={false} className="gem-setup-hint">Use + for linked gems and commas for independent gems. Add a label such as Main: or Utility: before a setup.</p><NodeViewContent /></div>
+  </NodeViewWrapper>;
+}
+
 export const GemSetup = Node.create({
   name: 'gemSetup', group: 'block', content: 'block+', defining: true,
   parseHTML() { return [{ tag: 'section[data-gem-setup]' }]; },
   renderHTML({ HTMLAttributes }) { return ['section', mergeAttributes(HTMLAttributes, { 'data-gem-setup': '', class: 'gem-setup' }), 0]; },
-  addNodeView() { return ReactNodeViewRenderer(() => <NodeViewWrapper className="gem-setup"><div className="block-eyebrow" contentEditable={false}>GEM SETUP</div><NodeViewContent /></NodeViewWrapper>); },
+  addNodeView() { return ReactNodeViewRenderer(GemSetupEditor); },
 });
 
 export const Callout = Node.create({

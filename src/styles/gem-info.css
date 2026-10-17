@@ -1,0 +1,54 @@
+.gem[data-gem-info] { font: inherit; font-weight: 400; color: inherit; cursor: pointer; text-align: inherit; background: none; }
+.gem.gem-red[data-gem-info] { color: #ff6655; }
+.gem.gem-green[data-gem-info] { color: #65ed7f; }
+.gem.gem-blue[data-gem-info] { color: #58a6ff; }
+.gem[data-gem-info]:hover { text-decoration: underline; text-underline-offset: 3px; }
+.gem[data-gem-info]:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+.gem-info-dialog { position: fixed; inset: auto; margin: 0; padding: 0; border: 0; width: min(440px, calc(100vw - 24px)); max-width: none; max-height: calc(100dvh - 24px); overflow: visible; background: transparent; color: #ccd1d5; }
+.gem-info-dialog::backdrop { background: #0006; }
+.gem-info-scroll { max-height: calc(100dvh - 24px); overflow-y: auto; border-radius: 5px; }
+.gem-info-close { position: absolute; top: 7px; right: 7px; z-index: 1; width: 27px; height: 27px; border: 1px solid #354554; border-radius: 4px; background: #101820; color: #d3dbe2; font-size: 22px; line-height: 1; }
+.gem-info-panel, .gem-info-loading { background: #090d12; border: 1px solid #344b5b; border-radius: 5px; font-family: 'Reddit Mono', monospace; font-size: 14px; line-height: 1.45; }
+.gem-info-heading { display: flex; align-items: center; gap: 12px; padding: 12px 38px 12px 14px; border-bottom: 1px solid #2b424e; background: #101e26; }
+.gem-info-heading img { object-fit: contain; flex: none; }
+.gem-info-heading h2 { font-family: var(--header-font); color: var(--gem-color); font-size: 24px; font-weight: 550; line-height: 1.15; margin: 0; }
+.gem-info-heading span { font-size: 12px; color: #8fa1ae; }
+.gem-info-fallback-icon { width: 44px; flex: none; color: var(--gem-color)!important; font-size: 38px!important; text-align: center; }
+.gem-info-body { padding: 11px 14px; }
+.gem-info-tags { margin: 0 0 10px; font-size: 12px; color: #93abbf; }
+.gem-info-level { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 10px; }
+.gem-info-level select { background: #111b25; color: #d6dce1; border: 1px solid #354554; border-radius: 3px; padding: 3px 6px; }
+.gem-info-level > span { color: #8796a1; font-size: 11px; }
+.gem-info-fields { margin: 0; }
+.gem-info-fields > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; margin: 3px 0; }
+.gem-info-fields dt { color: #9ba6af; }
+.gem-info-fields dd { margin: 0; color: #e0e3e5; }
+.gem-info-requirements { padding: 8px 0; margin: 10px 0; border-block: 1px solid #25333e; color: #a7b6c1; font-size: 13px; }
+.gem-info-requirements b { font-weight: 400; color: #d1dbe2; }
+.gem-info-description { color: #85b6bd; margin: 0 0 10px; }
+.gem-info-stats { list-style: none; padding: 0; margin: 0; color: #9eaaf4; }
+.gem-info-stats li { padding: 0; margin: 4px 0; white-space: pre-line; }
+.gem-info-quality { border-top: 1px solid #25333e; margin-top: 10px; padding-top: 8px; }
+.gem-info-quality > span { color: #a1a9b3; font-size: 12px; }
+.gem-info-quality p { color: #9eaaf4; margin: 4px 0; }
+.gem-info-body footer { border-top: 1px solid #25333e; margin-top: 10px; padding-top: 8px; }
+.gem-info-body footer a, .gem-info-loading a { color: var(--accent-light); font-size: 12px; }
+.gem-info-body footer span { display: block; color: #87929c; font-size: 11px; margin-top: 5px; }
+.gem-info-loading { padding: 20px 38px 20px 16px; }
+.gem-info-loading h2 { font-family: var(--header-font); font-size: 22px; margin: 0; }
+.gem-info-loading p { margin: 10px 0; }
+.gem-info-alternatives { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 38px 8px 10px; background: #101e26; }
+.gem-info-alternatives button { font-size: 12px; border: 1px solid #354554; padding: 3px 6px; border-radius: 3px; color: #b8c2ca; }
+.gem-info-alternatives button[aria-pressed=true] { color: var(--accent-light); border-color: var(--accent); }
+.gem-info-compact { position: fixed; width: 290px; max-width: calc(100vw - 24px); z-index: 100; background: #0c121a; border: 1px solid #2d3f52; border-radius: 5px; padding: 10px 12px; box-shadow: 0 8px 25px #0009; font-family: 'Reddit Mono', monospace; line-height: 1.4; pointer-events: none; }
+.gem-info-compact-heading { display: flex; align-items: center; gap: 8px; }
+.gem-info-compact-heading img { width: 30px; height: 30px; object-fit: contain; }
+.gem-info-compact-heading strong { font-family: var(--header-font); font-size: 20px; font-weight: 550; color: var(--gem-color); }
+.gem-info-compact p { font-size: 11px; color: #92a2b4; margin: 6px 0; }
+.gem-info-compact > span { display: block; font-size: 13px; color: #c4cbd2; }
+.gem-info-compact small { display: block; font-size: 11px; color: var(--accent-light); margin-top: 6px; }
+@media (max-width: 650px) {
+  .gem-info-dialog { inset: auto 0 0; width: 100%; max-height: 82dvh; }
+  .gem-info-scroll { max-height: 82dvh; border-radius: 10px 10px 0 0; }
+  .gem-info-compact { display: none; }
+}

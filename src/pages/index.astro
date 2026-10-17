@@ -1,28 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { guides } from '../lib/guide';
+import ContentLibrary from '../components/ContentLibrary';
+import { contentPath, normalizeTags, searchableText } from '../lib/search';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const entries = guides.map((guide) => ({ ...guide, content: undefined, kind: guide.kind ?? 'build', tags: normalizeTags(guide.tags ?? []), text: searchableText(guide.content), path: contentPath(guide) }));
 ---
 <BaseLayout title="Build guides" description="Path of Exile build guides by Muzaroni">
   <div class="shell library-shell">
     <aside class="library-nav" aria-label="Guide library navigation">
       <p class="nav-label">GUIDE LIBRARY</p>
-      <a class="library-nav-link library-nav-current" href="#guides">All guides <span>{guides.length}</span></a>
-      <p class="nav-label library-nav-subhead">BUILDS</p>
-      {guides.map((guide) => <a class="library-nav-link" href={`${base}builds/${guide.slug}/`}><span>{guide.title}</span><span aria-hidden="true">↗</span></a>)}
+      <a class="library-nav-link library-nav-current" href="#search">All content <span>{guides.length}</span></a>
+      <p class="nav-label library-nav-subhead">GUIDES & ARTICLES</p>
+      {guides.map((guide) => <a class="library-nav-link" href={`${base}${contentPath(guide)}`}><span>{guide.title}</span><span aria-hidden="true">↗</span></a>)}
       <a class="library-editor-link" href={`${base}editor/`}>Open visual editor <span aria-hidden="true">↗</span></a>
     </aside>
     <main class="home-main" id="guides">
       <div class="home-kicker">PATH OF EXILE · BUILD LIBRARY</div>
       <h1>Find your next<br /><span>way forward.</span></h1>
       <p class="home-lede">Clear build guides for the full journey, from your first gem to mapping.</p>
-      <div class="build-grid">
-        {guides.map((guide) => <a class="build-card" href={`${base}builds/${guide.slug}/`}>
-          <div class="build-card-top"><span class="league-pill">{guide.league}</span><span class="card-arrow">↗</span></div>
-          <h2>{guide.title}</h2><p>{guide.subtitle}</p>
-          <div class="build-card-foot"><span>FULL GUIDE</span><span>View build →</span></div>
-        </a>)}
-      </div>
+      <ContentLibrary entries={entries} base={base} client:load />
     </main>
   </div>
 </BaseLayout>

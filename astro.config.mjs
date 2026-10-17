@@ -7,5 +7,8 @@ export default defineConfig({
   base: '/poe',
   output: 'static',
   integrations: [react()],
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    cacheDir: process.argv.includes('dev') ? 'node_modules/.vite-dev' : 'node_modules/.vite-build',
+    plugins: [tailwindcss()],
+  },
 });
