@@ -1,0 +1,20 @@
+---
+import '../styles/global.css';
+const { title, description = 'Visual Path of Exile build guides' } = Astro.props;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d1117" />
+    <meta name="description" content={description} />
+    <title>{title} · Muzaroni PoE</title>
+  </head>
+  <body>
+    <header class="site-header"><div class="shell header-inner"><a class="brand" href={base}><span class="brand-mark">M</span><span>MUZARONI <small>PATH OF EXILE GUIDES</small></span></a><nav><a href={base}>All builds</a><a href={`${base}editor/`}>Editor</a></nav></div></header>
+    <slot />
+    <footer class="site-footer"><div class="shell">Fan made Path of Exile guides. Not affiliated with Grinding Gear Games.</div></footer>
+  </body>
+</html>

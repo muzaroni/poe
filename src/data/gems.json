@@ -1,0 +1,3354 @@
+[
+  {
+    "name": "Absolution",
+    "color": "red"
+  },
+  {
+    "name": "Absolution of Inspiring",
+    "color": "red"
+  },
+  {
+    "name": "Added Chaos Damage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Added Cold Damage Support",
+    "color": "green"
+  },
+  {
+    "name": "Added Fire Damage Support",
+    "color": "red"
+  },
+  {
+    "name": "Added Lightning Damage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Additional Accuracy Support",
+    "color": "green"
+  },
+  {
+    "name": "Advanced Traps Support",
+    "color": "green"
+  },
+  {
+    "name": "Alchemist's Mark",
+    "color": "green"
+  },
+  {
+    "name": "Ambush",
+    "color": "green"
+  },
+  {
+    "name": "Ancestral Call Support",
+    "color": "red"
+  },
+  {
+    "name": "Ancestral Cry",
+    "color": "red"
+  },
+  {
+    "name": "Ancestral Protector",
+    "color": "red"
+  },
+  {
+    "name": "Ancestral Warchief",
+    "color": "red"
+  },
+  {
+    "name": "Anger",
+    "color": "red"
+  },
+  {
+    "name": "Animate Guardian",
+    "color": "red"
+  },
+  {
+    "name": "Animate Guardian of Smiting",
+    "color": "red"
+  },
+  {
+    "name": "Animate Weapon",
+    "color": "green"
+  },
+  {
+    "name": "Animate Weapon of Ranged Arms",
+    "color": "green"
+  },
+  {
+    "name": "Animate Weapon of Self Reflection",
+    "color": "green"
+  },
+  {
+    "name": "Annihilation Support",
+    "color": "red"
+  },
+  {
+    "name": "Arc",
+    "color": "blue"
+  },
+  {
+    "name": "Arc of Oscillating",
+    "color": "blue"
+  },
+  {
+    "name": "Arc of Surging",
+    "color": "blue"
+  },
+  {
+    "name": "Arcane Cloak",
+    "color": "blue"
+  },
+  {
+    "name": "Arcane Surge Support",
+    "color": "blue"
+  },
+  {
+    "name": "Arcanist Brand",
+    "color": "blue"
+  },
+  {
+    "name": "Archmage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Arctic Armour",
+    "color": "green"
+  },
+  {
+    "name": "Armageddon Brand",
+    "color": "blue"
+  },
+  {
+    "name": "Armageddon Brand of Recall",
+    "color": "blue"
+  },
+  {
+    "name": "Armageddon Brand of Volatility",
+    "color": "blue"
+  },
+  {
+    "name": "Arrogance Support",
+    "color": "red"
+  },
+  {
+    "name": "Arrow Nova Support",
+    "color": "green"
+  },
+  {
+    "name": "Artillery Ballista",
+    "color": "green"
+  },
+  {
+    "name": "Artillery Ballista of Cross Strafe",
+    "color": "green"
+  },
+  {
+    "name": "Artillery Ballista of Focus Fire",
+    "color": "green"
+  },
+  {
+    "name": "Assassin's Mark",
+    "color": "blue"
+  },
+  {
+    "name": "Autoexertion",
+    "color": "red"
+  },
+  {
+    "name": "Automation",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Added Chaos Damage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Added Cold Damage Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Added Fire Damage Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Added Lightning Damage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Ancestral Call Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Arrow Nova Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Blasphemy Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Brutality Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Burning Damage Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Cast On Critical Strike Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Cast While Channelling Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Chain Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Cold Penetration Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Controlled Destruction Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Deadly Ailments Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Elemental Damage with Attacks Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Elemental Focus Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Empower Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Enhance Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Enlighten Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Fire Penetration Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Fork Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Generosity Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Greater Multiple Projectiles Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Hextouch Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Increased Area of Effect Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Lightning Penetration Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Melee Physical Damage Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Melee Splash Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Minion Damage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Multistrike Support",
+    "color": "red"
+  },
+  {
+    "name": "Awakened Spell Cascade Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Spell Echo Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Swift Affliction Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Unbound Ailments Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Unleash Support",
+    "color": "blue"
+  },
+  {
+    "name": "Awakened Vicious Projectiles Support",
+    "color": "green"
+  },
+  {
+    "name": "Awakened Void Manipulation Support",
+    "color": "green"
+  },
+  {
+    "name": "Ball Lightning",
+    "color": "blue"
+  },
+  {
+    "name": "Ball Lightning of Orbiting",
+    "color": "blue"
+  },
+  {
+    "name": "Ball Lightning of Static",
+    "color": "blue"
+  },
+  {
+    "name": "Ballista Totem Support",
+    "color": "red"
+  },
+  {
+    "name": "Bane",
+    "color": "blue"
+  },
+  {
+    "name": "Bane of Condemnation",
+    "color": "blue"
+  },
+  {
+    "name": "Barrage",
+    "color": "green"
+  },
+  {
+    "name": "Barrage of Volley Fire",
+    "color": "green"
+  },
+  {
+    "name": "Barrage Support",
+    "color": "green"
+  },
+  {
+    "name": "Battlemage's Cry",
+    "color": "red"
+  },
+  {
+    "name": "Bear Trap",
+    "color": "green"
+  },
+  {
+    "name": "Bear Trap of Skewers",
+    "color": "green"
+  },
+  {
+    "name": "Behead Support",
+    "color": "red"
+  },
+  {
+    "name": "Berserk",
+    "color": "red"
+  },
+  {
+    "name": "Blade Blast",
+    "color": "green"
+  },
+  {
+    "name": "Blade Blast of Dagger Detonation",
+    "color": "green"
+  },
+  {
+    "name": "Blade Blast of Unloading",
+    "color": "green"
+  },
+  {
+    "name": "Blade Flurry",
+    "color": "green"
+  },
+  {
+    "name": "Blade Flurry of Incision",
+    "color": "green"
+  },
+  {
+    "name": "Blade Vortex",
+    "color": "green"
+  },
+  {
+    "name": "Blade Vortex of the Scythe",
+    "color": "green"
+  },
+  {
+    "name": "Bladefall",
+    "color": "green"
+  },
+  {
+    "name": "Bladefall of Impaling",
+    "color": "green"
+  },
+  {
+    "name": "Bladefall of Trarthus",
+    "color": "green"
+  },
+  {
+    "name": "Bladefall of Volleys",
+    "color": "green"
+  },
+  {
+    "name": "Bladestorm",
+    "color": "red"
+  },
+  {
+    "name": "Bladestorm of Uncertainty",
+    "color": "red"
+  },
+  {
+    "name": "Blasphemy Support",
+    "color": "blue"
+  },
+  {
+    "name": "Blast Rain",
+    "color": "green"
+  },
+  {
+    "name": "Blast Rain of Trarthus",
+    "color": "green"
+  },
+  {
+    "name": "Blastchain Mine Support",
+    "color": "blue"
+  },
+  {
+    "name": "Blazing Salvo",
+    "color": "blue"
+  },
+  {
+    "name": "Blessed Call Support",
+    "color": "red"
+  },
+  {
+    "name": "Blight",
+    "color": "blue"
+  },
+  {
+    "name": "Blight of Atrophy",
+    "color": "blue"
+  },
+  {
+    "name": "Blight of Contagion",
+    "color": "blue"
+  },
+  {
+    "name": "Blind Support",
+    "color": "green"
+  },
+  {
+    "name": "Blink Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Blink Arrow of Bombarding Clones",
+    "color": "green"
+  },
+  {
+    "name": "Blink Arrow of Prismatic Clones",
+    "color": "green"
+  },
+  {
+    "name": "Block Chance Reduction Support",
+    "color": "green"
+  },
+  {
+    "name": "Blood and Sand",
+    "color": "red"
+  },
+  {
+    "name": "Blood Offering",
+    "color": "blue"
+  },
+  {
+    "name": "Blood Rage",
+    "color": "green"
+  },
+  {
+    "name": "Bloodlust Support",
+    "color": "red"
+  },
+  {
+    "name": "Bloodsoaked Banner Support",
+    "color": "red"
+  },
+  {
+    "name": "Bloodthirst Support",
+    "color": "red"
+  },
+  {
+    "name": "Bodyswap",
+    "color": "blue"
+  },
+  {
+    "name": "Bodyswap of Sacrifice",
+    "color": "blue"
+  },
+  {
+    "name": "Bone Offering",
+    "color": "blue"
+  },
+  {
+    "name": "Bonechill Support",
+    "color": "blue"
+  },
+  {
+    "name": "Boneshatter",
+    "color": "red"
+  },
+  {
+    "name": "Boneshatter of Carnage",
+    "color": "red"
+  },
+  {
+    "name": "Boneshatter of Complex Trauma",
+    "color": "red"
+  },
+  {
+    "name": "Bonespire Support",
+    "color": "red"
+  },
+  {
+    "name": "Brand Recall",
+    "color": "blue"
+  },
+  {
+    "name": "Brutality Support",
+    "color": "red"
+  },
+  {
+    "name": "Burning Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Burning Arrow of Vigour",
+    "color": "green"
+  },
+  {
+    "name": "Burning Damage Support",
+    "color": "red"
+  },
+  {
+    "name": "Call the Pyre",
+    "color": "red"
+  },
+  {
+    "name": "Cast On Critical Strike Support",
+    "color": "green"
+  },
+  {
+    "name": "Cast on Death Support",
+    "color": "green"
+  },
+  {
+    "name": "Cast on Melee Kill Support",
+    "color": "red"
+  },
+  {
+    "name": "Cast on Ward Break Support",
+    "color": "green"
+  },
+  {
+    "name": "Cast when Damage Taken Support",
+    "color": "red"
+  },
+  {
+    "name": "Cast when Stunned Support",
+    "color": "blue"
+  },
+  {
+    "name": "Cast while Channelling Support",
+    "color": "blue"
+  },
+  {
+    "name": "Caustic Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Caustic Arrow of Poison",
+    "color": "green"
+  },
+  {
+    "name": "Chain Hook",
+    "color": "red"
+  },
+  {
+    "name": "Chain Hook of Angling",
+    "color": "red"
+  },
+  {
+    "name": "Chain Hook of Trarthus",
+    "color": "red"
+  },
+  {
+    "name": "Chain Support",
+    "color": "green"
+  },
+  {
+    "name": "Chance to Bleed Support",
+    "color": "red"
+  },
+  {
+    "name": "Chance to Flee Support",
+    "color": "green"
+  },
+  {
+    "name": "Chance to Poison Support",
+    "color": "green"
+  },
+  {
+    "name": "Charged Dash",
+    "color": "green"
+  },
+  {
+    "name": "Charged Dash of Projection",
+    "color": "green"
+  },
+  {
+    "name": "Charged Mines Support",
+    "color": "blue"
+  },
+  {
+    "name": "Charged Traps Support",
+    "color": "green"
+  },
+  {
+    "name": "Clarity",
+    "color": "blue"
+  },
+  {
+    "name": "Cleave",
+    "color": "red"
+  },
+  {
+    "name": "Cleave of Rage",
+    "color": "red"
+  },
+  {
+    "name": "Close Combat Support",
+    "color": "green"
+  },
+  {
+    "name": "Cluster Traps Support",
+    "color": "green"
+  },
+  {
+    "name": "Cobra Lash",
+    "color": "green"
+  },
+  {
+    "name": "Cold Penetration Support",
+    "color": "green"
+  },
+  {
+    "name": "Cold Snap",
+    "color": "blue"
+  },
+  {
+    "name": "Cold Snap of Power",
+    "color": "blue"
+  },
+  {
+    "name": "Cold to Fire Support",
+    "color": "red"
+  },
+  {
+    "name": "Combustion Support",
+    "color": "blue"
+  },
+  {
+    "name": "Communion Support",
+    "color": "blue"
+  },
+  {
+    "name": "Companionship Support",
+    "color": "green"
+  },
+  {
+    "name": "Concentrated Effect Support",
+    "color": "blue"
+  },
+  {
+    "name": "Conductivity",
+    "color": "blue"
+  },
+  {
+    "name": "Conflagration",
+    "color": "green"
+  },
+  {
+    "name": "Congregation Support",
+    "color": "blue"
+  },
+  {
+    "name": "Consecrated Path",
+    "color": "red"
+  },
+  {
+    "name": "Consecrated Path of Endurance",
+    "color": "red"
+  },
+  {
+    "name": "Contagion",
+    "color": "blue"
+  },
+  {
+    "name": "Contagion of Subsiding",
+    "color": "blue"
+  },
+  {
+    "name": "Contagion of Transference",
+    "color": "blue"
+  },
+  {
+    "name": "Controlled Blaze Support",
+    "color": "red"
+  },
+  {
+    "name": "Controlled Destruction Support",
+    "color": "blue"
+  },
+  {
+    "name": "Conversion Trap",
+    "color": "blue"
+  },
+  {
+    "name": "Cooldown Recovery Support",
+    "color": "blue"
+  },
+  {
+    "name": "Corrupting Cry Support",
+    "color": "red"
+  },
+  {
+    "name": "Corrupting Fever",
+    "color": "red"
+  },
+  {
+    "name": "Coursing Current Support",
+    "color": "blue"
+  },
+  {
+    "name": "Crackling Lance",
+    "color": "blue"
+  },
+  {
+    "name": "Crackling Lance of Branching",
+    "color": "blue"
+  },
+  {
+    "name": "Crackling Lance of Disintegration",
+    "color": "blue"
+  },
+  {
+    "name": "Creeping Frost",
+    "color": "blue"
+  },
+  {
+    "name": "Creeping Frost of Floes",
+    "color": "blue"
+  },
+  {
+    "name": "Cremation",
+    "color": "green"
+  },
+  {
+    "name": "Cremation of Exhuming",
+    "color": "green"
+  },
+  {
+    "name": "Cremation of the Volcano",
+    "color": "green"
+  },
+  {
+    "name": "Critical Strike Affliction Support",
+    "color": "green"
+  },
+  {
+    "name": "Cruelty Support",
+    "color": "red"
+  },
+  {
+    "name": "Crushing Fist",
+    "color": "red"
+  },
+  {
+    "name": "Crystalfall Support",
+    "color": "red"
+  },
+  {
+    "name": "Cull the Weak Support",
+    "color": "green"
+  },
+  {
+    "name": "Culling Strike Support",
+    "color": "green"
+  },
+  {
+    "name": "Cursed Ground Support",
+    "color": "blue"
+  },
+  {
+    "name": "Cyclone",
+    "color": "green"
+  },
+  {
+    "name": "Cyclone of Tumult",
+    "color": "green"
+  },
+  {
+    "name": "Damage on Full Life Support",
+    "color": "red"
+  },
+  {
+    "name": "Dance in the White",
+    "color": "green"
+  },
+  {
+    "name": "Dark Bargain",
+    "color": "blue"
+  },
+  {
+    "name": "Dark Bargain of Trarthus",
+    "color": "blue"
+  },
+  {
+    "name": "Dash",
+    "color": "green"
+  },
+  {
+    "name": "Deadly Ailments Support",
+    "color": "green"
+  },
+  {
+    "name": "Decay Support",
+    "color": "blue"
+  },
+  {
+    "name": "Decoy Totem",
+    "color": "red"
+  },
+  {
+    "name": "Defiance Banner",
+    "color": "red"
+  },
+  {
+    "name": "Desecrate",
+    "color": "green"
+  },
+  {
+    "name": "Despair",
+    "color": "blue"
+  },
+  {
+    "name": "Destructive Link",
+    "color": "blue"
+  },
+  {
+    "name": "Determination",
+    "color": "red"
+  },
+  {
+    "name": "Detonate Dead",
+    "color": "green"
+  },
+  {
+    "name": "Detonate Dead of Chain Reaction",
+    "color": "green"
+  },
+  {
+    "name": "Detonate Dead of Scavenging",
+    "color": "green"
+  },
+  {
+    "name": "Devour Support",
+    "color": "blue"
+  },
+  {
+    "name": "Devouring Totem",
+    "color": "red"
+  },
+  {
+    "name": "Discharge",
+    "color": "blue"
+  },
+  {
+    "name": "Discharge of Misery",
+    "color": "blue"
+  },
+  {
+    "name": "Discipline",
+    "color": "blue"
+  },
+  {
+    "name": "Divine Blast",
+    "color": "red"
+  },
+  {
+    "name": "Divine Blast of Radiance",
+    "color": "red"
+  },
+  {
+    "name": "Divine Blessing Support",
+    "color": "red"
+  },
+  {
+    "name": "Divine Ire",
+    "color": "blue"
+  },
+  {
+    "name": "Divine Ire of Disintegration",
+    "color": "blue"
+  },
+  {
+    "name": "Divine Ire of Holy Lightning",
+    "color": "blue"
+  },
+  {
+    "name": "Divine Retribution",
+    "color": "blue"
+  },
+  {
+    "name": "Divine Sentinel Support",
+    "color": "red"
+  },
+  {
+    "name": "Dominating Blow",
+    "color": "red"
+  },
+  {
+    "name": "Dominating Blow of Inspiring",
+    "color": "red"
+  },
+  {
+    "name": "Double Strike",
+    "color": "green"
+  },
+  {
+    "name": "Double Strike of Impaling",
+    "color": "green"
+  },
+  {
+    "name": "Double Strike of Momentum",
+    "color": "green"
+  },
+  {
+    "name": "Dread Banner",
+    "color": "red"
+  },
+  {
+    "name": "Dual Strike",
+    "color": "green"
+  },
+  {
+    "name": "Dual Strike of Ambidexterity",
+    "color": "green"
+  },
+  {
+    "name": "Earthbreaker Support",
+    "color": "red"
+  },
+  {
+    "name": "Earthquake",
+    "color": "red"
+  },
+  {
+    "name": "Earthquake of Amplification",
+    "color": "red"
+  },
+  {
+    "name": "Earthshatter",
+    "color": "red"
+  },
+  {
+    "name": "Earthshatter of Fragility",
+    "color": "red"
+  },
+  {
+    "name": "Earthshatter of Prominence",
+    "color": "red"
+  },
+  {
+    "name": "Edify Support",
+    "color": "red"
+  },
+  {
+    "name": "Efficacy Support",
+    "color": "blue"
+  },
+  {
+    "name": "Eldritch Blasphemy Support",
+    "color": "blue"
+  },
+  {
+    "name": "Elemental Army Support",
+    "color": "blue"
+  },
+  {
+    "name": "Elemental Damage with Attacks Support",
+    "color": "red"
+  },
+  {
+    "name": "Elemental Focus Support",
+    "color": "blue"
+  },
+  {
+    "name": "Elemental Hit",
+    "color": "green"
+  },
+  {
+    "name": "Elemental Hit of the Spectrum",
+    "color": "green"
+  },
+  {
+    "name": "Elemental Penetration Support",
+    "color": "blue"
+  },
+  {
+    "name": "Elemental Proliferation Support",
+    "color": "blue"
+  },
+  {
+    "name": "Elemental Weakness",
+    "color": "blue"
+  },
+  {
+    "name": "Empower Support",
+    "color": "red"
+  },
+  {
+    "name": "Endurance Charge on Melee Stun Support",
+    "color": "red"
+  },
+  {
+    "name": "Enduring Cry",
+    "color": "red"
+  },
+  {
+    "name": "Energy Blade",
+    "color": "blue"
+  },
+  {
+    "name": "Energy Leech Support",
+    "color": "blue"
+  },
+  {
+    "name": "Enervating Grasp",
+    "color": "blue"
+  },
+  {
+    "name": "Enfeeble",
+    "color": "blue"
+  },
+  {
+    "name": "Enhance Support",
+    "color": "green"
+  },
+  {
+    "name": "Enlighten Support",
+    "color": "blue"
+  },
+  {
+    "name": "Ensnaring Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Envy",
+    "color": "blue"
+  },
+  {
+    "name": "Essence Drain",
+    "color": "blue"
+  },
+  {
+    "name": "Essence Drain of Desperation",
+    "color": "blue"
+  },
+  {
+    "name": "Essence Drain of Wickedness",
+    "color": "blue"
+  },
+  {
+    "name": "Eternal Blessing Support",
+    "color": "red"
+  },
+  {
+    "name": "Ethereal Knives",
+    "color": "green"
+  },
+  {
+    "name": "Ethereal Knives of Lingering Blades",
+    "color": "green"
+  },
+  {
+    "name": "Ethereal Knives of the Massacre",
+    "color": "green"
+  },
+  {
+    "name": "Eviscerate",
+    "color": "red"
+  },
+  {
+    "name": "Excommunicate Support",
+    "color": "red"
+  },
+  {
+    "name": "Exemplar Support",
+    "color": "blue"
+  },
+  {
+    "name": "Expert Retaliation Support",
+    "color": "red"
+  },
+  {
+    "name": "Explosive Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Explosive Concoction",
+    "color": "green"
+  },
+  {
+    "name": "Explosive Concoction of Destruction",
+    "color": "green"
+  },
+  {
+    "name": "Explosive Trap",
+    "color": "green"
+  },
+  {
+    "name": "Explosive Trap of Magnitude",
+    "color": "green"
+  },
+  {
+    "name": "Explosive Trap of Shrapnel",
+    "color": "green"
+  },
+  {
+    "name": "Exsanguinate",
+    "color": "red"
+  },
+  {
+    "name": "Exsanguinate of Transmission",
+    "color": "red"
+  },
+  {
+    "name": "Eye of Winter",
+    "color": "blue"
+  },
+  {
+    "name": "Eye of Winter of Finality",
+    "color": "blue"
+  },
+  {
+    "name": "Eye of Winter of Transience",
+    "color": "blue"
+  },
+  {
+    "name": "Falling Crystals",
+    "color": "green"
+  },
+  {
+    "name": "Faster Attacks Support",
+    "color": "green"
+  },
+  {
+    "name": "Faster Casting Support",
+    "color": "blue"
+  },
+  {
+    "name": "Faster Projectiles Support",
+    "color": "green"
+  },
+  {
+    "name": "Feeding Frenzy Support",
+    "color": "blue"
+  },
+  {
+    "name": "Fire Penetration Support",
+    "color": "red"
+  },
+  {
+    "name": "Fire Trap",
+    "color": "green"
+  },
+  {
+    "name": "Fire Trap of Blasting",
+    "color": "green"
+  },
+  {
+    "name": "Fireball",
+    "color": "blue"
+  },
+  {
+    "name": "Firestorm",
+    "color": "blue"
+  },
+  {
+    "name": "Firestorm of Meteors",
+    "color": "blue"
+  },
+  {
+    "name": "Firestorm of Pelting",
+    "color": "blue"
+  },
+  {
+    "name": "Fissure Support",
+    "color": "red"
+  },
+  {
+    "name": "Fist of War Support",
+    "color": "red"
+  },
+  {
+    "name": "Flame Dash",
+    "color": "blue"
+  },
+  {
+    "name": "Flame Dash of Return",
+    "color": "blue"
+  },
+  {
+    "name": "Flame Link",
+    "color": "red"
+  },
+  {
+    "name": "Flame Surge",
+    "color": "blue"
+  },
+  {
+    "name": "Flame Surge of Combusting",
+    "color": "blue"
+  },
+  {
+    "name": "Flame Wall",
+    "color": "blue"
+  },
+  {
+    "name": "Flameblast",
+    "color": "blue"
+  },
+  {
+    "name": "Flameblast of Celerity",
+    "color": "blue"
+  },
+  {
+    "name": "Flameblast of Contraction",
+    "color": "blue"
+  },
+  {
+    "name": "Flamethrower Trap",
+    "color": "green"
+  },
+  {
+    "name": "Flamethrower Trap of Stability",
+    "color": "green"
+  },
+  {
+    "name": "Flamewood Support",
+    "color": "red"
+  },
+  {
+    "name": "Flammability",
+    "color": "blue"
+  },
+  {
+    "name": "Flammable Shot",
+    "color": "green"
+  },
+  {
+    "name": "Flesh and Stone",
+    "color": "red"
+  },
+  {
+    "name": "Flesh Offering",
+    "color": "blue"
+  },
+  {
+    "name": "Flicker Strike",
+    "color": "green"
+  },
+  {
+    "name": "Flicker Strike of Power",
+    "color": "green"
+  },
+  {
+    "name": "Focused Ballista Support",
+    "color": "green"
+  },
+  {
+    "name": "Focused Channelling Support",
+    "color": "blue"
+  },
+  {
+    "name": "Forbidden Rite",
+    "color": "blue"
+  },
+  {
+    "name": "Forbidden Rite of Soul Sacrifice",
+    "color": "blue"
+  },
+  {
+    "name": "Fork Support",
+    "color": "green"
+  },
+  {
+    "name": "Fortify Support",
+    "color": "red"
+  },
+  {
+    "name": "Foulgrasp Support",
+    "color": "blue"
+  },
+  {
+    "name": "Freezing Pulse",
+    "color": "blue"
+  },
+  {
+    "name": "Frenzy",
+    "color": "green"
+  },
+  {
+    "name": "Frenzy of Onslaught",
+    "color": "green"
+  },
+  {
+    "name": "Fresh Meat Support",
+    "color": "blue"
+  },
+  {
+    "name": "Frigid Bond Support",
+    "color": "blue"
+  },
+  {
+    "name": "Frost Blades",
+    "color": "green"
+  },
+  {
+    "name": "Frost Blades of Katabasis",
+    "color": "green"
+  },
+  {
+    "name": "Frost Bomb",
+    "color": "blue"
+  },
+  {
+    "name": "Frost Bomb of Forthcoming",
+    "color": "blue"
+  },
+  {
+    "name": "Frost Bomb of Instability",
+    "color": "blue"
+  },
+  {
+    "name": "Frost Shield",
+    "color": "blue"
+  },
+  {
+    "name": "Frost Wall",
+    "color": "blue"
+  },
+  {
+    "name": "Frost Wall of Encroachment",
+    "color": "blue"
+  },
+  {
+    "name": "Frostbite",
+    "color": "blue"
+  },
+  {
+    "name": "Frostblink",
+    "color": "blue"
+  },
+  {
+    "name": "Frostblink of Wintry Blast",
+    "color": "blue"
+  },
+  {
+    "name": "Frostbolt",
+    "color": "blue"
+  },
+  {
+    "name": "Frostmage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Frozen Legion",
+    "color": "red"
+  },
+  {
+    "name": "Frozen Legion of Rallying",
+    "color": "red"
+  },
+  {
+    "name": "Galvanic Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Galvanic Arrow of Energy",
+    "color": "green"
+  },
+  {
+    "name": "Galvanic Arrow of Surging",
+    "color": "green"
+  },
+  {
+    "name": "Galvanic Field",
+    "color": "blue"
+  },
+  {
+    "name": "Galvanic Field of Intensity",
+    "color": "blue"
+  },
+  {
+    "name": "General's Cry",
+    "color": "red"
+  },
+  {
+    "name": "Generosity Support",
+    "color": "red"
+  },
+  {
+    "name": "Glacial Cascade",
+    "color": "blue"
+  },
+  {
+    "name": "Glacial Cascade of the Fissure",
+    "color": "blue"
+  },
+  {
+    "name": "Glacial Hammer",
+    "color": "red"
+  },
+  {
+    "name": "Glacial Hammer of Shattering",
+    "color": "red"
+  },
+  {
+    "name": "Glacial Shield Swipe",
+    "color": "green"
+  },
+  {
+    "name": "Glowing Silhouette",
+    "color": "blue"
+  },
+  {
+    "name": "Gluttony Support",
+    "color": "blue"
+  },
+  {
+    "name": "Grace",
+    "color": "green"
+  },
+  {
+    "name": "Greater Ancestral Call Support",
+    "color": "red"
+  },
+  {
+    "name": "Greater Chain Support",
+    "color": "green"
+  },
+  {
+    "name": "Greater Devour Support",
+    "color": "blue"
+  },
+  {
+    "name": "Greater Fork Support",
+    "color": "green"
+  },
+  {
+    "name": "Greater Kinetic Instability Support",
+    "color": "blue"
+  },
+  {
+    "name": "Greater Multiple Projectiles Support",
+    "color": "green"
+  },
+  {
+    "name": "Greater Multistrike Support",
+    "color": "red"
+  },
+  {
+    "name": "Greater Spell Cascade Support",
+    "color": "blue"
+  },
+  {
+    "name": "Greater Spell Echo Support",
+    "color": "blue"
+  },
+  {
+    "name": "Greater Unleash Support",
+    "color": "blue"
+  },
+  {
+    "name": "Greater Volley Support",
+    "color": "green"
+  },
+  {
+    "name": "Ground Slam",
+    "color": "red"
+  },
+  {
+    "name": "Ground Slam of Earthshaking",
+    "color": "red"
+  },
+  {
+    "name": "Guardian's Blessing Support",
+    "color": "red"
+  },
+  {
+    "name": "Hallow Support",
+    "color": "red"
+  },
+  {
+    "name": "Harrowing Throng Support",
+    "color": "blue"
+  },
+  {
+    "name": "Haste",
+    "color": "green"
+  },
+  {
+    "name": "Hatred",
+    "color": "green"
+  },
+  {
+    "name": "Heart of Flame",
+    "color": "red"
+  },
+  {
+    "name": "Heavy Strike",
+    "color": "red"
+  },
+  {
+    "name": "Heavy Strike of Trarthus",
+    "color": "red"
+  },
+  {
+    "name": "Herald of Agony",
+    "color": "green"
+  },
+  {
+    "name": "Herald of Ash",
+    "color": "red"
+  },
+  {
+    "name": "Herald of Ice",
+    "color": "green"
+  },
+  {
+    "name": "Herald of Purity",
+    "color": "red"
+  },
+  {
+    "name": "Herald of Thunder",
+    "color": "blue"
+  },
+  {
+    "name": "Hex Bloom Support",
+    "color": "blue"
+  },
+  {
+    "name": "Hexblast",
+    "color": "blue"
+  },
+  {
+    "name": "Hexblast of Contradiction",
+    "color": "blue"
+  },
+  {
+    "name": "Hexblast of Havoc",
+    "color": "blue"
+  },
+  {
+    "name": "Hexpass Support",
+    "color": "blue"
+  },
+  {
+    "name": "Hextoad Support",
+    "color": "blue"
+  },
+  {
+    "name": "Hextouch Support",
+    "color": "blue"
+  },
+  {
+    "name": "High-Impact Mine Support",
+    "color": "blue"
+  },
+  {
+    "name": "His Burning Message",
+    "color": "red"
+  },
+  {
+    "name": "Hiveborn Support",
+    "color": "blue"
+  },
+  {
+    "name": "Holy Flame Totem",
+    "color": "red"
+  },
+  {
+    "name": "Holy Flame Totem of Ire",
+    "color": "red"
+  },
+  {
+    "name": "Holy Hammers",
+    "color": "red"
+  },
+  {
+    "name": "Holy Hammers of Spirals",
+    "color": "red"
+  },
+  {
+    "name": "Holy Strike",
+    "color": "red"
+  },
+  {
+    "name": "Holy Sweep",
+    "color": "red"
+  },
+  {
+    "name": "Holy Sweep of Hammerfalls",
+    "color": "red"
+  },
+  {
+    "name": "Hydrosphere",
+    "color": "blue"
+  },
+  {
+    "name": "Hypothermia Support",
+    "color": "green"
+  },
+  {
+    "name": "Ice Bite Support",
+    "color": "green"
+  },
+  {
+    "name": "Ice Crash",
+    "color": "red"
+  },
+  {
+    "name": "Ice Crash of Cadence",
+    "color": "red"
+  },
+  {
+    "name": "Ice Nova",
+    "color": "blue"
+  },
+  {
+    "name": "Ice Nova of Deep Freeze",
+    "color": "blue"
+  },
+  {
+    "name": "Ice Nova of Frostbolts",
+    "color": "blue"
+  },
+  {
+    "name": "Ice Shot",
+    "color": "green"
+  },
+  {
+    "name": "Ice Shot of Penetration",
+    "color": "green"
+  },
+  {
+    "name": "Ice Spear",
+    "color": "blue"
+  },
+  {
+    "name": "Ice Spear of Splitting",
+    "color": "blue"
+  },
+  {
+    "name": "Ice Trap",
+    "color": "green"
+  },
+  {
+    "name": "Ice Trap of Hollowness",
+    "color": "green"
+  },
+  {
+    "name": "Icicle Mine",
+    "color": "blue"
+  },
+  {
+    "name": "Icicle Mine of Fanning",
+    "color": "blue"
+  },
+  {
+    "name": "Icicle Mine of Sabotage",
+    "color": "blue"
+  },
+  {
+    "name": "Ignite Proliferation Support",
+    "color": "blue"
+  },
+  {
+    "name": "Immolate Support",
+    "color": "blue"
+  },
+  {
+    "name": "Immortal Call",
+    "color": "red"
+  },
+  {
+    "name": "Impale Support",
+    "color": "green"
+  },
+  {
+    "name": "Impending Doom Support",
+    "color": "blue"
+  },
+  {
+    "name": "Incinerate",
+    "color": "blue"
+  },
+  {
+    "name": "Incinerate of Expanse",
+    "color": "blue"
+  },
+  {
+    "name": "Incinerate of Venting",
+    "color": "blue"
+  },
+  {
+    "name": "Increased Area of Effect Support",
+    "color": "blue"
+  },
+  {
+    "name": "Increased Critical Damage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Increased Critical Strikes Support",
+    "color": "blue"
+  },
+  {
+    "name": "Increased Duration Support",
+    "color": "red"
+  },
+  {
+    "name": "Infernal Blow",
+    "color": "red"
+  },
+  {
+    "name": "Infernal Blow of Immolation",
+    "color": "red"
+  },
+  {
+    "name": "Infernal Cry",
+    "color": "red"
+  },
+  {
+    "name": "Infernal Legion Support",
+    "color": "blue"
+  },
+  {
+    "name": "Infused Channelling Support",
+    "color": "blue"
+  },
+  {
+    "name": "Innervate Support",
+    "color": "blue"
+  },
+  {
+    "name": "Inspiration Support",
+    "color": "red"
+  },
+  {
+    "name": "Intensify Support",
+    "color": "blue"
+  },
+  {
+    "name": "Intimidating Cry",
+    "color": "red"
+  },
+  {
+    "name": "Intuitive Link",
+    "color": "green"
+  },
+  {
+    "name": "Invention Support",
+    "color": "green"
+  },
+  {
+    "name": "Invert the Rules Support",
+    "color": "blue"
+  },
+  {
+    "name": "Iron Grip Support",
+    "color": "red"
+  },
+  {
+    "name": "Iron Will Support",
+    "color": "red"
+  },
+  {
+    "name": "Item Rarity Support",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Blast",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Blast of Clustering",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Bolt",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Bolt of Fragmentation",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Fusillade",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Fusillade of Detonation",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Instability Support",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Rain",
+    "color": "blue"
+  },
+  {
+    "name": "Kinetic Rain of Impact",
+    "color": "blue"
+  },
+  {
+    "name": "Knockback Support",
+    "color": "red"
+  },
+  {
+    "name": "Lacerate",
+    "color": "green"
+  },
+  {
+    "name": "Lacerate of Butchering",
+    "color": "green"
+  },
+  {
+    "name": "Lacerate of Haemorrhage",
+    "color": "green"
+  },
+  {
+    "name": "Lancing Steel",
+    "color": "green"
+  },
+  {
+    "name": "Lancing Steel of Spraying",
+    "color": "green"
+  },
+  {
+    "name": "Leap Slam",
+    "color": "red"
+  },
+  {
+    "name": "Leap Slam of Groundbreaking",
+    "color": "red"
+  },
+  {
+    "name": "Less Duration Support",
+    "color": "red"
+  },
+  {
+    "name": "Lethal Dose Support",
+    "color": "green"
+  },
+  {
+    "name": "Life Gain on Hit Support",
+    "color": "red"
+  },
+  {
+    "name": "Life Leech Support",
+    "color": "red"
+  },
+  {
+    "name": "Lifetap Support",
+    "color": "red"
+  },
+  {
+    "name": "Lightning Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Lightning Arrow of Electrocution",
+    "color": "green"
+  },
+  {
+    "name": "Lightning Conduit",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Conduit of the Heavens",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Penetration Support",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Spire Trap",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Spire Trap of Overloading",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Spire Trap of Zapping",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Strike",
+    "color": "green"
+  },
+  {
+    "name": "Lightning Strike of Arcing",
+    "color": "green"
+  },
+  {
+    "name": "Lightning Tendrils",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Tendrils of Eccentricity",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Tendrils of Escalation",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Trap",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Trap of Sparking",
+    "color": "blue"
+  },
+  {
+    "name": "Lightning Warp",
+    "color": "blue"
+  },
+  {
+    "name": "Living Lightning Support",
+    "color": "blue"
+  },
+  {
+    "name": "Locus Mine Support",
+    "color": "green"
+  },
+  {
+    "name": "Machinations Support",
+    "color": "green"
+  },
+  {
+    "name": "Magnetism Support",
+    "color": "green"
+  },
+  {
+    "name": "Maim Support",
+    "color": "red"
+  },
+  {
+    "name": "Malevolence",
+    "color": "blue"
+  },
+  {
+    "name": "Mana Leech Support",
+    "color": "green"
+  },
+  {
+    "name": "Mana-Infused Staff",
+    "color": "blue"
+  },
+  {
+    "name": "Manabond",
+    "color": "blue"
+  },
+  {
+    "name": "Manaforged Arrows Support",
+    "color": "green"
+  },
+  {
+    "name": "Mark On Hit Support",
+    "color": "green"
+  },
+  {
+    "name": "Meat Shield Support",
+    "color": "blue"
+  },
+  {
+    "name": "Melee Physical Damage Support",
+    "color": "red"
+  },
+  {
+    "name": "Melee Splash Support",
+    "color": "red"
+  },
+  {
+    "name": "Minefield Support",
+    "color": "blue"
+  },
+  {
+    "name": "Minion Damage Support",
+    "color": "blue"
+  },
+  {
+    "name": "Minion Life Support",
+    "color": "blue"
+  },
+  {
+    "name": "Minion Speed Support",
+    "color": "blue"
+  },
+  {
+    "name": "Mirage Archer Support",
+    "color": "green"
+  },
+  {
+    "name": "Mirror Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Mirror Arrow of Bombarding Clones",
+    "color": "green"
+  },
+  {
+    "name": "Mirror Arrow of Prismatic Clones",
+    "color": "green"
+  },
+  {
+    "name": "Molten Shell",
+    "color": "red"
+  },
+  {
+    "name": "Molten Strike",
+    "color": "red"
+  },
+  {
+    "name": "Molten Strike of the Zenith",
+    "color": "red"
+  },
+  {
+    "name": "Momentum Support",
+    "color": "green"
+  },
+  {
+    "name": "More Duration Support",
+    "color": "red"
+  },
+  {
+    "name": "Multiple Projectiles Support",
+    "color": "green"
+  },
+  {
+    "name": "Multiple Totems Support",
+    "color": "red"
+  },
+  {
+    "name": "Multiple Traps Support",
+    "color": "green"
+  },
+  {
+    "name": "Multistrike Support",
+    "color": "red"
+  },
+  {
+    "name": "Nightblade Support",
+    "color": "green"
+  },
+  {
+    "name": "Orb of Storms",
+    "color": "blue"
+  },
+  {
+    "name": "Orb of Storms of Squalls",
+    "color": "blue"
+  },
+  {
+    "name": "Overcharge Support",
+    "color": "blue"
+  },
+  {
+    "name": "Overcharged Sinews",
+    "color": "blue"
+  },
+  {
+    "name": "Overexertion Support",
+    "color": "red"
+  },
+  {
+    "name": "Overheat Support",
+    "color": "red"
+  },
+  {
+    "name": "Overloaded Intensity Support",
+    "color": "blue"
+  },
+  {
+    "name": "Pacifism Support",
+    "color": "green"
+  },
+  {
+    "name": "Penance Brand",
+    "color": "blue"
+  },
+  {
+    "name": "Penance Brand of Conduction",
+    "color": "blue"
+  },
+  {
+    "name": "Penance Brand of Dissipation",
+    "color": "blue"
+  },
+  {
+    "name": "Perforate",
+    "color": "red"
+  },
+  {
+    "name": "Perforate of Bloodshed",
+    "color": "red"
+  },
+  {
+    "name": "Perforate of Duality",
+    "color": "red"
+  },
+  {
+    "name": "Pestilent Strike",
+    "color": "green"
+  },
+  {
+    "name": "Petrified Blood",
+    "color": "red"
+  },
+  {
+    "name": "Phase Run",
+    "color": "green"
+  },
+  {
+    "name": "Physical to Lightning Support",
+    "color": "blue"
+  },
+  {
+    "name": "Pierce Support",
+    "color": "green"
+  },
+  {
+    "name": "Pinpoint Support",
+    "color": "blue"
+  },
+  {
+    "name": "Plague Bearer",
+    "color": "green"
+  },
+  {
+    "name": "Poacher's Mark",
+    "color": "green"
+  },
+  {
+    "name": "Point Blank Support",
+    "color": "green"
+  },
+  {
+    "name": "Poisonous Concoction",
+    "color": "green"
+  },
+  {
+    "name": "Poisonous Concoction of Bouncing",
+    "color": "green"
+  },
+  {
+    "name": "Power Charge On Critical Support",
+    "color": "blue"
+  },
+  {
+    "name": "Power Siphon",
+    "color": "blue"
+  },
+  {
+    "name": "Power Siphon of the Archmage",
+    "color": "blue"
+  },
+  {
+    "name": "Precision",
+    "color": "green"
+  },
+  {
+    "name": "Predator Support",
+    "color": "blue"
+  },
+  {
+    "name": "Preserving Stillness",
+    "color": "green"
+  },
+  {
+    "name": "Pride",
+    "color": "red"
+  },
+  {
+    "name": "Prismatic Burst Support",
+    "color": "blue"
+  },
+  {
+    "name": "Protective Link",
+    "color": "red"
+  },
+  {
+    "name": "Pulverise Support",
+    "color": "red"
+  },
+  {
+    "name": "Puncture",
+    "color": "green"
+  },
+  {
+    "name": "Puncture of Shanking",
+    "color": "green"
+  },
+  {
+    "name": "Punishment",
+    "color": "red"
+  },
+  {
+    "name": "Purifying Flame",
+    "color": "blue"
+  },
+  {
+    "name": "Purifying Flame of Revelations",
+    "color": "blue"
+  },
+  {
+    "name": "Purity of Elements",
+    "color": "blue"
+  },
+  {
+    "name": "Purity of Fire",
+    "color": "red"
+  },
+  {
+    "name": "Purity of Ice",
+    "color": "green"
+  },
+  {
+    "name": "Purity of Lightning",
+    "color": "blue"
+  },
+  {
+    "name": "Pyre Support",
+    "color": "red"
+  },
+  {
+    "name": "Pyroclast Mine",
+    "color": "blue"
+  },
+  {
+    "name": "Pyroclast Mine of Sabotage",
+    "color": "blue"
+  },
+  {
+    "name": "Rage Support",
+    "color": "red"
+  },
+  {
+    "name": "Rage Vortex",
+    "color": "red"
+  },
+  {
+    "name": "Rage Vortex of Berserking",
+    "color": "red"
+  },
+  {
+    "name": "Rain of Arrows",
+    "color": "green"
+  },
+  {
+    "name": "Rain of Arrows of Artillery",
+    "color": "green"
+  },
+  {
+    "name": "Rain of Arrows of Saturation",
+    "color": "green"
+  },
+  {
+    "name": "Raise Spectre",
+    "color": "blue"
+  },
+  {
+    "name": "Raise Spectre of Transience",
+    "color": "blue"
+  },
+  {
+    "name": "Raise Zombie",
+    "color": "blue"
+  },
+  {
+    "name": "Raise Zombie of Falling",
+    "color": "blue"
+  },
+  {
+    "name": "Raise Zombie of Slamming",
+    "color": "blue"
+  },
+  {
+    "name": "Rallying Cry",
+    "color": "red"
+  },
+  {
+    "name": "Reap",
+    "color": "red"
+  },
+  {
+    "name": "Reap of Butchery",
+    "color": "red"
+  },
+  {
+    "name": "Reave",
+    "color": "green"
+  },
+  {
+    "name": "Reave of Refraction",
+    "color": "green"
+  },
+  {
+    "name": "Rejuvenation Totem",
+    "color": "red"
+  },
+  {
+    "name": "Return to Dust",
+    "color": "red"
+  },
+  {
+    "name": "Returning Projectiles Support",
+    "color": "green"
+  },
+  {
+    "name": "Righteous Fire",
+    "color": "blue"
+  },
+  {
+    "name": "Righteous Fire of Arcane Devotion",
+    "color": "blue"
+  },
+  {
+    "name": "Rolling Magma",
+    "color": "blue"
+  },
+  {
+    "name": "Rupture Support",
+    "color": "green"
+  },
+  {
+    "name": "Ruthless Support",
+    "color": "red"
+  },
+  {
+    "name": "Sacred Wisps Support",
+    "color": "blue"
+  },
+  {
+    "name": "Sacrifice Support",
+    "color": "blue"
+  },
+  {
+    "name": "Sadism Support",
+    "color": "green"
+  },
+  {
+    "name": "Scorching Ray",
+    "color": "blue"
+  },
+  {
+    "name": "Scorching Ray of Immolation",
+    "color": "blue"
+  },
+  {
+    "name": "Scornful Herald Support",
+    "color": "blue"
+  },
+  {
+    "name": "Scourge Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Scourge Arrow of Menace",
+    "color": "green"
+  },
+  {
+    "name": "Searing Bond",
+    "color": "red"
+  },
+  {
+    "name": "Searing Bond of Detonation",
+    "color": "red"
+  },
+  {
+    "name": "Second Wind Support",
+    "color": "green"
+  },
+  {
+    "name": "Seismic Cry",
+    "color": "red"
+  },
+  {
+    "name": "Seismic Trap",
+    "color": "green"
+  },
+  {
+    "name": "Seismic Trap of Swells",
+    "color": "green"
+  },
+  {
+    "name": "Seize the Flesh",
+    "color": "red"
+  },
+  {
+    "name": "Shattering Steel",
+    "color": "green"
+  },
+  {
+    "name": "Shattering Steel of Ammunition",
+    "color": "green"
+  },
+  {
+    "name": "Shield Charge",
+    "color": "red"
+  },
+  {
+    "name": "Shield Crush",
+    "color": "red"
+  },
+  {
+    "name": "Shield Crush of the Chieftain",
+    "color": "red"
+  },
+  {
+    "name": "Shield of Light",
+    "color": "red"
+  },
+  {
+    "name": "Shock Nova",
+    "color": "blue"
+  },
+  {
+    "name": "Shock Nova of Procession",
+    "color": "blue"
+  },
+  {
+    "name": "Shockwave Support",
+    "color": "red"
+  },
+  {
+    "name": "Shockwave Totem",
+    "color": "red"
+  },
+  {
+    "name": "Shockwave Totem of Authority",
+    "color": "red"
+  },
+  {
+    "name": "Shrapnel Ballista",
+    "color": "green"
+  },
+  {
+    "name": "Shrapnel Ballista of Steel",
+    "color": "green"
+  },
+  {
+    "name": "Siege Ballista",
+    "color": "green"
+  },
+  {
+    "name": "Siege Ballista of Splintering",
+    "color": "green"
+  },
+  {
+    "name": "Siege Ballista of Trarthus",
+    "color": "green"
+  },
+  {
+    "name": "Sigil of Power",
+    "color": "blue"
+  },
+  {
+    "name": "Siphoning Trap",
+    "color": "blue"
+  },
+  {
+    "name": "Siphoning Trap of Pain",
+    "color": "blue"
+  },
+  {
+    "name": "Slower Projectiles Support",
+    "color": "green"
+  },
+  {
+    "name": "Smite",
+    "color": "red"
+  },
+  {
+    "name": "Smite of Divine Judgement",
+    "color": "red"
+  },
+  {
+    "name": "Smoke Mine",
+    "color": "green"
+  },
+  {
+    "name": "Snipe",
+    "color": "green"
+  },
+  {
+    "name": "Sniper's Mark",
+    "color": "green"
+  },
+  {
+    "name": "Somatic Shell",
+    "color": "blue"
+  },
+  {
+    "name": "Soul Link",
+    "color": "blue"
+  },
+  {
+    "name": "Soulrend",
+    "color": "blue"
+  },
+  {
+    "name": "Soulrend of Reaping",
+    "color": "blue"
+  },
+  {
+    "name": "Soulrend of the Spiral",
+    "color": "blue"
+  },
+  {
+    "name": "Spark",
+    "color": "blue"
+  },
+  {
+    "name": "Spark of the Nova",
+    "color": "blue"
+  },
+  {
+    "name": "Spark of Unpredictability",
+    "color": "blue"
+  },
+  {
+    "name": "Spectral Helix",
+    "color": "green"
+  },
+  {
+    "name": "Spectral Helix of Trarthus",
+    "color": "green"
+  },
+  {
+    "name": "Spectral Shield Throw",
+    "color": "green"
+  },
+  {
+    "name": "Spectral Shield Throw of Shattering",
+    "color": "green"
+  },
+  {
+    "name": "Spectral Shield Throw of Trarthus",
+    "color": "green"
+  },
+  {
+    "name": "Spectral Throw",
+    "color": "green"
+  },
+  {
+    "name": "Spectral Throw of Materialising",
+    "color": "green"
+  },
+  {
+    "name": "Spectral Throw of Trarthus",
+    "color": "green"
+  },
+  {
+    "name": "Spell Cascade Support",
+    "color": "blue"
+  },
+  {
+    "name": "Spell Echo Support",
+    "color": "blue"
+  },
+  {
+    "name": "Spell Totem Support",
+    "color": "red"
+  },
+  {
+    "name": "Spellblade Support",
+    "color": "blue"
+  },
+  {
+    "name": "Spellslinger",
+    "color": "blue"
+  },
+  {
+    "name": "Spirit Offering",
+    "color": "blue"
+  },
+  {
+    "name": "Split Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Split Arrow of Splitting",
+    "color": "green"
+  },
+  {
+    "name": "Splitting Steel",
+    "color": "green"
+  },
+  {
+    "name": "Splitting Steel of Ammunition",
+    "color": "green"
+  },
+  {
+    "name": "Static Strike",
+    "color": "red"
+  },
+  {
+    "name": "Static Strike of Gathering Lightning",
+    "color": "red"
+  },
+  {
+    "name": "Steelskin",
+    "color": "red"
+  },
+  {
+    "name": "Storm Brand",
+    "color": "blue"
+  },
+  {
+    "name": "Storm Brand of Indecision",
+    "color": "blue"
+  },
+  {
+    "name": "Storm Burst",
+    "color": "blue"
+  },
+  {
+    "name": "Storm Burst of Repulsion",
+    "color": "blue"
+  },
+  {
+    "name": "Storm Call",
+    "color": "blue"
+  },
+  {
+    "name": "Storm Call of Trarthus",
+    "color": "blue"
+  },
+  {
+    "name": "Storm Rain",
+    "color": "green"
+  },
+  {
+    "name": "Storm Rain of the Conduit",
+    "color": "green"
+  },
+  {
+    "name": "Storm Rain of the Fence",
+    "color": "green"
+  },
+  {
+    "name": "Stormbind",
+    "color": "blue"
+  },
+  {
+    "name": "Stormbind of Teleportation",
+    "color": "blue"
+  },
+  {
+    "name": "Stormblast Mine",
+    "color": "blue"
+  },
+  {
+    "name": "Stun Support",
+    "color": "red"
+  },
+  {
+    "name": "Summon Carrion Golem",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Carrion Golem of Hordes",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Carrion Golem of Scavenging",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Chaos Golem",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Chaos Golem of Hordes",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Chaos Golem of the Maelström",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Flame Golem",
+    "color": "red"
+  },
+  {
+    "name": "Summon Flame Golem of Hordes",
+    "color": "red"
+  },
+  {
+    "name": "Summon Flame Golem of the Meteor",
+    "color": "red"
+  },
+  {
+    "name": "Summon Holy Relic",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Holy Relic of Conviction",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Ice Golem",
+    "color": "green"
+  },
+  {
+    "name": "Summon Ice Golem of Hordes",
+    "color": "green"
+  },
+  {
+    "name": "Summon Ice Golem of Shattering",
+    "color": "green"
+  },
+  {
+    "name": "Summon Lightning Golem",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Lightning Golem of Hordes",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Phantasm Support",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Raging Spirit",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Raging Spirit of Enormity",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Reaper",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Reaper of Eviscerating",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Reaper of Revenants",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Skeletons",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Skeletons of Archers",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Skeletons of Mages",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Skitterbots",
+    "color": "blue"
+  },
+  {
+    "name": "Summon Stone Golem",
+    "color": "red"
+  },
+  {
+    "name": "Summon Stone Golem of Hordes",
+    "color": "red"
+  },
+  {
+    "name": "Summon Stone Golem of Safeguarding",
+    "color": "red"
+  },
+  {
+    "name": "Sunder",
+    "color": "red"
+  },
+  {
+    "name": "Sunder of Earthbreaking",
+    "color": "red"
+  },
+  {
+    "name": "Sunder of Trarthus",
+    "color": "red"
+  },
+  {
+    "name": "Sweep",
+    "color": "red"
+  },
+  {
+    "name": "Swift Affliction Support",
+    "color": "green"
+  },
+  {
+    "name": "Swift Assembly Support",
+    "color": "green"
+  },
+  {
+    "name": "Swiftbrand Support",
+    "color": "blue"
+  },
+  {
+    "name": "Swordstorm",
+    "color": "red"
+  },
+  {
+    "name": "Tectonic Slam",
+    "color": "red"
+  },
+  {
+    "name": "Tectonic Slam of Cataclysm",
+    "color": "red"
+  },
+  {
+    "name": "Tempest Shield",
+    "color": "blue"
+  },
+  {
+    "name": "Temporal Chains",
+    "color": "green"
+  },
+  {
+    "name": "Temporal Rift",
+    "color": "green"
+  },
+  {
+    "name": "Tender Embrace",
+    "color": "red"
+  },
+  {
+    "name": "The Great Avalanche",
+    "color": "blue"
+  },
+  {
+    "name": "The Grey Wind Howls",
+    "color": "red"
+  },
+  {
+    "name": "Thunderstorm",
+    "color": "green"
+  },
+  {
+    "name": "Tornado",
+    "color": "green"
+  },
+  {
+    "name": "Tornado of Elemental Turbulence",
+    "color": "green"
+  },
+  {
+    "name": "Tornado Shot",
+    "color": "green"
+  },
+  {
+    "name": "Tornado Shot of Cloudburst",
+    "color": "green"
+  },
+  {
+    "name": "Toxic Rain",
+    "color": "green"
+  },
+  {
+    "name": "Toxic Rain of Sporeburst",
+    "color": "green"
+  },
+  {
+    "name": "Toxic Rain of Withering",
+    "color": "green"
+  },
+  {
+    "name": "Transfusion Support",
+    "color": "red"
+  },
+  {
+    "name": "Trap and Mine Damage Support",
+    "color": "green"
+  },
+  {
+    "name": "Trap Support",
+    "color": "green"
+  },
+  {
+    "name": "Trauma Support",
+    "color": "red"
+  },
+  {
+    "name": "Trinity Support",
+    "color": "blue"
+  },
+  {
+    "name": "Unbound Ailments Support",
+    "color": "blue"
+  },
+  {
+    "name": "Unearth",
+    "color": "green"
+  },
+  {
+    "name": "Unholy Trinity Support",
+    "color": "green"
+  },
+  {
+    "name": "Unleash Support",
+    "color": "blue"
+  },
+  {
+    "name": "Urgent Orders Support",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Absolution",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Ancestral Warchief",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Animate Weapon",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Arc",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Arctic Armour",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Blade Flurry",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Blade Vortex",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Blight",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Burning Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Caustic Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Clarity",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Cleave",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Cold Snap",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Cyclone",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Detonate Dead",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Discipline",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Domination",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Double Strike",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Earthquake",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Fireball",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Firestorm",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Flameblast",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Flicker Strike",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Glacial Hammer",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Grace",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Ground Slam",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Haste",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Ice Nova",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Ice Shot",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Immortal Call",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Impurity of Fire",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Impurity of Ice",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Impurity of Lightning",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Lightning Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Lightning Strike",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Lightning Trap",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Lightning Warp",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Molten Shell",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Molten Strike",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Power Siphon",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Rain of Arrows",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Reap",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Reave",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Rejuvenation Totem",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Righteous Fire",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Sacrifice Support",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Smite",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Spark",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Spectral Throw",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Split Arrow",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Storm Call",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Summon Skeletons",
+    "color": "blue"
+  },
+  {
+    "name": "Vaal Temptation Support",
+    "color": "red"
+  },
+  {
+    "name": "Vaal Venom Gyre",
+    "color": "green"
+  },
+  {
+    "name": "Vaal Volcanic Fissure",
+    "color": "red"
+  },
+  {
+    "name": "Vampiric Link",
+    "color": "green"
+  },
+  {
+    "name": "Vengeful Cry",
+    "color": "red"
+  },
+  {
+    "name": "Venom Gyre",
+    "color": "green"
+  },
+  {
+    "name": "Vicious Projectiles Support",
+    "color": "green"
+  },
+  {
+    "name": "Vigilant Strike",
+    "color": "red"
+  },
+  {
+    "name": "Vile Toxins Support",
+    "color": "green"
+  },
+  {
+    "name": "Violent Desire",
+    "color": "red"
+  },
+  {
+    "name": "Viper Strike",
+    "color": "green"
+  },
+  {
+    "name": "Viper Strike of the Mamba",
+    "color": "green"
+  },
+  {
+    "name": "Vitality",
+    "color": "red"
+  },
+  {
+    "name": "Void Manipulation Support",
+    "color": "green"
+  },
+  {
+    "name": "Void Shockwave Support",
+    "color": "red"
+  },
+  {
+    "name": "Void Sphere",
+    "color": "blue"
+  },
+  {
+    "name": "Void Sphere of Rending",
+    "color": "blue"
+  },
+  {
+    "name": "Voidstorm Support",
+    "color": "green"
+  },
+  {
+    "name": "Volatile Dead",
+    "color": "green"
+  },
+  {
+    "name": "Volatile Dead of Confinement",
+    "color": "green"
+  },
+  {
+    "name": "Volatile Dead of Seething",
+    "color": "green"
+  },
+  {
+    "name": "Volatility Support",
+    "color": "red"
+  },
+  {
+    "name": "Volcanic Fissure",
+    "color": "red"
+  },
+  {
+    "name": "Volcanic Fissure of Snaking",
+    "color": "red"
+  },
+  {
+    "name": "Volley Support",
+    "color": "green"
+  },
+  {
+    "name": "Voltaxic Burst",
+    "color": "blue"
+  },
+  {
+    "name": "Vortex",
+    "color": "blue"
+  },
+  {
+    "name": "Vortex of Projection",
+    "color": "blue"
+  },
+  {
+    "name": "Vulnerability",
+    "color": "red"
+  },
+  {
+    "name": "Wall of Force",
+    "color": "blue"
+  },
+  {
+    "name": "War Banner",
+    "color": "red"
+  },
+  {
+    "name": "Ward Support",
+    "color": "blue"
+  },
+  {
+    "name": "Warlord's Mark",
+    "color": "red"
+  },
+  {
+    "name": "Wave of Conviction",
+    "color": "blue"
+  },
+  {
+    "name": "Wave of Conviction of Trarthus",
+    "color": "blue"
+  },
+  {
+    "name": "Whirling Blades",
+    "color": "green"
+  },
+  {
+    "name": "Wild Strike",
+    "color": "green"
+  },
+  {
+    "name": "Wild Strike of Extremes",
+    "color": "green"
+  },
+  {
+    "name": "Windburst Support",
+    "color": "green"
+  },
+  {
+    "name": "Winter Orb",
+    "color": "blue"
+  },
+  {
+    "name": "Wintertide Brand",
+    "color": "blue"
+  },
+  {
+    "name": "Wither",
+    "color": "blue"
+  },
+  {
+    "name": "Withering Step",
+    "color": "green"
+  },
+  {
+    "name": "Withering Touch Support",
+    "color": "green"
+  },
+  {
+    "name": "Wrath",
+    "color": "blue"
+  },
+  {
+    "name": "Wreathed in Light",
+    "color": "blue"
+  },
+  {
+    "name": "Zealotry",
+    "color": "blue"
+  }
+]

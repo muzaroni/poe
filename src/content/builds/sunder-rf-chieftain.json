@@ -1,0 +1,4642 @@
+{
+  "slug": "sunder-rf-chieftain",
+  "title": "Sunder Leveling into Pohx RF Swap",
+  "subtitle": "Level with Sunder, then swap to Righteous Fire at Blood Aqueducts.",
+  "league": "3.28 · Chieftain",
+  "updated": "2026-03-05",
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "This guide adapts "
+                      },
+                      {
+                        "type": "text",
+                        "text": "Pohx's RF guide",
+                        "marks": [
+                          {
+                            "type": "link",
+                            "attrs": {
+                              "href": "https://pohx.net/",
+                              "target": "_blank"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "text": " by using Sunder for leveling instead of the traditional caster approach. Play Sunder until Level 52-55, then use the free campaign respec and gold at Blood Aqueducts to hard-swap into Righteous Fire and follow Pohx's instructions. This approach allows you to level significantly quicker while still transitioning smoothly into the powerful RF setup once you reach maps."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "POB Links"
+          }
+        ]
+      },
+      {
+        "type": "pobLinks",
+        "attrs": {
+          "links": [
+            {
+              "label": "3.28 Guide POB : This Guide USE THIS",
+              "url": "https://pobb.in/Mte0VuKLso3C"
+            },
+            {
+              "label": "3.27 CWS w/o Bloodnotch: Emiracles Starter CWS POB for reference",
+              "url": "https://pobb.in/p4B-eODjL7RV"
+            },
+            {
+              "label": "3.26 Day 2 POB: LVL 94 Starter",
+              "url": "https://pobb.in/GaPzv7hRoc9y"
+            },
+            {
+              "label": "3.26 Day 3 POB: LVL 95 MB Swap",
+              "url": "https://pobb.in/h3DDjaATOe06"
+            },
+            {
+              "label": "3.26 Day 5 POB: LVL 98 Dawnbreaker + Stormshroud (ailment immune)",
+              "url": "https://pobb.in/bYrTsYELAH7e"
+            },
+            {
+              "label": "3.26 Day 7 POB: LVL 99 Crafted Shield",
+              "url": "https://pobb.in/muvlA8bo3mGJ"
+            },
+            {
+              "label": "3.26 Day 9 POB: LVL 99 Svalinn Swap",
+              "url": "https://pobb.in/GZ8yhzUkKXoi"
+            }
+          ]
+        }
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "REGEX"
+          }
+        ]
+      },
+      {
+        "type": "regex",
+        "attrs": {
+          "label": "Gear Regex - works for full campaign",
+          "value": "-\\w-.-|r-r-r|g-[gr]-r|r-[gr]-g|g-r-g|r-g-r|Runn|s:.+ax"
+        }
+      },
+      {
+        "type": "regex",
+        "attrs": {
+          "label": "Gear Regex - A1 ONLY, useful for 2 links early",
+          "value": "r-r-|-r-r|r-.-r|g-g-r|g-r-g|r-g-g|r-r|g-r|r-g|Runn|s:.+ax"
+        }
+      },
+      {
+        "type": "regex",
+        "attrs": {
+          "label": "Gem Regex for only Acts 1-3",
+          "value": "\"Frostblink|Jade|ida|eter|^purity of f|od r|urity$\""
+        }
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 1 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "End of Act 1: 20-23 mins - Level 12"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/act1.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "attrs": {},
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Starting Gems: "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Heavy Strike",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": "+"
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Ruthless",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "attrs": {},
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ensure you have "
+                  },
+                  {
+                    "type": "text",
+                    "text": "R-R"
+                  },
+                  {
+                    "type": "text",
+                    "text": " linked somewhere before leaving town"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Below are all breakpoints by monster, after each name go to town and get the items listed."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Tarkleigh"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Ground Slam",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": "(left gem) → Replace "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Heavy Strike",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Stone Axe"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for cheap"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy any "
+                  },
+                  {
+                    "type": "text",
+                    "text": "R-R"
+                  },
+                  {
+                    "type": "text",
+                    "text": " linked"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Pick up any shield and put it on off-hand for "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Shield Charge",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " at level 4"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Hailrake"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Quicksilver"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Decoy Totem",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " (optional)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Shield Charge",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Chance to Bleed",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " or "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Momentum",
+                      "color": "green"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "I personally take "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Momentum",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " and link with "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Shield Charge",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Jade Amulet / Iron Ring"
+                  },
+                  {
+                    "type": "text",
+                    "text": " 3x "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Frostblink",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Momentum",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " or "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Chance to Bleed",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy the other gem you didn't get earlier"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Blood & Sand",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dweller"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Faster Attacks",
+                      "color": "green"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy 1-2x "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Iron Rings"
+                  },
+                  {
+                    "type": "text",
+                    "text": " and 2x "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "mana potions",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " to make Brutus fight easier"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brutus"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Leap Slam",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Indimidating Cry",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fairgraves (Enter Caverns)"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Sunder",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {},
+        "content": [
+          {
+            "type": "heading",
+            "attrs": {
+              "level": 3
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "Level 1-9: Use Ground Slam"
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Ground Slam",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Ruthless",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Chance to Bleed",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " or "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood & Sand",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Intimidating Cry",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": {
+              "level": 3
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "Level 10: Replace Shield Charge with Leap Slam"
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Leap Slam",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": {
+              "level": 3
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "Level 12: Mervail"
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sunder",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Ruthless",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Chance to Bleed",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " or "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Leap Slam",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood & Sand",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Intimidating Cry",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 1 Transmute"
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/trans.png"
+                }
+              },
+              {
+                "type": "text",
+                "text": ", 3+ Wisdoms"
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/wisdom.png"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 2 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "End of Act 2: 38-40 mins, Level 20"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/act2.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fidelitas"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Herald of Ash",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Blood Rage",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/alt.png"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Herald of Purity",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/alt.png"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " (optional)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Jade Amulet",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": "3x"
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Weaver"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Melee Physical Damage",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {},
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sunder",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Melee Physical Damage",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Ruthless",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " or "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Close Combat",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Leap Slam",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood & Sand",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Intimidating Cry",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood Rage",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 1-2 Alterations "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/alt.png"
+                }
+              },
+              {
+                "type": "text",
+                "text": ", 3 Wisdoms "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/wisdom.png"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 3 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "End of Act 3: 55-60 mins, Level 28-30"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/act3.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "2H Axe / body armor: 145 gold each"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Gloves / Helmet / Boots: 135 gold each "
+                      },
+                      {
+                        "type": "text",
+                        "text": "< BETTER OPTION"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Piety"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Vulnerability",
+                      "color": "red"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {},
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sunder",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Melee Physical Damage",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Cruelty",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Ruthless",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " or "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Close Combat",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Leap Slam",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood & Sand",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Intimidating Cry",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood Rage",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Vulnerability",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 4 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "End of Act 4: 1h20, Level 35"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/act4.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Do Normal Lab once you reach "
+                      },
+                      {
+                        "type": "text",
+                        "text": "Crystal Veins"
+                      },
+                      {
+                        "type": "text",
+                        "text": " waypoint"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Take Chieftain - "
+                      },
+                      {
+                        "type": "text",
+                        "text": "Tasalio, Cleansing Water"
+                      },
+                      {
+                        "type": "text",
+                        "text": " for first ascendancy"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Malachai"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": " Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Fist of War",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " replace "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Cruelty",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " or "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Close Combat",
+                      "color": "green"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {},
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sunder",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Melee Physical Damage",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Cruelty/Ruthless",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fist of War",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Leap Slam",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood & Sand",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Intimidating Cry",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood Rage",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Vulnerability",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 5 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "End of Act 5: 1h35, Level 40"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/act5.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Act 5-9 will keep the same gem links until the respec at Blood Aqueducts in A9"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {},
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sunder",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Melee Physical Damage",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Cruelty/Ruthless",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fist of War",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Leap Slam",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood & Sand",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Intimidating Cry",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood Rage",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Vulnerability",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 6 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "End of Act 6: 2h, Level 45"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/act6.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "important"
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fire Trap",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/trans.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Swift Assembly",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/wisdom.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Trap & Mine Damage",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/alt.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Elemental Focus",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/alt.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Malevolence",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/alt.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Burning Damage",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/chance.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "For Righteous Fire look for "
+                      },
+                      {
+                        "type": "text",
+                        "text": "BBB"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      },
+                      {
+                        "type": "text",
+                        "text": " links."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "For Fire Trap look for "
+                      },
+                      {
+                        "type": "text",
+                        "text": "GGG"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      },
+                      {
+                        "type": "text",
+                        "text": " links."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Check wiki if needed: "
+                      },
+                      {
+                        "type": "text",
+                        "text": "Essence of Umbra Quest"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 7 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "End of Act 7: 2h15, Level 49"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/act7.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "For Righteous Fire look for "
+                      },
+                      {
+                        "type": "text",
+                        "text": "BBB"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      },
+                      {
+                        "type": "text",
+                        "text": " links."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "For Fire Trap look for "
+                      },
+                      {
+                        "type": "text",
+                        "text": "GGG"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      },
+                      {
+                        "type": "text",
+                        "text": " links."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Check wiki if needed: "
+                      },
+                      {
+                        "type": "text",
+                        "text": "Essence of Artist Quest"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "For Curse look for "
+                      },
+                      {
+                        "type": "text",
+                        "text": "BBB"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      },
+                      {
+                        "type": "text",
+                        "text": " links. (AR/ES Base for easy color)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "For Movement look for "
+                      },
+                      {
+                        "type": "text",
+                        "text": "GG"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      },
+                      {
+                        "type": "text",
+                        "text": "B"
+                      },
+                      {
+                        "type": "text",
+                        "text": " links. (AR/ES Base for easy color)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 8 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "End of Act 8: 2h30, Level 52"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/act8.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Tree above is what you should have going from Act 1 to end of Act 8 (Blood Aqueducts)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "This is the \"pre swap\" tree at around level 52 or 55"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 9 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "The original guide continues Sunder into Blood Aqueducts and swaps to Righteous Fire around level 52–55. Add Act 9 route details here."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "ACT 10 PROGRESSION"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Act 10 route details were not in the original guide. Add them here."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "LEVEL 52 RESPEC (BA)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Time at BA: 2h30, Level 52"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Use Campaign respec points first (~ 14 pts)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Can get 16 pts if you do Fetid Pool"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Spend gold to finish the respec according to tree below"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Remove points in "
+                      },
+                      {
+                        "type": "text",
+                        "text": "Red"
+                      },
+                      {
+                        "type": "text",
+                        "text": " and take "
+                      },
+                      {
+                        "type": "text",
+                        "text": "Green"
+                      },
+                      {
+                        "type": "text",
+                        "text": " on tree below."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/sunder-rf/final.png",
+          "alt": "Guide screenshot"
+        }
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "10 pts @ 313 gold each (lvl 52) = 3130 gold"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "In a test run (lvl 52 @ BA) I ended with 7282 gold after doing 3 armor gambles at level 24 in act 3 to get 1 4-link."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "After 26 point respect I ended with 4152 gold which I used to gamble other armor pieces or sceptre/shield for RF swap."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Gamble body (705 gold), gloves/helm (676 gold) for 4-link RF/FT colors if you did not get from quest rewards in A6 or A7."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Righteous Fire - "
+                      },
+                      {
+                        "type": "text",
+                        "text": "BBB"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Fire Trap - "
+                      },
+                      {
+                        "type": "text",
+                        "text": "GGG"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Curse - "
+                      },
+                      {
+                        "type": "text",
+                        "text": "BBB"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "attrs": {},
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement - "
+                      },
+                      {
+                        "type": "text",
+                        "text": "GG"
+                      },
+                      {
+                        "type": "text",
+                        "text": "R"
+                      },
+                      {
+                        "type": "text",
+                        "text": "B"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "important"
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Act 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "2x Lifetap (max)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "2x "
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/alt.png"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Enduring Cry",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/trans.png"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Vitality",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/trans.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Act 3: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Punishment",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/alt.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Act 6: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "2x Lifetap (1)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "2x "
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/trans.png"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Arrogance",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/chance.png"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Skitterbots",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/chance.png"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "RF HEIST LINKS"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Try to have these links as soon as you get to BA and start doing heists. You can swap around the auras to fit your needs. For example, if you think you're tanky enough or if you have enough damage, feel free to replace determination or malevolence with "
+          },
+          {
+            "type": "gem",
+            "attrs": {
+              "name": "Haste",
+              "color": "green"
+            }
+          },
+          {
+            "type": "text",
+            "text": " so you can move faster."
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {},
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "RF",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Elemental Focus",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Lifetap (max)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Burning Damage",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " or "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Efficacy",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fire Trap",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Swift Affliction",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Lifetap (max)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Trap & Mine Damage",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 3: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Lifetap (1)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 4: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Vitality",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Arrogance",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 5: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Punishment",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Lifetap (1)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Enduring Cry",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink (1)",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Determination",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Malevolence",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Skitterbots",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood Rage",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "RF MAPPING LINKS"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "attrs": {},
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The RF gems are in order of importance, some gems like Swift Affliction will not work without the use of Lifetap as it adds a duration tag."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "attrs": {},
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "It will be r to buy aura gems directly from A3 so they start at Level 11. Getting Purity of Fire and Determination first is really big for survivability."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "attrs": {},
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If you have enough damage or defences, you can use Haste to move faster."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {},
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "RF",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Burn Damage",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Ele Focus",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Efficacy",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Lifetap (max)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Swift Aff",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fire Trap",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Swift Affliction",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Lifetap (max)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Trap & Mine Damage",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 3: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Lifetap (1)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink (1)",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 4: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Vitality",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Arrogance",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Link 5: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Punishment",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Lifetap (1)",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": "+"
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Enduring Cry",
+                          "color": "red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Determination",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Purity of Fire,",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Malevolence",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " or "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Skitterbots",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": " Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood Rage",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "horizontalRule"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "poe-guide-studio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:site\" \"npm:dev:save\"",
+    "dev:site": "astro dev --host 127.0.0.1",
+    "dev:save": "node scripts/save-server.mjs",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/react": "^6.0.6",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@tailwindcss/vite": "^4.1.14",
+    "@tiptap/core": "^3.6.6",
+    "@tiptap/extension-image": "^3.6.6",
+    "@tiptap/extension-link": "^3.6.6",
+    "@tiptap/extension-placeholder": "^3.6.6",
+    "@tiptap/extension-task-item": "^3.6.6",
+    "@tiptap/extension-task-list": "^3.6.6",
+    "@tiptap/react": "^3.6.6",
+    "@tiptap/starter-kit": "^3.6.6",
+    "astro": "^7.3.8",
+    "clsx": "^2.1.1",
+    "concurrently": "^9.2.1",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EditorApp from '../editor/EditorApp';
+import { guides } from '../lib/guide';
+---
+<BaseLayout title="Visual editor" description="Write Path of Exile guides visually">
+  <EditorApp initialGuides={guides} client:only="react" />
+</BaseLayout>

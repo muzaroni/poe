@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { guides } from '../lib/guide';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<BaseLayout title="Build guides" description="Path of Exile build guides by Muzaroni">
+  <main class="shell home-main">
+    <div class="home-kicker">PATH OF EXILE · BUILD LIBRARY</div>
+    <h1>Find your next<br /><span>way forward.</span></h1>
+    <p class="home-lede">Clear build guides for the full journey, from your first gem to mapping.</p>
+    <div class="build-grid">
+      {guides.map((guide) => <a class="build-card" href={`${base}builds/${guide.slug}/`}>
+        <div class="build-card-top"><span class="league-pill">{guide.league}</span><span class="card-arrow">↗</span></div>
+        <h2>{guide.title}</h2><p>{guide.subtitle}</p>
+        <div class="build-card-foot"><span>FULL GUIDE</span><span>View build →</span></div>
+      </a>)}
+    </div>
+  </main>
+</BaseLayout>
