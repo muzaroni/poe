@@ -4,8 +4,12 @@ import HeaderSearch from '../components/HeaderSearch';
 import GemInfo from '../components/GemInfo';
 import SocialLinks from '../components/SocialLinks.astro';
 import Analytics from '../components/Analytics.astro';
-const { title, description = 'Visual Path of Exile build guides' } = Astro.props;
+type Crumb = { label: string; href?: string };
+interface Props { title: string; description?: string; breadcrumbs?: Crumb[] }
+const { title, description = 'Visual Path of Exile build guides', breadcrumbs } = Astro.props;
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const isHome = Astro.url.pathname.replace(/\/$/, '') === base.replace(/\/$/, '');
+const trail = breadcrumbs ?? (isHome ? [] : [{ label: title }]);
 ---
 <!doctype html>
 <html lang="en">
@@ -18,7 +22,12 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     <Analytics />
   </head>
   <body>
-    <header class="site-header"><div class="shell header-inner"><a class="brand" href={base}><img class="brand-logo" src={`${base}images/branding/muzdevoto.gif`} alt="" width="64" height="64" /><span>MUZARONI <small>PATH OF EXILE GUIDES</small></span></a><HeaderSearch base={base} client:load /></div></header>
+    <header class="site-header"><div class="shell header-inner"><a class="brand" href={base}><img class="brand-logo" src={`${base}images/branding/muzdevoto.gif`} alt="" width="64" height="64" /><span>MUZARONI <small>PATH OF EXILE GUIDES</small></span></a><HeaderSearch base={base} client:load /></div>
+      <nav class="shell site-breadcrumb" aria-label="Breadcrumb"><ol>
+        <li><a href={base}>Home</a></li>
+        {trail.map((crumb, index) => <li><span class="breadcrumb-separator" aria-hidden="true">/</span>{index === trail.length - 1 ? <span class="breadcrumb-current" aria-current="page" title={crumb.label}>{crumb.label}</span> : <a href={crumb.href}>{crumb.label}</a>}</li>)}
+      </ol></nav>
+    </header>
     <slot />
     <GemInfo client:load />
     <footer class="site-footer"><div class="shell"><div class="mobile-social-links"><SocialLinks /></div>Fan made Path of Exile guides. Not affiliated with Grinding Gear Games.</div></footer>

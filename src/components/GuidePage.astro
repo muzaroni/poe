@@ -12,7 +12,7 @@ const portrait = ascendancyPortrait(guide);
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const headings = (guide.content.content ?? []).filter((node) => node.type === 'heading' && Number(node.attrs?.level) === 2).map((node) => ({ title: plainText(node), id: headingId(plainText(node)) }));
 ---
-<BaseLayout title={guide.title} description={guide.subtitle}>
+<BaseLayout title={guide.title} description={guide.subtitle} breadcrumbs={[{ label: guide.kind === 'article' ? 'Articles' : 'Builds', href: `${base}?kind=${guide.kind === 'article' ? 'article' : 'build'}#search` }, { label: guide.title }]}>
   <div class="guide-shell shell">
     <aside class="guide-nav" aria-label="On this page">
       <div class="nav-label">ON THIS PAGE</div>
@@ -20,7 +20,6 @@ const headings = (guide.content.content ?? []).filter((node) => node.type === 'h
       <SocialLinks />
     </aside>
     <main class="guide-main">
-      <div class="guide-breadcrumb"><a href={base}>{guide.kind === 'article' ? 'Articles' : 'Builds'}</a><span> / </span><span>{buildLabel(guide)}</span></div>
       <div class="guide-hero"><span class:list={["league-pill", ascendancyBadgeClass(guide)]}><span>{buildLabel(guide)}</span></span><div class="guide-title-row">{portrait && <img class="ascendancy-portrait" src={`${base}${portrait}`} width="76" height="76" alt={`${buildDetails(guide).ascendancy} ascendancy`} />}<h1>{guide.title}</h1></div><p>{guide.subtitle}</p><div class="hero-meta">UPDATED {new Date(`${guide.updated}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).toUpperCase()} <span>·</span> PROGRESS SAVES ON THIS DEVICE</div></div>
       {(guide.tags ?? []).length > 0 && <div class="content-tags guide-tags">{guide.tags!.map((tag) => <a href={`${base}?tag=${encodeURIComponent(tag)}#search`}>{tag}</a>)}</div>}
       <nav class="mobile-guide-nav" aria-label="Jump to section"><label for="section-jump">JUMP TO SECTION</label><select id="section-jump" onchange="if(this.value) location.hash=this.value"><option value="">Choose a section</option>{headings.map((item) => <option value={item.id}>{item.title}</option>)}</select></nav>
