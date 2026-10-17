@@ -64,7 +64,7 @@
 .tiptap .reader-task input[type=checkbox] { margin-top: calc((1.35em - 16px) / 2); }
 .tiptap .gem-link-grid > .reader-task > label > input { margin-top: calc((12px * 1.35 - 16px) / 2); }
 .tiptap .gem-setup, .tiptap .callout { padding: 9px 12px; }
-.tiptap .gem-setup-preview .gem-setup { padding: 0; margin: 0; }
+.tiptap .gem-setup-preview .gem-setup { padding: 0; margin: 0; border: 0; background: transparent; }
 .gem-setup-editor { margin: 13px 0; }
 .gem-setup-controls { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 7px; }
 .gem-setup-controls button { font-size: 12px; color: var(--accent-light); background: #101419; border: 1px solid #2b3138; border-radius: 4px; padding: 3px 7px; }
@@ -120,3 +120,11 @@
 .text-color-picker input.text-color-hex[aria-invalid=true] { border-color: #ff6655; }
 .text-color-actions button:disabled { opacity: .45; cursor: not-allowed; }
 .editor-toolbar .toolbar-important { color: #ff6655; }
+
+.currency-presets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin: 14px 0; }
+.currency-presets button { display: flex; align-items: center; gap: 8px; text-align: left; border: 1px solid #30363d; background: #0b0e11; border-radius: 4px; padding: 8px; font-size: 14px; }
+.currency-presets button[aria-pressed=true] { border-color: var(--accent); background: #1b190f; }
+.currency-presets img { width: 32px; height: 32px; object-fit: contain; }
+.currency-name-option { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.currency-preview { display: flex; align-items: center; gap: 5px; padding: 12px 0; }
+@media (max-width: 480px) { .currency-presets { grid-template-columns: 1fr; } }

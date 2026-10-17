@@ -17,10 +17,10 @@ export const Gem = Node.create({
 
 export const Icon = Node.create({
   name: 'icon', group: 'inline', inline: true, atom: true,
-  addAttributes() { return { src: { default: '' } }; },
+  addAttributes() { return { src: { default: '' }, name: { default: '' } }; },
   parseHTML() { return [{ tag: 'img[data-guide-icon]' }]; },
   renderHTML({ HTMLAttributes }) { return ['img', mergeAttributes(HTMLAttributes, { 'data-guide-icon': '', class: 'inline-icon' })]; },
-  addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper as="span" contentEditable={false}><img className="inline-icon" src={assetUrl(node.attrs.src)} alt="" /></NodeViewWrapper>); },
+  addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper as="span" contentEditable={false}><img className="inline-icon" src={assetUrl(node.attrs.src)} alt={node.attrs.name ?? ''} title={node.attrs.name || undefined} /></NodeViewWrapper>); },
 });
 
 export const GuideImage = Image.extend({

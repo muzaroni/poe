@@ -1,3 +1,4 @@
+import { assetUrl } from '../lib/guide';
 import { gemDisplayName } from '../lib/gems';
 import { useEffect, useRef, useState } from 'react';
 import { EditorContent, useEditor } from '@tiptap/react';
@@ -20,10 +21,18 @@ import gems from '../data/gems.json';
 import type { Guide } from '../types';
 import './editor.css';
 
+const currencies = [
+  { name: 'Scroll of Wisdom', src: '/images/sunder-rf/wisdom.png' },
+  { name: 'Orb of Transmutation', src: '/images/sunder-rf/trans.png' },
+  { name: 'Orb of Alteration', src: '/images/sunder-rf/alt.png' },
+  { name: 'Orb of Chance', src: '/images/sunder-rf/chance.png' },
+  { name: 'Orb of Alchemy', src: '/images/currency/alchemy.png' },
+];
+
 const API = 'http://127.0.0.1:4322';
 const BASE = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const localDate = () => { const day = new Date(); return `${day.getFullYear()}-${String(day.getMonth() + 1).padStart(2, '0')}-${String(day.getDate()).padStart(2, '0')}`; };
-type Modal = 'gem' | 'link' | 'new' | 'color' | null;
+type Modal = 'gem' | 'link' | 'new' | 'color' | 'cost' | null;
 
 function newGuide(title: string, kind: 'build' | 'article' = 'build'): Guide {
   const slug = title.toLowerCase().normalize('NFKD').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').slice(0, 70) || 'new-build';
@@ -48,6 +57,9 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
   const [url, setUrl] = useState('');
   const [newTitle, setNewTitle] = useState('');
   const [newKind, setNewKind] = useState<'build' | 'article'>('build');
+  const [costAmount, setCostAmount] = useState('1');
+  const [costCurrency, setCostCurrency] = useState(currencies[0]);
+  const [costShowName, setCostShowName] = useState(false);
   const [textColor, setTextColor] = useState('#b9bdc1');
   const validTextColor = /^#[0-9a-f]{6}$/i.test(textColor.trim());
   const [status, setStatus] = useState('Checking local editor…');
@@ -121,7 +133,12 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     return () => window.clearTimeout(timeout);
   }, [guide, ready]);
 
-  function switchGuide(next: Guide) {
+  function switchGuide(next: Guide, preserveCurrent = true) {
+    if (preserveCurrent && ready && guide.slug !== next.slug) {
+      const outgoing = { ...guide, content: editor?.getJSON() ?? guide.content };
+      setKnownGuides((current) => [...current.filter((item) => item.slug !== outgoing.slug), outgoing]);
+      void saveDraft(outgoing).catch(() => setDraftState('Draft storage unavailable'));
+    }
     setGuide(next);
     editor?.commands.setContent(next.content, { emitUpdate: false });
     try { localStorage.setItem('poe-active-guide', next.slug); } catch { /* private browsing */ }
@@ -161,7 +178,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     const saved = initialGuides.find((item) => item.slug === guide.slug);
     const next = saved ?? initialGuides[0] ?? newGuide('New build');
     setKnownGuides((current) => current.filter((item) => item.slug !== guide.slug || item.slug === saved?.slug));
-    switchGuide(next);
+    switchGuide(next, false);
     setStatus(saved ? 'Loaded project version' : 'Removed unsaved guide');
   }
 
@@ -191,10 +208,16 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
   function insert(node: JSONContent) { editor?.chain().focus().insertContent(node).run(); }
   const filteredGems = gems.filter((gem) => gem.name.toLowerCase().includes(query.toLowerCase())).slice(0, 35);
 
+  const guideOptions = [...new Map([...knownGuides, guide].map((item) => [item.slug, item])).values()];
+  const optionLabel = (item: Guide) => {
+    const sameTitle = guideOptions.filter((entry) => entry.title.trim().toLowerCase() === item.title.trim().toLowerCase()).length > 1;
+    return sameTitle ? `${item.title} — /${item.slug}${initialGuides.some((saved) => saved.slug === item.slug) ? ' (project)' : ' (browser draft)'}` : item.title;
+  };
+
   return <div className="editor-app">
     <div className="editor-controls">
     <div className="editor-topbar">
-      <div className="editor-topbar-main"><div className="editor-select"><select aria-label="Choose guide or article" value={guide.slug} onChange={(event) => { const next = knownGuides.find((item) => item.slug === event.target.value); if (next) switchGuide(next); }}><option value={guide.slug}>{guide.title}</option>{knownGuides.filter((item) => item.slug !== guide.slug).map((item) => <option key={item.slug} value={item.slug}>{item.title}</option>)}</select><ChevronDown size={15} /></div><Button variant="ghost" onClick={() => setModal('new')}><Plus size={16} /> New content</Button></div>
+      <div className="editor-topbar-main"><div className="editor-select"><select aria-label="Choose guide or article" value={guide.slug} onChange={(event) => { const next = knownGuides.find((item) => item.slug === event.target.value); if (next) switchGuide(next); }}>{guideOptions.map((item) => <option key={item.slug} value={item.slug}>{optionLabel(item)}</option>)}</select><ChevronDown size={15} /></div><Button variant="ghost" onClick={() => setModal('new')}><Plus size={16} /> New content</Button></div>
       <div className="editor-topbar-actions"><span className="save-status">{draftState}</span><Button variant="secondary" disabled={!ready} onClick={downloadDraft}>Download draft</Button><Button variant="secondary" disabled={!ready} onClick={() => draftInput.current?.click()}>Import draft</Button><input ref={draftInput} type="file" accept=".json,application/json" hidden onChange={(event) => { void importDraft(event.target.files?.[0]); event.target.value = ''; }} /><Button variant="primary" onClick={saveToProject} disabled={!localServer}><Save size={16} /> Save to project</Button></div>
     </div>
       <div className="editor-toolbar" role="toolbar" aria-label="Formatting and blocks">
@@ -208,6 +231,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
         <span className="toolbar-divider" />
         <button title="Insert gem" aria-label="Insert gem" className="toolbar-gem" onClick={() => { setQuery(''); setModal('gem'); }}>+ Gem</button>
         <button title="Gem links" aria-label="Gem links" onClick={() => insert({ type: 'gemSetup', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Link 1: ' }] }] })}><ListChecks /></button>
+        <button title="Insert currency cost" aria-label="Insert currency cost" onClick={() => setModal('cost')}>Cost</button>
         <button title="Callout" aria-label="Callout" onClick={() => insert({ type: 'callout', attrs: { tone: 'note' }, content: [{ type: 'paragraph' }] })}>Note</button>
         <button className="toolbar-important" title="Important block" aria-label="Important block" onClick={() => insert({ type: 'callout', attrs: { tone: 'important' }, content: [{ type: 'paragraph' }] })}>Important</button>
         <button title="Copyable regex" aria-label="Copyable regex" onClick={() => insert({ type: 'regex', attrs: { label: 'Regex', value: '' } })}><Code2 /></button>
@@ -225,6 +249,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
       <EditorContent editor={editor} className="editor-document" />
     </div></div>
     <Dialog.Root open={modal !== null} onOpenChange={(open) => { if (!open) setModal(null); }}><Dialog.Portal><Dialog.Overlay className="dialog-overlay" /><Dialog.Content className="dialog-content"><Dialog.Close className="dialog-close" aria-label="Close"><X size={18} /></Dialog.Close>
+      {modal === 'cost' && <><Dialog.Title>Insert currency cost</Dialog.Title><Dialog.Description>Choose a currency and amount. Insert beside a gem or in a total-cost line. You can edit the amount as normal text afterward.</Dialog.Description><div className="currency-presets" role="group" aria-label="Currency">{currencies.map((currency) => <button type="button" key={currency.src} aria-pressed={costCurrency.src === currency.src} onClick={() => setCostCurrency(currency)}><img src={assetUrl(currency.src)} alt="" />{currency.name}</button>)}</div><label htmlFor="cost-amount">Amount</label><input id="cost-amount" className="dialog-input" placeholder="1, 1–2, or 3+" value={costAmount} onChange={(event) => setCostAmount(event.target.value)} /><label className="currency-name-option"><input type="checkbox" checked={costShowName} onChange={(event) => setCostShowName(event.target.checked)} /> Include currency name</label><div className="currency-preview" aria-label="Cost preview">{costAmount} <img className="inline-icon" src={assetUrl(costCurrency.src)} alt={costCurrency.name} />{costShowName && <> {costCurrency.name}</>}</div><Button variant="primary" disabled={!costAmount.trim()} onClick={() => { editor?.chain().focus().insertContent([{ type: 'text', text: `${costAmount.trim()} ` }, { type: 'icon', attrs: { src: costCurrency.src, name: costCurrency.name } }, { type: 'text', text: costShowName ? ` ${costCurrency.name} ` : ' ' }]).run(); setModal(null); }}>Insert cost</Button></>}
       {modal === 'color' && <><Dialog.Title>Text color</Dialog.Title><Dialog.Description>Select text to recolor it, or choose a color for what you type next.</Dialog.Description><div className="text-color-presets" role="group" aria-label="Color presets">{[{ name: 'Red', color: '#ff6655' }, { name: 'Blue', color: '#58a6ff' }, { name: 'Green', color: '#65ed7f' }, { name: 'Unique', color: '#975b07' }].map((preset) => <button key={preset.name} type="button" style={{ color: preset.color }} onClick={() => { setTextColor(preset.color); editor?.chain().focus().setColor(preset.color).run(); setModal(null); }}><span style={{ backgroundColor: preset.color }} aria-hidden="true" />{preset.name}</button>)}</div><div className="text-color-picker"><label htmlFor="text-color">Choose a color</label><input id="text-color" type="color" value={validTextColor ? textColor.trim() : "#b9bdc1"} onChange={(event) => setTextColor(event.target.value)} /><label htmlFor="text-color-hex">Hex code</label><input id="text-color-hex" className="text-color-hex" type="text" placeholder="#975b07" spellCheck={false} value={textColor} aria-invalid={!validTextColor} onChange={(event) => setTextColor(event.target.value)} /></div><div className="text-color-actions"><Button variant="primary" disabled={!validTextColor} onClick={() => { editor?.chain().focus().setColor(textColor.trim()).run(); setModal(null); }}>Apply color</Button><Button variant="secondary" onClick={() => { editor?.chain().focus().unsetColor().run(); setModal(null); }}>Reset to default</Button></div></>}
       {modal === 'gem' && <><Dialog.Title>Insert a gem</Dialog.Title><Dialog.Description>Search by name. The correct socket color is applied automatically.</Dialog.Description><input autoFocus className="dialog-input" placeholder="Search 900+ gems…" value={query} onChange={(event) => setQuery(event.target.value)} /><div className="gem-results">{filteredGems.map((gem) => <button key={gem.name} type="button" onClick={() => { insert({ type: 'gem', attrs: { name: gem.name, color: gem.color } }); setModal(null); }}><span className={`gem gem-${gem.color}`}>{gemDisplayName(gem.name)}</span></button>)}</div></>}
       {modal === 'link' && <><Dialog.Title>Add a link</Dialog.Title><Dialog.Description>Apply a URL to selected text.</Dialog.Description><input autoFocus className="dialog-input" placeholder="https://…" value={url} onChange={(event) => setUrl(event.target.value)} /><Button variant="primary" onClick={() => { if (url.trim()) editor?.chain().focus().setLink({ href: url.trim() }).run(); else editor?.chain().focus().unsetLink().run(); setModal(null); }}>Apply link</Button></>}

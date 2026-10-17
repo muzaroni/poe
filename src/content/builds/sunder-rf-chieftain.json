@@ -14,41 +14,31 @@
         },
         "content": [
           {
-            "type": "bulletList",
+            "type": "paragraph",
             "content": [
               {
-                "type": "listItem",
-                "content": [
+                "type": "text",
+                "text": "This guide adapts "
+              },
+              {
+                "type": "text",
+                "marks": [
                   {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "This guide adapts "
-                      },
-                      {
-                        "type": "text",
-                        "marks": [
-                          {
-                            "type": "link",
-                            "attrs": {
-                              "href": "https://pohx.net/",
-                              "target": "_blank",
-                              "rel": "noopener noreferrer nofollow",
-                              "class": null,
-                              "title": null
-                            }
-                          }
-                        ],
-                        "text": "Pohx's RF guide"
-                      },
-                      {
-                        "type": "text",
-                        "text": " by using Sunder for leveling instead of the traditional caster approach. Play Sunder until Level 52-55, then use the free campaign respec and gold at Blood Aqueducts to hard-swap into Righteous Fire and follow Pohx's instructions. This approach allows you to level significantly quicker while still transitioning smoothly into the powerful RF setup once you reach maps."
-                      }
-                    ]
+                    "type": "link",
+                    "attrs": {
+                      "href": "https://pohx.net/",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer nofollow",
+                      "class": null,
+                      "title": null
+                    }
                   }
-                ]
+                ],
+                "text": "Pohx's RF guide"
+              },
+              {
+                "type": "text",
+                "text": " by using Sunder for leveling instead of the traditional caster approach. Play Sunder until Level 52-55, then use the free campaign respec and gold at Blood Aqueducts to hard-swap into Righteous Fire and follow Pohx's instructions. This approach allows you to level significantly quicker while still transitioning smoothly into the powerful RF setup once you reach maps."
               }
             ]
           }
@@ -102,9 +92,6 @@
         }
       },
       {
-        "type": "horizontalRule"
-      },
-      {
         "type": "heading",
         "attrs": {
           "level": 2
@@ -138,9 +125,6 @@
         }
       },
       {
-        "type": "horizontalRule"
-      },
-      {
         "type": "heading",
         "attrs": {
           "level": 2
@@ -148,7 +132,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 1 PROGRESSION"
+            "text": "ACT 1"
           }
         ]
       },
@@ -196,7 +180,7 @@
                   },
                   {
                     "type": "text",
-                    "text": "+"
+                    "text": " + "
                   },
                   {
                     "type": "gem",
@@ -217,34 +201,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ensure you have R-R linked somewhere before leaving town"
+                    "text": "Ensure you have "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff6655"
+                        }
+                      }
+                    ],
+                    "text": "R"
+                  },
+                  {
+                    "type": "text",
+                    "text": "-"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff6655"
+                        }
+                      }
+                    ],
+                    "text": "R"
+                  },
+                  {
+                    "type": "text",
+                    "text": " linked somewhere before leaving town"
                   }
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
-        "content": [
+          },
           {
-            "type": "bulletList",
+            "type": "listItem",
             "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Below are all breakpoints by monster, after each name go to town and get the items listed."
-                      }
-                    ]
+                    "type": "text",
+                    "text": "Below are all breakpoints by monster, after each name go to town and get the items listed."
                   }
                 ]
               }
@@ -289,7 +292,7 @@
                   },
                   {
                     "type": "text",
-                    "text": "(left gem) → Replace "
+                    "text": " (left gem) → Replace "
                   },
                   {
                     "type": "gem",
@@ -313,7 +316,23 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy Stone Axe for cheap"
+                    "text": " Buy "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#595c5f"
+                        }
+                      }
+                    ],
+                    "text": "Stone Axe"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for cheap"
                   }
                 ]
               }
@@ -330,7 +349,39 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy any R-R linked"
+                    "text": " Buy any "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(255, 102, 85)"
+                        }
+                      }
+                    ],
+                    "text": "R"
+                  },
+                  {
+                    "type": "text",
+                    "text": "-"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(255, 102, 85)"
+                        }
+                      }
+                    ],
+                    "text": "R"
+                  },
+                  {
+                    "type": "text",
+                    "text": " linked"
                   }
                 ]
               }
@@ -392,7 +443,19 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get Quicksilver"
+                    "text": "Get "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#50bea8"
+                        }
+                      }
+                    ],
+                    "text": "Quicksilver"
                   }
                 ]
               }
@@ -409,7 +472,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -437,7 +500,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -461,7 +524,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -482,15 +545,7 @@
                     }
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
+              },
               {
                 "type": "paragraph",
                 "content": [
@@ -519,7 +574,12 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
           {
             "type": "taskItem",
             "attrs": {
@@ -531,13 +591,50 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy Jade Amulet / Iron Ring 3x "
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(89, 92, 95)"
+                        }
+                      }
+                    ],
+                    "text": "Jade Amulet"
+                  },
+                  {
+                    "type": "text",
+                    "text": " or "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(89, 92, 95)"
+                        }
+                      }
+                    ],
+                    "text": "Iron Ring"
+                  },
+                  {
+                    "type": "text",
+                    "text": " 3 "
                   },
                   {
                     "type": "icon",
                     "attrs": {
-                      "src": "/images/sunder-rf/wisdom.png"
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
                     }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
                   }
                 ]
               }
@@ -554,7 +651,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy "
+                    "text": "Buy "
                   },
                   {
                     "type": "gem",
@@ -565,13 +662,18 @@
                   },
                   {
                     "type": "text",
-                    "text": " "
+                    "text": " 1 "
                   },
                   {
                     "type": "icon",
                     "attrs": {
-                      "src": "/images/sunder-rf/wisdom.png"
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
                     }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
                   }
                 ]
               }
@@ -588,7 +690,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy "
+                    "text": "Buy "
                   },
                   {
                     "type": "gem",
@@ -609,10 +711,19 @@
                     }
                   },
                   {
+                    "type": "text",
+                    "text": "1 "
+                  },
+                  {
                     "type": "icon",
                     "attrs": {
-                      "src": "/images/sunder-rf/wisdom.png"
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
                     }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
                   }
                 ]
               }
@@ -646,7 +757,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy "
+                    "text": "Buy "
                   },
                   {
                     "type": "gem",
@@ -656,10 +767,19 @@
                     }
                   },
                   {
+                    "type": "text",
+                    "text": "1 "
+                  },
+                  {
                     "type": "icon",
                     "attrs": {
-                      "src": "/images/sunder-rf/wisdom.png"
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
                     }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
                   }
                 ]
               }
@@ -693,7 +813,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -717,7 +837,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy 1-2x Iron Rings and 2x "
+                    "text": "Buy 1-2x Iron Rings and 2x "
                   },
                   {
                     "type": "gem",
@@ -762,7 +882,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -786,7 +906,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -827,7 +947,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -1223,30 +1343,33 @@
             "content": [
               {
                 "type": "text",
-                "text": "Total Cost: 1 Transmute"
+                "text": "Total Cost: 1 "
               },
               {
                 "type": "icon",
                 "attrs": {
-                  "src": "/images/sunder-rf/trans.png"
+                  "src": "/images/sunder-rf/trans.png",
+                  "name": "Orb of Transmutation"
                 }
               },
               {
                 "type": "text",
-                "text": ", 3+ Wisdoms"
+                "text": " Orb of Transmutation, 3+ "
               },
               {
                 "type": "icon",
                 "attrs": {
-                  "src": "/images/sunder-rf/wisdom.png"
+                  "src": "/images/sunder-rf/wisdom.png",
+                  "name": "Scroll of Wisdom"
                 }
+              },
+              {
+                "type": "text",
+                "text": " Scroll of Wisdom "
               }
             ]
           }
         ]
-      },
-      {
-        "type": "horizontalRule"
       },
       {
         "type": "heading",
@@ -1256,7 +1379,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 2 PROGRESSION"
+            "text": "ACT 2"
           }
         ]
       },
@@ -1308,7 +1431,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -1332,7 +1455,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy "
+                    "text": "Buy "
                   },
                   {
                     "type": "gem",
@@ -1342,10 +1465,19 @@
                     }
                   },
                   {
+                    "type": "text",
+                    "text": " 1 "
+                  },
+                  {
                     "type": "icon",
                     "attrs": {
-                      "src": "/images/sunder-rf/alt.png"
+                      "src": "/images/sunder-rf/alt.png",
+                      "name": "Orb of Alteration"
                     }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
                   }
                 ]
               }
@@ -1362,7 +1494,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy "
+                    "text": "Buy "
                   },
                   {
                     "type": "gem",
@@ -1372,9 +1504,14 @@
                     }
                   },
                   {
+                    "type": "text",
+                    "text": " 1 "
+                  },
+                  {
                     "type": "icon",
                     "attrs": {
-                      "src": "/images/sunder-rf/alt.png"
+                      "src": "/images/sunder-rf/alt.png",
+                      "name": "Orb of Alteration"
                     }
                   },
                   {
@@ -1396,24 +1533,18 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Buy "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Jade Amulet",
-                      "color": "green"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": "3x"
+                    "text": "Buy Jade Amulet 3 "
                   },
                   {
                     "type": "icon",
                     "attrs": {
-                      "src": "/images/sunder-rf/wisdom.png"
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
                     }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
                   }
                 ]
               }
@@ -1447,7 +1578,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -1590,6 +1721,17 @@
                           "name": "Herald of Ash",
                           "color": "red"
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red"
+                        }
                       }
                     ]
                   }
@@ -1613,17 +1755,6 @@
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Blood & Sand",
-                          "color": "red"
                         }
                       },
                       {
@@ -1659,30 +1790,33 @@
             "content": [
               {
                 "type": "text",
-                "text": "Total Cost: 1-2 Alterations "
+                "text": "Total Cost: 2 "
               },
               {
                 "type": "icon",
                 "attrs": {
-                  "src": "/images/sunder-rf/alt.png"
+                  "src": "/images/sunder-rf/alt.png",
+                  "name": "Orb of Alteration"
                 }
               },
               {
                 "type": "text",
-                "text": ", 3 Wisdoms "
+                "text": " Orb of Alteration , 3 "
               },
               {
                 "type": "icon",
                 "attrs": {
-                  "src": "/images/sunder-rf/wisdom.png"
+                  "src": "/images/sunder-rf/wisdom.png",
+                  "name": "Scroll of Wisdom"
                 }
+              },
+              {
+                "type": "text",
+                "text": " Scroll of Wisdom "
               }
             ]
           }
         ]
-      },
-      {
-        "type": "horizontalRule"
       },
       {
         "type": "heading",
@@ -1692,7 +1826,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 3 PROGRESSION"
+            "text": "ACT 3"
           }
         ]
       },
@@ -1719,39 +1853,98 @@
         }
       },
       {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
+        "type": "paragraph",
         "content": [
           {
-            "type": "bulletList",
+            "type": "text",
+            "text": "You can gamble at "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "textStyle",
+                "attrs": {
+                  "color": "#975b07"
+                }
+              }
+            ],
+            "text": "Maramoa "
+          },
+          {
+            "type": "text",
+            "text": "at level 24 for 4 links. Focus on armor since it's used for a longer time than weapons which you should always be upgrading. "
+          },
+          {
+            "type": "hardBreak"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "textStyle",
+                "attrs": {
+                  "color": "#ff1900"
+                }
+              }
+            ],
+            "text": "DO NOT OVER SPEND"
+          },
+          {
+            "type": "text",
+            "text": " as you will need gold later to respec to "
+          },
+          {
+            "type": "gem",
+            "attrs": {
+              "name": "Righteous Fire",
+              "color": "blue"
+            }
+          },
+          {
+            "type": "text",
+            "text": " in Act 9."
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
             "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "2H Axe / body armor: 145 gold each"
-                      }
-                    ]
+                    "type": "text",
+                    "text": "2H Axe / body armor: 145 gold each"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "text": "Gloves / Helmet / Boots: 135 Gold each "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "Gloves / Helmet / Boots: 135 gold each < BETTER OPTION"
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff0000"
+                        }
                       }
-                    ]
+                    ],
+                    "text": "← BETTER OPTION"
                   }
                 ]
               }
@@ -1785,7 +1978,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -1828,7 +2021,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -1839,7 +2032,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -1850,7 +2043,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -1896,7 +2089,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -1907,7 +2100,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -1939,6 +2132,17 @@
                           "name": "Herald of Ash",
                           "color": "red"
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red"
+                        }
                       }
                     ]
                   }
@@ -1962,17 +2166,6 @@
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Blood & Sand",
-                          "color": "red"
                         }
                       },
                       {
@@ -2026,9 +2219,6 @@
         ]
       },
       {
-        "type": "horizontalRule"
-      },
-      {
         "type": "heading",
         "attrs": {
           "level": 2
@@ -2036,7 +2226,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 4 PROGRESSION"
+            "text": "ACT 4"
           }
         ]
       },
@@ -2063,39 +2253,63 @@
         }
       },
       {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "bulletList",
+            "type": "listItem",
             "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "text": "Do Normal Lab once you reach "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "Do Normal Lab once you reach Crystal Veins waypoint"
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
                       }
-                    ]
+                    ],
+                    "text": "Crystal Veins"
+                  },
+                  {
+                    "type": "text",
+                    "text": " waypoint"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "text": "Take "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "Take Chieftain - Tasalio, Cleansing Water for first ascendancy"
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
                       }
-                    ]
+                    ],
+                    "text": "Chieftain - Tasalio, Cleansing Water"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for first ascendancy"
                   }
                 ]
               }
@@ -2129,7 +2343,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": " Get "
+                    "text": "Get "
                   },
                   {
                     "type": "gem",
@@ -2194,7 +2408,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -2205,7 +2419,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -2216,7 +2430,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -2251,7 +2465,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -2262,7 +2476,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -2294,6 +2508,17 @@
                           "name": "Herald of Ash",
                           "color": "red"
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood & Sand",
+                          "color": "red"
+                        }
                       }
                     ]
                   }
@@ -2317,17 +2542,6 @@
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Blood & Sand",
-                          "color": "red"
                         }
                       },
                       {
@@ -2381,9 +2595,6 @@
         ]
       },
       {
-        "type": "horizontalRule"
-      },
-      {
         "type": "heading",
         "attrs": {
           "level": 2
@@ -2391,7 +2602,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 5 PROGRESSION"
+            "text": "ACT 5"
           }
         ]
       },
@@ -2418,29 +2629,11 @@
         }
       },
       {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
+        "type": "paragraph",
         "content": [
           {
-            "type": "bulletList",
-            "content": [
-              {
-                "type": "listItem",
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Act 5-9 will keep the same gem links until the respec at Blood Aqueducts in A9"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            "type": "text",
+            "text": "Act 5-9 will keep the same gem links until the respec at Blood Aqueducts in A9"
           }
         ]
       },
@@ -2572,6 +2765,17 @@
                           "name": "Herald of Ash",
                           "color": "red"
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": ",  "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood & Sand",
+                          "color": "red"
+                        }
                       }
                     ]
                   }
@@ -2595,17 +2799,6 @@
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Blood & Sand",
-                          "color": "red"
                         }
                       },
                       {
@@ -2659,9 +2852,6 @@
         ]
       },
       {
-        "type": "horizontalRule"
-      },
-      {
         "type": "heading",
         "attrs": {
           "level": 2
@@ -2669,7 +2859,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 6 PROGRESSION"
+            "text": "ACT 6"
           }
         ]
       },
@@ -2702,6 +2892,67 @@
         },
         "content": [
           {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "As soon as you finish "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(151, 91, 7)"
+                    }
+                  }
+                ],
+                "text": "Twilight Strand quest"
+              },
+              {
+                "type": "text",
+                "text": " to unlock "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(151, 91, 7)"
+                    }
+                  }
+                ],
+                "text": "Lilly Roth"
+              },
+              {
+                "type": "text",
+                "text": " make sure you buy these "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ],
+                "text": "6 gems"
+              },
+              {
+                "type": "text",
+                "text": " below and level them in the off-hand weapon. "
+              },
+              {
+                "type": "hardBreak"
+              },
+              {
+                "type": "text",
+                "text": "You will need these once you respec in Blood Aqueducts for the RF swap."
+              }
+            ]
+          },
+          {
             "type": "taskList",
             "content": [
               {
@@ -2714,10 +2965,6 @@
                     "type": "paragraph",
                     "content": [
                       {
-                        "type": "text",
-                        "text": " "
-                      },
-                      {
                         "type": "gem",
                         "attrs": {
                           "name": "Fire Trap",
@@ -2725,10 +2972,8 @@
                         }
                       },
                       {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/trans.png"
-                        }
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -2744,21 +2989,11 @@
                     "type": "paragraph",
                     "content": [
                       {
-                        "type": "text",
-                        "text": " "
-                      },
-                      {
                         "type": "gem",
                         "attrs": {
-                          "name": "Swift Assembly",
+                          "name": "Swift Assembly Support",
                           "color": "green"
                         }
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/wisdom.png"
-                        }
                       }
                     ]
                   }
@@ -2774,21 +3009,11 @@
                     "type": "paragraph",
                     "content": [
                       {
-                        "type": "text",
-                        "text": " "
-                      },
-                      {
                         "type": "gem",
                         "attrs": {
-                          "name": "Trap & Mine Damage",
+                          "name": "Trap and Mine Damage Support",
                           "color": "green"
                         }
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/alt.png"
-                        }
                       }
                     ]
                   }
@@ -2804,21 +3029,11 @@
                     "type": "paragraph",
                     "content": [
                       {
-                        "type": "text",
-                        "text": " "
-                      },
-                      {
                         "type": "gem",
                         "attrs": {
-                          "name": "Elemental Focus",
+                          "name": "Elemental Focus Support",
                           "color": "blue"
                         }
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/alt.png"
-                        }
                       }
                     ]
                   }
@@ -2833,22 +3048,12 @@
                   {
                     "type": "paragraph",
                     "content": [
-                      {
-                        "type": "text",
-                        "text": " "
-                      },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Malevolence",
                           "color": "blue"
                         }
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/alt.png"
-                        }
                       }
                     ]
                   }
@@ -2864,20 +3069,10 @@
                     "type": "paragraph",
                     "content": [
                       {
-                        "type": "text",
-                        "text": " "
-                      },
-                      {
                         "type": "gem",
                         "attrs": {
-                          "name": "Burning Damage",
+                          "name": "Burning Damage Support",
                           "color": "red"
-                        }
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/chance.png"
                         }
                       }
                     ]
@@ -2889,51 +3084,207 @@
         ]
       },
       {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "bulletList",
+            "type": "listItem",
             "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "text": "After killing "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "For Righteous Fire look for BBBR links."
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
                       }
-                    ]
+                    ],
+                    "text": "Shavronne "
+                  },
+                  {
+                    "type": "text",
+                    "text": "grab the helmet reward from "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Sin "
+                  },
+                  {
+                    "type": "text",
+                    "text": "in town that matches your build armor type:"
                   }
                 ]
               },
               {
-                "type": "listItem",
+                "type": "bulletList",
                 "content": [
                   {
-                    "type": "paragraph",
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "For Fire Trap look for GGGR links."
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "For "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Righteous Fire",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " look for "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#58a6ff"
+                                }
+                              }
+                            ],
+                            "text": "BBB"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#ff6655"
+                                }
+                              }
+                            ],
+                            "text": "R"
+                          },
+                          {
+                            "type": "text",
+                            "text": " links."
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "For "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Fire Trap",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " look for "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#65ed7f"
+                                }
+                              }
+                            ],
+                            "text": "GGG"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#ff6655"
+                                }
+                              }
+                            ],
+                            "text": "R"
+                          },
+                          {
+                            "type": "text",
+                            "text": " links."
+                          }
+                        ]
                       }
                     ]
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
+                    "type": "text",
+                    "text": "If the reward has exactly those links, take it. It's ready to equip with your corresponding gems once you swap builds."
+                  }
+                ]
+              },
+              {
+                "type": "bulletList",
+                "content": [
+                  {
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "Check wiki if needed: Essence of Umbra Quest"
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Check wiki if needed: "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "link",
+                                "attrs": {
+                                  "href": "https://www.poewiki.net/wiki/Essence_of_Umbra",
+                                  "target": "_blank",
+                                  "rel": "noopener noreferrer nofollow",
+                                  "class": null,
+                                  "title": null
+                                }
+                              }
+                            ],
+                            "text": "Essence of Umbra Quest"
+                          }
+                        ]
                       }
                     ]
                   }
@@ -2951,7 +3302,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 7 PROGRESSION"
+            "text": "ACT 7"
           }
         ]
       },
@@ -2978,79 +3329,362 @@
         }
       },
       {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "bulletList",
+            "type": "listItem",
             "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "For Righteous Fire look for BBBR links."
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(238, 238, 238)"
+                        }
                       }
-                    ]
+                    ],
+                    "text": "After killing "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Maligaro "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(238, 238, 238)"
+                        }
+                      }
+                    ],
+                    "text": "grab the boot reward for "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Helena "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(238, 238, 238)"
+                        }
+                      }
+                    ],
+                    "text": "in town that matches your builds armor type:"
                   }
                 ]
               },
               {
-                "type": "listItem",
+                "type": "bulletList",
                 "content": [
                   {
-                    "type": "paragraph",
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "For Fire Trap look for GGGR links."
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "For "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Righteous Fire",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " look for "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(88, 166, 255)"
+                                }
+                              }
+                            ],
+                            "text": "BBB"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(255, 102, 85)"
+                                }
+                              }
+                            ],
+                            "text": "R"
+                          },
+                          {
+                            "type": "text",
+                            "text": " links."
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "For "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Fire Trap",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " look for "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(101, 237, 127)"
+                                }
+                              }
+                            ],
+                            "text": "GGG"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(255, 102, 85)"
+                                }
+                              }
+                            ],
+                            "text": "R"
+                          },
+                          {
+                            "type": "text",
+                            "text": " links."
+                          }
+                        ]
                       }
                     ]
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "Check wiki if needed: Essence of Artist Quest"
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(238, 238, 238)"
+                        }
                       }
-                    ]
+                    ],
+                    "text": "If the reward has exactly those links, take it. It's ready to equip with your corresponding gems once you swap builds."
                   }
                 ]
               },
               {
-                "type": "listItem",
+                "type": "bulletList",
                 "content": [
                   {
-                    "type": "paragraph",
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "For Curse look for BBBR links. (AR/ES Base for easy color)"
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Check wiki if needed: "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "link",
+                                "attrs": {
+                                  "href": "https://www.poewiki.net/wiki/Essence_of_the_Artist",
+                                  "target": "_blank",
+                                  "rel": "noopener noreferrer nofollow",
+                                  "class": null,
+                                  "title": null
+                                }
+                              }
+                            ],
+                            "text": "Essence of Artist Quest"
+                          }
+                        ]
                       }
                     ]
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(238, 238, 238)"
+                        }
+                      }
+                    ],
+                    "text": "Start looking for scepters and shields and links for your curse and movement setups:"
+                  }
+                ]
+              },
+              {
+                "type": "bulletList",
+                "content": [
+                  {
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "For Movement look for GGRB links. (AR/ES Base for easy color)"
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "For Curse look for "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(255, 102, 85)"
+                                }
+                              }
+                            ],
+                            "text": "RRR"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(88, 166, 255)"
+                                }
+                              }
+                            ],
+                            "text": "B "
+                          },
+                          {
+                            "type": "text",
+                            "text": "links. (AR/ES Base for easy color)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "For Movement look for "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#65ed7f"
+                                }
+                              }
+                            ],
+                            "text": "GG"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#ff6655"
+                                }
+                              }
+                            ],
+                            "text": "R"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#58a6ff"
+                                }
+                              }
+                            ],
+                            "text": "B"
+                          },
+                          {
+                            "type": "text",
+                            "text": " links. (AR/ES Base for easy color)"
+                          }
+                        ]
                       }
                     ]
                   }
@@ -3068,7 +3702,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 8 PROGRESSION"
+            "text": "ACT 8"
           }
         ]
       },
@@ -3095,102 +3729,33 @@
         }
       },
       {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "bulletList",
+            "type": "listItem",
             "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Tree above is what you should have going from Act 1 to end of Act 8 (Blood Aqueducts)"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "listItem",
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "This is the \"pre swap\" tree at around level 52 or 55"
-                      }
-                    ]
+                    "type": "text",
+                    "text": "Tree above is what you should have going from Act 1 to end of Act 8 (Blood Aqueducts)"
                   }
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "type": "horizontalRule"
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 2
-        },
-        "content": [
+          },
           {
-            "type": "text",
-            "text": "ACT 9 PROGRESSION"
-          }
-        ]
-      },
-      {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
-        "content": [
-          {
-            "type": "paragraph",
+            "type": "listItem",
             "content": [
               {
-                "type": "text",
-                "text": "The original guide continues Sunder into Blood Aqueducts and swaps to Righteous Fire around level 52–55. Add Act 9 route details here."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 2
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "ACT 10 PROGRESSION"
-          }
-        ]
-      },
-      {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
-        "content": [
-          {
-            "type": "paragraph",
-            "content": [
-              {
-                "type": "text",
-                "text": "Act 10 route details were not in the original guide. Add them here."
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "This is the \"pre swap\" tree at around level 52 or 55"
+                  }
+                ]
               }
             ]
           }
@@ -3221,67 +3786,91 @@
         ]
       },
       {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "bulletList",
+            "type": "listItem",
             "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Use Campaign respec points first (~ 14 pts)"
-                      }
-                    ]
+                    "type": "text",
+                    "text": "Use Campaign respec points first (~ 14 pts)"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Can get 16 pts if you do Fetid Pool"
-                      }
-                    ]
+                    "type": "text",
+                    "text": "Can get 16 pts if you do Fetid Pool"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Spend gold to finish the respec according to tree below"
-                      }
-                    ]
+                    "type": "text",
+                    "text": "Spend gold to finish the respec according to tree below"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "text": "Remove points in "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "Remove points in Red and take Green on tree below."
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff6655"
+                        }
                       }
-                    ]
+                    ],
+                    "text": "Red "
+                  },
+                  {
+                    "type": "text",
+                    "text": "and take "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#65ed7f"
+                        }
+                      }
+                    ],
+                    "text": "Green "
+                  },
+                  {
+                    "type": "text",
+                    "text": "on tree below."
                   }
                 ]
               }
@@ -3300,121 +3889,311 @@
         }
       },
       {
-        "type": "callout",
-        "attrs": {
-          "tone": "note"
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "bulletList",
+            "type": "listItem",
             "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "10 pts @ 313 gold each (lvl 52) = 3130 gold"
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": null
+                        }
                       }
-                    ]
+                    ],
+                    "text": "26 point respec required = 16 from campaign + 10 from gold"
                   }
                 ]
               },
               {
-                "type": "listItem",
+                "type": "bulletList",
                 "content": [
                   {
-                    "type": "paragraph",
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "In a test run (lvl 52 @ BA) I ended with 7282 gold after doing 3 armor gambles at level 24 in act 3 to get 1 4-link."
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "10 pts @ 313 gold each (lvl 52) = 3130 gold"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "In a test run (lvl 52 @ BA) I ended with 7282 gold after doing 3 armor gambles at level 24 in act 3 to get 1 4-link."
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "After 26 point respect I ended with 4152 gold which I used to gamble other armor pieces or scepter/shield for RF swap."
+                          }
+                        ]
                       }
                     ]
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
               {
-                "type": "listItem",
+                "type": "paragraph",
                 "content": [
                   {
-                    "type": "paragraph",
-                    "content": [
+                    "type": "text",
+                    "text": "Gamble body (705 gold), gloves/helm (676 gold) for 4-link "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
                       {
-                        "type": "text",
-                        "text": "After 26 point respect I ended with 4152 gold which I used to gamble other armor pieces or sceptre/shield for RF swap."
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#58a6ff"
+                        }
                       }
-                    ]
+                    ],
+                    "text": "RF"
+                  },
+                  {
+                    "type": "text",
+                    "text": "/"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#65ed7f"
+                        }
+                      }
+                    ],
+                    "text": "FT"
+                  },
+                  {
+                    "type": "text",
+                    "text": " colors if you did not get from quest rewards in A6 or A7."
                   }
                 ]
               },
               {
-                "type": "listItem",
+                "type": "bulletList",
                 "content": [
                   {
-                    "type": "paragraph",
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "Gamble body (705 gold), gloves/helm (676 gold) for 4-link RF/FT colors if you did not get from quest rewards in A6 or A7."
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Righteous Fire",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " - "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(88, 166, 255)"
+                                }
+                              }
+                            ],
+                            "text": "BBB"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(255, 102, 85)"
+                                }
+                              }
+                            ],
+                            "text": "R"
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "listItem",
-                "content": [
+                  },
                   {
-                    "type": "paragraph",
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "Righteous Fire - BBBR"
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Fire Trap",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " - "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(101, 237, 127)"
+                                }
+                              }
+                            ],
+                            "text": "GGG"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(255, 102, 85)"
+                                }
+                              }
+                            ],
+                            "text": "R"
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "listItem",
-                "content": [
+                  },
                   {
-                    "type": "paragraph",
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "Fire Trap - GGGR"
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Curse - "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#ff6655"
+                                }
+                              }
+                            ],
+                            "text": "RRR"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(88, 166, 255)"
+                                }
+                              }
+                            ],
+                            "text": "B"
+                          }
+                        ]
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "listItem",
-                "content": [
+                  },
                   {
-                    "type": "paragraph",
+                    "type": "listItem",
                     "content": [
                       {
-                        "type": "text",
-                        "text": "Curse - BBBR"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "listItem",
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Movement - GGRB"
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement - "
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(101, 237, 127)"
+                                }
+                              }
+                            ],
+                            "text": "GG"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(255, 102, 85)"
+                                }
+                              }
+                            ],
+                            "text": "R"
+                          },
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "rgb(88, 166, 255)"
+                                }
+                              }
+                            ],
+                            "text": "B"
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
                       }
                     ]
                   }
@@ -3431,6 +4210,15 @@
         },
         "content": [
           {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "If you're continuing into heist or finishing campaign it's important to buy these 9 gems to level off-hand or in any open sockets. Ensure you buy 2 lifetaps from Act 1 so they are pre-leveled and another 2 from Act 6 to keep at level 1. If you're interested in where they are used, check the Heist links below."
+              }
+            ]
+          },
+          {
             "type": "taskList",
             "content": [
               {
@@ -3444,44 +4232,24 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Act 1: "
+                        "text": "Act 1: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "2x Lifetap (max)",
+                          "name": "Lifetap Support",
                           "color": "red"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "2x "
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/alt.png"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
+                        "text": " (level 13) x 2, "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Enduring Cry",
                           "color": "red"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " "
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/trans.png"
                         }
                       },
                       {
@@ -3494,16 +4262,6 @@
                           "name": "Vitality",
                           "color": "red"
                         }
-                      },
-                      {
-                        "type": "text",
-                        "text": " "
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/trans.png"
-                        }
                       }
                     ]
                   }
@@ -3520,7 +4278,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Act 3: "
+                        "text": "Act 3: "
                       },
                       {
                         "type": "gem",
@@ -3528,12 +4286,6 @@
                           "name": "Punishment",
                           "color": "red"
                         }
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/alt.png"
-                        }
                       }
                     ]
                   }
@@ -3550,23 +4302,24 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Act 6: "
+                        "text": "Act 6: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "2x Lifetap (1)",
+                          "name": "Lifetap Support",
                           "color": "red"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "2x "
+                        "text": " (level 1) x 2, "
                       },
                       {
-                        "type": "icon",
+                        "type": "gem",
                         "attrs": {
-                          "src": "/images/sunder-rf/trans.png"
+                          "name": "Arrogance Support",
+                          "color": "red"
                         }
                       },
                       {
@@ -3576,31 +4329,8 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Arrogance",
-                          "color": "red"
-                        }
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/chance.png"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Skitterbots",
+                          "name": "Summon Skitterbots",
                           "color": "blue"
-                        }
-                      },
-                      {
-                        "type": "icon",
-                        "attrs": {
-                          "src": "/images/sunder-rf/chance.png"
                         }
                       }
                     ]
@@ -3610,9 +4340,6 @@
             ]
           }
         ]
-      },
-      {
-        "type": "horizontalRule"
       },
       {
         "type": "heading",
@@ -3627,22 +4354,54 @@
         ]
       },
       {
-        "type": "paragraph",
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "Try to have these links as soon as you get to BA and start doing heists. You can swap around the auras to fit your needs. For example, if you think you're tanky enough or if you have enough damage, feel free to replace determination or malevolence with "
-          },
-          {
-            "type": "gem",
-            "attrs": {
-              "name": "Haste",
-              "color": "green"
-            }
-          },
-          {
-            "type": "text",
-            "text": " so you can move faster."
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Try to have these links as soon as you get to BA and start doing heists. You can swap around the auras to fit your needs. For example, if you think you're tanky enough or if you have enough damage, feel free to replace "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Determination",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " or "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Malevolence",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " with "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Haste",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " so you can move faster."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -4001,9 +4760,6 @@
         ]
       },
       {
-        "type": "horizontalRule"
-      },
-      {
         "type": "heading",
         "attrs": {
           "level": 2
@@ -4026,7 +4782,40 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "The RF gems are in order of importance, some gems like Swift Affliction will not work without the use of Lifetap as it adds a duration tag."
+                    "text": "The "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Righteous Fire",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " gems are in order of importance, some gems like "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Swift Affliction Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " will not work without the use of "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Lifetap Support",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " as it adds a duration tag."
                   }
                 ]
               }
@@ -4040,7 +4829,29 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "It will be r to buy aura gems directly from A3 so they start at Level 11. Getting Purity of Fire and Determination first is really big for survivability."
+                    "text": "It will be better to buy aura gems directly from A3 so they start at Level 11. Getting "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Purity of Fire",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " and "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Determination",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " first is really important for survivability."
                   }
                 ]
               }
@@ -4054,7 +4865,18 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "If you have enough damage or defences, you can use Haste to move faster."
+                    "text": "If you have enough damage or defenses, you can use "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Haste",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " to move faster."
                   }
                 ]
               }
@@ -4084,35 +4906,35 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "RF",
+                          "name": "Righteous Fire",
                           "color": "blue"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Burn Damage",
+                          "name": "Burning Damage Support",
                           "color": "red"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Ele Focus",
+                          "name": "Elemental Focus Support",
                           "color": "blue"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -4123,23 +4945,23 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Lifetap (max)",
+                          "name": "Lifetap Support",
                           "color": "red"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " (13) + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Swift Aff",
+                          "name": "Swift Affliction Support",
                           "color": "green"
                         }
                       }
@@ -4169,7 +4991,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -4180,18 +5002,18 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Lifetap (max)",
+                          "name": "Lifetap Support",
                           "color": "red"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
@@ -4226,18 +5048,18 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Lifetap (1)",
+                          "name": "Lifetap Support",
                           "color": "red"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " (1) + "
                       },
                       {
                         "type": "gem",
@@ -4253,9 +5075,13 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Frostblink (1)",
+                          "name": "Frostblink",
                           "color": "blue"
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " (1)"
                       }
                     ]
                   }
@@ -4318,18 +5144,18 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Lifetap (1)",
+                          "name": "Lifetap Support",
                           "color": "red"
                         }
                       },
                       {
                         "type": "text",
-                        "text": "+"
+                        "text": " (1) + "
                       },
                       {
                         "type": "gem",
@@ -4369,9 +5195,13 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Purity of Fire,",
+                          "name": "Purity of Fire",
                           "color": "red"
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
                       },
                       {
                         "type": "gem",
@@ -4435,7 +5265,9 @@
     "chieftain",
     "sunder",
     "righteous fire",
-    "leveling"
+    "leveling",
+    "3.28",
+    "league starter"
   ],
   "kind": "build",
   "ascendancy": "Chieftain"

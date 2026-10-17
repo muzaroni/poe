@@ -12,9 +12,15 @@ export function gemLinkGroups(node: JSONContent) {
       const label = child.text?.match(/^\s*([^:]{1,40}):\s*/);
       if (label) { title = label[1].trim(); child = { ...child, text: child.text!.slice(label[0].length) }; }
     }
-    if (child.type === 'text' && child.text?.trim() === ',') groups.push([[]]);
-    else if (child.type === 'text' && child.text?.trim() === '+') groups.at(-1)!.push([]);
-    else if (child.type !== 'text' || child.text?.trim()) groups.at(-1)!.at(-1)!.push(child);
+    if (child.type === 'text') {
+      // Tiptap combines adjacent text, e.g. " (1) + ", into one node.
+      // Read separators within it while retaining annotations and their marks.
+      for (const part of (child.text ?? '').split(/([+,])/)) {
+        if (part === ',') groups.push([[]]);
+        else if (part === '+') groups.at(-1)!.push([]);
+        else if (part.trim()) groups.at(-1)!.at(-1)!.push({ ...child, text: part });
+      }
+    } else groups.at(-1)!.at(-1)!.push(child);
   }
   return { title, groups: groups.map((group) => group.filter((row) => row.length)).filter((group) => group.length) };
 }

@@ -71,7 +71,7 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
     case 'listItem': return <li>{children}</li>;
     case 'taskList': return <ul className={`reader-task-list ${gemSetup ? 'gem-link-grid' : ''}`}>{(node.content ?? []).map((item, index) => <ChecklistItem key={index} node={item} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup} />)}</ul>;
     case 'gem': return <button type="button" className={`gem gem-${attrs.color ?? 'red'}`} data-gem-info={String(attrs.name ?? '')} aria-haspopup="dialog" aria-label={`${gemDisplayName(String(attrs.name ?? ''))}: gem details`}>{gemDisplayName(String(attrs.name ?? ''))}</button>;
-    case 'icon': return <img className="inline-icon" src={assetUrl(String(attrs.src ?? ''))} alt="" />;
+    case 'icon': return <img className="inline-icon" src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.name ?? '')} title={attrs.name ? String(attrs.name) : undefined} />;
     case 'image': return <figure><img src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? 'Guide screenshot')} loading="lazy" /><figcaption>{attrs.alt && attrs.alt !== 'Guide screenshot' ? String(attrs.alt) : ''}</figcaption></figure>;
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
     case 'gemSetup': return <section className="gem-setup"><div className="block-eyebrow">GEM LINKS</div>{children}</section>;
