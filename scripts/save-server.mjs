@@ -48,6 +48,21 @@ createServer(async (request, response) => {
       await rename(temporary, output);
       return send(response, 200, { ok: true, file: `src/content/builds/${guide.slug}.json` }, origin);
     }
+    if (request.method === 'POST' && url.pathname === '/delete') {
+      const guide = JSON.parse((await readBody(request, 8 * 1024 * 1024)).toString('utf8'));
+      if (typeof guide.slug !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(guide.slug) || !guide.title?.trim() || guide.content?.type !== 'doc' || !Array.isArray(guide.content.content)) throw new Error('Choose a valid page to delete');
+      const backup = path.join('.deleted-pages', `${guide.slug}-${randomUUID()}`);
+      const destination = path.join(root, backup);
+      await mkdir(destination, { recursive: true });
+      // Preserve unsaved editor changes as well as the last saved project version.
+      await writeFile(path.join(destination, 'draft.json'), `${JSON.stringify(guide, null, 2)}\n`, 'utf8');
+      try {
+        await rename(path.join(builds, `${guide.slug}.json`), path.join(destination, 'project.json'));
+      } catch (error) {
+        if (error.code !== 'ENOENT') throw error;
+      }
+      return send(response, 200, { ok: true, backup: backup.replaceAll('\\', '/') }, origin);
+    }
     if (request.method === 'POST' && url.pathname === '/upload') {
       const type = request.headers['content-type'] ?? '';
       const extension = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' }[type];
@@ -62,4 +77,4 @@ createServer(async (request, response) => {
   } catch (error) {
     return send(response, 400, { error: error instanceof Error ? error.message : 'Request failed' }, origin);
   }
-}).listen(4322, '127.0.0.1', () => console.log('Local guide save server: http://127.0.0.1:4322'));
+}).listen(Number(process.env.POE_SAVE_PORT ?? 4322), '127.0.0.1', () => console.log('Local guide save server ready'));

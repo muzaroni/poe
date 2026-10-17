@@ -9,7 +9,7 @@ import TaskList from '@tiptap/extension-task-list';
 import TaskItem from '@tiptap/extension-task-item';
 import { Color, TextStyle } from '@tiptap/extension-text-style';
 import * as Dialog from '@radix-ui/react-dialog';
-import { Bold, CheckSquare, ChevronDown, Code2, Heading2, Heading3, ImagePlus, Italic, Link2, List, ListChecks, Plus, Redo2, Save, Undo2, X } from 'lucide-react';
+import { Bold, CheckSquare, ChevronDown, Code2, Heading2, Heading3, ImagePlus, Italic, Link2, List, ListChecks, Plus, Redo2, Save, Undo2, Underline, X } from 'lucide-react';
 import type { JSONContent } from '@tiptap/core';
 import { Button } from '../components/ui/Button';
 import { deleteDraft, listDrafts, saveDraft } from './drafts';
@@ -32,7 +32,7 @@ const currencies = [
 const API = 'http://127.0.0.1:4322';
 const BASE = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const localDate = () => { const day = new Date(); return `${day.getFullYear()}-${String(day.getMonth() + 1).padStart(2, '0')}-${String(day.getDate()).padStart(2, '0')}`; };
-type Modal = 'gem' | 'link' | 'new' | 'color' | 'cost' | null;
+type Modal = 'gem' | 'link' | 'new' | 'color' | 'cost' | 'delete' | null;
 
 function newGuide(title: string, kind: 'build' | 'article' = 'build'): Guide {
   const slug = title.toLowerCase().normalize('NFKD').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').slice(0, 70) || 'new-build';
@@ -53,7 +53,14 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
   const [guide, setGuide] = useState<Guide>(initialGuides[0] ?? newGuide('New build'));
   const [knownGuides, setKnownGuides] = useState<Guide[]>(initialGuides);
   const [modal, setModal] = useState<Modal>(null);
+  const [deleting, setDeleting] = useState(false);
+  const [, refreshFormatting] = useState(0);
   const [query, setQuery] = useState('');
+  const [activeGem, setActiveGem] = useState(0);
+  const gemSearch = useRef<HTMLInputElement>(null);
+  const gemResults = useRef<HTMLDivElement>(null);
+  const returnToWriting = useRef(false);
+  function openGemPicker() { setQuery(''); setActiveGem(0); returnToWriting.current = true; setModal('gem'); }
   const [url, setUrl] = useState('');
   const [newTitle, setNewTitle] = useState('');
   const [newKind, setNewKind] = useState<'build' | 'article'>('build');
@@ -84,6 +91,22 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     content: guide.content,
     editorProps: {
       attributes: { class: 'tiptap guide-content' },
+      handleTextInput: (view, from, to, text) => {
+        if (text !== '@' || from !== to || view.composing) return false;
+        const position = view.state.doc.resolve(from);
+        const before = position.parent.textBetween(0, position.parentOffset, '\n', '\ufffc');
+        if (position.parent.type.name === 'codeBlock' || (before && !/\s$/.test(before))) return false;
+        openGemPicker(); return true;
+      },
+      handleKeyDown: (view, event) => {
+        if (event.isComposing || view.composing) return false;
+        const { selection } = view.state;
+        const before = selection.$from.parent.textBetween(0, selection.$from.parentOffset, '\n', '\ufffc');
+        const shortcut = (event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyG';
+        const mention = event.key === '@' && !event.ctrlKey && !event.metaKey && selection.empty && (!before || /\s$/.test(before)) && selection.$from.parent.type.name !== 'codeBlock';
+        if (!shortcut && !mention) return false;
+        event.preventDefault(); openGemPicker(); return true;
+      },
       handlePaste: (_view, event) => {
         const image = Array.from(event.clipboardData?.files ?? []).find((file) => file.type.startsWith('image/'));
         if (!image) return false;
@@ -91,6 +114,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
         return true;
       },
     },
+    onSelectionUpdate: () => refreshFormatting((value) => value + 1),
     onUpdate: ({ editor: current }) => setGuide((previous) => ({ ...previous, content: current.getJSON() })),
     immediatelyRender: false,
   });
@@ -182,6 +206,29 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     setStatus(saved ? 'Loaded project version' : 'Removed unsaved guide');
   }
 
+  async function deletePage() {
+    if (!editor || !localServer || deleting) return;
+    const outgoing = { ...guide, content: editor.getJSON() };
+    setDeleting(true); setReady(false); editor.setEditable(false);
+    try {
+      // Remove the browser copy before file watchers can refresh the editor.
+      await deleteDraft(outgoing.slug);
+      const response = await fetch(`${API}/delete`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(outgoing) });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error ?? 'Could not delete page');
+      const remaining = knownGuides.filter((item) => item.slug !== outgoing.slug);
+      setKnownGuides(remaining);
+      switchGuide(remaining[0] ?? newGuide('New build'), false);
+      setModal(null);
+      setStatus(`Page deleted locally. Backup: ${result.backup}. Push to GitHub to remove the published page.`);
+    } catch (error) {
+      await saveDraft(outgoing).catch(() => {});
+      setStatus(error instanceof Error ? error.message : 'Could not delete page');
+    } finally {
+      setDeleting(false); setReady(true); editor.setEditable(true);
+    }
+  }
+
   async function saveToProject() {
     if (!editor) return;
     const payload = { ...guide, ...buildDetails(guide), content: editor.getJSON(), updated: localDate() };
@@ -208,6 +255,14 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
   function insert(node: JSONContent) { editor?.chain().focus().insertContent(node).run(); }
   const filteredGems = gems.filter((gem) => gem.name.toLowerCase().includes(query.toLowerCase())).slice(0, 35);
 
+  function selectGem(gem: (typeof gems)[number]) {
+    editor?.chain().focus().insertContent([{ type: 'gem', attrs: { name: gem.name, color: gem.color } }, { type: 'text', text: ' ' }]).run();
+    setModal(null);
+  }
+  useEffect(() => {
+    if (modal === 'gem') gemResults.current?.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest' });
+  }, [activeGem, query, modal]);
+
   const guideOptions = [...new Map([...knownGuides, guide].map((item) => [item.slug, item])).values()];
   const optionLabel = (item: Guide) => {
     const sameTitle = guideOptions.filter((entry) => entry.title.trim().toLowerCase() === item.title.trim().toLowerCase()).length > 1;
@@ -218,24 +273,25 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     <div className="editor-controls">
     <div className="editor-topbar">
       <div className="editor-topbar-main"><div className="editor-select"><select aria-label="Choose guide or article" value={guide.slug} onChange={(event) => { const next = knownGuides.find((item) => item.slug === event.target.value); if (next) switchGuide(next); }}>{guideOptions.map((item) => <option key={item.slug} value={item.slug}>{optionLabel(item)}</option>)}</select><ChevronDown size={15} /></div><Button variant="ghost" onClick={() => setModal('new')}><Plus size={16} /> New content</Button></div>
-      <div className="editor-topbar-actions"><span className="save-status">{draftState}</span><Button variant="secondary" disabled={!ready} onClick={downloadDraft}>Download draft</Button><Button variant="secondary" disabled={!ready} onClick={() => draftInput.current?.click()}>Import draft</Button><input ref={draftInput} type="file" accept=".json,application/json" hidden onChange={(event) => { void importDraft(event.target.files?.[0]); event.target.value = ''; }} /><Button variant="primary" onClick={saveToProject} disabled={!localServer}><Save size={16} /> Save to project</Button></div>
+      <div className="editor-topbar-actions"><span className="save-status">{draftState}</span><Button variant="secondary" disabled={!ready} onClick={downloadDraft}>Download draft</Button><Button variant="secondary" disabled={!ready} onClick={() => draftInput.current?.click()}>Import draft</Button><input ref={draftInput} type="file" accept=".json,application/json" hidden onChange={(event) => { void importDraft(event.target.files?.[0]); event.target.value = ''; }} /><Button className="ui-button-danger" variant="secondary" disabled={!localServer || !ready || deleting} onClick={() => setModal('delete')}>Delete page</Button><Button variant="primary" onClick={saveToProject} disabled={!localServer || deleting}><Save size={16} /> Save to project</Button></div>
     </div>
-      <div className="editor-toolbar" role="toolbar" aria-label="Formatting and blocks">
+      <div className="editor-toolbar" role="toolbar" aria-label="Formatting and blocks" onMouseDown={(event) => { if ((event.target as Element).closest('button')) event.preventDefault(); }}>
         <button title="Heading 2" aria-label="Heading 2" onClick={() => editor?.chain().focus().toggleHeading({ level: 2 }).run()}><Heading2 /></button>
         <button title="Heading 3" aria-label="Heading 3" onClick={() => editor?.chain().focus().toggleHeading({ level: 3 }).run()}><Heading3 /></button>
-        <button title="Bold" aria-label="Bold" onClick={() => editor?.chain().focus().toggleBold().run()}><Bold /></button>
-        <button title="Italic" aria-label="Italic" onClick={() => editor?.chain().focus().toggleItalic().run()}><Italic /></button>
+        <button title="Bold (Ctrl+B)" aria-label="Bold" aria-pressed={editor?.isActive('bold') ?? false} onClick={() => editor?.chain().focus().toggleBold().run()}><Bold /></button>
+        <button title="Italic (Ctrl+I)" aria-label="Italic" aria-pressed={editor?.isActive('italic') ?? false} onClick={() => editor?.chain().focus().toggleItalic().run()}><Italic /></button>
+        <button title="Underline (Ctrl+U)" aria-label="Underline" aria-pressed={editor?.isActive('underline') ?? false} onClick={() => editor?.chain().focus().toggleUnderline().run()}><Underline /></button>
         <button title="Text color" aria-label="Text color" onClick={() => { setTextColor(editor?.getAttributes('textStyle').color ?? '#b9bdc1'); setModal('color'); }}><span className="text-color-icon">A</span></button>
         <button title="Bullet list" aria-label="Bullet list" onClick={() => editor?.chain().focus().toggleBulletList().run()}><List /></button>
         <button title="Checklist" aria-label="Checklist" onClick={() => editor?.chain().focus().toggleTaskList().run()}><CheckSquare /></button>
         <span className="toolbar-divider" />
-        <button title="Insert gem" aria-label="Insert gem" className="toolbar-gem" onClick={() => { setQuery(''); setModal('gem'); }}>+ Gem</button>
+        <button title="Insert gem (@ or Ctrl+Shift+G)" aria-label="Insert gem" className="toolbar-gem" onClick={openGemPicker}>+ Gem</button>
         <button title="Gem links" aria-label="Gem links" onClick={() => insert({ type: 'gemSetup', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Link 1: ' }] }] })}><ListChecks /></button>
-        <button title="Insert currency cost" aria-label="Insert currency cost" onClick={() => setModal('cost')}>Cost</button>
-        <button title="Callout" aria-label="Callout" onClick={() => insert({ type: 'callout', attrs: { tone: 'note' }, content: [{ type: 'paragraph' }] })}>Note</button>
+        <button className="toolbar-cost" title="Insert currency cost" aria-label="Insert currency cost" onClick={() => setModal('cost')}>Cost</button>
+        <button className="toolbar-note" title="Callout" aria-label="Callout" onClick={() => insert({ type: 'callout', attrs: { tone: 'note' }, content: [{ type: 'paragraph' }] })}>Note</button>
         <button className="toolbar-important" title="Important block" aria-label="Important block" onClick={() => insert({ type: 'callout', attrs: { tone: 'important' }, content: [{ type: 'paragraph' }] })}>Important</button>
         <button title="Copyable regex" aria-label="Copyable regex" onClick={() => insert({ type: 'regex', attrs: { label: 'Regex', value: '' } })}><Code2 /></button>
-        <button title="PoB links" aria-label="PoB links" onClick={() => insert({ type: 'pobLinks', attrs: { links: [{ label: '', url: '' }] } })}>PoB</button>
+        <button className="toolbar-pob" title="PoB links" aria-label="PoB links" onClick={() => insert({ type: 'pobLinks', attrs: { links: [{ label: '', url: '' }] } })}>PoB</button>
         <button title="Image" aria-label="Image" onClick={() => fileInput.current?.click()}><ImagePlus /></button>
         <button title="Link" aria-label="Link" onClick={() => { setUrl(editor?.getAttributes('link').href ?? ''); setModal('link'); }}><Link2 /></button>
         <span className="toolbar-divider" />
@@ -248,10 +304,18 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
       <input ref={fileInput} type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden onChange={(event) => { void pickImage(event.target.files?.[0]); event.target.value = ''; }} />
       <EditorContent editor={editor} className="editor-document" />
     </div></div>
-    <Dialog.Root open={modal !== null} onOpenChange={(open) => { if (!open) setModal(null); }}><Dialog.Portal><Dialog.Overlay className="dialog-overlay" /><Dialog.Content className="dialog-content"><Dialog.Close className="dialog-close" aria-label="Close"><X size={18} /></Dialog.Close>
+    <Dialog.Root open={modal !== null} onOpenChange={(open) => { if (!open && !deleting) setModal(null); }}><Dialog.Portal><Dialog.Overlay className="dialog-overlay" /><Dialog.Content className="dialog-content" onOpenAutoFocus={(event) => { if (modal === 'gem') { event.preventDefault(); gemSearch.current?.focus(); } }} onCloseAutoFocus={(event) => { if (returnToWriting.current) { event.preventDefault(); returnToWriting.current = false; editor?.commands.focus(); } }}><Dialog.Close className="dialog-close" aria-label="Close" disabled={deleting}><X size={18} /></Dialog.Close>
+      {modal === 'delete' && <><Dialog.Title>Delete this page?</Dialog.Title><Dialog.Description>This removes “{guide.title}” (/{guide.slug}) from your local project and this browser's drafts. The published page stays online until you push to GitHub. A recovery copy is kept in the project's .deleted-pages folder.</Dialog.Description><div className="text-color-actions"><Button variant="secondary" disabled={deleting} onClick={() => setModal(null)}>Cancel</Button><Button className="ui-button-danger" variant="secondary" disabled={deleting} onClick={() => void deletePage()}>{deleting ? 'Deleting…' : 'Delete page'}</Button></div></>}
       {modal === 'cost' && <><Dialog.Title>Insert currency cost</Dialog.Title><Dialog.Description>Choose a currency and amount. Insert beside a gem or in a total-cost line. You can edit the amount as normal text afterward.</Dialog.Description><div className="currency-presets" role="group" aria-label="Currency">{currencies.map((currency) => <button type="button" key={currency.src} aria-pressed={costCurrency.src === currency.src} onClick={() => setCostCurrency(currency)}><img src={assetUrl(currency.src)} alt="" />{currency.name}</button>)}</div><label htmlFor="cost-amount">Amount</label><input id="cost-amount" className="dialog-input" placeholder="1, 1–2, or 3+" value={costAmount} onChange={(event) => setCostAmount(event.target.value)} /><label className="currency-name-option"><input type="checkbox" checked={costShowName} onChange={(event) => setCostShowName(event.target.checked)} /> Include currency name</label><div className="currency-preview" aria-label="Cost preview">{costAmount} <img className="inline-icon" src={assetUrl(costCurrency.src)} alt={costCurrency.name} />{costShowName && <> {costCurrency.name}</>}</div><Button variant="primary" disabled={!costAmount.trim()} onClick={() => { editor?.chain().focus().insertContent([{ type: 'text', text: `${costAmount.trim()} ` }, { type: 'icon', attrs: { src: costCurrency.src, name: costCurrency.name } }, { type: 'text', text: costShowName ? ` ${costCurrency.name} ` : ' ' }]).run(); setModal(null); }}>Insert cost</Button></>}
       {modal === 'color' && <><Dialog.Title>Text color</Dialog.Title><Dialog.Description>Select text to recolor it, or choose a color for what you type next.</Dialog.Description><div className="text-color-presets" role="group" aria-label="Color presets">{[{ name: 'Red', color: '#ff6655' }, { name: 'Blue', color: '#58a6ff' }, { name: 'Green', color: '#65ed7f' }, { name: 'Unique', color: '#975b07' }].map((preset) => <button key={preset.name} type="button" style={{ color: preset.color }} onClick={() => { setTextColor(preset.color); editor?.chain().focus().setColor(preset.color).run(); setModal(null); }}><span style={{ backgroundColor: preset.color }} aria-hidden="true" />{preset.name}</button>)}</div><div className="text-color-picker"><label htmlFor="text-color">Choose a color</label><input id="text-color" type="color" value={validTextColor ? textColor.trim() : "#b9bdc1"} onChange={(event) => setTextColor(event.target.value)} /><label htmlFor="text-color-hex">Hex code</label><input id="text-color-hex" className="text-color-hex" type="text" placeholder="#975b07" spellCheck={false} value={textColor} aria-invalid={!validTextColor} onChange={(event) => setTextColor(event.target.value)} /></div><div className="text-color-actions"><Button variant="primary" disabled={!validTextColor} onClick={() => { editor?.chain().focus().setColor(textColor.trim()).run(); setModal(null); }}>Apply color</Button><Button variant="secondary" onClick={() => { editor?.chain().focus().unsetColor().run(); setModal(null); }}>Reset to default</Button></div></>}
-      {modal === 'gem' && <><Dialog.Title>Insert a gem</Dialog.Title><Dialog.Description>Search by name. The correct socket color is applied automatically.</Dialog.Description><input autoFocus className="dialog-input" placeholder="Search 900+ gems…" value={query} onChange={(event) => setQuery(event.target.value)} /><div className="gem-results">{filteredGems.map((gem) => <button key={gem.name} type="button" onClick={() => { insert({ type: 'gem', attrs: { name: gem.name, color: gem.color } }); setModal(null); }}><span className={`gem gem-${gem.color}`}>{gemDisplayName(gem.name)}</span></button>)}</div></>}
+      {modal === 'gem' && <><Dialog.Title>Insert a gem</Dialog.Title><Dialog.Description>Type to search. Use ↑/↓ to choose, Enter to insert, or Escape to cancel. Open while writing with @ or Ctrl+Shift+G.</Dialog.Description><input ref={gemSearch} autoFocus className="dialog-input" aria-label="Search gems" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-controls="gem-search-results" aria-activedescendant={filteredGems.length ? `gem-result-${activeGem}` : undefined} placeholder="Search gems…" value={query} onChange={(event) => { setQuery(event.target.value); setActiveGem(0); }} onKeyDown={(event) => {
+        if (event.nativeEvent.isComposing) return;
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          if (filteredGems.length) setActiveGem((current) => (current + (event.key === 'ArrowDown' ? 1 : -1) + filteredGems.length) % filteredGems.length);
+        } else if (event.key === 'Enter') { event.preventDefault(); if (filteredGems[activeGem]) selectGem(filteredGems[activeGem]); }
+      }} /><div ref={gemResults} id="gem-search-results" role="listbox" aria-label="Matching gems" className="gem-results">{filteredGems.map((gem, index) => <button id={`gem-result-${index}`} role="option" aria-selected={index === activeGem} key={gem.name} type="button" onMouseEnter={() => setActiveGem(index)} onClick={() => selectGem(gem)}><span className={`gem gem-${gem.color}`}>{gemDisplayName(gem.name)}</span></button>)}</div>{!filteredGems.length && <p role="status">No matching gems.</p>}</>}
+
       {modal === 'link' && <><Dialog.Title>Add a link</Dialog.Title><Dialog.Description>Apply a URL to selected text.</Dialog.Description><input autoFocus className="dialog-input" placeholder="https://…" value={url} onChange={(event) => setUrl(event.target.value)} /><Button variant="primary" onClick={() => { if (url.trim()) editor?.chain().focus().setLink({ href: url.trim() }).run(); else editor?.chain().focus().unsetLink().run(); setModal(null); }}>Apply link</Button></>}
       {modal === 'new' && <><Dialog.Title>New guide or article</Dialog.Title><Dialog.Description>Build guides start with a campaign outline. Articles start with a blank overview.</Dialog.Description><label htmlFor="new-content-kind">Content type</label><select id="new-content-kind" className="dialog-input" value={newKind} onChange={(event) => setNewKind(event.target.value as 'build' | 'article')}><option value="build">Build guide</option><option value="article">Article</option></select><input autoFocus className="dialog-input" placeholder="Title" value={newTitle} onChange={(event) => setNewTitle(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter' && newTitle.trim()) { const next = newGuide(newTitle.trim(), newKind); setKnownGuides((old) => [...old, next]); switchGuide(next); setNewTitle(''); setModal(null); } }} /><Button variant="primary" onClick={() => { if (!newTitle.trim()) return; const next = newGuide(newTitle.trim(), newKind); setKnownGuides((old) => [...old, next]); switchGuide(next); setNewTitle(''); setModal(null); }}>Create page</Button></>}
     </Dialog.Content></Dialog.Portal></Dialog.Root>

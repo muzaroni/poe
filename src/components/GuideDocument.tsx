@@ -46,6 +46,7 @@ function Text({ node }: { node: JSONContent }) {
   for (const mark of node.marks ?? []) {
     if (mark.type === 'bold') value = <strong>{value}</strong>;
     if (mark.type === 'italic') value = <em>{value}</em>;
+    if (mark.type === 'underline') value = <u>{value}</u>;
     if (mark.type === 'textStyle' && mark.attrs?.color) value = <span style={{ color: String(mark.attrs.color) }}>{value}</span>;
     if (mark.type === 'code') value = <code>{value}</code>;
     if (mark.type === 'link') value = <a href={String(mark.attrs?.href ?? '#')} target="_blank" rel="noopener noreferrer">{value}<ExternalLink size={11} aria-hidden /></a>;
@@ -72,7 +73,11 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
     case 'taskList': return <ul className={`reader-task-list ${gemSetup ? 'gem-link-grid' : ''}`}>{(node.content ?? []).map((item, index) => <ChecklistItem key={index} node={item} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup} />)}</ul>;
     case 'gem': return <button type="button" className={`gem gem-${attrs.color ?? 'red'}`} data-gem-info={String(attrs.name ?? '')} aria-haspopup="dialog" aria-label={`${gemDisplayName(String(attrs.name ?? ''))}: gem details`}>{gemDisplayName(String(attrs.name ?? ''))}</button>;
     case 'icon': return <img className="inline-icon" src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.name ?? '')} title={attrs.name ? String(attrs.name) : undefined} />;
-    case 'image': return <figure><img src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? 'Guide screenshot')} loading="lazy" /><figcaption>{attrs.alt && attrs.alt !== 'Guide screenshot' ? String(attrs.alt) : ''}</figcaption></figure>;
+    case 'image': {
+      const caption = attrs.caption ?? (attrs.alt && attrs.alt !== 'Guide screenshot' ? String(attrs.alt) : '');
+      const width = attrs.widthPercent == null ? null : Math.max(10, Math.min(100, Number(attrs.widthPercent) || 100));
+      return <figure><img className={width == null ? undefined : 'has-custom-width'} style={width == null ? undefined : { width: `${width}%`, height: 'auto' }} src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? '')} loading="lazy" />{caption && <figcaption>{String(caption)}</figcaption>}</figure>;
+    }
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
     case 'gemSetup': return <section className="gem-setup"><div className="block-eyebrow">GEM LINKS</div>{children}</section>;
     case 'callout': return <aside className={`callout ${attrs.tone === 'important' ? 'callout-important' : ''}`}>{children}</aside>;

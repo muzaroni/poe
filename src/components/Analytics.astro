@@ -1,0 +1,16 @@
+---
+const excluded = /\/(editor|gem-cards|gem-preview)(\/|$)/.test(Astro.url.pathname);
+const enabled = import.meta.env.PROD && !excluded;
+---
+{enabled && <script is:inline id="site-analytics">
+  // Only the published GitHub Pages site contributes to the dashboard.
+  if (location.hostname === 'muzaroni.github.io' && location.pathname.startsWith('/poe/')) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://gc.zgo.at/count.js';
+    script.dataset.goatcounter = 'https://muzaroni.goatcounter.com/count';
+    // Group visits by page, excluding search queries and section anchors.
+    script.dataset.goatcounterSettings = JSON.stringify({ path: location.pathname });
+    document.head.appendChild(script);
+  }
+</script>}

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import { guides } from '../lib/guide';
 import ContentLibrary from '../components/ContentLibrary';
 import { contentPath, normalizeTags, searchableText } from '../lib/search';
@@ -13,12 +14,12 @@ const entries = guides.map((guide) => ({ ...guide, content: undefined, kind: gui
       <a class="library-nav-link library-nav-current" href="#search">All content <span>{guides.length}</span></a>
       <p class="nav-label library-nav-subhead">GUIDES & ARTICLES</p>
       {guides.map((guide) => <a class="library-nav-link" href={`${base}${contentPath(guide)}`}><span>{guide.title}</span><span aria-hidden="true">↗</span></a>)}
-      <a class="library-editor-link" href={`${base}editor/`}>Open visual editor <span aria-hidden="true">↗</span></a>
+      <SocialLinks />
     </aside>
     <main class="home-main" id="guides">
       <div class="home-kicker">PATH OF EXILE · BUILD LIBRARY</div>
-      <h1>Find your next<br /><span>way forward.</span></h1>
-      <p class="home-lede">Clear build guides for the full journey, from your first gem to mapping.</p>
+      <h1>Path of Exile Guides</h1>
+      <p class="home-lede">Build guides, leveling notes, and resources.</p>
       <ContentLibrary entries={entries} base={base} client:load />
     </main>
   </div>

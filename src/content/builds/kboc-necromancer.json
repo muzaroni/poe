@@ -1,0 +1,1703 @@
+{
+  "slug": "kboc-necromancer",
+  "title": "KBoC Necromancer",
+  "kind": "build",
+  "tags": [
+    "3.30",
+    "necromancer",
+    "kinetic blast",
+    "league starter",
+    "leveling"
+  ],
+  "subtitle": "KBoC early leveling and progression guide",
+  "league": "3.30",
+  "ascendancy": "Necromancer",
+  "updated": "2026-10-17",
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Overview"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This guide pulls it's resources from a mixture of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.youtube.com/@legi1_/videos",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "legi"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "link",
+                "attrs": {
+                  "href": "https://www.youtube.com/@Redvilespoe",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer nofollow",
+                  "class": null,
+                  "title": null
+                }
+              }
+            ],
+            "text": "redviles"
+          },
+          {
+            "type": "text",
+            "text": " YT videos + google sheets and personal experience playing this build over last 3 leagues."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This build highly excels at fast mapping and content such as Breach, Legion, Blight. Single target is high once you invest. Starting out you're very defensive being CI with capped block, over 7K ES pool, 12k armor, great movement and recovery once you invest more. Probably one of the best all arounder over last few leagues that starts around 30 divs and can scale into hundreds."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "PoB Links + Useful Links"
+          }
+        ]
+      },
+      {
+        "type": "pobLinks",
+        "attrs": {
+          "links": [
+            {
+              "label": "3.29 Redviles POB",
+              "url": "https://pobb.in/APXuY7dhcv9q"
+            },
+            {
+              "label": "Redviles Google Sheets",
+              "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGYEEtJS6N2vxIQ2ujP5lgFShq2luV5zbl-LKR-Z4-wrkryg0HcF_eijJ4Bzt6ucuao8ZABtPrnFKn/pubhtml#gid=197071748"
+            },
+            {
+              "label": "Redviles YT Guide",
+              "url": "https://www.youtube.com/watch?v=QOXeHiSK-9U"
+            },
+            {
+              "label": "3.28 - Legi 2 Stone VOD",
+              "url": "https://www.youtube.com/watch?v=6QcJr4rbqeU"
+            },
+            {
+              "label": "Legi Maxroll guide - Very detailed",
+              "url": "https://maxroll.gg/poe/build-guides/kinetic-blast-of-clustering-necromancer-league-starter"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Regex"
+          }
+        ]
+      },
+      {
+        "type": "regex",
+        "attrs": {
+          "label": "3 link or more + move speed boots for act 1-2 + most all required gems from vendor up until maps",
+          "value": "\"-\\w-.-|(-\\w){4}|-\\w-|Runn|rint|^added l|pris|ombu|oly f|ter at|ld ch|usil|^voll|^added co|akn|f thu|ld of i|^has|lsl|do$|iper'|^mark|^greater m|r v|mmol|^fork|^returni|c bl|^balli|ta s|crate$|atile|^sig|mpes|bone o|^spell c|^lightning p|cis|sacred\""
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "General Notes"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "You should mule a ranger first for "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Momentum Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " and have an extra check on the vendor for move speed boots or iron rings (last resort 3 Link items) "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Prioritize getting at least 1 iron ring if you have extra scrolls in act 1, buying 2 rings for 6 scrolls might cause you to run out for other items/gems that you need later on"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make sure to get at least 2 3-link items before "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(151, 91, 7)"
+                        }
+                      }
+                    ],
+                    "text": "Merveil"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (preferably not boots cuz move speed)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hit level 12 before "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Merveil"
+                  },
+                  {
+                    "type": "text",
+                    "text": " and get the two "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Kinetic Fusillade",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " 3 link setup going and use flame wall to ignite the projectiles for more fire damage, must shoot through the wall for extra dmg"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff6655"
+                        }
+                      },
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "IMPORTANT"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": After normal lab, take "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Commander of Darkness"
+                  },
+                  {
+                    "type": "text",
+                    "text": " Ascendancy node first, and then respec with Faustus after Cruel lab (around 4k gold) to take "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Corpse pact"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In Act 3, make sure to start having flat elemental damage on gloves/rings/amulet/wand, definitely craft the flat fire damage on the wand after Solaris Temple"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If you are lacking damage, make sure to see if you can craft flat damage on gloves/ring/amulet/wand, its roughly 10% more damage for every crafted modifier"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "You CAN skip library if you are not planning to use KB until after cruel lab where you can get it at "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Lily Roth"
+                  },
+                  {
+                    "type": "text",
+                    "text": " then"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Immolate Support",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " support is much stronger than other supports for wand skills in campaign but make sure to have at least 1 fire damage to attack modifier on gear for more consistent ignites"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff6655"
+                        }
+                      },
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "IMPORTANT"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": When you start using "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Kinetic Fusillade",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": ", I used "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Multiple Projectiles Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " / "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Greater Multiple Projectiles Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " supports because that allows you to just cast 1-2 times before reaching max stacks for max damage, this allows more smooth gameplay so you can kite and move around after 1-2 casts per KF gem, do not spam more than 2 times per gem for stacking projectiles or else you are just wasting damage"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#58a6ff"
+                        }
+                      },
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "ENTERING MAPS"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": I did a test run on stream and its safe to say that regular KB can reach to red maps with campaign gear with ease but should be looking to buy the transfig gem KBoC as soon as possible when you reach act 10"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Act 1"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "attrs": {
+          "src": "/images/uploads/brave-eazeyrtmdq-c4581d14.png",
+          "alt": "brave_EAzEyrTmdQ",
+          "title": null,
+          "width": null,
+          "height": null,
+          "caption": "Arcanist Dominion ➜ Deep Wisdom",
+          "widthPercent": 30
+        }
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mule Ranger"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Starting gems: "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Burning Arrow",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " + "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Momentum Support",
+                      "color": "green"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vendor check"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Restart on Witch"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Tarkleigh"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Kinetic Bolt",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Nessa"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Prismatic Burst Support",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy 1 Iron Ring - 3 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Bolt",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Prismatic Burst Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Hailrake"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get Quicksilver"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Holy Flame Totem",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Shield Charge",
+                      "color": "red"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Volley Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Optional)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gamble Gloves (AR/ES)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Flame Wall",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Frostblink",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy any shield"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dweller"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Added Lightning Damage Support",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Added Lightning Damage Support",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Optional)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Faster Attacks Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brutus"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Precision",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Bolt",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Added Lightning Damage Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Precision",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Holy Flame Totem",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fairgraves"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Kinetic Fusillade",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Kinetic Fusillade",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/alt.png",
+                      "name": "Orb of Alteration"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Double KF Links"
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Link 1: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Added Lightning Damage Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Link 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Link 3: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Added Lightning Damage Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Precision",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Holy Flame Totem",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph"
+      }
+    ]
+  }
+}

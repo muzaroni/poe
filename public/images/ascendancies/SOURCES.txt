@@ -1,0 +1,2 @@
+Grinding Gear Games ascendancy artwork, distributed by Path of Building Community.
+https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/dev/src/TreeData

@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from './SocialLinks.astro';
 import GuideDocument from '../components/GuideDocument';
 import { headingId, plainText } from '../lib/guide';
 import type { Guide } from '../types';
-import { buildLabel } from '../lib/build';
+import { ascendancyBadgeClass, ascendancyPortrait, buildDetails, buildLabel } from '../lib/build';
 
 
 const { guide } = Astro.props as { guide: Guide };
+const portrait = ascendancyPortrait(guide);
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const headings = (guide.content.content ?? []).filter((node) => node.type === 'heading' && Number(node.attrs?.level) === 2).map((node) => ({ title: plainText(node), id: headingId(plainText(node)) }));
 ---
@@ -15,10 +17,11 @@ const headings = (guide.content.content ?? []).filter((node) => node.type === 'h
     <aside class="guide-nav" aria-label="On this page">
       <div class="nav-label">ON THIS PAGE</div>
       {headings.map((item, index) => <a href={`#${item.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{item.title}</a>)}
+      <SocialLinks />
     </aside>
     <main class="guide-main">
       <div class="guide-breadcrumb"><a href={base}>{guide.kind === 'article' ? 'Articles' : 'Builds'}</a><span> / </span><span>{buildLabel(guide)}</span></div>
-      <div class="guide-hero"><span class="league-pill">{buildLabel(guide)}</span><h1>{guide.title}</h1><p>{guide.subtitle}</p><div class="hero-meta">UPDATED {new Date(`${guide.updated}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).toUpperCase()} <span>·</span> PROGRESS SAVES ON THIS DEVICE</div></div>
+      <div class="guide-hero"><span class:list={["league-pill", ascendancyBadgeClass(guide)]}><span>{buildLabel(guide)}</span></span><div class="guide-title-row">{portrait && <img class="ascendancy-portrait" src={`${base}${portrait}`} width="76" height="76" alt={`${buildDetails(guide).ascendancy} ascendancy`} />}<h1>{guide.title}</h1></div><p>{guide.subtitle}</p><div class="hero-meta">UPDATED {new Date(`${guide.updated}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).toUpperCase()} <span>·</span> PROGRESS SAVES ON THIS DEVICE</div></div>
       {(guide.tags ?? []).length > 0 && <div class="content-tags guide-tags">{guide.tags!.map((tag) => <a href={`${base}?tag=${encodeURIComponent(tag)}#search`}>{tag}</a>)}</div>}
       <nav class="mobile-guide-nav" aria-label="Jump to section"><label for="section-jump">JUMP TO SECTION</label><select id="section-jump" onchange="if(this.value) location.hash=this.value"><option value="">Choose a section</option>{headings.map((item) => <option value={item.id}>{item.title}</option>)}</select></nav>
       <GuideDocument content={guide.content} slug={guide.slug} client:load />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { searchEntries, type SearchEntry } from '../lib/search';
-import { buildLabel } from '../lib/build';
+import { ascendancyBadgeClass, buildLabel } from '../lib/build';
 
 export default function ContentLibrary({ entries, base }: { entries: SearchEntry[]; base: string }) {
   const [query, setQuery] = useState('');
@@ -25,7 +25,7 @@ export default function ContentLibrary({ entries, base }: { entries: SearchEntry
     {tag && <div className="library-query">Tagged “{tag}” <button type="button" onClick={() => setTag('')} aria-label="Clear tag filter">Clear ×</button></div>}
     <p className="search-count" role="status">{results.length} {results.length === 1 ? 'result' : 'results'}</p>
     <div className="build-grid">{results.map((entry) => <article className="build-card" key={entry.slug}>
-      <div className="build-card-top"><span className="league-pill">{buildLabel(entry)}</span><span className="card-arrow" aria-hidden>↗</span></div>
+      <div className="build-card-top"><span className={`league-pill ${ascendancyBadgeClass(entry)}`}><span>{buildLabel(entry)}</span></span><span className="card-arrow" aria-hidden>↗</span></div>
       <h2><a href={`${base}${entry.path}`}>{entry.title}</a></h2><p>{entry.subtitle}</p>
       <div className="build-card-foot"><span>{entry.kind === 'article' ? 'ARTICLE' : 'FULL GUIDE'}</span><a href={`${base}${entry.path}`}>Read {entry.kind === 'article' ? 'article' : 'guide'} →</a></div>
     </article>)}</div>

@@ -38,7 +38,18 @@
               },
               {
                 "type": "text",
-                "text": " by using Sunder for leveling instead of the traditional caster approach. Play Sunder until Level 52-55, then use the free campaign respec and gold at Blood Aqueducts to hard-swap into Righteous Fire and follow Pohx's instructions. This approach allows you to level significantly quicker while still transitioning smoothly into the powerful RF setup once you reach maps."
+                "text": " by using "
+              },
+              {
+                "type": "gem",
+                "attrs": {
+                  "name": "Sunder",
+                  "color": "red"
+                }
+              },
+              {
+                "type": "text",
+                "text": " for leveling instead of the traditional caster approach. Play Sunder until Level 52-55, then use the free campaign respec and gold at Blood Aqueducts to hard-swap into Righteous Fire and follow Pohx's instructions. This approach allows you to level significantly quicker while still transitioning smoothly into the powerful RF setup once you reach maps."
               }
             ]
           }

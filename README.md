@@ -15,6 +15,8 @@ The editor's **Save to project** button works only when `npm run dev` is running
 
 ## Current content
 
+To remove a page, select it in the local editor and choose **Delete page**. The confirmation shows its title and page address. Deletion removes its local project file and this browser's draft; the public page is removed on the next push and deployment. Recovery copies of the saved file and current editor content are kept under `.deleted-pages/` (excluded from Git and the public site). To recover, import the backup's `draft.json` in the editor and save it to the project. Uploaded images are kept because other pages may use them.
+
 The Sunder → RF guide was imported from [the existing guide](https://muzaroni.github.io/328_sunder_rf.html). Acts 9 and 10 have clearly labeled placeholders because the reference did not include full instructions for those acts. Review them in the editor before treating this as a complete campaign guide.
 
 ## Commands
@@ -25,6 +27,10 @@ The Sunder → RF guide was imported from [the existing guide](https://muzaroni.
 - `npm run refresh:gems` — refresh the locally bundled gem card data and icons from RePoE and the Path of Exile CDN
 
 The local save service listens only on `127.0.0.1:4322` and accepts requests from the local editor origin.
+
+## Analytics
+
+Production page views are sent to `https://muzaroni.goatcounter.com/` using GoatCounter's hosted script. Analytics runs only on `muzaroni.github.io/poe/`; local development, local production previews, the editor, and gem mockup pages are excluded. Page paths are counted without query strings or section anchors. The account dashboard provides the reports; tracking starts after deployment, and visitors who block the script may not be counted.
 
 ## Sources
 

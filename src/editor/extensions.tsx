@@ -23,8 +23,27 @@ export const Icon = Node.create({
   addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper as="span" contentEditable={false}><img className="inline-icon" src={assetUrl(node.attrs.src)} alt={node.attrs.name ?? ''} title={node.attrs.name || undefined} /></NodeViewWrapper>); },
 });
 
+function ImageView({ node, updateAttributes }: NodeViewProps) {
+  const width = node.attrs.widthPercent == null ? null : Math.max(10, Math.min(100, Number(node.attrs.widthPercent) || 100));
+  const caption = node.attrs.caption ?? (node.attrs.alt === 'Guide screenshot' ? '' : node.attrs.alt ?? '');
+  return <NodeViewWrapper className="editor-figure" contentEditable={false}>
+    <img className="editor-image" src={assetUrl(node.attrs.src)} alt={node.attrs.alt || ''} style={width == null ? undefined : { width: `${width}%`, height: 'auto' }} />
+    <div className="image-controls">
+      <label>Caption<input type="text" aria-label="Image caption" placeholder="Add a caption…" value={caption} onChange={(event) => updateAttributes({ caption: event.target.value })} /></label>
+      <div className="image-width-controls"><label>Image width<input type="range" aria-label="Image width" min="10" max="100" step="5" value={width ?? 100} onChange={(event) => updateAttributes({ widthPercent: Number(event.target.value) })} /></label><output>{width == null ? 'Original' : `${width}%`}</output><button type="button" onClick={() => updateAttributes({ widthPercent: null })}>Reset size</button></div>
+    </div>
+  </NodeViewWrapper>;
+}
+
 export const GuideImage = Image.extend({
-  addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper className="editor-figure" contentEditable={false}><img className="editor-image" src={assetUrl(node.attrs.src)} alt={node.attrs.alt || 'Guide screenshot'} /><span>{node.attrs.alt || 'Guide screenshot'}</span></NodeViewWrapper>); },
+  addAttributes() {
+    return {
+      ...this.parent?.(),
+      caption: { default: null, parseHTML: (element) => element.getAttribute('data-caption'), renderHTML: (attributes) => attributes.caption == null ? {} : { 'data-caption': attributes.caption } },
+      widthPercent: { default: null, parseHTML: (element) => element.hasAttribute('data-width-percent') ? Number(element.getAttribute('data-width-percent')) : null, renderHTML: (attributes) => attributes.widthPercent == null ? {} : { 'data-width-percent': attributes.widthPercent, style: `width: ${Math.max(10, Math.min(100, Number(attributes.widthPercent) || 100))}%; height: auto;` } },
+    };
+  },
+  addNodeView() { return ReactNodeViewRenderer(ImageView); },
 });
 
 function RegexView({ node, updateAttributes, selected }: NodeViewProps) {
