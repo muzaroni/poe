@@ -26,7 +26,7 @@ export default function GemLinkList({ node, renderInline }: { node: JSONContent;
   return <div className="gem-link-list">
     <div className="gem-link-heading"><span>{setup.title}</span><small>{maxLinks > 1 ? `${maxLinks}-link` : 'No links needed'}</small></div>
     {setup.groups.map((group, groupIndex) => <ul key={groupIndex} className={`gem-link-group ${group.length > 1 ? 'is-linked' : ''}`} aria-label={group.length > 1 ? 'Linked gems' : 'Independent gem'}>
-      {group.map((row, rowIndex) => <li key={rowIndex}><span className="gem-link-dot" aria-hidden="true" /><span>{row.map(renderInline)}</span></li>)}
+      {group.map((row, rowIndex) => <li key={rowIndex}><span className={`gem-link-dot gem-${row.find((item) => item.type === 'gem')?.attrs?.color ?? 'red'}`} aria-hidden="true" /><span>{row.map(renderInline)}</span></li>)}
     </ul>)}
   </div>;
 }

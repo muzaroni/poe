@@ -115,3 +115,8 @@
   .meta-row { display: block; }
   .meta-row label { display: block; margin: 8px 0; }
 }
+
+.text-color-picker input.text-color-hex { width: 120px; padding: 6px 8px; cursor: text; color: var(--bright); background: #090c0f; font-family: inherit; }
+.text-color-picker input.text-color-hex[aria-invalid=true] { border-color: #ff6655; }
+.text-color-actions button:disabled { opacity: .45; cursor: not-allowed; }
+.editor-toolbar .toolbar-important { color: #ff6655; }

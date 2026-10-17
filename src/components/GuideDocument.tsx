@@ -73,7 +73,7 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
     case 'icon': return <img className="inline-icon" src={assetUrl(String(attrs.src ?? ''))} alt="" />;
     case 'image': return <figure><img src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? 'Guide screenshot')} loading="lazy" /><figcaption>{attrs.alt && attrs.alt !== 'Guide screenshot' ? String(attrs.alt) : ''}</figcaption></figure>;
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
-    case 'gemSetup': return <section className="gem-setup"><div className="block-eyebrow">Gem setup</div>{children}</section>;
+    case 'gemSetup': return <section className="gem-setup"><div className="block-eyebrow">GEM LINKS</div>{children}</section>;
     case 'callout': return <aside className={`callout ${attrs.tone === 'important' ? 'callout-important' : ''}`}>{children}</aside>;
     case 'pobLinks': return <div className="pob-grid">{(attrs.links ?? []).map((link: { label: string; url: string }, index: number) => <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="pob-card"><span>{link.label}</span><ExternalLink size={17} /></a>)}</div>;
     case 'horizontalRule': return <hr />;

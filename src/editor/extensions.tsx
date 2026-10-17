@@ -67,7 +67,7 @@ export const PobLinks = Node.create({
 function GemSetupEditor({ node }: NodeViewProps) {
   const [editing, setEditing] = useState(!JSON.stringify(node.toJSON()).includes('"type":"gem"'));
   return <NodeViewWrapper className="gem-setup-editor">
-    <div className="gem-setup-controls" contentEditable={false}><span className="block-eyebrow">GEM SETUP</span><button type="button" onClick={() => setEditing(!editing)}>{editing ? 'Preview setup' : 'Edit setup'}</button></div>
+    <div className="gem-setup-controls" contentEditable={false}><span className="block-eyebrow">GEM LINKS</span><button type="button" onClick={() => setEditing(!editing)}>{editing ? 'Preview setup' : 'Edit setup'}</button></div>
     <div contentEditable={false} hidden={editing} className="gem-setup-preview"><fieldset disabled><GuideDocument content={{ type: 'doc', content: [node.toJSON()] }} slug="editor-gem-preview" /></fieldset></div>
     <div hidden={!editing} className="gem-setup-source"><p contentEditable={false} className="gem-setup-hint">Use + for linked gems and commas for independent gems. Add a label such as Main: or Utility: before a setup.</p><NodeViewContent /></div>
   </NodeViewWrapper>;
