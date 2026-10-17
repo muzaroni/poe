@@ -13,7 +13,7 @@ import { Bold, CheckSquare, ChevronDown, Code2, Heading2, Heading3, ImagePlus, I
 import type { JSONContent } from '@tiptap/core';
 import { Button } from '../components/ui/Button';
 import { deleteDraft, listDrafts, saveDraft } from './drafts';
-import { Callout, Gem, GemSetup, GuideImage, Icon, PobLinks, Regex } from './extensions';
+import { Callout, Gem, GemSetup, GuideImage, Icon, PobLinks, Regex, PassiveTreeBlock } from './extensions';
 import TagInput from './TagInput';
 import { contentPath } from '../lib/search';
 import { buildDetails } from '../lib/build';
@@ -86,7 +86,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
       Placeholder.configure({ placeholder: 'Write your guide here…' }),
       TaskList,
       TaskItem.configure({ nested: true }),
-      Gem, Icon, Regex, PobLinks, GemSetup, Callout,
+      Gem, Icon, Regex, PobLinks, GemSetup, Callout, PassiveTreeBlock,
     ],
     content: guide.content,
     editorProps: {
@@ -200,7 +200,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
   async function discardDraft() {
     await deleteDraft(guide.slug);
     const saved = initialGuides.find((item) => item.slug === guide.slug);
-    const next = saved ?? initialGuides[0] ?? newGuide('New build');
+    const next = saved ?? knownGuides.find(item => item.slug !== guide.slug) ?? initialGuides[0] ?? newGuide('New build');
     setKnownGuides((current) => current.filter((item) => item.slug !== guide.slug || item.slug === saved?.slug));
     switchGuide(next, false);
     setStatus(saved ? 'Loaded project version' : 'Removed unsaved guide');
@@ -292,6 +292,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
         <button className="toolbar-important" title="Important block" aria-label="Important block" onClick={() => insert({ type: 'callout', attrs: { tone: 'important' }, content: [{ type: 'paragraph' }] })}>Important</button>
         <button title="Copyable regex" aria-label="Copyable regex" onClick={() => insert({ type: 'regex', attrs: { label: 'Regex', value: '' } })}><Code2 /></button>
         <button className="toolbar-pob" title="PoB links" aria-label="PoB links" onClick={() => insert({ type: 'pobLinks', attrs: { links: [{ label: '', url: '' }] } })}>PoB</button>
+        <button title="Insert passive tree snapshot" aria-label="Insert passive tree snapshot" className="toolbar-tree" onClick={() => insert({ type: 'passiveTree', attrs: { snapshot: { version: guide.league.startsWith('3.28') ? '3.28.0' : '3.29.1', title: 'Passive tree', width: 480, height: 240 } } })}>Tree</button>
         <button title="Image" aria-label="Image" onClick={() => fileInput.current?.click()}><ImagePlus /></button>
         <button title="Link" aria-label="Link" onClick={() => { setUrl(editor?.getAttributes('link').href ?? ''); setModal('link'); }}><Link2 /></button>
         <span className="toolbar-divider" />

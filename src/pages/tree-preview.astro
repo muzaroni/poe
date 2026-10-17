@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PassiveTreeViewer from '../components/PassiveTreeViewer';
+---
+<BaseLayout title="Passive tree viewer preview" description="Interactive passive tree viewer for Path of Exile guides">
+  <main class="shell tree-preview-main">
+    <div class="tree-preview-heading"><div class="home-kicker">VIEWER PREVIEW</div><h1>Passive skill tree</h1><p>Explore the current 3.29 tree, or load the Sunder / RF example to follow its actual 3.28 PoB stages. Green marks additions; red marks removals between stages.</p></div>
+    <PassiveTreeViewer client:only="react" />
+  </main>
+</BaseLayout>

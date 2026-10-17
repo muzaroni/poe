@@ -45,3 +45,19 @@ Cards use a local [RePoE gem export](https://repoe-fork.github.io/gems.json) and
 ## Fonts
 
 Reddit Mono and Reddit Sans are bundled locally from [reddit/redditsans](https://github.com/reddit/redditsans), licensed under the SIL Open Font License 1.1. The license is included at public/fonts/OFL.txt.
+
+## Passive tree viewer preview
+
+Open `/poe/tree-preview/` locally. The preview has pinned GGG 3.29.1 and 3.28.0 trees and locally bundled spritesheets. The Sunder/RF example imports 11 real 3.28 stages from the guide's existing PoB. Switch stages to compare allocations, search or click passives to inspect them, and use drag/scroll/pinch or keyboard navigation to move around. Ascendancy nodes have a separate view.
+
+Import accepts compressed PoB export codes or XML files for 3.28/3.29. Tree versions are matched to the export; 3.28 allocations are never silently applied to 3.29. Preview imports last until reload, and do not change guides. This is a viewer, not an allocation planner: item calculations, jewel transformations, and cluster-jewel-generated nodes are not supported. Missing node IDs are reported. Existing screenshots stay in place.
+
+Run `npm run refresh:trees` to refresh the pinned data and example stages. Review game-version updates explicitly; do not replace an existing league snapshot with a newer tree. The preview route is excluded from GoatCounter.
+
+## Inline tree blocks
+
+Use **Tree** in the local visual editor toolbar to insert a compact snapshot. Choose **Choose nodes & steps** to open the picker. Click nodes to select/deselect them, or import a PoB and choose a stage. Inspect a destination, choose **Add step marker**, add an optional instruction, and reorder the steps with the up/down buttons.
+
+The inline view defaults to 480 × 240 pixels. Automatic framing focuses the numbered destinations (or selected nodes when there are no markers), with surrounding nodes for context. Choose a width/height preset or pan/zoom and select **Use dashed crop** for manual framing. **Apply to guide** stores the selection, ordered markers, notes, version, and framing inside that block. **Save to project** writes it with the rest of the guide. Cancel closes the picker without altering the block.
+
+Readers get the compact snapshot, selectable numbered instructions, and **Expand tree** for the interactive viewer. Scrolling over the compact snapshot continues scrolling the page. Tree data and spritesheets are shared and loaded only as snapshots approach the viewport. `/poe/tree-inline-preview/` is an editable demonstration that never changes guide files and is excluded from analytics.

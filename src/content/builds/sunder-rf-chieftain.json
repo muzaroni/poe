@@ -1,8 +1,8 @@
 {
   "slug": "sunder-rf-chieftain",
-  "title": "Sunder Leveling into Pohx RF Swap",
+  "title": "Sunder Leveling",
   "subtitle": "Level with Sunder, then swap to Righteous Fire at Blood Aqueducts.",
-  "league": "3.28",
+  "league": "3.29",
   "updated": "2026-10-17",
   "content": {
     "type": "doc",
@@ -110,7 +110,38 @@
         "content": [
           {
             "type": "text",
-            "text": "REGEX"
+            "text": "Useful Resources"
+          }
+        ]
+      },
+      {
+        "type": "pobLinks",
+        "attrs": {
+          "links": [
+            {
+              "label": "3.29 Emiracles CWS Video Guide",
+              "url": "https://www.youtube.com/watch?v=2fMifC2ZAao"
+            },
+            {
+              "label": "Pohx RF Guide",
+              "url": "https://pohx.net/"
+            },
+            {
+              "label": "3.29 SpicySushi Magic Find RF Video Guide",
+              "url": "https://www.youtube.com/watch?v=7btowEqohyc"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Regex"
           }
         ]
       },
@@ -143,7 +174,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 1"
+            "text": "Act 1"
           }
         ]
       },
@@ -160,13 +191,47 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/act1.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 1 Tree",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449
+            ],
+            "mastery": {},
+            "inheritedNodes": [],
+            "markers": [
+              {
+                "nodeId": 58449,
+                "note": ""
+              },
+              {
+                "nodeId": 12795,
+                "note": ""
+              },
+              {
+                "nodeId": 14606,
+                "note": ""
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 480,
+            "height": 240
+          }
         }
       },
       {
@@ -1390,7 +1455,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 2"
+            "text": "Act 2"
           }
         ]
       },
@@ -1407,13 +1472,69 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/act2.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 2 Tree",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723
+            ],
+            "mastery": {},
+            "inheritedNodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449
+            ],
+            "markers": [
+              {
+                "nodeId": 53118,
+                "note": ""
+              },
+              {
+                "nodeId": 31961,
+                "note": ""
+              },
+              {
+                "nodeId": 63723,
+                "note": ""
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 600,
+            "height": 360
+          }
         }
       },
       {
@@ -1837,7 +1958,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 3"
+            "text": "Act 3"
           }
         ]
       },
@@ -1854,13 +1975,92 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/act3.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 3 Tree",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412
+            ],
+            "mastery": {
+              "24224": 50175
+            },
+            "inheritedNodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723
+            ],
+            "markers": [
+              {
+                "nodeId": 24224,
+                "note": "30% increased Damage while in Blood Stance  15% increased Area of Effect while in Sand Stance"
+              },
+              {
+                "nodeId": 48199,
+                "note": "Don't need notable, just the 2 small nodes for +1 Rage"
+              },
+              {
+                "nodeId": 49412,
+                "note": ""
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 600,
+            "height": 360
+          }
         }
       },
       {
@@ -2237,7 +2437,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 4"
+            "text": "Act 4"
           }
         ]
       },
@@ -2254,13 +2454,113 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/act4.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 4 Tree",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793
+            ],
+            "mastery": {
+              "24224": 50175,
+              "25934": 27095
+            },
+            "inheritedNodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412
+            ],
+            "markers": [
+              {
+                "nodeId": 25934,
+                "note": "40% increased Damage with Hits against Rare and Unique Enemies"
+              },
+              {
+                "nodeId": 63422,
+                "note": ""
+              },
+              {
+                "nodeId": 53793,
+                "note": ""
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 480,
+            "height": 240
+          }
         }
       },
       {
@@ -2613,7 +2913,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 5"
+            "text": "Act 5"
           }
         ]
       },
@@ -2630,13 +2930,139 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/act5.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 5 Tree",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822
+            ],
+            "mastery": {
+              "24224": 50175,
+              "25934": 27095
+            },
+            "inheritedNodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793
+            ],
+            "markers": [
+              {
+                "nodeId": 56359,
+                "note": "",
+                "offsetX": -63.333163997897906,
+                "offsetY": -112.59229155181849
+              },
+              {
+                "nodeId": 33287,
+                "note": "",
+                "offsetX": -56.29614577590925,
+                "offsetY": -119.62930977380717
+              },
+              {
+                "nodeId": 48822,
+                "note": "",
+                "offsetX": 140.7403644397731,
+                "offsetY": -309.6288017675009
+              }
+            ],
+            "frame": {
+              "x": -5806.145,
+              "y": 2188.2855577065397,
+              "width": 8169.97815572883,
+              "height": 4084.989077864415
+            },
+            "view": "tree",
+            "width": 600,
+            "height": 300
+          }
         }
       },
       {
@@ -2870,7 +3296,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 6"
+            "text": "Act 6"
           }
         ]
       },
@@ -2887,13 +3313,150 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/act6.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 6 Tree",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822,
+              30302,
+              53517,
+              47175,
+              63048,
+              36047,
+              15868,
+              22627,
+              50904
+            ],
+            "mastery": {
+              "24224": 50175,
+              "25934": 27095,
+              "53517": 45653
+            },
+            "inheritedNodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822
+            ],
+            "markers": [
+              {
+                "nodeId": 53517,
+                "note": "Regenerate 50 Life per second",
+                "offsetX": 77.23994967266142,
+                "offsetY": 88.82594212356064
+              },
+              {
+                "nodeId": 50904,
+                "note": "Allocate these nodes for respec later",
+                "nodeIds": [
+                  50904,
+                  22627,
+                  15868,
+                  36047,
+                  63048
+                ],
+                "offsetX": -62.5,
+                "offsetY": 575
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 480,
+            "height": 240
+          }
         }
       },
       {
@@ -3313,7 +3876,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 7"
+            "text": "Act 7"
           }
         ]
       },
@@ -3330,13 +3893,156 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/act7.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 7 Tree",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822,
+              30302,
+              53517,
+              47175,
+              63048,
+              36047,
+              15868,
+              22627,
+              50904,
+              2841,
+              5152,
+              61198,
+              22285
+            ],
+            "mastery": {
+              "2841": 64875,
+              "24224": 50175,
+              "25934": 27095,
+              "53517": 45653
+            },
+            "inheritedNodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822,
+              30302,
+              53517,
+              47175,
+              63048,
+              36047,
+              15868,
+              22627,
+              50904
+            ],
+            "markers": [
+              {
+                "nodeId": 2841,
+                "note": "12% increased Mana Reservation Efficiency of Skills"
+              },
+              {
+                "nodeId": 61198,
+                "note": ""
+              },
+              {
+                "nodeId": 22285,
+                "note": ""
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 480,
+            "height": 240
+          }
         }
       },
       {
@@ -3713,7 +4419,7 @@
         "content": [
           {
             "type": "text",
-            "text": "ACT 8"
+            "text": "Act 8"
           }
         ]
       },
@@ -3730,13 +4436,171 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/act8.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 8 Tree - Pre Swap (BA)",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822,
+              30302,
+              53517,
+              47175,
+              63048,
+              36047,
+              15868,
+              22627,
+              50904,
+              2841,
+              5152,
+              61198,
+              22285,
+              29353,
+              44202,
+              23027,
+              60472,
+              6712,
+              36949
+            ],
+            "mastery": {
+              "2841": 64875,
+              "24224": 50175,
+              "25934": 27095,
+              "53517": 45653
+            },
+            "inheritedNodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822,
+              30302,
+              53517,
+              47175,
+              63048,
+              36047,
+              15868,
+              22627,
+              50904,
+              2841,
+              5152,
+              61198,
+              22285
+            ],
+            "markers": [
+              {
+                "nodeId": 36949,
+                "note": "",
+                "positionX": -6696.23304518855,
+                "positionY": -1562.4074397042414
+              },
+              {
+                "nodeId": 60472,
+                "note": "",
+                "positionX": -7480.110313794446,
+                "positionY": -2390.5502012476763
+              }
+            ],
+            "frame": {
+              "x": -7308.834040210188,
+              "y": -1118.4649787480369,
+              "width": 3168.666664835372,
+              "height": 4158.874997596426
+            },
+            "view": "tree",
+            "width": 320,
+            "height": 420
+          }
         }
       },
       {
@@ -3780,7 +4644,7 @@
         "content": [
           {
             "type": "text",
-            "text": "LEVEL 52 RESPEC (BA)"
+            "text": "Act 9 Level 52 Respec at BA"
           }
         ]
       },
@@ -3835,7 +4699,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Spend gold to finish the respec according to tree below"
+                    "text": "Spend gold to finish the respec according to tree below."
                   }
                 ]
               }
@@ -3857,7 +4721,7 @@
                       {
                         "type": "textStyle",
                         "attrs": {
-                          "color": "#ff6655"
+                          "color": "rgb(255, 102, 85)"
                         }
                       }
                     ],
@@ -3873,7 +4737,7 @@
                       {
                         "type": "textStyle",
                         "attrs": {
-                          "color": "#65ed7f"
+                          "color": "rgb(101, 237, 127)"
                         }
                       }
                     ],
@@ -3881,7 +4745,37 @@
                   },
                   {
                     "type": "text",
-                    "text": "on tree below."
+                    "text": "on tree."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Click "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(88, 166, 255)"
+                        }
+                      }
+                    ],
+                    "text": "Expand Tree"
+                  },
+                  {
+                    "type": "text",
+                    "text": " and scroll or zoom if needed."
                   }
                 ]
               }
@@ -3890,13 +4784,289 @@
         ]
       },
       {
-        "type": "image",
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/sunder-rf/final.png",
-          "alt": "Guide screenshot",
-          "title": null,
-          "width": null,
-          "height": null
+          "snapshot": {
+            "title": "Act 8 - Respec (BA) level 52",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              12795,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              32739,
+              24383,
+              49412,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822,
+              30302,
+              53517,
+              47175,
+              63048,
+              36047,
+              15868,
+              22627,
+              50904,
+              2841,
+              5152,
+              61198,
+              22285,
+              29353,
+              44202,
+              23027,
+              60472,
+              6712,
+              36949,
+              6446,
+              10221,
+              54396,
+              2550,
+              48267,
+              27166,
+              48929,
+              25989,
+              42792,
+              29061,
+              55993,
+              8198,
+              13164,
+              10031,
+              15064,
+              12536,
+              33435,
+              41472,
+              58453,
+              1203,
+              49254,
+              26270,
+              64210,
+              5743,
+              58218,
+              7444,
+              4713,
+              6245,
+              29049,
+              5935,
+              25831,
+              21974,
+              32932
+            ],
+            "mastery": {
+              "2841": 64875,
+              "42792": 9074,
+              "48267": 55308,
+              "53517": 45653
+            },
+            "inheritedNodes": [
+              33988,
+              31628,
+              32480,
+              30335,
+              40535,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              58449,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822,
+              30302,
+              53517,
+              47175,
+              63048,
+              36047,
+              15868,
+              22627,
+              50904,
+              2841,
+              5152,
+              61198,
+              22285,
+              29353,
+              44202,
+              23027,
+              60472,
+              6712,
+              36949
+            ],
+            "respec": {
+              "title": "Act 8 Tree - Pre Swap (BA)",
+              "version": "3.29.1",
+              "classId": 1,
+              "ascendancyId": 3,
+              "nodes": [
+                33988,
+                31628,
+                32480,
+                30335,
+                40535,
+                39768,
+                12795,
+                38777,
+                2454,
+                14606,
+                58449,
+                60169,
+                34130,
+                55649,
+                44429,
+                53118,
+                30380,
+                59928,
+                63282,
+                31961,
+                63723,
+                25682,
+                49571,
+                57953,
+                12407,
+                23038,
+                24224,
+                34590,
+                48199,
+                32739,
+                24383,
+                49412,
+                15438,
+                28728,
+                35436,
+                25934,
+                40653,
+                62108,
+                28311,
+                63422,
+                53793,
+                12247,
+                56359,
+                62017,
+                33287,
+                2219,
+                48822,
+                30302,
+                53517,
+                47175,
+                63048,
+                36047,
+                15868,
+                22627,
+                50904,
+                2841,
+                5152,
+                61198,
+                22285,
+                29353,
+                44202,
+                23027,
+                60472,
+                6712,
+                36949
+              ],
+              "mastery": {
+                "2841": 64875,
+                "24224": 50175,
+                "25934": 27095,
+                "53517": 45653
+              },
+              "note": ""
+            },
+            "markers": [
+              {
+                "nodeId": 48267,
+                "note": "Regenerate 1 Life per second for each 1% Uncapped Fire Resistance",
+                "positionX": -5129.547929692868,
+                "positionY": 255.25991157258
+              },
+              {
+                "nodeId": 42792,
+                "note": "Corrupted Blood cannot be inflicted on you",
+                "positionX": -6170.927733917565,
+                "positionY": 173.66766563602891
+              },
+              {
+                "nodeId": 13164,
+                "note": "",
+                "positionX": -8648.184127617393,
+                "positionY": -1934.3164724448661
+              },
+              {
+                "nodeId": 49254,
+                "note": "",
+                "positionX": -4265.02479181864,
+                "positionY": -2694.3948556971027
+              },
+              {
+                "nodeId": 58218,
+                "note": "",
+                "positionX": -5844.190587325908,
+                "positionY": -4702.163121189031
+              },
+              {
+                "nodeId": 29049,
+                "note": "",
+                "positionX": -7068.12373259812,
+                "positionY": -5808.257635435153
+              },
+              {
+                "nodeId": 32932,
+                "note": "",
+                "positionX": -6318.986791237967,
+                "positionY": -4188.308043694617
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 800,
+            "height": 900
+          }
         }
       },
       {
@@ -4360,7 +5530,7 @@
         "content": [
           {
             "type": "text",
-            "text": "RF HEIST LINKS"
+            "text": "RF Heist Gem Links"
           }
         ]
       },
@@ -4778,7 +5948,7 @@
         "content": [
           {
             "type": "text",
-            "text": "RF MAPPING LINKS"
+            "text": "RF Mapping Gem Links"
           }
         ]
       },
@@ -5265,7 +6435,120 @@
         ]
       },
       {
-        "type": "horizontalRule"
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Next Steps"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "From this point my 3 recommendation would be:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://pohx.net/",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Pohx's RF"
+                  },
+                  {
+                    "type": "text",
+                    "text": " guide for a general all-rounder"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.youtube.com/watch?v=2fMifC2ZAao",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "Emiracles's CWS"
+                  },
+                  {
+                    "type": "text",
+                    "text": " if you're looking to specialize in Ultimatum"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.youtube.com/watch?v=7btowEqohyc",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": "SpicySushi's MF RF Guide"
+                  },
+                  {
+                    "type": "text",
+                    "text": " if you're looking for a pure magic find map blaster"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "paragraph"
@@ -5277,8 +6560,8 @@
     "sunder",
     "righteous fire",
     "leveling",
-    "3.28",
-    "league starter"
+    "league starter",
+    "3.29"
   ],
   "kind": "build",
   "ascendancy": "Chieftain"

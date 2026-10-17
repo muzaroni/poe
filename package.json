@@ -9,7 +9,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "refresh:gems": "node scripts/refresh-gems.mjs"
+    "refresh:gems": "node scripts/refresh-gems.mjs",
+    "refresh:trees": "node scripts/refresh-trees.mjs",
+    "check:trees": "node scripts/check-trees.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

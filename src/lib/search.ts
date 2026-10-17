@@ -12,6 +12,7 @@ export function normalizeTags(tags: string[]) {
 export function searchableText(node: JSONContent): string {
   return [node.text, node.type === 'gem' ? node.attrs?.name : '', node.attrs?.label,
     node.type === 'regex' ? node.attrs?.value : '',
+    node.type === 'passiveTree' ? [node.attrs?.snapshot?.title, ...(node.attrs?.snapshot?.markers ?? []).map((marker: { note?: string }) => marker.note)].filter(Boolean).join(' ') : '',
     ...(node.attrs?.links ?? []).map((link: { label?: string }) => link.label),
     ...(node.content ?? []).map(searchableText)].filter(Boolean).join(' ');
 }

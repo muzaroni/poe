@@ -1,5 +1,5 @@
 ---
-const excluded = /\/(editor|gem-cards|gem-preview)(\/|$)/.test(Astro.url.pathname);
+const excluded = /\/(editor|gem-cards|gem-preview|tree-preview|tree-inline-preview)(\/|$)/.test(Astro.url.pathname);
 const enabled = import.meta.env.PROD && !excluded;
 ---
 {enabled && <script is:inline id="site-analytics">

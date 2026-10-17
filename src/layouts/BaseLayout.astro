@@ -22,7 +22,7 @@ const trail = breadcrumbs ?? (isHome ? [] : [{ label: title }]);
     <Analytics />
   </head>
   <body>
-    <header class="site-header"><div class="shell header-inner"><a class="brand" href={base}><img class="brand-logo" src={`${base}images/branding/muzdevoto.gif`} alt="" width="64" height="64" /><span>MUZARONI <small>PATH OF EXILE GUIDES</small></span></a><HeaderSearch base={base} client:load /></div>
+    <header class="site-header"><div class="shell header-inner"><a class="brand" href={base}><img class="brand-logo" src={`${base}images/branding/muzdevoto.gif`} alt="" width="64" height="64" /><span>MUZARONI <small>PATH OF EXILE GUIDES</small></span></a><HeaderSearch base={base} client:load />{import.meta.env.DEV && <a class="local-editor-link" href={`${base}editor/`}>Editor</a>}</div>
       <nav class="shell site-breadcrumb" aria-label="Breadcrumb"><ol>
         <li><a href={base}>Home</a></li>
         {trail.map((crumb, index) => <li><span class="breadcrumb-separator" aria-hidden="true">/</span>{index === trail.length - 1 ? <span class="breadcrumb-current" aria-current="page" title={crumb.label}>{crumb.label}</span> : <a href={crumb.href}>{crumb.label}</a>}</li>)}

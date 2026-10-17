@@ -514,15 +514,44 @@
         ]
       },
       {
-        "type": "image",
+        "type": "paragraph"
+      },
+      {
+        "type": "passiveTree",
         "attrs": {
-          "src": "/images/uploads/brave-eazeyrtmdq-c4581d14.png",
-          "alt": "brave_EAzEyrTmdQ",
-          "title": null,
-          "width": null,
-          "height": null,
-          "caption": "Arcanist Dominion ➜ Deep Wisdom",
-          "widthPercent": 30
+          "snapshot": {
+            "title": "Act 1 Tree",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929
+            ],
+            "mastery": {},
+            "markers": [
+              {
+                "nodeId": 11420,
+                "note": ""
+              },
+              {
+                "nodeId": 27929,
+                "note": ""
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 480,
+            "height": 240
+          }
         }
       },
       {

@@ -1,10 +1,11 @@
+import TreeBlockEditor from './TreeBlockEditor';
 import { gemDisplayName } from '../lib/gems';
 import { Node, mergeAttributes } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper, ReactNodeViewRenderer, type NodeViewProps } from '@tiptap/react';
 import { X, Plus } from 'lucide-react';
 import Image from '@tiptap/extension-image';
 import { assetUrl } from '../lib/guide';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GuideDocument from '../components/GuideDocument';
 
 export const Gem = Node.create({
@@ -62,18 +63,22 @@ export const Regex = Node.create({
 });
 
 function PobView({ node, updateAttributes }: NodeViewProps) {
-  const links = (node.attrs.links ?? []) as { label: string; url: string }[];
+  type PobLink = { label: string; url: string };
+  // Keep typing synchronous; node-view attribute updates can arrive after React's input event.
+  const [links, setLinks] = useState<PobLink[]>(() => node.attrs.links ?? []);
+  useEffect(() => { setLinks(node.attrs.links ?? []); }, [node.attrs.links]);
+  function saveLinks(next: PobLink[]) { setLinks(next); updateAttributes({ links: next }); }
   function update(index: number, key: 'label' | 'url', value: string) {
-    updateAttributes({ links: links.map((link, i) => i === index ? { ...link, [key]: value } : link) });
+    saveLinks(links.map((link, i) => i === index ? { ...link, [key]: value } : link));
   }
-  return <NodeViewWrapper className="editor-special pob-editor">
+  return <NodeViewWrapper className="editor-special pob-editor" contentEditable={false}>
     <div className="block-eyebrow">PATH OF BUILDING LINKS</div>
     {links.map((link, index) => <div className="pob-editor-row" key={index}>
       <input aria-label={`PoB ${index + 1} label`} value={link.label} onChange={(e) => update(index, 'label', e.target.value)} placeholder="Label" />
       <input aria-label={`PoB ${index + 1} URL`} value={link.url} onChange={(e) => update(index, 'url', e.target.value)} placeholder="https://pobb.in/..." />
-      <button type="button" aria-label="Remove link" onClick={() => updateAttributes({ links: links.filter((_, i) => i !== index) })}><X size={16} /></button>
+      <button type="button" aria-label="Remove link" onClick={() => saveLinks(links.filter((_, i) => i !== index))}><X size={16} /></button>
     </div>)}
-    <button type="button" className="editor-add-link" onClick={() => updateAttributes({ links: [...links, { label: '', url: '' }] })}><Plus size={15} /> Add PoB link</button>
+    <button type="button" className="editor-add-link" onClick={() => saveLinks([...links, { label: '', url: '' }])}><Plus size={15} /> Add PoB link</button>
   </NodeViewWrapper>;
 }
 export const PobLinks = Node.create({
@@ -106,4 +111,12 @@ export const Callout = Node.create({
   parseHTML() { return [{ tag: 'aside[data-callout]' }]; },
   renderHTML({ HTMLAttributes }) { return ['aside', mergeAttributes(HTMLAttributes, { 'data-callout': '' }), 0]; },
   addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper className={`callout ${node.attrs.tone === 'important' ? 'callout-important' : ''}`}><NodeViewContent /></NodeViewWrapper>); },
+});
+
+export const PassiveTreeBlock = Node.create({
+  name: 'passiveTree', group: 'block', atom: true, draggable: false,
+  addAttributes() { return { snapshot: { default: {}, parseHTML: element => { try { return JSON.parse(element.getAttribute('data-snapshot') ?? '{}'); } catch { return {}; } }, renderHTML: attributes => ({ 'data-snapshot': JSON.stringify(attributes.snapshot) }) } }; },
+  parseHTML() { return [{ tag: 'section[data-passive-tree]' }]; },
+  renderHTML({ HTMLAttributes }) { return ['section', mergeAttributes(HTMLAttributes, { 'data-passive-tree': '' })]; },
+  addNodeView() { return ReactNodeViewRenderer(TreeBlockEditor); },
 });

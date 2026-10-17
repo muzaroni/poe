@@ -1,3 +1,4 @@
+import TreeBlock from './TreeBlock';
 import { gemDisplayName } from '../lib/gems';
 import { useEffect, useState, type ReactNode } from 'react';
 import type { JSONContent } from '@tiptap/core';
@@ -79,6 +80,7 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
       return <figure><img className={width == null ? undefined : 'has-custom-width'} style={width == null ? undefined : { width: `${width}%`, height: 'auto' }} src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? '')} loading="lazy" />{caption && <figcaption>{String(caption)}</figcaption>}</figure>;
     }
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
+    case 'passiveTree': return <TreeBlock snapshot={attrs.snapshot ?? {}} />;
     case 'gemSetup': return <section className="gem-setup"><div className="block-eyebrow">GEM LINKS</div>{children}</section>;
     case 'callout': return <aside className={`callout ${attrs.tone === 'important' ? 'callout-important' : ''}`}>{children}</aside>;
     case 'pobLinks': return <div className="pob-grid">{(attrs.links ?? []).map((link: { label: string; url: string }, index: number) => <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="pob-card"><span>{link.label}</span><ExternalLink size={17} /></a>)}</div>;
