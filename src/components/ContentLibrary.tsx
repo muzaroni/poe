@@ -24,11 +24,11 @@ export default function ContentLibrary({ entries, base }: { entries: SearchEntry
     {query && <div className="library-query">Results for “{query}” <button type="button" onClick={() => setQuery('')} aria-label="Clear search query">Clear ×</button></div>}
     {tag && <div className="library-query">Tagged “{tag}” <button type="button" onClick={() => setTag('')} aria-label="Clear tag filter">Clear ×</button></div>}
     <p className="search-count" role="status">{results.length} {results.length === 1 ? 'result' : 'results'}</p>
-    <div className="build-grid">{results.map((entry) => <article className="build-card" key={entry.slug}>
+    <div className="build-grid">{results.map((entry) => <a className="build-card" key={entry.slug} href={`${base}${entry.path}`} aria-label={`Read ${entry.title}`}>
       <div className="build-card-top"><span className={`league-pill ${ascendancyBadgeClass(entry)}`}><span>{buildLabel(entry)}</span></span><span className="card-arrow" aria-hidden>↗</span></div>
-      <h2><a href={`${base}${entry.path}`}>{entry.title}</a></h2><p>{entry.subtitle}</p>
-      <div className="build-card-foot"><span>{entry.kind === 'article' ? 'ARTICLE' : 'FULL GUIDE'}</span><a href={`${base}${entry.path}`}>Read {entry.kind === 'article' ? 'article' : 'guide'} →</a></div>
-    </article>)}</div>
+      <h2>{entry.title}</h2><p>{entry.subtitle}</p>
+      <div className="build-card-foot"><span>{entry.kind === 'article' ? 'ARTICLE' : 'FULL GUIDE'}</span><span>Read {entry.kind === 'article' ? 'article' : 'guide'} →</span></div>
+    </a>)}</div>
     {!results.length && <div className="search-empty"><p>No matching guides or articles. Try a different search or clear your filters.</p><button onClick={() => { setQuery(''); setTag(''); setKind('all'); }}>Clear search</button></div>}
   </section>;
 }
