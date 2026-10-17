@@ -1,3 +1,4 @@
+import { gemDisplayName } from '../lib/gems';
 import { useEffect, useRef, useState } from 'react';
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
@@ -54,6 +55,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
   const [draftState, setDraftState] = useState('');
   const [ready, setReady] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
+  const draftInput = useRef<HTMLInputElement>(null);
 
   const editor = useEditor({
     extensions: [
@@ -114,7 +116,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
   useEffect(() => {
     if (!ready) return;
     const timeout = window.setTimeout(() => {
-      saveDraft(guide).then(() => setDraftState('Draft saved automatically')).catch(() => setDraftState('Draft storage unavailable'));
+      saveDraft(guide).then(() => setDraftState('Draft saved in this browser')).catch(() => setDraftState('Draft storage unavailable'));
     }, 650);
     return () => window.clearTimeout(timeout);
   }, [guide, ready]);
@@ -124,6 +126,34 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     editor?.commands.setContent(next.content, { emitUpdate: false });
     try { localStorage.setItem('poe-active-guide', next.slug); } catch { /* private browsing */ }
     setDraftState('');
+  }
+
+  function downloadDraft() {
+    if (!editor || !ready) return;
+    const payload = { ...guide, content: editor.getJSON() };
+    const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }));
+    const link = document.createElement('a');
+    link.href = url; link.download = `${guide.slug}-draft.json`; link.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setStatus('Draft downloaded. Import it in the local editor, then Save to project.');
+  }
+
+  async function importDraft(file?: File) {
+    if (!file || !editor || !ready) return;
+    try {
+      if (file.size > 8 * 1024 * 1024) throw new Error('Draft file is too large (maximum 8 MB).');
+      const draft = JSON.parse(await file.text());
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(draft.slug ?? '') || typeof draft.title !== 'string' || !draft.title.trim() || draft.content?.type !== 'doc' || !Array.isArray(draft.content.content)) throw new Error('Choose a guide draft JSON file.');
+      if (draft.kind != null && !['build', 'article'].includes(draft.kind)) throw new Error('Unknown content type.');
+      if (draft.tags != null && (!Array.isArray(draft.tags) || draft.tags.some((tag: unknown) => typeof tag !== 'string'))) throw new Error('Invalid draft tags.');
+      // Keep the current version available as a download before replacing it.
+      downloadDraft();
+      const imported: Guide = { ...draft, subtitle: draft.subtitle ?? '', league: draft.league ?? '', updated: draft.updated ?? localDate() };
+      await saveDraft(imported);
+      setKnownGuides((current) => [...current.filter((item) => item.slug !== imported.slug), imported]);
+      switchGuide(imported);
+      setStatus('Draft imported. Review it, then click Save to project. Your previous guide was downloaded as a backup.');
+    } catch (error) { setStatus(error instanceof Error ? error.message : 'Could not import draft'); }
   }
 
   async function discardDraft() {
@@ -165,7 +195,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     <div className="editor-controls">
     <div className="editor-topbar">
       <div className="editor-topbar-main"><div className="editor-select"><select aria-label="Choose guide or article" value={guide.slug} onChange={(event) => { const next = knownGuides.find((item) => item.slug === event.target.value); if (next) switchGuide(next); }}><option value={guide.slug}>{guide.title}</option>{knownGuides.filter((item) => item.slug !== guide.slug).map((item) => <option key={item.slug} value={item.slug}>{item.title}</option>)}</select><ChevronDown size={15} /></div><Button variant="ghost" onClick={() => setModal('new')}><Plus size={16} /> New content</Button></div>
-      <div className="editor-topbar-actions"><span className="save-status">{draftState}</span><Button variant="primary" onClick={saveToProject} disabled={!localServer}><Save size={16} /> Save to project</Button></div>
+      <div className="editor-topbar-actions"><span className="save-status">{draftState}</span><Button variant="secondary" disabled={!ready} onClick={downloadDraft}>Download draft</Button><Button variant="secondary" disabled={!ready} onClick={() => draftInput.current?.click()}>Import draft</Button><input ref={draftInput} type="file" accept=".json,application/json" hidden onChange={(event) => { void importDraft(event.target.files?.[0]); event.target.value = ''; }} /><Button variant="primary" onClick={saveToProject} disabled={!localServer}><Save size={16} /> Save to project</Button></div>
     </div>
       <div className="editor-toolbar" role="toolbar" aria-label="Formatting and blocks">
         <button title="Heading 2" aria-label="Heading 2" onClick={() => editor?.chain().focus().toggleHeading({ level: 2 }).run()}><Heading2 /></button>
@@ -196,7 +226,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     </div></div>
     <Dialog.Root open={modal !== null} onOpenChange={(open) => { if (!open) setModal(null); }}><Dialog.Portal><Dialog.Overlay className="dialog-overlay" /><Dialog.Content className="dialog-content"><Dialog.Close className="dialog-close" aria-label="Close"><X size={18} /></Dialog.Close>
       {modal === 'color' && <><Dialog.Title>Text color</Dialog.Title><Dialog.Description>Select text to recolor it, or choose a color for what you type next.</Dialog.Description><div className="text-color-presets" role="group" aria-label="Color presets">{[{ name: 'Red', color: '#ff6655' }, { name: 'Blue', color: '#58a6ff' }, { name: 'Green', color: '#65ed7f' }, { name: 'Unique', color: '#975b07' }].map((preset) => <button key={preset.name} type="button" style={{ color: preset.color }} onClick={() => { setTextColor(preset.color); editor?.chain().focus().setColor(preset.color).run(); setModal(null); }}><span style={{ backgroundColor: preset.color }} aria-hidden="true" />{preset.name}</button>)}</div><div className="text-color-picker"><label htmlFor="text-color">Choose a color</label><input id="text-color" type="color" value={validTextColor ? textColor.trim() : "#b9bdc1"} onChange={(event) => setTextColor(event.target.value)} /><label htmlFor="text-color-hex">Hex code</label><input id="text-color-hex" className="text-color-hex" type="text" placeholder="#975b07" spellCheck={false} value={textColor} aria-invalid={!validTextColor} onChange={(event) => setTextColor(event.target.value)} /></div><div className="text-color-actions"><Button variant="primary" disabled={!validTextColor} onClick={() => { editor?.chain().focus().setColor(textColor.trim()).run(); setModal(null); }}>Apply color</Button><Button variant="secondary" onClick={() => { editor?.chain().focus().unsetColor().run(); setModal(null); }}>Reset to default</Button></div></>}
-      {modal === 'gem' && <><Dialog.Title>Insert a gem</Dialog.Title><Dialog.Description>Search by name. The correct socket color is applied automatically.</Dialog.Description><input autoFocus className="dialog-input" placeholder="Search 900+ gems…" value={query} onChange={(event) => setQuery(event.target.value)} /><div className="gem-results">{filteredGems.map((gem) => <button key={gem.name} type="button" onClick={() => { insert({ type: 'gem', attrs: { name: gem.name, color: gem.color } }); setModal(null); }}><span className={`gem gem-${gem.color}`}>{gem.name}</span></button>)}</div></>}
+      {modal === 'gem' && <><Dialog.Title>Insert a gem</Dialog.Title><Dialog.Description>Search by name. The correct socket color is applied automatically.</Dialog.Description><input autoFocus className="dialog-input" placeholder="Search 900+ gems…" value={query} onChange={(event) => setQuery(event.target.value)} /><div className="gem-results">{filteredGems.map((gem) => <button key={gem.name} type="button" onClick={() => { insert({ type: 'gem', attrs: { name: gem.name, color: gem.color } }); setModal(null); }}><span className={`gem gem-${gem.color}`}>{gemDisplayName(gem.name)}</span></button>)}</div></>}
       {modal === 'link' && <><Dialog.Title>Add a link</Dialog.Title><Dialog.Description>Apply a URL to selected text.</Dialog.Description><input autoFocus className="dialog-input" placeholder="https://…" value={url} onChange={(event) => setUrl(event.target.value)} /><Button variant="primary" onClick={() => { if (url.trim()) editor?.chain().focus().setLink({ href: url.trim() }).run(); else editor?.chain().focus().unsetLink().run(); setModal(null); }}>Apply link</Button></>}
       {modal === 'new' && <><Dialog.Title>New guide or article</Dialog.Title><Dialog.Description>Build guides start with a campaign outline. Articles start with a blank overview.</Dialog.Description><label htmlFor="new-content-kind">Content type</label><select id="new-content-kind" className="dialog-input" value={newKind} onChange={(event) => setNewKind(event.target.value as 'build' | 'article')}><option value="build">Build guide</option><option value="article">Article</option></select><input autoFocus className="dialog-input" placeholder="Title" value={newTitle} onChange={(event) => setNewTitle(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter' && newTitle.trim()) { const next = newGuide(newTitle.trim(), newKind); setKnownGuides((old) => [...old, next]); switchGuide(next); setNewTitle(''); setModal(null); } }} /><Button variant="primary" onClick={() => { if (!newTitle.trim()) return; const next = newGuide(newTitle.trim(), newKind); setKnownGuides((old) => [...old, next]); switchGuide(next); setNewTitle(''); setModal(null); }}>Create page</Button></>}
     </Dialog.Content></Dialog.Portal></Dialog.Root>

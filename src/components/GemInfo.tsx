@@ -1,3 +1,4 @@
+import { gemDisplayName } from '../lib/gems';
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import { assetUrl } from '../lib/guide';
@@ -35,7 +36,7 @@ function Panel({ detail, level, setLevel }: { detail: GemDetail; level: string; 
   const stats = detail.levels[level];
   const requirements = Object.entries(stats?.requirements ?? {}).filter(([, value]) => value != null && value > 0).map(([key, value]) => `${value} ${{ str: 'Strength', dex: 'Dexterity', int: 'Intelligence' }[key] ?? key}`);
   return <div className="gem-info-panel" style={{ '--gem-color': colors[detail.color] } as CSSProperties}>
-    <header className="gem-info-heading"><GemIcon gem={detail} /><div><h2>{detail.name}</h2><span>{detail.support ? 'Support gem' : 'Active skill gem'}</span></div></header>
+    <header className="gem-info-heading"><GemIcon gem={detail} /><div><h2>{gemDisplayName(detail.name)}</h2><span>{detail.support ? 'Support gem' : 'Active skill gem'}</span></div></header>
     <div className="gem-info-body"><p className="gem-info-tags">{detail.tags.join(' · ')}</p>
       <label className="gem-info-level">Gem level<select value={level} onChange={(event) => setLevel(event.target.value)}>{Object.keys(detail.levels).map((number) => <option key={number} value={number}>{number}</option>)}</select><span>Stats at this level · Base quality</span></label>
       {stats && <><dl className="gem-info-fields">{stats.fields.map(([name, value]) => <div key={name}><dt>{name}</dt><dd>{value}</dd></div>)}</dl><p className="gem-info-requirements">Requires character level <b>{stats.requiredLevel ?? '—'}</b>{requirements.length > 0 && <> · {requirements.join(' · ')}</>}</p></>}
@@ -125,10 +126,10 @@ export default function GemInfo() {
   }, [compact]);
   if (!mounted) return null;
   return createPortal(<>
-    {compact && !full && <div ref={compactElement} className="gem-info-compact" role="tooltip" style={{ '--gem-color': colors[compact.gem.color] } as CSSProperties}><div className="gem-info-compact-heading"><GemIcon gem={compact.gem} /><strong>{compact.gem.name}</strong></div><p>{compact.gem.tags.slice(0, 5).join(' · ')}</p><span>{compact.gem.description ? compact.gem.description.split(/(?<=[.!?])\s/)[0] : compact.gem.support ? 'Support gem' : 'Active skill gem'}</span><small>Click for full gem details</small></div>}
+    {compact && !full && <div ref={compactElement} className="gem-info-compact" role="tooltip" style={{ '--gem-color': colors[compact.gem.color] } as CSSProperties}><div className="gem-info-compact-heading"><GemIcon gem={compact.gem} /><strong>{gemDisplayName(compact.gem.name)}</strong></div><p>{compact.gem.tags.slice(0, 5).join(' · ')}</p><span>{compact.gem.description ? compact.gem.description.split(/(?<=[.!?])\s/)[0] : compact.gem.support ? 'Support gem' : 'Active skill gem'}</span><small>Click for full gem details</small></div>}
     <dialog ref={dialog} className="gem-info-dialog" aria-label={`${full?.gem?.name ?? full?.name ?? 'Gem'} details`} onCancel={(event) => { event.preventDefault(); close(); }} onClose={() => { if (fullRef.current) close(); }} onClick={(event) => { if (event.target !== event.currentTarget) return; const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) close(); }}>
       <button type="button" className="gem-info-close" aria-label="Close gem details" onClick={close}>×</button>
-      <div className="gem-info-scroll">{full?.options && full.options.length > 1 && <div className="gem-info-alternatives" aria-label="Choose an alternative gem">{full.options.map((gem) => <button key={gem.id} type="button" aria-pressed={full.gem?.id === gem.id} onClick={() => setFull({ ...full, gem })}>{gem.name}</button>)}</div>}
+      <div className="gem-info-scroll">{full?.options && full.options.length > 1 && <div className="gem-info-alternatives" aria-label="Choose an alternative gem">{full.options.map((gem) => <button key={gem.id} type="button" aria-pressed={full.gem?.id === gem.id} onClick={() => setFull({ ...full, gem })}>{gemDisplayName(gem.name)}</button>)}</div>}
         {detail ? <Panel detail={detail} level={level} setLevel={setLevel} /> : <div className="gem-info-loading" role="status"><h2>{full?.name}</h2><p>{failed ? 'Detailed data is unavailable for this gem.' : 'Loading gem details…'}</p>{failed && <a href={`https://www.poewiki.net/wiki/Special:Search?search=${encodeURIComponent(full?.name ?? '')}`} target="_blank" rel="noopener noreferrer">Find this gem on PoE Wiki ↗</a>}</div>}
       </div>
     </dialog>

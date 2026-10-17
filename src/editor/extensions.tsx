@@ -1,3 +1,4 @@
+import { gemDisplayName } from '../lib/gems';
 import { Node, mergeAttributes } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper, ReactNodeViewRenderer, type NodeViewProps } from '@tiptap/react';
 import { X, Plus } from 'lucide-react';
@@ -11,7 +12,7 @@ export const Gem = Node.create({
   addAttributes() { return { name: { default: '' }, color: { default: 'red' } }; },
   parseHTML() { return [{ tag: 'span[data-gem]' }]; },
   renderHTML({ HTMLAttributes }) { return ['span', mergeAttributes(HTMLAttributes, { 'data-gem': '', class: `gem gem-${HTMLAttributes.color}` }), HTMLAttributes.name]; },
-  addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper as="span" className={`gem gem-${node.attrs.color}`} contentEditable={false}><button type="button" className={`gem gem-${node.attrs.color}`} data-gem-info={node.attrs.name} aria-haspopup="dialog" aria-label={`${node.attrs.name}: gem details`}>{node.attrs.name}</button></NodeViewWrapper>); },
+  addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper as="span" className={`gem gem-${node.attrs.color}`} contentEditable={false}><button type="button" className={`gem gem-${node.attrs.color}`} data-gem-info={node.attrs.name} aria-haspopup="dialog" aria-label={`${gemDisplayName(node.attrs.name)}: gem details`}>{gemDisplayName(node.attrs.name)}</button></NodeViewWrapper>); },
 });
 
 export const Icon = Node.create({

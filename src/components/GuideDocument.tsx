@@ -1,3 +1,4 @@
+import { gemDisplayName } from '../lib/gems';
 import { useEffect, useState, type ReactNode } from 'react';
 import type { JSONContent } from '@tiptap/core';
 import { Check, Copy, ExternalLink } from 'lucide-react';
@@ -69,7 +70,7 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
     case 'orderedList': return <ol className="prose-list">{children}</ol>;
     case 'listItem': return <li>{children}</li>;
     case 'taskList': return <ul className={`reader-task-list ${gemSetup ? 'gem-link-grid' : ''}`}>{(node.content ?? []).map((item, index) => <ChecklistItem key={index} node={item} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup} />)}</ul>;
-    case 'gem': return <button type="button" className={`gem gem-${attrs.color ?? 'red'}`} data-gem-info={String(attrs.name ?? '')} aria-haspopup="dialog" aria-label={`${attrs.name}: gem details`}>{attrs.name}</button>;
+    case 'gem': return <button type="button" className={`gem gem-${attrs.color ?? 'red'}`} data-gem-info={String(attrs.name ?? '')} aria-haspopup="dialog" aria-label={`${gemDisplayName(String(attrs.name ?? ''))}: gem details`}>{gemDisplayName(String(attrs.name ?? ''))}</button>;
     case 'icon': return <img className="inline-icon" src={assetUrl(String(attrs.src ?? ''))} alt="" />;
     case 'image': return <figure><img src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? 'Guide screenshot')} loading="lazy" /><figcaption>{attrs.alt && attrs.alt !== 'Guide screenshot' ? String(attrs.alt) : ''}</figcaption></figure>;
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
