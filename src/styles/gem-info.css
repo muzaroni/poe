@@ -32,7 +32,7 @@
 .gem-info-quality > span { color: #a1a9b3; font-size: 12px; }
 .gem-info-quality p { color: #9eaaf4; margin: 4px 0; }
 .gem-info-body footer { border-top: 1px solid #25333e; margin-top: 10px; padding-top: 8px; }
-.gem-info-body footer a, .gem-info-loading a { color: var(--accent-light); font-size: 12px; }
+.gem-info-body footer a, .gem-info-loading a { color: var(--link); font-size: 12px; }
 .gem-info-body footer span { display: block; color: #87929c; font-size: 11px; margin-top: 5px; }
 .gem-info-loading { padding: 20px 38px 20px 16px; }
 .gem-info-loading h2 { font-family: var(--header-font); font-size: 22px; margin: 0; }

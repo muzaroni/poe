@@ -36,6 +36,8 @@
   --bright: #e4e5e3;
   --accent: #e2bc55;
   --accent-light: #f0d57a;
+  --link: #79b8ff;
+  --link-hover: #afd4ff;
   --header-font: "Reddit Sans", sans-serif;
 }
 
@@ -155,7 +157,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--header-font); }
 .guide-content h3 { color: #d3d5d4; font-size: 21px; font-weight: 650; line-height: 1.28; margin: 19px 0 7px; scroll-margin-top: calc(var(--site-header-height) + 18px); }
 .guide-content h4 { color: #c9cccb; font-size: 18px; margin: 15px 0 6px; }
 .guide-content p { margin: 7px 0; }
-.guide-content a:not(.pob-card) { color: var(--accent-light); text-decoration: underline; text-decoration-color: #e2bc5566; text-underline-offset: 2px; }
+.guide-content a:not(.pob-card) { color: var(--link); text-decoration: underline; text-decoration-color: #79b8ff66; text-underline-offset: 2px; }
+.guide-content a:not(.pob-card):hover { color: var(--link-hover); text-decoration-color: currentColor; }
 .guide-content a svg { display: inline; vertical-align: middle; margin-left: 2px; }
 .guide-content hr { border: 0; border-top: 1px solid #20252b; margin: 29px 0 0; }
 .guide-content figure { margin: 13px 0 17px; }
@@ -208,9 +211,9 @@ ol.prose-list, .tiptap ol { list-style-type: decimal; padding-left: 24px; }
 .regex-head button { display: flex; align-items: center; gap: 5px; border: 1px solid #30363d; background: #171c21; color: #c7c9c8; border-radius: 3px; padding: 3px 6px; font-size: 14px; }
 .regex-card > code { display: block; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--accent-light); font-size: 18px; line-height: 1.5; padding: 9px; }
 .pob-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 5px; margin: 12px 0; }
-.pob-card { display: flex; justify-content: space-between; gap: 9px; align-items: center; border-bottom: 1px solid #222930; padding: 6px 0; color: #ced1d0; font-size: 16px; line-height: 1.4; }
-.pob-card:hover { border-color: #5c4d27; color: var(--accent-light); }
-.pob-card svg { color: #b89a48; flex: none; }
+.pob-card { display: flex; justify-content: space-between; gap: 9px; align-items: center; border-bottom: 1px solid #222930; padding: 6px 0; color: var(--link); font-size: 16px; line-height: 1.4; }
+.pob-card:hover { border-color: #41658c; color: var(--link-hover); }
+.pob-card svg { color: var(--link); flex: none; }
 
 @media (max-width: 980px) {
   .guide-shell { grid-template-columns: 175px minmax(0, 1fr); gap: 26px; }
