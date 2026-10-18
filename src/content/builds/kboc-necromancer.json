@@ -152,369 +152,9 @@
         "content": [
           {
             "type": "text",
-            "text": "General Notes"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "You should mule a ranger first for "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Momentum Support",
-                      "color": "green"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " and have an extra check on the vendor for move speed boots or iron rings (last resort 3 Link items) "
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Prioritize getting at least 1 iron ring if you have extra scrolls in act 1, buying 2 rings for 6 scrolls might cause you to run out for other items/gems that you need later on"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Make sure to get at least 2 3-link items before "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "rgb(151, 91, 7)"
-                        }
-                      }
-                    ],
-                    "text": "Merveil"
-                  },
-                  {
-                    "type": "text",
-                    "text": " (preferably not boots cuz move speed)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Hit level 12 before "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Merveil"
-                  },
-                  {
-                    "type": "text",
-                    "text": " and get the two "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Kinetic Fusillade",
-                      "color": "blue"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " 3 link setup going and use flame wall to ignite the projectiles for more fire damage, must shoot through the wall for extra dmg"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#ff6655"
-                        }
-                      },
-                      {
-                        "type": "bold"
-                      }
-                    ],
-                    "text": "IMPORTANT"
-                  },
-                  {
-                    "type": "text",
-                    "text": ": After normal lab, take "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Commander of Darkness"
-                  },
-                  {
-                    "type": "text",
-                    "text": " Ascendancy node first, and then respec with Faustus after Cruel lab (around 4k gold) to take "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Corpse pact"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "In Act 3, make sure to start having flat elemental damage on gloves/rings/amulet/wand, definitely craft the flat fire damage on the wand after Solaris Temple"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "If you are lacking damage, make sure to see if you can craft flat damage on gloves/ring/amulet/wand, its roughly 10% more damage for every crafted modifier"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "You CAN skip library if you are not planning to use KB until after cruel lab where you can get it at "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Lily Roth"
-                  },
-                  {
-                    "type": "text",
-                    "text": " then"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Immolate Support",
-                      "color": "blue"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " support is much stronger than other supports for wand skills in campaign but make sure to have at least 1 fire damage to attack modifier on gear for more consistent ignites"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#ff6655"
-                        }
-                      },
-                      {
-                        "type": "bold"
-                      }
-                    ],
-                    "text": "IMPORTANT"
-                  },
-                  {
-                    "type": "text",
-                    "text": ": When you start using "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Kinetic Fusillade",
-                      "color": "blue"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": ", I used "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Multiple Projectiles Support",
-                      "color": "green"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " / "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Greater Multiple Projectiles Support",
-                      "color": "green"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " supports because that allows you to just cast 1-2 times before reaching max stacks for max damage, this allows more smooth gameplay so you can kite and move around after 1-2 casts per KF gem, do not spam more than 2 times per gem for stacking projectiles or else you are just wasting damage"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#58a6ff"
-                        }
-                      },
-                      {
-                        "type": "bold"
-                      }
-                    ],
-                    "text": "ENTERING MAPS"
-                  },
-                  {
-                    "type": "text",
-                    "text": ": I did a test run on stream and its safe to say that regular KB can reach to red maps with campaign gear with ease but should be looking to buy the transfig gem KBoC as soon as possible when you reach act 10"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "paragraph"
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 2
-        },
-        "content": [
-          {
-            "type": "text",
             "text": "Act 1"
           }
         ]
-      },
-      {
-        "type": "paragraph"
       },
       {
         "type": "passiveTree",
@@ -621,7 +261,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Vendor check"
+                    "text": "Vendor check for move speed boots or iron rings"
                   }
                 ]
               }
@@ -1574,6 +1214,168 @@
         ]
       },
       {
+        "type": "callout",
+        "attrs": {
+          "tone": "important"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Make sure to get at least 2 x 3-link items before "
+                      },
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "rgb(151, 91, 7)"
+                            }
+                          }
+                        ],
+                        "text": "Merveil"
+                      },
+                      {
+                        "type": "text",
+                        "text": " (preferably not boots because of move speed)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Hit level 12 before "
+                      },
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "rgb(151, 91, 7)"
+                            }
+                          }
+                        ],
+                        "text": "Merveil"
+                      },
+                      {
+                        "type": "text",
+                        "text": " and get the two "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " 3 link setup going and use flame wall to ignite the projectiles for more fire damage"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "bulletList",
+                    "content": [
+                      {
+                        "type": "listItem",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "type": "text",
+                                "text": "Must shoot through the flame wall for extra damage"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "rgb(255, 102, 85)"
+                            }
+                          }
+                        ],
+                        "text": "IMPORTANT"
+                      },
+                      {
+                        "type": "text",
+                        "text": ": When you start using "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", I used "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Multiple Projectiles Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " or "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " supports because that allows you to just cast 1-2 times before reaching max stacks for max damage, this allows more smooth gameplay so you can kite and move around after 1-2 casts per KF gem, do not spam more than 2 times per gem for stacking projectiles or else you are just wasting damage"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "type": "gemSetup",
         "attrs": {
           "changeOverrides": null,
@@ -1765,11 +1567,14 @@
         },
         "content": [
           {
-            "type": "paragraph",
+            "type": "heading",
+            "attrs": {
+              "level": 3
+            },
             "content": [
               {
                 "type": "text",
-                "text": "Alternate double KF skills for 18 projectiles"
+                "text": "Level 12: Mervail"
               }
             ]
           },
@@ -2763,6 +2568,133 @@
         }
       },
       {
+        "type": "callout",
+        "attrs": {
+          "tone": "important"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "#ff6655"
+                    }
+                  }
+                ],
+                "text": "IMPORTANT"
+              },
+              {
+                "type": "text",
+                "text": ": Make sure to start having flat elemental damage on gloves/rings/amulet/wand, craft "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "#ff6655"
+                    }
+                  },
+                  {
+                    "type": "underline"
+                  }
+                ],
+                "text": "flat fire damage"
+              },
+              {
+                "type": "text",
+                "text": " on the wand after Solaris Temple. It's roughly 10% more damage for every crafted modifier"
+              }
+            ]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "rgb(184, 144, 95)"
+                            }
+                          }
+                        ],
+                        "text": "Adds (8–11) to (16–20) Fire Damage to Attacks "
+                      },
+                      {
+                        "type": "text",
+                        "text": "4 "
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/trans.png",
+                          "name": "Orb of Transmutation"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " - Rings & Amulets"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "rgb(184, 144, 95)"
+                            }
+                          }
+                        ],
+                        "text": "Adds (11–12) to (19–23) Fire Damage "
+                      },
+                      {
+                        "type": "text",
+                        "text": "4 "
+                      },
+                      {
+                        "type": "icon",
+                        "attrs": {
+                          "src": "/images/sunder-rf/trans.png",
+                          "name": "Orb of Transmutation"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " - Wand"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "type": "heading",
         "attrs": {
           "level": 3
@@ -3649,34 +3581,61 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "important"
+        },
+        "content": [
           {
-            "type": "listItem",
+            "type": "paragraph",
             "content": [
               {
-                "type": "paragraph",
-                "content": [
+                "type": "text",
+                "marks": [
                   {
-                    "type": "text",
-                    "text": "Take "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "rgb(151, 91, 7)"
-                        }
-                      }
-                    ],
-                    "text": "Commander of Darkness"
-                  },
-                  {
-                    "type": "text",
-                    "text": " for first ascendancy"
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(255, 102, 85)"
+                    }
                   }
-                ]
+                ],
+                "text": "ASCENDANCY"
+              },
+              {
+                "type": "text",
+                "text": ": For normal lab, take "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(151, 91, 7)"
+                    }
+                  }
+                ],
+                "text": "Commander of Darkness"
+              },
+              {
+                "type": "text",
+                "text": " Ascendancy node, then respec with Faustus after Cruel lab (around 4k gold) to take "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(151, 91, 7)"
+                    }
+                  }
+                ],
+                "text": "Corpse pact"
               }
             ]
           }
@@ -3904,6 +3863,17 @@
                   },
                   {
                     "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/currency/alchemy.png",
+                      "name": "Orb of Alchemy"
+                    }
+                  },
+                  {
+                    "type": "text",
                     "text": " "
                   }
                 ]
@@ -3919,33 +3889,77 @@
         },
         "content": [
           {
-            "type": "paragraph",
+            "type": "bulletList",
             "content": [
               {
-                "type": "text",
-                "text": "You don't have to swap "
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "You don't have to swap "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " & "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Greater Multiple Projectiles Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " immediately. Just do it as you get Alchemy orbs."
+                      }
+                    ]
+                  }
+                ]
               },
               {
-                "type": "gem",
-                "attrs": {
-                  "name": "Immolate Support",
-                  "color": "blue"
-                }
-              },
-              {
-                "type": "text",
-                "text": " & "
-              },
-              {
-                "type": "gem",
-                "attrs": {
-                  "name": "Greater Multiple Projectiles Support",
-                  "color": "green"
-                }
-              },
-              {
-                "type": "text",
-                "text": " immediately. Just do it as you get Alchemy orbs."
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " support is much stronger than other supports for wand skills in campaign but make sure to have at least "
+                      },
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "underline"
+                          }
+                        ],
+                        "text": "1 fire damage to attack"
+                      },
+                      {
+                        "type": "text",
+                        "text": " modifier on gear for more consistent ignites."
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
