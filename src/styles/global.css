@@ -187,7 +187,7 @@ ol.prose-list, .tiptap ol { list-style-type: decimal; padding-left: 24px; }
 .reader-task.is-done > label > span, .reader-task.is-done > label > div { opacity: .5; text-decoration: line-through; text-decoration-color: #737a80; }
 .reader-task-list .reader-task-list { margin-left: 20px; }
 .callout { background: #0d1518; border: 1px solid #202f32; border-left: 2px solid #52777a; border-radius: 4px; padding: 8px 11px; margin: 12px 0; color: #bfcac9; }
-.callout-important { background: #120a0c; border-color: #613036; border-left-color: #ff6655; color: #ffaaa1; }
+.callout-important { background: #120a0c; border-color: #613036; border-left-color: #ff6655; color: #f3e6d2; }
 .callout > p:first-child, .callout > .prose-list:first-child { margin-top: 0; }
 .callout > p:last-child, .callout > .prose-list:last-child { margin-bottom: 0; }
 .gem-setup, .gem-setup-editor { margin: 13px 0; padding: 10px 12px; border: 1px solid #48412b; border-radius: 7px; background: #0b0e11; }
