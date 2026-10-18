@@ -2,6 +2,24 @@
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <div class="social-links" aria-label="Find Muzaroni">
-  <div class="social-profile" title="Discord username: muzaroni"><img src={`${base}images/social/discord.svg`} width="20" height="20" alt="Discord" /><span>@muzaroni</span></div>
+  <button type="button" class="social-profile discord-copy" data-discord-copy aria-label="Copy Discord handle @muzaroni" title="Copy @muzaroni to clipboard"><img src={`${base}images/social/discord.svg`} width="20" height="20" alt="Discord" /><span aria-live="polite">@muzaroni</span></button>
   <a class="social-profile" href="https://www.youtube.com/@muzmuz" target="_blank" rel="noopener noreferrer"><img src={`${base}images/social/youtube.svg`} width="20" height="20" alt="YouTube" /><span>@muzmuz</span></a>
 </div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-discord-copy]').forEach(button => {
+    let reset: ReturnType<typeof setTimeout>;
+    button.addEventListener('click', async () => {
+      const label = button.querySelector('span');
+      if (!label) return;
+      clearTimeout(reset);
+      try {
+        await navigator.clipboard.writeText('@muzaroni');
+        label.textContent = 'Copied!';
+      } catch {
+        label.textContent = 'Copy failed';
+      }
+      reset = setTimeout(() => { label.textContent = '@muzaroni'; }, 1800);
+    });
+  });
+</script>

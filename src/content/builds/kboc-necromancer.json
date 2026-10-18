@@ -12,7 +12,7 @@
   "subtitle": "KBoC early leveling and progression guide",
   "league": "3.30",
   "ascendancy": "Necromancer",
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "content": {
     "type": "doc",
     "content": [
@@ -537,20 +537,30 @@
               27929
             ],
             "mastery": {},
+            "inheritedNodes": [],
             "markers": [
               {
                 "nodeId": 11420,
-                "note": ""
+                "note": "",
+                "positionX": -717.0074935150699,
+                "positionY": -4609.254203374567
               },
               {
                 "nodeId": 27929,
-                "note": ""
+                "note": "",
+                "positionX": 718.9388147592158,
+                "positionY": -4601.723212441458
               }
             ],
-            "frame": null,
+            "frame": {
+              "x": -4.054999999999836,
+              "y": -3985.6592551338936,
+              "width": 2570.57823850129,
+              "height": 1606.6113990633062
+            },
             "view": "tree",
             "width": 480,
-            "height": 240
+            "height": 300
           }
         }
       },
@@ -760,6 +770,10 @@
       },
       {
         "type": "gemSetup",
+        "attrs": {
+          "changeOverrides": null,
+          "previousSetup": null
+        },
         "content": [
           {
             "type": "taskList",
@@ -775,7 +789,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
@@ -1152,6 +1166,17 @@
                   },
                   {
                     "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
                     "text": " "
                   }
                 ]
@@ -1218,6 +1243,69 @@
       },
       {
         "type": "gemSetup",
+        "attrs": {
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Nessa · Main",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Bolt",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Prismatic Burst Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
         "content": [
           {
             "type": "taskList",
@@ -1233,7 +1321,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
@@ -1260,8 +1348,8 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Momentum Support",
-                          "color": "green"
+                          "name": "Prismatic Burst Support",
+                          "color": "blue"
                         }
                       },
                       {
@@ -1283,7 +1371,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 2: "
+                        "text": "Movement: "
                       },
                       {
                         "type": "gem",
@@ -1362,7 +1450,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Util: "
+                        "text": "Utility: "
                       },
                       {
                         "type": "gem",
@@ -1487,13 +1575,201 @@
       },
       {
         "type": "gemSetup",
+        "attrs": {
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Brutus · Main, Movement, Aura, Utility",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Bolt",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Added Lightning Damage Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Prismatic Burst Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Shield Charge",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Precision",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Holy Flame Totem",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Flame Wall",
+                              "color": "blue"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
         "content": [
           {
             "type": "paragraph",
             "content": [
               {
                 "type": "text",
-                "text": "Double KF Links"
+                "text": "Alternate double KF skills for 18 projectiles"
               }
             ]
           },
@@ -1511,7 +1787,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
@@ -1538,7 +1814,7 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Momentum Support",
+                          "name": "Volley Support",
                           "color": "green"
                         }
                       },
@@ -1561,7 +1837,57 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 2: "
+                        "text": "Main 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Added Lightning Damage Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement: "
                       },
                       {
                         "type": "gem",
@@ -1595,57 +1921,12 @@
                     ]
                   }
                 ]
-              },
-              {
-                "type": "taskItem",
-                "attrs": {
-                  "checked": false
-                },
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Link 3: "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Kinetic Fusillade",
-                          "color": "blue"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " + "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Added Lightning Damage Support",
-                          "color": "blue"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " + "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Momentum Support",
-                          "color": "green"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " "
-                      }
-                    ]
-                  }
-                ]
-              },
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
               {
                 "type": "taskItem",
                 "attrs": {
@@ -1685,7 +1966,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Util: "
+                        "text": "Utility: "
                       },
                       {
                         "type": "gem",
@@ -1715,6 +1996,4642 @@
                           "name": "Flame Wall",
                           "color": "blue"
                         }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Act 2"
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "Act 2 Tree",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271
+            ],
+            "mastery": {
+              "56128": 63280
+            },
+            "inheritedNodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929
+            ],
+            "markers": [
+              {
+                "nodeId": 56128,
+                "note": "Intelligence is added to Accuracy Rating with Wands",
+                "positionX": 982.5265108136373,
+                "positionY": -6431.297303934026
+              },
+              {
+                "nodeId": 40271,
+                "note": "Critical Strikes do not inherently Ignite  100% increased Damage with Hits against Ignited Enemies",
+                "positionX": 2969.1840485272073,
+                "positionY": -6643.517866147735
+              }
+            ],
+            "frame": {
+              "x": 2176.2457573227534,
+              "y": -5711.052006255892,
+              "width": 3755.5669829309377,
+              "height": 2816.675237198204
+            },
+            "view": "tree",
+            "width": 480,
+            "height": 360
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fidelitas"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Herald of Thunder",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Herald of Ice",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/alt.png",
+                      "name": "Orb of Alteration"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Fairgraves · Main, Main 2, Movement, Aura, Utility",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Alternate double KF skills for 18 projectiles"
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Added Lightning Damage Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main 2: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Added Lightning Damage Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Shield Charge",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Precision",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Holy Flame Totem",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Flame Wall",
+                              "color": "blue"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main : "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Added Lightning Damage Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Added Lightning Damage Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Precision",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Thunder",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ice",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Act 3"
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "Act 3 Tree",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828
+            ],
+            "mastery": {
+              "53828": 42540,
+              "56128": 63280
+            },
+            "inheritedNodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271
+            ],
+            "markers": [
+              {
+                "nodeId": 16243,
+                "note": "",
+                "positionX": 3801.5530359434774,
+                "positionY": -8558.100809431453
+              },
+              {
+                "nodeId": 53828,
+                "note": "Wand Attacks fire an additional Projectile",
+                "positionX": 3238.386013848018,
+                "positionY": -8152.9226902977
+              }
+            ],
+            "frame": {
+              "x": 3330.610761441645,
+              "y": -7984.052462088865,
+              "width": 2234.268539976752,
+              "height": 1675.701404982564
+            },
+            "view": "tree",
+            "width": 320,
+            "height": 240
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Piety"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Elemental Weakness",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Spellslinger",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/alt.png",
+                      "name": "Orb of Alteration"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Wrath",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/alt.png",
+                      "name": "Orb of Alteration"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Remove "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Herald of Thunder",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " & "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Herald of Ice",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {
+          "changeOverrides": {
+            "current": {
+              "[\"aura:0\",\"wrath\",0]": {
+                "kind": "new"
+              }
+            },
+            "removed": {}
+          },
+          "previousSetup": {
+            "title": "Fidelitas · Main, Main 2, Movement, Aura, Utility",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main : "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Added Lightning Damage Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main 2: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Added Lightning Damage Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Shield Charge",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Precision",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Herald of Thunder",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Herald of Ice",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Added Lightning Damage Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Multiple Projectiles Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Added Lightning Damage Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Multiple Projectiles Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Curse: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sniper's Mark",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Precision",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Wrath",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spellslinger",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Act 4"
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "Act 4 Tree",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828,
+              60791,
+              5415,
+              36017,
+              27879,
+              52031,
+              52848,
+              41476,
+              41635,
+              32710,
+              32345,
+              43000,
+              10115,
+              4502,
+              20852,
+              13862
+            ],
+            "mastery": {
+              "53828": 42540,
+              "56128": 63280
+            },
+            "inheritedNodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828
+            ],
+            "markers": [
+              {
+                "nodeId": 41476,
+                "note": "",
+                "positionX": 3060.496631955863,
+                "positionY": -8076.7988828667785
+              },
+              {
+                "nodeId": 32345,
+                "note": "",
+                "positionX": 3530.0768181515537,
+                "positionY": -6465.865708112861
+              },
+              {
+                "nodeId": 10115,
+                "note": "",
+                "positionX": 732.7250856205137,
+                "positionY": -6788.552031292554
+              },
+              {
+                "nodeId": 13862,
+                "note": "12% increased Mana Reservation Efficiency of Skills",
+                "positionX": 259.5561586848621,
+                "positionY": -6150.327735599383
+              },
+              {
+                "nodeId": 20852,
+                "note": "",
+                "positionX": 4882.526384323657,
+                "positionY": -4460.1318092053725
+              }
+            ],
+            "frame": {
+              "x": 2331.1811581857983,
+              "y": -6049.134255133893,
+              "width": 6784.601317899047,
+              "height": 5936.526153161667
+            },
+            "view": "tree",
+            "width": 480,
+            "height": 420
+          }
+        }
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Do Normal Lab once you reach "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(151, 91, 7)"
+                        }
+                      }
+                    ],
+                    "text": "Crystal Veins"
+                  },
+                  {
+                    "type": "text",
+                    "text": " waypoint"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(151, 91, 7)"
+                        }
+                      }
+                    ],
+                    "text": "Commander of Darkness"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for first ascendancy"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "ASC 1 - Commander of Darkness",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              60791,
+              5415,
+              36017
+            ],
+            "mastery": {},
+            "inheritedNodes": [],
+            "markers": [
+              {
+                "nodeId": 36017,
+                "note": "",
+                "positionX": 989.5591374664891,
+                "positionY": -10534.121288439816
+              }
+            ],
+            "frame": {
+              "x": 1408.9945687332447,
+              "y": -10613.627310886575,
+              "width": 1901.6666666666667,
+              "height": 950.8333333333334
+            },
+            "view": "ascendancy",
+            "width": 480,
+            "height": 240
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Malachai"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Immolate Support",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Immolate Support",
+                      "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/currency/alchemy.png",
+                      "name": "Orb of Alchemy"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Greater Multiple Projectiles Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/currency/alchemy.png",
+                      "name": "Orb of Alchemy"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Greater Multiple Projectiles Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/currency/alchemy.png",
+                      "name": "Orb of Alchemy"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Mark On Hit Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "You don't have to swap "
+              },
+              {
+                "type": "gem",
+                "attrs": {
+                  "name": "Immolate Support",
+                  "color": "blue"
+                }
+              },
+              {
+                "type": "text",
+                "text": " & "
+              },
+              {
+                "type": "gem",
+                "attrs": {
+                  "name": "Greater Multiple Projectiles Support",
+                  "color": "green"
+                }
+              },
+              {
+                "type": "text",
+                "text": " immediately. Just do it as you get Alchemy orbs."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Piety · Main, Main 2, Movement, Curse, Aura, Utility",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Added Lightning Damage Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Multiple Projectiles Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main 2: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Added Lightning Damage Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Multiple Projectiles Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Shield Charge",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Curse: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Sniper's Mark",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Precision",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Wrath",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Spellslinger",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Flame Wall",
+                              "color": "blue"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Greater Multiple Projectiles Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Greater Multiple Projectiles Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Curse: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sniper's Mark",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Mark On Hit Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Precision",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Wrath",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spellslinger",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Act 5"
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "Act 5 Tree",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828,
+              60791,
+              5415,
+              36017,
+              27879,
+              52031,
+              52848,
+              41476,
+              41635,
+              32710,
+              32345,
+              43000,
+              10115,
+              4502,
+              20852,
+              13862,
+              6785,
+              42649,
+              13387,
+              1822,
+              38190,
+              61653,
+              18769
+            ],
+            "mastery": {
+              "13387": 17942,
+              "53828": 42540,
+              "56128": 63280
+            },
+            "inheritedNodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828,
+              60791,
+              5415,
+              36017,
+              27879,
+              52031,
+              52848,
+              41476,
+              41635,
+              32710,
+              32345,
+              43000,
+              10115,
+              4502,
+              20852,
+              13862
+            ],
+            "markers": [
+              {
+                "nodeId": 42649,
+                "note": "",
+                "positionX": 4540.193971881941,
+                "positionY": -4735.823058831956
+              },
+              {
+                "nodeId": 13387,
+                "note": "Hits have 15% chance to treat Enemy Monster Elemental Resistance values as inverted",
+                "positionX": 4875.8086968950065,
+                "positionY": -4913.879509630288
+              },
+              {
+                "nodeId": 18769,
+                "note": "",
+                "positionX": 5887.235270730997,
+                "positionY": -4930.000479690598
+              }
+            ],
+            "frame": {
+              "x": 5475.789903597545,
+              "y": -4788.4413113925175,
+              "width": 2108.723465906715,
+              "height": 878.6347774611312
+            },
+            "view": "tree",
+            "width": 480,
+            "height": 200
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Act 6-9"
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "Act 6-9",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828,
+              60791,
+              5415,
+              36017,
+              27879,
+              52031,
+              52848,
+              41476,
+              41635,
+              32710,
+              32345,
+              43000,
+              10115,
+              4502,
+              20852,
+              13862,
+              6785,
+              42649,
+              13387,
+              1822,
+              38190,
+              61653,
+              18769,
+              36858,
+              53456,
+              18182,
+              56295,
+              46277,
+              60592,
+              35851,
+              47484,
+              26148,
+              38995,
+              8001,
+              7488,
+              4269,
+              55880,
+              32681,
+              32657,
+              25260,
+              27788,
+              292
+            ],
+            "mastery": {
+              "292": 34242,
+              "7488": 62252,
+              "13387": 17942,
+              "26148": 9755,
+              "32657": 48980,
+              "53828": 42540,
+              "56128": 63280
+            },
+            "inheritedNodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828,
+              60791,
+              5415,
+              36017,
+              27879,
+              52031,
+              52848,
+              41476,
+              41635,
+              32710,
+              32345,
+              43000,
+              10115,
+              4502,
+              20852,
+              13862,
+              6785,
+              42649,
+              13387,
+              1822,
+              38190,
+              61653,
+              18769
+            ],
+            "markers": [
+              {
+                "nodeId": 26148,
+                "note": "+500 to Accuracy Rating  -2 to Accuracy Rating per Level",
+                "positionX": 7560.1567616603625,
+                "positionY": -1732.0088452009418
+              },
+              {
+                "nodeId": 7488,
+                "note": "5% of Leech is Instant",
+                "positionX": 6715.717137777868,
+                "positionY": -1034.6353808037675
+              },
+              {
+                "nodeId": 32657,
+                "note": "10% chance to gain a Frenzy Charge when you Hit your Marked Enemy",
+                "positionX": 8155.273443098647,
+                "positionY": -1249.0921234874859
+              },
+              {
+                "nodeId": 292,
+                "note": "15% increased maximum Life if there are no Life Modifiers on Equipped Body Armour",
+                "positionX": 6825.277321985874,
+                "positionY": -1383.1942507802219
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 480,
+            "height": 240
+          }
+        }
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Malachai · Main, Main 2, Movement, Curse, Aura, Utility",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Immolate Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Greater Multiple Projectiles Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main 2: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Immolate Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Greater Multiple Projectiles Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Shield Charge",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Curse: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Sniper's Mark",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Mark On Hit Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Precision",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Wrath",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Spellslinger",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Flame Wall",
+                              "color": "blue"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Blast",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fork Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Returning Projectiles Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Bolt",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Ballista Totem Support",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Focused Ballista Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Curse: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sniper's Mark",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Mark On Hit Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " , "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sigil of Power",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spellslinger",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Tornado",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spellslinger",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Desecrate",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volatile Dead",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spell Cascade Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Act 10"
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "Act 10 Tree",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828,
+              60791,
+              5415,
+              36017,
+              27879,
+              52031,
+              52848,
+              41476,
+              41635,
+              32710,
+              32345,
+              43000,
+              10115,
+              4502,
+              20852,
+              13862,
+              6785,
+              42649,
+              13387,
+              1822,
+              38190,
+              61653,
+              18769,
+              36858,
+              53456,
+              18182,
+              56295,
+              46277,
+              60592,
+              35851,
+              47484,
+              26148,
+              38995,
+              8001,
+              7488,
+              4269,
+              55880,
+              32681,
+              32657,
+              25260,
+              27788,
+              292,
+              27415,
+              37175,
+              16970,
+              25439,
+              32278,
+              2292,
+              27203,
+              5022,
+              44339,
+              6615,
+              37532,
+              4036,
+              15228,
+              47306,
+              9586,
+              64239,
+              64612,
+              19098,
+              63207,
+              48411,
+              63228,
+              42804,
+              60259,
+              32176,
+              35255,
+              22315,
+              48514,
+              27163,
+              12913
+            ],
+            "mastery": {
+              "292": 34242,
+              "7488": 62252,
+              "9586": 2987,
+              "13387": 17942,
+              "26148": 9755,
+              "32278": 57179,
+              "32657": 48980,
+              "37532": 53046,
+              "48411": 63280,
+              "53828": 42540,
+              "56128": 63280
+            },
+            "inheritedNodes": [
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11128,
+              8135,
+              11659,
+              11420,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828,
+              60791,
+              5415,
+              36017,
+              27879,
+              52031,
+              52848,
+              41476,
+              41635,
+              32710,
+              32345,
+              43000,
+              10115,
+              4502,
+              20852,
+              13862,
+              6785,
+              42649,
+              13387,
+              1822,
+              38190,
+              61653,
+              18769,
+              36858,
+              53456,
+              18182,
+              56295,
+              46277,
+              60592,
+              35851,
+              47484,
+              26148,
+              38995,
+              8001,
+              7488,
+              4269,
+              55880,
+              32681,
+              32657,
+              25260,
+              27788,
+              292
+            ],
+            "markers": [
+              {
+                "nodeId": 32278,
+                "note": "20% increased effect of Offerings",
+                "positionX": 3274.384824702766,
+                "positionY": -4781.860083619757
+              },
+              {
+                "nodeId": 27203,
+                "note": "",
+                "positionX": 8.181339924632994,
+                "positionY": -4826.461198995104
+              },
+              {
+                "nodeId": 37532,
+                "note": "40% of Physical Damage Converted to Lightning Damage",
+                "positionX": 7280.108659559805,
+                "positionY": -4011.4618331112442
+              },
+              {
+                "nodeId": 48411,
+                "note": "Intelligence is added to Accuracy Rating with Wands",
+                "positionX": 2761.942174883974,
+                "positionY": -5930.160998667465
+              },
+              {
+                "nodeId": 9586,
+                "note": "+25% to Critical Strike Multiplier against Unique Enemies",
+                "positionX": 3554.2969906722456,
+                "positionY": -6556.127168221292
+              },
+              {
+                "nodeId": 42804,
+                "note": "",
+                "positionX": 6875.939040803918,
+                "positionY": -2882.9219241347178
+              },
+              {
+                "nodeId": 32176,
+                "note": "",
+                "positionX": 6681.542940678306,
+                "positionY": -3440.612716166752
+              },
+              {
+                "nodeId": 35255,
+                "note": "",
+                "positionX": 7540.367538919736,
+                "positionY": -3656.695839296571
+              },
+              {
+                "nodeId": 27163,
+                "note": "",
+                "positionX": 547.1852589169907,
+                "positionY": -5227.423856539126
+              },
+              {
+                "nodeId": 12913,
+                "note": "",
+                "positionX": 394.68885653912594,
+                "positionY": -6024.914557728058
+              }
+            ],
+            "frame": {
+              "x": 3731.6425,
+              "y": -4747.941942293461,
+              "width": 9629.885453304863,
+              "height": 8666.896907974378
+            },
+            "view": "tree",
+            "width": 1000,
+            "height": 900
+          }
+        }
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "ASC Respec",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              60791,
+              60547,
+              11490,
+              23509,
+              23572,
+              18309,
+              48719
+            ],
+            "mastery": {},
+            "inheritedNodes": [
+              60791,
+              5415,
+              36017
+            ],
+            "markers": [
+              {
+                "nodeId": 11490,
+                "note": "",
+                "positionX": 1874.5908184985212,
+                "positionY": -10434.988847284541
+              },
+              {
+                "nodeId": 23572,
+                "note": "",
+                "positionX": 2207.537462593931,
+                "positionY": -10511.54827553854
+              },
+              {
+                "nodeId": 48719,
+                "note": "",
+                "positionX": 2232.419708249473,
+                "positionY": -10766.942318877693
+              }
+            ],
+            "frame": {
+              "x": 1916.1198930166672,
+              "y": -10630.827204068819,
+              "width": 860.5042016806722,
+              "height": 752.9411764705883
+            },
+            "view": "ascendancy",
+            "width": 480,
+            "height": 420
+          }
+        }
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Act 6-9 · Main, Main 2, Movement, Curse, Utility, Utility 2",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Blast",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Immolate Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Fork Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Returning Projectiles Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main 2: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Bolt",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Immolate Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Ballista Totem Support",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Focused Ballista Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Shield Charge",
+                              "color": "red"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Curse: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Sniper's Mark",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Mark On Hit Support",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " , "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Sigil of Power",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Spellslinger",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Flame Wall",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Tornado",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility 2: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Spellslinger",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Desecrate",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volatile Dead",
+                              "color": "green"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Spell Cascade Support",
+                              "color": "blue"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Blast of Clustering",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sacred Wisps Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fork Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Returning Projectiles Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Physical to Lightning Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Bolt",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Ballista Totem Support",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Focused Ballista Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Curse: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Assassin's Mark",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Mark On Hit Support",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " , "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sigil of Power",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spellslinger",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Tornado",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Bone Offering",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spellslinger",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Desecrate",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volatile Dead of Seething",
+                          "color": "green"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spell Cascade Support",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }

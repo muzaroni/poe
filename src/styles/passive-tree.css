@@ -94,7 +94,7 @@
 .tree-step-row strong { color: #c0cddd; font-size: 13px; display: block; }
 .tree-step-row input { display: block; width: 100%; margin-top: 4px; }
 .tree-step-row p { color: #a4b4c5; font-size: 13px; margin: 4px 0; }
-.tree-step-row .tree-step-number { min-width: 30px; border-radius: 5px; background: #142863; border-color: #eef2ff; color: white; font-weight: 700; }
+.tree-step-row .tree-step-number { min-width: 25px; width: 25px; height: 25px; padding: 0; font-size: 17px; font-family: var(--header-font); border-radius: 5px; background: #142863; border-color: #8398ff; box-shadow: 0 2px 6px #000b; color: white; font-weight: 700; }
 .editor-toolbar .toolbar-tree { color: #aabcf9; }
 @media (max-width: 600px) { .tree-step-row { flex-wrap: wrap; } .tree-step-row > div { flex-basis: calc(100% - 50px); } }
 
@@ -126,3 +126,5 @@
 .tree-respec-summary label { display: flex; flex: 1 1 300px; align-items: center; gap: 8px; }
 .tree-respec-summary input { flex: 1; min-width: 0; padding: 5px 7px; background: #080d13; border: 1px solid #35404b; border-radius: 4px; color: #d3dde7; font-size: 12px; }
 .respec-remove { color: #ef7a78; } .respec-add { color: #70e79b; }
+
+.tree-auto-ascendancy { display: flex; gap: 7px; align-items: center; padding: 6px 10px; font-size: 12px; color: #a7b5c4; }

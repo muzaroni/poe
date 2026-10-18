@@ -199,3 +199,17 @@ console.log('Respec checks passed: real 28-removal / 24-addition transition, sav
 
 assert.equal(normalizeSnapshot({ height: 1200 }).height, 1200);
 assert.equal(normalizeSnapshot({ height: 5000 }).height, 1200);
+
+const { ascendancyStepMarkers } = snapshotContext.exports;
+const ascendancyTree = JSON.parse(fs.readFileSync(new URL('../public/data/trees/3.29.1/tree.json', import.meta.url), 'utf8'));
+const ascendancyExample = normalizeSnapshot(JSON.parse(fs.readFileSync(new URL('../src/data/tree-ascendancy-example.json', import.meta.url), 'utf8')));
+const ascMarkers = ascendancyStepMarkers(ascendancyTree, ascendancyExample);
+assert.equal(ascMarkers.map(marker => marker.nodeId).join(','), '48480,32249');
+assert.ok(ascMarkers.every(marker => ascendancyTree.nodes.find(node => node.id === marker.nodeId).stats.length > 0));
+const authored = { ...ascendancyExample, markers: [{ nodeId: 32249, note: 'Second lab destination', positionX: 200, positionY: 300 }, { nodeId: 48480, note: 'First lab destination' }] };
+assert.equal(JSON.stringify(ascendancyStepMarkers(ascendancyTree, authored)), JSON.stringify(authored.markers), 'Existing order, positions, and notes must be preserved');
+assert.equal(ascendancyStepMarkers(ascendancyTree, { ...ascendancyExample, markers: [{ nodeId: 48480, nodeIds: [32249], note: 'Both notables' }] }).length, 1, 'Grouped ascendancy destinations must not get duplicate markers');
+assert.equal(ascendancyStepMarkers(ascendancyTree, { ...ascendancyExample, ascendancyNumbering: 'manual' }).length, 0);
+assert.equal(ascendancyStepMarkers(tree, recovered).length, recovered.markers.length, 'Main-tree marker behavior must remain unchanged');
+assert.equal(normalizeSnapshot(JSON.parse(JSON.stringify({ ...ascendancyExample, markers: ascMarkers, ascendancyNumbering: 'manual' }))).ascendancyNumbering, 'manual');
+console.log('Ascendancy checks passed: automatic notable numbering, stats availability, existing order and positions, grouped destinations, and manual opt-out.');

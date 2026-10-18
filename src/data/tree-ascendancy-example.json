@@ -1,0 +1,19 @@
+{
+  "title": "Cruel Lab \u00b7 Chieftain",
+  "version": "3.29.1",
+  "classId": 1,
+  "ascendancyId": 3,
+  "nodes": [
+    24704,
+    5643,
+    48480,
+    42659,
+    32249
+  ],
+  "mastery": {},
+  "markers": [],
+  "width": 480,
+  "height": 300,
+  "view": "ascendancy",
+  "frame": null
+}

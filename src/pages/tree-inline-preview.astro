@@ -1,5 +1,6 @@
 ---
 import example from '../data/tree-inline-example.json';
+import ascendancyExample from '../data/tree-ascendancy-example.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TreeSnapshotDemo from '../components/TreeSnapshotDemo';
 import stages from '../../public/data/trees/sunder-rf-stages.json';
@@ -14,7 +15,7 @@ const respecAfter = normalizeSnapshot({ ...exampleStages.find(stage => stage.tit
   <main class="shell inline-tree-preview">
     <div class="home-kicker">INLINE TREE PREVIEW</div><h1>Compact tree snapshots</h1>
     <p>This is the size and layout readers see inside a guide. Try the numbered markers, expand the tree, or open the picker to adjust the selection and crop. Demo changes last until reload.</p>
-    <div class="guide-content"><h2>Act 1 progression</h2><p>Pick up your gems, then take the early passives in this order.</p><TreeSnapshotDemo initial={snapshot} respecBefore={respecBefore} respecAfter={respecAfter} client:load /><p>Continue toward the next waypoint once your links and passive points are ready.</p></div>
+    <div class="guide-content"><h2>Act 1 progression</h2><p>Pick up your gems, then take the early passives in this order.</p><TreeSnapshotDemo initial={snapshot} respecBefore={respecBefore} respecAfter={respecAfter} ascendancyExample={normalizeSnapshot({ ...ascendancyExample, view: 'ascendancy' })} client:load /><p>Continue toward the next waypoint once your links and passive points are ready.</p></div>
   </main>
 </BaseLayout>
 <style>

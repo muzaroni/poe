@@ -13,7 +13,8 @@ function SnapshotEditor({ snapshot, previousSnapshot, previousSnapshots, onChang
   </>;
 }
 
-export default function TreeSnapshotDemo({ initial, respecBefore, respecAfter }: { initial: TreeSnapshotData; respecBefore?: TreeSnapshotData; respecAfter?: TreeSnapshotData }) {
+export default function TreeSnapshotDemo({ initial, respecBefore, respecAfter, ascendancyExample }: { initial: TreeSnapshotData; respecBefore?: TreeSnapshotData; respecAfter?: TreeSnapshotData; ascendancyExample?: TreeSnapshotData }) {
+  const [ascendancyDemo, setAscendancyDemo] = useState(ascendancyExample);
   const [respecDemo, setRespecDemo] = useState(respecAfter);
   const [first, setFirst] = useState(initial);
   const [second, setSecond] = useState(() => normalizeSnapshot({ ...initial, title: 'Act 2 Tree', nodes: [], inheritedNodes: [], mastery: {}, markers: [], frame: null }));
@@ -26,6 +27,7 @@ export default function TreeSnapshotDemo({ initial, respecBefore, respecAfter }:
     <h2>Act 3 progression</h2>
     <p>The source dropdown includes every earlier tree with allocated nodes.</p>
     <SnapshotEditor snapshot={third} previousSnapshots={[first, second].filter(tree => tree.nodes.length > 0)} onChange={setThird} />
+    {ascendancyDemo && <><h2>Ascendancy progression</h2><p>Allocated notables use matching numbered markers, with their names and effects beside the tree.</p><SnapshotEditor snapshot={ascendancyDemo} onChange={setAscendancyDemo} /></>}
     {respecDemo && respecBefore && <><h2>Respec example</h2><p>Red dashed paths are refunded; green paths are added. Open the picker to edit the After tree and refund note.</p><SnapshotEditor snapshot={respecDemo} previousSnapshot={respecBefore} onChange={setRespecDemo} /></>}
   </>;
 }

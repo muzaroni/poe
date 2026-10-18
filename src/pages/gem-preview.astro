@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GemMockup from '../components/GemMockup.astro';
+import GuideDocument from '../components/GuideDocument';
+import type { JSONContent } from '@tiptap/core';
 const gem = (name: string, color: string) => ({ name, color });
 const main = [gem('Sunder', 'red'), gem('Melee Physical Damage', 'red')];
 const movement = [gem('Leap Slam', 'red'), gem('Faster Attacks', 'green'), gem('Momentum', 'green')];
@@ -15,18 +17,43 @@ const act4 = [
   { title: 'Movement', groups: [movement, [gem('Frostblink', 'blue')]] },
   { title: 'Utility', groups: utility },
 ];
+const gemNode = (name: string, color = 'red'): JSONContent => ({ type: 'gem', attrs: { name, color } });
+const textNode = (text: string): JSONContent => ({ type: 'text', text });
+const linkRow = (label: string, ...content: JSONContent[]): JSONContent => ({ type: 'paragraph', content: [textNode(`${label}: `), ...content] });
+const previousLinks = [linkRow('Main', gemNode('Sunder'), textNode(' + '), gemNode('Ruthless Support')), linkRow('Movement', gemNode('Leap Slam'), textNode(' + '), gemNode('Faster Attacks Support', 'green'), textNode(' + '), gemNode('Momentum Support', 'green')), linkRow('Utility', gemNode('Frostblink', 'blue'), textNode(', '), gemNode('Blood Rage', 'green'))];
+const inlineProgression: JSONContent = { type: 'doc', content: [{ type: 'gemSetup', attrs: { previousSetup: { title: 'Previous act', content: previousLinks } }, content: [
+  linkRow('Main', gemNode('Sunder'), textNode(' + '), gemNode('Melee Physical Damage Support'), textNode(' + '), gemNode('Added Fire Damage Support')),
+  linkRow('Movement', gemNode('Leap Slam'), textNode(' + '), gemNode('Faster Attacks Support', 'green'), textNode(', '), gemNode('Frostblink', 'blue')),
+  linkRow('Utility', gemNode('Blood Rage', 'green')),
+] }] };
 const options = [
   { id: 'equipment', variant: 'cards' as const, title: 'Link cards', description: 'The equipment-card look, grouped by purpose. Connector lines mean linked gems. Frostblink sits separately below the movement link; utility gems have no connectors.' },
   { id: 'rows', variant: 'rows' as const, title: 'Compact rows', description: 'The smallest footprint. Plus signs mean linked gems; commas separate independent gems or groups.' },
   { id: 'minimal', variant: 'minimal' as const, title: 'Minimal linked list', description: 'The same grouping without card backgrounds. Connected dots form a link; standalone dots mean independent gems.' },
 ];
+const alternativeBase = linkRow('Main', gemNode('Sunder'), textNode(' + '), gemNode('Melee Physical Damage Support'), textNode(' + '), gemNode('Ruthless Support'));
+const alternatives: JSONContent = { type: 'doc', content: [{ type: 'gemSetup', attrs: { previousSetup: { title: 'Previous act', content: [alternativeBase] } }, content: [linkRow('Main', gemNode('Sunder'), textNode(' + '), gemNode('Melee Physical Damage Support'), textNode(' + '), gemNode('Ruthless Support'), textNode(' or '), gemNode('Close Combat Support', 'green'))] }] };
+const stageHeading = (text: string): JSONContent => ({ type: 'heading', attrs: { level: 3 }, content: [textNode(text)] });
+const stageList = (...rows: JSONContent[]): JSONContent => ({ type: 'taskList', content: rows.map(row => ({ type: 'taskItem', attrs: { checked: false }, content: [row] })) });
+const mainStage = (name: string) => linkRow('Link 1', gemNode(name), textNode(' + '), gemNode('Ruthless Support'), textNode(' + '), gemNode('Chance to Bleed Support'), textNode(' or '), gemNode('Momentum Support', 'green'));
+const moveStage = (name: string, faster = false) => linkRow('Link 2', gemNode(name), textNode(' + '), ...(faster ? [gemNode('Faster Attacks Support', 'green'), textNode(' + ')] : []), gemNode('Momentum Support', 'green'));
+const utilityStage = () => linkRow('Util', gemNode('Frostblink', 'blue'), textNode(', '), gemNode('Blood and Sand'), textNode(', '), gemNode('Intimidating Cry'));
+const headedProgression: JSONContent = { type: 'doc', content: [{ type: 'gemSetup', content: [
+  stageHeading('Level 1–9: Use Ground Slam'), stageList(mainStage('Ground Slam'), moveStage('Shield Charge'), utilityStage()),
+  stageHeading('Level 10: Replace Shield Charge with Leap Slam'), stageList(moveStage('Leap Slam')),
+  stageHeading('Level 12: Merveil'), stageList(mainStage('Sunder'), moveStage('Leap Slam', true), utilityStage()),
+  { type: 'paragraph', content: [textNode('Total Cost: add your currency costs here as usual.')] },
+] }] };
 ---
 <BaseLayout title="Gem display mockups" description="Local leveling gem layout comparison">
   <main class="mockups shell">
     <div class="home-kicker">DESIGN PREVIEW</div>
     <h1>Compact gem setups, act by act</h1>
     <p class="intro">Each layout shows the same two acts. Stable group names and gem order make progression easy to follow. Examples are illustrative; your guide content is unchanged.</p>
+    <section id="progression"><div class="section-heading"><h2>Changes inside the links</h2></div><p class="description">Small badges mark NEW, SWAP, REMOVED, and MOVED gems. Moved gems appear only in their new location; unchanged gems stay clean.</p><div class="guide-content"><GuideDocument content={inlineProgression} slug="gem-progression-preview" client:load /></div></section>
     <nav class="option-nav" aria-label="Mockup options">{options.map((option, index) => <a href={`#${option.id}`}>0{index + 1} · {option.title}</a>)}</nav>
+    <section id="alternatives"><div class="section-heading"><h2>Either gem, same socket</h2></div><p class="description">Type “or” between two gem selections. Both options share one socket; badges apply to the individual option.</p><div class="guide-content"><GuideDocument content={alternatives} slug="gem-alternatives-preview" client:load /></div></section>
+    <section id="stages"><div class="section-heading"><h2>Headings with progression</h2></div><p class="description">Each heading starts a stage. Only include links that change, or show the full setup whenever useful.</p><div class="guide-content"><GuideDocument content={headedProgression} slug="gem-stages-preview" client:load /></div></section>
     {options.map((option, index) => <section id={option.id}>
       <div class="section-heading"><span>0{index + 1}</span><h2>{option.title}</h2></div>
       <p class="description">{option.description}</p>

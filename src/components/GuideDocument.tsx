@@ -1,4 +1,5 @@
 import TreeBlock from './TreeBlock';
+import GemSetupChanges, { GemSetupComparison } from './GemSetupChanges';
 import { gemDisplayName } from '../lib/gems';
 import { useEffect, useState, type ReactNode } from 'react';
 import type { JSONContent } from '@tiptap/core';
@@ -81,7 +82,7 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
     }
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
     case 'passiveTree': return <TreeBlock snapshot={attrs.snapshot ?? {}} />;
-    case 'gemSetup': return <section className="gem-setup"><div className="block-eyebrow">GEM LINKS</div>{children}</section>;
+    case 'gemSetup': return <section className="gem-setup" title={attrs.previousSetup ? `Changes from ${attrs.previousSetup.title}` : undefined}><div className="block-eyebrow">GEM LINKS</div><GemSetupComparison content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides}>{children}</GemSetupComparison><GemSetupChanges content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides} /></section>;
     case 'callout': return <aside className={`callout ${attrs.tone === 'important' ? 'callout-important' : ''}`}>{children}</aside>;
     case 'pobLinks': return <div className="pob-grid">{(attrs.links ?? []).map((link: { label: string; url: string }, index: number) => <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="pob-card"><span>{link.label}</span><ExternalLink size={17} /></a>)}</div>;
     case 'horizontalRule': return <hr />;

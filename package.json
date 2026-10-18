@@ -11,7 +11,8 @@
     "check": "astro check",
     "refresh:gems": "node scripts/refresh-gems.mjs",
     "refresh:trees": "node scripts/refresh-trees.mjs",
-    "check:trees": "node scripts/check-trees.mjs"
+    "check:trees": "node scripts/check-trees.mjs",
+    "check:gem-links": "node scripts/check-gem-links.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

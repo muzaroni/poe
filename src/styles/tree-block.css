@@ -14,7 +14,7 @@
 .tree-block-steps { flex: 1 1 240px; list-style: none !important; margin: 0 !important; padding: 10px 12px !important; display: grid; gap: 10px; }
 .tree-block-steps > li { display: flex; align-items: flex-start; gap: 9px; margin: 0 !important; padding: 0; min-width: 0; }
 .tree-block-steps > li::marker { content: ''; }
-.tree-block-steps button { display: grid; place-items: center; flex: 0 0 29px; width: 29px; height: 29px; padding: 0; border: 1px solid #8398ff; border-radius: 5px; background: #142863; color: white; font-family: var(--header-font); font-size: 14px; font-weight: 700; }
+.tree-block-steps button { display: grid; place-items: center; flex: 0 0 25px; width: 25px; height: 25px; padding: 0; border: 1px solid #8398ff; box-shadow: 0 2px 6px #000b; border-radius: 5px; background: #142863; color: white; font-family: var(--header-font); font-size: 17px; font-weight: 700; }
 .tree-block-steps button[aria-pressed=true] { background: #203b80; border-color: white; }
 .tree-block-steps > li > div { min-width: 0; padding-top: 3px; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
 .tree-block-steps strong { display: block; color: #d1dcea; font-weight: 650; }
@@ -41,3 +41,8 @@
 .tree-block-respec > div { display: flex; gap: 14px; margin: 7px 0; font-weight: 700; }
 .tree-block-respec p { margin: 7px 0 0 !important; color: #bdc8d3; font-size: 13px; white-space: pre-wrap; }
 .respec-remove { color: #ef7a78; } .respec-add { color: #70e79b; }
+
+.tree-block-ascendancy-name { padding: 10px 12px 0; color: #d8c78d; font-family: var(--header-font); font-size: 15px; font-weight: 700; }
+.tree-block-ascendancy-info { margin-top: 5px; }
+.tree-block-ascendancy-info ul { list-style: none !important; padding: 0 !important; margin: 0 !important; display: grid; gap: 4px; }
+.tree-block-ascendancy-info ul > li { display: block; margin: 0 !important; padding: 0 !important; color: #9dabb9; font-size: 12px; line-height: 1.5; white-space: pre-line; }

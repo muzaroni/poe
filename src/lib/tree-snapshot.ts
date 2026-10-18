@@ -6,7 +6,7 @@ export type TreeRespec = { title: string; version: string; classId: number; asce
 export type TreeSnapshotData = {
   title: string; version: string; classId: number; ascendancyId: number;
   respec?: TreeRespec; nodes: number[]; inheritedNodes?: number[]; mastery: Record<string, number>; markers: TreeMarker[];
-  width: number; height: number; view: 'tree' | 'ascendancy'; frame: TreeFrame | null;
+  ascendancyNumbering?: 'automatic' | 'manual'; width: number; height: number; view: 'tree' | 'ascendancy'; frame: TreeFrame | null;
 };
 export type TreeCamera = { x: number; y: number; scale: number };
 export type TreeSize = { width: number; height: number; dpr: number };
@@ -27,6 +27,7 @@ export function normalizeSnapshot(value: Partial<TreeSnapshotData> = {}): TreeSn
       nodes: [...new Set((Array.isArray(value.respec.nodes) ? value.respec.nodes : []).filter(id => Number.isInteger(id) && id >= 0))].slice(0, 6000),
       mastery: Object.fromEntries(Object.entries(value.respec.mastery ?? {}).filter(([id, effect]) => /^\d+$/.test(id) && Number.isInteger(effect))), note: String(value.respec.note ?? '').slice(0, 2000),
     } : undefined,
+    ascendancyNumbering: value.ascendancyNumbering === 'manual' ? 'manual' : undefined,
     markers, frame, view: value.view === 'ascendancy' ? 'ascendancy' : 'tree',
     width: bounded(value.width, 480, 240, 1000), height: bounded(value.height, 240, 120, 1200),
   };
@@ -190,4 +191,17 @@ export function saveMarkerPositions(markers: TreeMarker[], nodes: PassiveNode[],
 
 export function respecBaseline(before: TreeSnapshotData): TreeRespec {
   return { title: before.title, version: before.version, classId: before.classId, ascendancyId: before.ascendancyId, nodes: [...before.nodes], mastery: { ...before.mastery }, note: '' };
+}
+
+export function ascendancyStepMarkers(tree: PassiveTree, snapshot: TreeSnapshotData): TreeMarker[] {
+  if (snapshot.view !== 'ascendancy' || snapshot.ascendancyNumbering === 'manual') return snapshot.markers;
+  const ascendancy = tree.classes.find(c => c.id === snapshot.classId)?.ascendancies[snapshot.ascendancyId - 1]?.id;
+  if (!ascendancy) return snapshot.markers;
+  const byId = new Map(tree.nodes.map(node => [node.id, node]));
+  const existing = new Set(snapshot.markers.flatMap(stepNodeIds));
+  const added = snapshot.nodes.flatMap(id => {
+    const node = byId.get(id);
+    return node?.ascendancy === ascendancy && node.kind === 'notable' && !existing.has(id) ? [{ nodeId: id, note: '' }] : [];
+  });
+  return [...snapshot.markers, ...added].slice(0, 50);
 }

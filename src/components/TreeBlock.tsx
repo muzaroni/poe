@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { loadPassiveTree, loadTreeSprites } from '../lib/tree-assets';
 import { drawPassiveTree } from '../lib/tree-render';
-import { cameraForFrame, frameNodes, markerPositions, normalizeSnapshot, stepNodeIds, progressionNodes, snapshotNodes, snapshotStage, treeEdges, type TreeSnapshotData } from '../lib/tree-snapshot';
+import { ascendancyStepMarkers, cameraForFrame, frameNodes, markerPositions, normalizeSnapshot, stepNodeIds, progressionNodes, snapshotNodes, snapshotStage, treeEdges, type TreeSnapshotData } from '../lib/tree-snapshot';
 import { stageChanges, type PassiveTree } from '../lib/passive-tree';
 import '../styles/tree-block.css';
 
@@ -14,8 +14,9 @@ export function TreePicker({ snapshot, previousSnapshot, previousSnapshots, onAp
 }
 
 export default function TreeBlock({ snapshot: value }: { snapshot: Partial<TreeSnapshotData> }) {
-  const snapshot = useMemo(() => normalizeSnapshot(value), [value]);
+  const baseSnapshot = useMemo(() => normalizeSnapshot(value), [value]);
   const [tree, setTree] = useState<PassiveTree | null>(null);
+  const snapshot = useMemo(() => tree ? { ...baseSnapshot, markers: ascendancyStepMarkers(tree, baseSnapshot) } : baseSnapshot, [tree, baseSnapshot]);
   const [sprites, setSprites] = useState<HTMLImageElement[]>([]);
   const [error, setError] = useState('');
   const [activeMarker, setActiveMarker] = useState<number | null>(null);
@@ -32,7 +33,8 @@ export default function TreeBlock({ snapshot: value }: { snapshot: Partial<TreeS
   const nodes = useMemo(() => tree ? snapshotNodes(tree, snapshot) : [], [tree, snapshot]);
   const allocated = useMemo(() => new Set(snapshot.nodes), [snapshot.nodes]);
   const changes = useMemo(() => stageChanges(snapshotStage(snapshot), snapshot.respec), [snapshot]);
-  const hasSidebar = snapshot.markers.length > 0 || !!snapshot.respec;
+  const hasSidebar = snapshot.markers.length > 0 || !!snapshot.respec || (snapshot.view === 'ascendancy' && snapshot.nodes.length > 0);
+  const ascendancyName = tree?.classes.find(c => c.id === snapshot.classId)?.ascendancies[snapshot.ascendancyId - 1]?.name;
   const focus = useMemo(() => {
     const ids = snapshot.respec ? new Set([...snapshot.nodes, ...snapshot.respec.nodes]) : snapshot.markers.length ? new Set(snapshot.markers.flatMap(stepNodeIds)) : allocated;
     const destinations = nodes.filter(n => ids.has(n.id));
@@ -92,10 +94,14 @@ export default function TreeBlock({ snapshot: value }: { snapshot: Partial<TreeS
       {(!tree || !camera) && <p className="tree-block-placeholder" role="status">{error || (tree ? 'No visible nodes in this snapshot.' : 'Loading tree…')}</p>}
     </div> : <div className="tree-block-empty">Choose nodes and numbered destinations to create a focused snapshot.</div>}
     {hasSidebar && <aside className="tree-block-sidebar" aria-label="Tree progression">
+    {snapshot.view === 'ascendancy' && ascendancyName && <div className="tree-block-ascendancy-name">{ascendancyName}</div>}
     {snapshot.respec && <div className="tree-block-respec"><strong>Respec</strong><small>Before: {snapshot.respec.title}</small><div><span className="respec-remove">Remove {changes.removed.size}</span><span className="respec-add">Add {changes.added.size}</span></div><small>Dashed red: remove · Solid green: add<br />Dim gold: keep</small>{snapshot.respec.note && <p>{snapshot.respec.note}</p>}</div>}
     {snapshot.markers.length > 0 && <ol className="tree-block-steps" aria-label="Tree steps in order">{snapshot.markers.map((marker, index) => <li key={marker.nodeId} className={marker.nodeId === activeMarker ? 'is-active' : ''}>
       <button type="button" aria-pressed={marker.nodeId === activeMarker} aria-label={`Step ${index + 1}: ${tree?.nodes.find(n => n.id === marker.nodeId)?.name ?? 'destination'}`} onClick={() => setActiveMarker(marker.nodeId)}>{index + 1}</button>
-      <div><strong>{tree?.nodes.find(n => n.id === marker.nodeId)?.name ?? 'Loading destination…'}</strong>{stepNodeIds(marker).length > 1 && <small className="tree-group-count">{stepNodeIds(marker).length} nodes</small>}{marker.note && <p>{marker.note}</p>}</div>
+      <div><strong>{tree?.nodes.find(n => n.id === marker.nodeId)?.name ?? 'Loading destination…'}</strong>{stepNodeIds(marker).length > 1 && <small className="tree-group-count">{stepNodeIds(marker).length} nodes</small>}{marker.note && <p>{marker.note}</p>}{stepNodeIds(marker).map(id => {
+        const notable = nodes.find(node => node.id === id);
+        return notable?.ascendancy && notable.stats.length > 0 ? <div className="tree-block-ascendancy-info" key={id}>{id !== marker.nodeId && <strong>{notable.name}</strong>}<ul>{notable.stats.map((stat, index) => <li key={index}>{stat}</li>)}</ul></div> : null;
+      })}</div>
     </li>)}</ol>}
     </aside>}
     </div>

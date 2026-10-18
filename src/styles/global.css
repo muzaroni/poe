@@ -187,7 +187,7 @@ ol.prose-list, .tiptap ol { list-style-type: decimal; padding-left: 24px; }
 .reader-task.is-done > label > span, .reader-task.is-done > label > div { opacity: .5; text-decoration: line-through; text-decoration-color: #737a80; }
 .reader-task-list .reader-task-list { margin-left: 20px; }
 .callout { background: #0d1518; border: 1px solid #202f32; border-left: 2px solid #52777a; border-radius: 4px; padding: 8px 11px; margin: 12px 0; color: #bfcac9; }
-.callout-important { background: #1c0e10; border-color: #613036; border-left-color: #ff6655; color: #ffaaa1; }
+.callout-important { background: #120a0c; border-color: #613036; border-left-color: #ff6655; color: #ffaaa1; }
 .callout > p:first-child, .callout > .prose-list:first-child { margin-top: 0; }
 .callout > p:last-child, .callout > .prose-list:last-child { margin-bottom: 0; }
 .gem-setup, .gem-setup-editor { margin: 13px 0; padding: 10px 12px; border: 1px solid #48412b; border-radius: 7px; background: #0b0e11; }
@@ -302,3 +302,37 @@ ol.prose-list, .tiptap ol { list-style-type: decimal; padding-left: 24px; }
   .header-inner:has(.local-editor-link) { grid-template-columns: minmax(0, 1fr) auto; }
   .local-editor-link { grid-column: 2; grid-row: 1; }
 }
+
+.social-links button.discord-copy { border: 0; border-radius: 3px; background: transparent; font-family: inherit; font-weight: inherit; text-align: left; cursor: pointer; }
+.social-links button.discord-copy:hover { color: #a7a4ff; }
+.social-links button.discord-copy:focus-visible { outline: 2px solid #8c85ff; outline-offset: 4px; }
+
+.gem-setup-continuation { display: flex; flex-wrap: wrap; align-items: end; gap: 7px; margin: 0 0 9px; }
+.gem-setup-continuation label { display: grid; gap: 3px; font-size: 12px; color: #8896a5; flex: 0 1 420px; min-width: 0; }
+.gem-setup-continuation select { max-width: 100%; min-width: 0; font: inherit; padding: 5px 7px; background: #090d11; border: 1px solid #35404b; color: #c6ced7; border-radius: 4px; }
+.gem-setup-continuation button { font: inherit; font-size: 12px; padding: 5px 8px; background: #141a20; border: 1px solid #35404b; color: #c6ced7; border-radius: 4px; cursor: pointer; }
+.gem-setup-continuation button:disabled { opacity: .45; cursor: default; }
+.gem-setup-continuation[hidden] { display: none; }
+
+.gem-change-badge { display: inline-block; margin-left: 6px; padding: 0 4px; border: 1px solid #665526; border-radius: 3px; background: #211c0d; color: #e7cc70; font-size: 10px; line-height: 1.5; font-weight: 700; letter-spacing: .04em; vertical-align: 2px; white-space: nowrap; }
+.gem-inline-replaced, .gem-inline-link-change { color: #87929d; font-size: 12px; font-weight: 400; }
+.gem-link-or { color: #929aa3; font-size: .85em; font-weight: 400; }
+.gem-link-removed { color: #8e9299; font-size: 12px; line-height: 1.5; margin: 3px 0 5px 12px; }
+.gem-removed-setups p { color: #8e9299; font-size: 12px; line-height: 1.5; margin: 4px 0 !important; }
+.gem-removed-setups strong { color: #9ca5ae; font-weight: 500; }
+
+.gem-change-removed { color: #d59b99; background: #201213; border-color: #613638; }
+.gem-change-moved { color: #98b7df; background: #101a28; border-color: #345176; white-space: normal; max-width: 100%; overflow-wrap: anywhere; }
+.gem-change-swap { color: #d5ac7b; background: #21190f; border-color: #655031; }
+
+.gem-manual-changes { border: 1px solid #303943; border-radius: 4px; padding: 6px 9px; margin: 7px 0 10px; background: #0a0e12; }
+.gem-manual-changes summary { cursor: pointer; color: #b7c3cf; font-size: 12px; }
+.gem-manual-changes > p { font-size: 12px; color: #8493a2; margin: 7px 0 !important; }
+.gem-manual-grid, .gem-manual-removals { display: grid; gap: 6px; margin: 8px 0; }
+.gem-manual-changes label { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(180px, 1fr); gap: 8px; align-items: center; color: #a8b4c1; font-size: 12px; }
+.gem-manual-changes select { min-width: 0; width: 100%; background: #10151c; border: 1px solid #35404b; color: #c6ced7; border-radius: 3px; font: inherit; padding: 5px; }
+.gem-manual-changes .gem { font-size: 13px; }
+.gem-manual-removals { border-top: 1px solid #29313b; padding-top: 7px; }
+.gem-manual-removals > strong { font-size: 12px; color: #b89a96; }
+.gem-manual-changes > button { font: inherit; font-size: 12px; padding: 4px 7px; background: #151c24; color: #c6ced7; border: 1px solid #35404b; border-radius: 3px; cursor: pointer; }
+@media (max-width: 600px) { .gem-manual-changes label { grid-template-columns: minmax(0, 1fr); gap: 3px; } }

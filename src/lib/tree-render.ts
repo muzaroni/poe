@@ -67,9 +67,13 @@ for (const node of drawOrder) {
 }
   for (const marker of markerPositions(markers, nodes, camera, size)) {
     if (marker.x < -15 || marker.y < -15 || marker.x > size.width + 15 || marker.y > size.height + 15) continue;
-    ctx.fillStyle = '#142863'; ctx.strokeStyle = '#eef2ff'; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.roundRect(marker.x - 13, marker.y - 13, 26, 26, 5); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = '#fff'; ctx.font = '700 16px "Reddit Sans", sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.save();
+    ctx.fillStyle = '#142863'; ctx.strokeStyle = '#8398ff'; ctx.lineWidth = 1;
+    ctx.shadowColor = '#000b'; ctx.shadowBlur = 6; ctx.shadowOffsetY = 2;
+    ctx.beginPath(); ctx.roundRect(marker.x - 12, marker.y - 12, 24, 24, 4); ctx.fill();
+    ctx.shadowColor = 'transparent'; ctx.stroke();
+    ctx.fillStyle = '#fff'; ctx.font = '700 17px "Reddit Sans", sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     ctx.fillText(String(marker.number), marker.x, marker.y + .5); ctx.textBaseline = 'alphabetic';
+    ctx.restore();
   }
 }
