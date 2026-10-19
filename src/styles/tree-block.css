@@ -12,14 +12,18 @@
 .tree-block-body { display: flex; flex-wrap: wrap; align-items: flex-start; }
 .tree-block-map { flex: 0 1 var(--tree-snapshot-width); width: var(--tree-snapshot-width); max-width: 100%; min-width: 0; }
 .tree-block-steps { flex: 1 1 240px; list-style: none !important; margin: 0 !important; padding: 10px 12px !important; display: grid; gap: 10px; }
-.tree-block-steps > li { display: flex; align-items: flex-start; gap: 9px; margin: 0 !important; padding: 0; min-width: 0; }
+.tree-block-steps > li { margin: 0 !important; padding: 0; min-width: 0; }
 .tree-block-steps > li::marker { content: ''; }
+.tree-block-step-content { display: flex; align-items: flex-start; gap: 9px; }
+.tree-block-steps .tree-act-divider { display: flex; align-items: center; gap: 8px; margin: 3px 0 9px; color: #f0c64f; font-size: 11px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.tree-block-steps .tree-act-divider::after { content: ''; flex: 1; height: 1px; background: #876b30; }
 .tree-block-steps button { display: grid; place-items: center; flex: 0 0 25px; width: 25px; height: 25px; padding: 0; border: 1px solid #8398ff; box-shadow: 0 2px 6px #000b; border-radius: 5px; background: #142863; color: white; font-family: var(--header-font); font-size: 17px; font-weight: 700; }
-.tree-block-steps button[aria-pressed=true] { background: #203b80; border-color: white; }
-.tree-block-steps > li > div { min-width: 0; padding-top: 3px; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+.tree-block-steps button[aria-pressed=true] { background: #f0c64f; border-color: #ffe693; color: #211807; box-shadow: 0 0 0 2px #f0c64f55, 0 2px 8px #000b; }
+.tree-block-step-content > div { min-width: 0; padding-top: 3px; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
 .tree-block-steps strong { display: block; color: #d1dcea; font-weight: 650; }
 .tree-block-steps p { margin: 3px 0 0 !important; font-size: 13px; line-height: 1.5; color: #9dabb9; }
-.tree-block-steps .is-active strong { color: #f0dfaa; }
+.tree-block-steps .is-active strong { color: #ffe17e; }
+.tree-block-steps .is-active p { color: #e5d4a3; }
 .tree-block-warning { padding: 0 9px; margin: 6px 0 !important; color: #d3a575; font-size: 11px; }
 .tree-block-dialog { position: fixed; inset: 0; margin: auto; width: min(1450px, calc(100vw - 30px)); max-width: none; max-height: 92dvh; padding: 10px; border: 1px solid #4d5b6b; border-radius: 7px; background: #0b0f14; color: #c6ced7; overflow: auto; }
 .tree-block-dialog::backdrop { background: #000c; }

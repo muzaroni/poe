@@ -38,7 +38,7 @@ for (const node of drawOrder) {
   const on = active(node), isAdded = added.has(node.id), isRemoved = removed.has(node.id), found = matchIds.has(node.id), focused = selected === node.id || hoverId === node.id || emphasized.has(node.id);
   const later = on && progression !== null && !progression.has(node.id);
   ctx.save();
-  if (later && !isAdded && !isRemoved) ctx.globalAlpha = .24;
+  if (later && !focused && !isAdded && !isRemoved) ctx.globalAlpha = .24;
   else if (on && inherited.has(node.id) && !focused) ctx.globalAlpha = .62;
   const color = isRemoved ? '#ef7a78' : focused ? '#fff3bd' : found ? '#79b8ff' : isAdded ? '#70e79b' : isRemoved ? '#ef7a78' : on ? '#e7ca83' : node.kind === 'keystone' ? '#514837' : '#2e3741';
   if (on || found || isRemoved || focused) {

@@ -33,7 +33,7 @@
         "content": [
           {
             "type": "text",
-            "text": "This guide pulls it's resources from a mixture of "
+            "text": "This guide pulls its resources from a mixture of "
           },
           {
             "type": "text",
@@ -82,9 +82,396 @@
         "content": [
           {
             "type": "text",
-            "text": "This build highly excels at fast mapping and content such as Breach, Legion, Blight. Single target is high once you invest. Starting out you're very defensive being CI with capped block, over 7K ES pool, 12k armor, great movement and recovery once you invest more. Probably one of the best all arounder over last few leagues that starts around 30 divs and can scale into hundreds."
+            "text": "This build highly excels at fast mapping and content such as Breach, Legion, Blight. Single target is high once you invest. Starting out you're very defensive being CI with capped block, over 7K ES pool, 12k armor, great movement and recovery once you invest more. Probably one of the best all-rounder builds over the last few leagues that can do all content around 20-30 divines and scale into hundreds of divines if you want."
           }
         ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There are two ways to follow this guide, depending on how much detail you want:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Written Guide (Act Breakdown):"
+                  },
+                  {
+                    "type": "text",
+                    "text": " A more detailed, step-by-step breakdown of the campaign, including when to pick up gems, how much they cost, and general tips to help you along the way."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Snapshot Viewer:"
+                  },
+                  {
+                    "type": "text",
+                    "text": " A simplified version of the guide designed to sit on your second monitor while you play. It keeps all the important information easily accessible without the extra explanations, including full campaign pathing, gem links at the end of each Act, and regex you can copy to your clipboard with a single click."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Campaign Snapshot"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "important"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Click the Passive tree below to open the snapshot viewer."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "Passive tree",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              54447,
+              57264,
+              33296,
+              36774,
+              17579,
+              21934,
+              11420,
+              11128,
+              8135,
+              11659,
+              27929,
+              8948,
+              38176,
+              11551,
+              50472,
+              63067,
+              22972,
+              56128,
+              49651,
+              27709,
+              22647,
+              38849,
+              40271,
+              5296,
+              33310,
+              39521,
+              51146,
+              51524,
+              48878,
+              16243,
+              53828,
+              27879,
+              41635,
+              32710,
+              32345,
+              4502,
+              20852,
+              6785,
+              42649,
+              13387,
+              1822,
+              38190,
+              61653,
+              18769,
+              36858,
+              53456,
+              18182,
+              56295,
+              46277,
+              60592,
+              35851,
+              47484,
+              26148,
+              38995,
+              8001,
+              7488,
+              4269,
+              55880,
+              32681,
+              32657,
+              25260,
+              27788,
+              292,
+              27415,
+              37175,
+              16970,
+              25439,
+              32278,
+              2292,
+              27203,
+              5022,
+              44339,
+              6615,
+              37532,
+              64239,
+              64612,
+              19098,
+              63207,
+              48411,
+              4036,
+              15228,
+              47306,
+              9586,
+              63228,
+              42804,
+              60259,
+              32176,
+              35255,
+              22315,
+              48514,
+              27163,
+              43000,
+              10115,
+              13862,
+              52031,
+              52848,
+              41476,
+              60791,
+              5415,
+              36017
+            ],
+            "mastery": {
+              "292": 34242,
+              "7488": 62252,
+              "9586": 2987,
+              "13387": 17942,
+              "13862": 12119,
+              "26148": 9755,
+              "32278": 57179,
+              "32657": 48980,
+              "37532": 53046,
+              "40271": 6216,
+              "48411": 26785,
+              "53828": 42540,
+              "56128": 63280
+            },
+            "inheritedNodes": [],
+            "campaignMode": true,
+            "campaignGems": {},
+            "markers": [
+              {
+                "nodeId": 11420,
+                "note": "",
+                "actDivider": "Act 1",
+                "positionX": -953.428817840555,
+                "positionY": -4403.376909414212
+              },
+              {
+                "nodeId": 27929,
+                "note": "",
+                "positionX": 738.571182159445,
+                "positionY": -4403.376909414212
+              },
+              {
+                "nodeId": 56128,
+                "note": "Intelligence is added to Accuracy Rating with Wands",
+                "actDivider": "Act 2",
+                "positionX": 954.5168989287808,
+                "positionY": -6435.6014350581045
+              },
+              {
+                "nodeId": 40271,
+                "note": "Critical Strikes do not inherently Ignite; 100% increased Damage with Hits against Ignited Enemies",
+                "positionX": 2931.811851561384,
+                "positionY": -6665.459352541713
+              },
+              {
+                "nodeId": 53828,
+                "note": "Wand Attacks fire an additional Projectile",
+                "actDivider": "Act 3",
+                "positionX": 3380.434490722588,
+                "positionY": -8213.079166993442
+              },
+              {
+                "nodeId": 52031,
+                "note": "",
+                "actDivider": "Act 4",
+                "positionX": 3400.2435213458693,
+                "positionY": -8733.231500428106
+              },
+              {
+                "nodeId": 41476,
+                "note": "",
+                "positionX": 2982.3436923199756,
+                "positionY": -8419.695707561697
+              },
+              {
+                "nodeId": 32345,
+                "note": "",
+                "actDivider": "Act 4",
+                "positionX": 3534.6109841300317,
+                "positionY": -6168.967234537422
+              },
+              {
+                "nodeId": 13387,
+                "note": "Hits have 15% chance to treat Enemy Monster Elemental Resistance values as inverted",
+                "positionX": 4832.765542505986,
+                "positionY": -4925.536692330107
+              },
+              {
+                "nodeId": 13862,
+                "note": "15% increased Mana Cost Efficiency",
+                "actDivider": "Act 5",
+                "positionX": 425.1811821594456,
+                "positionY": -6247.186909414211
+              },
+              {
+                "nodeId": 18769,
+                "note": "",
+                "positionX": 5880.716293826998,
+                "positionY": -5072.601299902755
+              },
+              {
+                "nodeId": 26148,
+                "note": "+500 to Accuracy Rating; -2 to Accuracy Rating per Level",
+                "actDivider": "Act 6",
+                "positionX": 7576.206542430248,
+                "positionY": -1810.0871653586473
+              },
+              {
+                "nodeId": 7488,
+                "note": "5% of Leech is Instant",
+                "actDivider": "Act 7",
+                "positionX": 6714.532759834543,
+                "positionY": -1131.8531905407995
+              },
+              {
+                "nodeId": 32657,
+                "note": "10% chance to gain a Frenzy Charge when you Hit your Marked Enemy",
+                "positionX": 8097.177904627955,
+                "positionY": -1292.5290365231426
+              },
+              {
+                "nodeId": 292,
+                "note": "15% increased maximum Life if there are no Life Modifiers on Equipped Body Armour",
+                "actDivider": "Act 8",
+                "positionX": 6755.286820249412,
+                "positionY": -1565.0082365290423
+              },
+              {
+                "nodeId": 27203,
+                "note": "",
+                "positionX": -9.495727254767644,
+                "positionY": -4793.887454114385
+              },
+              {
+                "nodeId": 48411,
+                "note": "25% increased Mana Reservation Efficiency of Skills Supported by Spellslinger",
+                "positionX": 2780.4268224308835,
+                "positionY": -5981.880908821491
+              },
+              {
+                "nodeId": 9586,
+                "note": "+25% to Critical Strike Multiplier against Unique Enemies",
+                "actDivider": "Act 9",
+                "positionX": 3562.557085255647,
+                "positionY": -6534.364259202228
+              },
+              {
+                "nodeId": 32278,
+                "note": "20% increased effect of Offerings",
+                "positionX": 3164.9261821594455,
+                "positionY": -4860.386909414212
+              },
+              {
+                "nodeId": 37532,
+                "note": "40% of Physical Damage Converted to Lightning Damage",
+                "actDivider": "Act 10",
+                "positionX": 7321.557417297795,
+                "positionY": -4005.9041046584853
+              },
+              {
+                "nodeId": 42804,
+                "note": "",
+                "positionX": 6903.086182159446,
+                "positionY": -2711.570794001134
+              },
+              {
+                "nodeId": 32176,
+                "note": "",
+                "positionX": 6688.296182159448,
+                "positionY": -3465.0430248272905
+              },
+              {
+                "nodeId": 35255,
+                "note": "",
+                "positionX": 7261.606182159447,
+                "positionY": -3444.556909414212
+              },
+              {
+                "nodeId": 27163,
+                "note": "",
+                "positionX": 626.356182159444,
+                "positionY": -5263.35690941421
+              },
+              {
+                "nodeId": 36017,
+                "note": "",
+                "positionX": 917.2606355110006,
+                "positionY": -10293.69814623637
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 800,
+            "height": 600
+          }
+        }
       },
       {
         "type": "heading",
@@ -140,7 +527,7 @@
       {
         "type": "regex",
         "attrs": {
-          "label": "3 link or more + move speed boots for act 1-2 + most all required gems from vendor up until maps",
+          "label": "3L, MS boots, Gems",
           "value": "\"-\\w-.-|(-\\w){4}|-\\w-|Runn|rint|^added l|pris|ombu|oly f|ter at|ld ch|usil|^voll|^added co|akn|f thu|ld of i|^has|lsl|do$|iper'|^mark|^greater m|r v|mmol|^fork|^returni|c bl|^balli|ta s|crate$|atile|^sig|mpes|bone o|^spell c|^lightning p|cis|sacred\""
         }
       },
@@ -498,7 +885,19 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Get Quicksilver"
+                    "text": "Get "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#51d6bc"
+                        }
+                      }
+                    ],
+                    "text": "Quicksilver"
                   }
                 ]
               }
@@ -596,15 +995,20 @@
                     "text": "Buy "
                   },
                   {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Volley Support",
-                      "color": "green"
-                    }
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#8a8a8a"
+                        }
+                      }
+                    ],
+                    "text": "Heavy Belt"
                   },
                   {
                     "type": "text",
-                    "text": " - 1 "
+                    "text": " - 2 "
                   },
                   {
                     "type": "icon",
@@ -615,24 +1019,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " (Optional)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Gamble Gloves (AR/ES)"
+                    "text": " (used for Shield Charge)"
                   }
                 ]
               }
@@ -665,7 +1052,12 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
           {
             "type": "taskItem",
             "attrs": {
@@ -750,74 +1142,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " "
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Buy "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Added Lightning Damage Support",
-                      "color": "blue"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " (Optional)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Buy "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Faster Attacks Support",
-                      "color": "green"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " - 1 "
-                  },
-                  {
-                    "type": "icon",
-                    "attrs": {
-                      "src": "/images/sunder-rf/trans.png",
-                      "name": "Orb of Transmutation"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " "
+                    "text": " (Used for Kinetic Fusillade)"
                   }
                 ]
               }
@@ -1027,17 +1352,6 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Faster Attacks Support",
-                          "color": "green"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " + "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
                           "name": "Momentum Support",
                           "color": "green"
                         }
@@ -1155,13 +1469,63 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Get "
+                    "text": "Buy 2 x "
                   },
                   {
                     "type": "gem",
                     "attrs": {
                       "name": "Kinetic Fusillade",
                       "color": "blue"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 2 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy 2 x "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Volley Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 2 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
                     }
                   },
                   {
@@ -1188,7 +1552,7 @@
                   {
                     "type": "gem",
                     "attrs": {
-                      "name": "Kinetic Fusillade",
+                      "name": "Added Lightning Damage Support",
                       "color": "blue"
                     }
                   },
@@ -1199,8 +1563,47 @@
                   {
                     "type": "icon",
                     "attrs": {
-                      "src": "/images/sunder-rf/alt.png",
-                      "name": "Orb of Alteration"
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Faster Attacks Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
                     }
                   },
                   {
@@ -1453,17 +1856,6 @@
                             "attrs": {
                               "name": "Shield Charge",
                               "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " + "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Faster Attacks Support",
-                              "color": "green"
                             }
                           },
                           {
@@ -1787,17 +2179,6 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Holy Flame Totem",
-                          "color": "red"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
                           "name": "Flame Wall",
                           "color": "blue"
                         }
@@ -1805,6 +2186,37 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 5 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/wisdom.png",
+                  "name": "Scroll of Wisdom"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Scroll of Wisdom, 5 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/trans.png",
+                  "name": "Orb of Transmutation"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Transmutation "
               }
             ]
           }
@@ -1987,11 +2399,14 @@
             "title": "Fairgraves · Main, Main 2, Movement, Aura, Utility",
             "content": [
               {
-                "type": "paragraph",
+                "type": "heading",
+                "attrs": {
+                  "level": 3
+                },
                 "content": [
                   {
                     "type": "text",
-                    "text": "Alternate double KF skills for 18 projectiles"
+                    "text": "Level 12: Mervail"
                   }
                 ]
               },
@@ -2204,17 +2619,6 @@
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Holy Flame Totem",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": ", "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
                               "name": "Flame Wall",
                               "color": "blue"
                             }
@@ -2222,6 +2626,37 @@
                         ]
                       }
                     ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Total Cost: 5 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " Scroll of Wisdom, 5 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " Orb of Transmutation "
                   }
                 ]
               }
@@ -2452,10 +2887,45 @@
                           "name": "Frostblink",
                           "color": "blue"
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 1 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/alt.png",
+                  "name": "Orb of Alteration"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Alteration "
               }
             ]
           }
@@ -2854,6 +3324,45 @@
                         ]
                       }
                     ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy 2 x "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Multiple Projectiles Support",
+                      "color": "green"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 2 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Act 1)"
                   }
                 ]
               }
@@ -3399,6 +3908,37 @@
                 ]
               }
             ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 2 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/trans.png",
+                  "name": "Orb of Transmutation"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Transmutation, 2 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/alt.png",
+                  "name": "Orb of Alteration"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Alteration "
+              }
+            ]
           }
         ]
       },
@@ -3645,7 +4185,7 @@
         "type": "passiveTree",
         "attrs": {
           "snapshot": {
-            "title": "ASC 1 - Commander of Darkness",
+            "title": "Normal Lab",
             "version": "3.29.1",
             "classId": 3,
             "ascendancyId": 3,
@@ -3656,6 +4196,7 @@
             ],
             "mastery": {},
             "inheritedNodes": [],
+            "campaignGems": {},
             "markers": [
               {
                 "nodeId": 36017,
@@ -5591,6 +6132,74 @@
         "content": [
           {
             "type": "text",
+            "text": "Act 9"
+          }
+        ]
+      },
+      {
+        "type": "passiveTree",
+        "attrs": {
+          "snapshot": {
+            "title": "Cruel Lab",
+            "version": "3.29.1",
+            "classId": 3,
+            "ascendancyId": 3,
+            "nodes": [
+              60791,
+              60547,
+              11490,
+              23509,
+              23572
+            ],
+            "mastery": {},
+            "inheritedNodes": [
+              60791,
+              5415,
+              36017
+            ],
+            "respec": {
+              "title": "ASC 1 - Commander of Darkness",
+              "version": "3.29.1",
+              "classId": 3,
+              "ascendancyId": 3,
+              "nodes": [
+                60791,
+                5415,
+                36017
+              ],
+              "mastery": {},
+              "note": ""
+            },
+            "campaignGems": {},
+            "markers": [
+              {
+                "nodeId": 11490,
+                "note": "",
+                "positionX": 1901.8818436011204,
+                "positionY": -10492.3
+              },
+              {
+                "nodeId": 23572,
+                "note": "",
+                "positionX": 2080.634195866844,
+                "positionY": -10507.45462177315
+              }
+            ],
+            "frame": null,
+            "view": "ascendancy",
+            "width": 480,
+            "height": 480
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
             "text": "Act 10"
           }
         ]
@@ -5622,10 +6231,6 @@
               22972,
               56128,
               49651,
-              27709,
-              22647,
-              38849,
-              40271,
               5296,
               33310,
               39521,
@@ -5791,6 +6396,7 @@
               27788,
               292
             ],
+            "campaignGems": {},
             "markers": [
               {
                 "nodeId": 32278,
@@ -5869,7 +6475,7 @@
         "type": "passiveTree",
         "attrs": {
           "snapshot": {
-            "title": "ASC Respec",
+            "title": "Merciless Lab",
             "version": "3.29.1",
             "classId": 3,
             "ascendancyId": 3,
@@ -5888,6 +6494,7 @@
               5415,
               36017
             ],
+            "campaignGems": {},
             "markers": [
               {
                 "nodeId": 11490,
@@ -5908,15 +6515,10 @@
                 "positionY": -10766.942318877693
               }
             ],
-            "frame": {
-              "x": 1916.1198930166672,
-              "y": -10630.827204068819,
-              "width": 860.5042016806722,
-              "height": 752.9411764705883
-            },
+            "frame": null,
             "view": "ascendancy",
             "width": 480,
-            "height": 420
+            "height": 480
           }
         }
       },

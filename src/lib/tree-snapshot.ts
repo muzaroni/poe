@@ -1,19 +1,19 @@
 import type { PassiveNode, PassiveTree, TreeStage } from './passive-tree';
 
-export type TreeMarker = { nodeId: number; note: string; nodeIds?: number[]; positionX?: number; positionY?: number; offsetX?: number; offsetY?: number };
+export type TreeMarker = { nodeId: number; note: string; actDivider?: string; displayNumber?: number; nodeIds?: number[]; positionX?: number; positionY?: number; offsetX?: number; offsetY?: number };
 export type TreeFrame = { x: number; y: number; width: number; height: number };
 export type TreeRespec = { title: string; version: string; classId: number; ascendancyId: number; nodes: number[]; mastery: Record<string, number>; note: string };
 export type TreeSnapshotData = {
   title: string; version: string; classId: number; ascendancyId: number;
   respec?: TreeRespec; nodes: number[]; inheritedNodes?: number[]; mastery: Record<string, number>; markers: TreeMarker[];
-  ascendancyNumbering?: 'automatic' | 'manual'; width: number; height: number; view: 'tree' | 'ascendancy'; frame: TreeFrame | null;
+  ascendancyNumbering?: 'automatic' | 'manual'; campaignMode?: boolean; campaignGems?: Record<string, string>; campaignRegex?: { label: string; value: string }; width: number; height: number; view: 'tree' | 'ascendancy'; frame: TreeFrame | null;
 };
 export type TreeCamera = { x: number; y: number; scale: number };
 export type TreeSize = { width: number; height: number; dpr: number };
 export function normalizeSnapshot(value: Partial<TreeSnapshotData> = {}): TreeSnapshotData {
   const bounded = (n: unknown, fallback: number, min: number, max: number) => Number.isFinite(n) ? Math.min(max, Math.max(min, Number(n))) : fallback;
   const nodes = [...new Set((Array.isArray(value.nodes) ? value.nodes : []).filter(id => Number.isInteger(id) && id >= 0))].slice(0, 6000);
-  const markers = (Array.isArray(value.markers) ? value.markers : []).filter((m, index, all) => Number.isInteger(m.nodeId) && m.nodeId >= 0 && all.findIndex(other => other.nodeId === m.nodeId) === index).slice(0, 50).map(m => ({ nodeId: m.nodeId, note: String(m.note ?? '').slice(0, 1000), positionX: Number.isFinite(m.positionX) && Number.isFinite(m.positionY) ? m.positionX : undefined, positionY: Number.isFinite(m.positionX) && Number.isFinite(m.positionY) ? m.positionY : undefined, nodeIds: Array.isArray(m.nodeIds) ? [...new Set(m.nodeIds.filter(id => Number.isInteger(id) && id >= 0))].slice(0, 500) : undefined, offsetX: Number.isFinite(m.offsetX) ? Math.max(-5000, Math.min(5000, m.offsetX!)) : undefined, offsetY: Number.isFinite(m.offsetY) ? Math.max(-5000, Math.min(5000, m.offsetY!)) : undefined }));
+  const markers = (Array.isArray(value.markers) ? value.markers : []).filter((m, index, all) => Number.isInteger(m.nodeId) && m.nodeId >= 0 && all.findIndex(other => other.nodeId === m.nodeId) === index).slice(0, 50).map(m => ({ nodeId: m.nodeId, note: String(m.note ?? '').slice(0, 1000), actDivider: typeof m.actDivider === 'string' ? m.actDivider.trim().slice(0, 60) || undefined : undefined, positionX: Number.isFinite(m.positionX) && Number.isFinite(m.positionY) ? m.positionX : undefined, positionY: Number.isFinite(m.positionX) && Number.isFinite(m.positionY) ? m.positionY : undefined, nodeIds: Array.isArray(m.nodeIds) ? [...new Set(m.nodeIds.filter(id => Number.isInteger(id) && id >= 0))].slice(0, 500) : undefined, offsetX: Number.isFinite(m.offsetX) ? Math.max(-5000, Math.min(5000, m.offsetX!)) : undefined, offsetY: Number.isFinite(m.offsetY) ? Math.max(-5000, Math.min(5000, m.offsetY!)) : undefined }));
   const f = value.frame;
   const frame = f && [f.x, f.y, f.width, f.height].every(Number.isFinite) && f.width > 0 && f.height > 0 ? { x: f.x, y: f.y, width: f.width, height: f.height } : null;
   return {
@@ -28,6 +28,9 @@ export function normalizeSnapshot(value: Partial<TreeSnapshotData> = {}): TreeSn
       mastery: Object.fromEntries(Object.entries(value.respec.mastery ?? {}).filter(([id, effect]) => /^\d+$/.test(id) && Number.isInteger(effect))), note: String(value.respec.note ?? '').slice(0, 2000),
     } : undefined,
     ascendancyNumbering: value.ascendancyNumbering === 'manual' ? 'manual' : undefined,
+    campaignMode: value.campaignMode === true || undefined,
+    campaignGems: value.campaignGems && typeof value.campaignGems === 'object' ? Object.fromEntries(Object.entries(value.campaignGems).filter(([act, links]) => /^(?:10|[1-9])$/.test(act) && typeof links === 'string').map(([act, links]) => [act, links.slice(0, 3000)])) : undefined,
+    campaignRegex: value.campaignRegex && typeof value.campaignRegex.value === 'string' && value.campaignRegex.value.trim() ? { label: String(value.campaignRegex.label ?? 'Regex').slice(0, 160), value: value.campaignRegex.value.slice(0, 3000) } : undefined,
     markers, frame, view: value.view === 'ascendancy' ? 'ascendancy' : 'tree',
     width: bounded(value.width, 480, 240, 1000), height: bounded(value.height, 240, 120, 1200),
   };
@@ -69,7 +72,7 @@ export function markerPositions(markers: TreeMarker[], nodes: PassiveNode[], cam
   return markers.flatMap((marker, index) => {
     const node = byId.get(marker.nodeId);
     if (!node) return [];
-    return [{ ...marker, number: index + 1, node, x: ((marker.positionX ?? node.x + (marker.offsetX ?? 0)) - camera.x) * camera.scale + size.width / 2 + (marker.positionX === undefined ? -19 : 0), y: ((marker.positionY ?? node.y + (marker.offsetY ?? 0)) - camera.y) * camera.scale + size.height / 2 + (marker.positionY === undefined ? 18 : 0) }];
+    return [{ ...marker, number: marker.displayNumber ?? index + 1, node, x: ((marker.positionX ?? node.x + (marker.offsetX ?? 0)) - camera.x) * camera.scale + size.width / 2 + (marker.positionX === undefined ? -19 : 0), y: ((marker.positionY ?? node.y + (marker.offsetY ?? 0)) - camera.y) * camera.scale + size.height / 2 + (marker.positionY === undefined ? 18 : 0) }];
   });
 }
 

@@ -1,13 +1,18 @@
 import TreeBlock from './TreeBlock';
 import GemSetupChanges, { GemSetupComparison } from './GemSetupChanges';
 import { gemDisplayName } from '../lib/gems';
-import { useEffect, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { JSONContent } from '@tiptap/core';
-import { Check, Copy, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { assetUrl, headingId, plainText } from '../lib/guide';
 import GemLinkList, { gemLinkGroups } from './GemLinkList';
+import { guideAscendancySnapshots, guideGemLinksByAct, guideRegexes, type CampaignAscendancySnapshot, type GuideRegex } from '../lib/campaign';
+import RegexCopyButton from './RegexCopyButton';
 
 type Props = { content: JSONContent; slug: string };
+const CampaignGemsContext = createContext<Record<string, JSONContent[]>>({});
+const CampaignRegexContext = createContext<GuideRegex[]>([]);
+const CampaignAscendancyContext = createContext<CampaignAscendancySnapshot[]>([]);
 
 function hash(value: string) {
   let result = 2166136261;
@@ -34,13 +39,7 @@ function ChecklistItem({ node, slug, section, path, gemSetup = false }: { node: 
 }
 
 function Regex({ label, value }: { label: string; value: string }) {
-  const [copied, setCopied] = useState(false);
-  async function copy() {
-    await navigator.clipboard.writeText(value);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1800);
-  }
-  return <div className="regex-card"><div className="regex-head"><strong>{label}</strong><button type="button" onClick={copy} aria-label={`Copy ${label}`}>{copied ? <Check size={15} /> : <Copy size={15} />}{copied ? 'Copied' : 'Copy'}</button></div><code>{value}</code></div>;
+  return <div className="regex-card"><div className="regex-head"><strong>{label}</strong><RegexCopyButton label={label} value={value} /></div><code>{value}</code></div>;
 }
 
 function Text({ node }: { node: JSONContent }) {
@@ -57,6 +56,9 @@ function Text({ node }: { node: JSONContent }) {
 }
 
 function Node({ node, slug, section, path, gemSetup = false }: { node: JSONContent; slug: string; section: string; path: string; gemSetup?: boolean }) {
+  const campaignGemLinks = useContext(CampaignGemsContext);
+  const campaignRegexes = useContext(CampaignRegexContext);
+  const campaignAscendancy = useContext(CampaignAscendancyContext);
   const children = (node.content ?? []).map((child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup || node.type === 'gemSetup'} />);
   const attrs = node.attrs ?? {};
   switch (node.type) {
@@ -81,7 +83,7 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
       return <figure><img className={width == null ? undefined : 'has-custom-width'} style={width == null ? undefined : { width: `${width}%`, height: 'auto' }} src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? '')} loading="lazy" />{caption && <figcaption>{String(caption)}</figcaption>}</figure>;
     }
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
-    case 'passiveTree': return <TreeBlock snapshot={attrs.snapshot ?? {}} />;
+    case 'passiveTree': return <TreeBlock snapshot={attrs.snapshot ?? {}} guideGemLinks={campaignGemLinks} guideRegexes={campaignRegexes} guideAscendancy={campaignAscendancy} />;
     case 'gemSetup': return <section className="gem-setup" title={attrs.previousSetup ? `Changes from ${attrs.previousSetup.title}` : undefined}><div className="block-eyebrow">GEM LINKS</div><GemSetupComparison content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides}>{children}</GemSetupComparison><GemSetupChanges content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides} /></section>;
     case 'callout': return <aside className={`callout ${attrs.tone === 'important' ? 'callout-important' : ''}`}>{children}</aside>;
     case 'pobLinks': return <div className="pob-grid">{(attrs.links ?? []).map((link: { label: string; url: string }, index: number) => <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="pob-card"><span>{link.label}</span><ExternalLink size={17} /></a>)}</div>;
@@ -92,9 +94,31 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
 }
 
 export default function GuideDocument({ content, slug }: Props) {
-  let section = 'intro';
-  return <div className="guide-content">{(content.content ?? []).map((node, index) => {
-    if (node.type === 'heading' && Number(node.attrs?.level) === 2) section = plainText(node);
-    return <Node key={index} node={node} slug={slug} section={section} path={String(index)} />;
-  })}</div>;
+  const campaignGemLinks = useMemo(() => guideGemLinksByAct(content), [content]);
+  const campaignRegexes = useMemo(() => guideRegexes(content), [content]);
+  const campaignAscendancy = useMemo(() => guideAscendancySnapshots(content), [content]);
+  const sections: { heading?: JSONContent; title: string; items: { node: JSONContent; index: number }[] }[] = [{ title: 'intro', items: [] }];
+  for (const [index, node] of (content.content ?? []).entries()) {
+    if (node.type === 'heading' && Number(node.attrs?.level) === 2) sections.push({ heading: node, title: plainText(node), items: [] });
+    else sections[sections.length - 1].items.push({ node, index });
+  }
+  const [collapsed, setCollapsed] = useState<Record<number, boolean>>({});
+  useEffect(() => {
+    function openHashSection() {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const index = sections.findIndex(section => section.heading && headingId(section.title) === id);
+      if (index >= 0) setCollapsed(current => current[index] ? { ...current, [index]: false } : current);
+    }
+    openHashSection();
+    window.addEventListener('hashchange', openHashSection);
+    return () => window.removeEventListener('hashchange', openHashSection);
+  }, [content]);
+  const headingCount = sections.length - 1;
+  return <CampaignGemsContext.Provider value={campaignGemLinks}><CampaignRegexContext.Provider value={campaignRegexes}><CampaignAscendancyContext.Provider value={campaignAscendancy}><div className="guide-content">
+    {headingCount > 0 && <div className="guide-section-controls" aria-label="Guide section controls"><button type="button" onClick={() => setCollapsed({})}>Show all</button><button type="button" onClick={() => setCollapsed(Object.fromEntries(sections.map((section, index) => [index, !!section.heading])))}>Collapse all</button></div>}
+    {sections.map((section, index) => <div className={`guide-section${collapsed[index] ? ' is-collapsed' : ''}`} key={index}>
+      {section.heading && <h2 id={headingId(section.title)}><button type="button" aria-expanded={!collapsed[index]} aria-controls={`guide-section-${index}`} onClick={() => setCollapsed(current => ({ ...current, [index]: !current[index] }))}><span>{(section.heading.content ?? []).map((child, childIndex) => <Node key={childIndex} node={child} slug={slug} section={section.title} path={`${index}.heading.${childIndex}`} />)}</span><span className="guide-section-toggle">{collapsed[index] ? 'Show' : 'Hide'} <span className="guide-section-chevron" aria-hidden="true">▴</span></span></button></h2>}
+      <div className={section.heading ? 'guide-section-body' : undefined} id={section.heading ? `guide-section-${index}` : undefined} aria-hidden={section.heading ? !!collapsed[index] : undefined} inert={section.heading ? !!collapsed[index] : undefined}><div className={section.heading ? 'guide-section-inner' : undefined}>{section.items.map(({ node, index: nodeIndex }) => <Node key={nodeIndex} node={node} slug={slug} section={section.title} path={String(nodeIndex)} />)}</div></div>
+    </div>)}
+  </div></CampaignAscendancyContext.Provider></CampaignRegexContext.Provider></CampaignGemsContext.Provider>;
 }
