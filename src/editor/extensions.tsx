@@ -11,13 +11,65 @@ import Image from '@tiptap/extension-image';
 import { assetUrl } from '../lib/guide';
 import { useEffect, useState } from 'react';
 import GuideDocument from '../components/GuideDocument';
+import { gemVendorCostAt, type GemVendorCost } from '../lib/gem-vendor';
+import { acquisitionVendorForAct, carryGemAcquisitions } from '../lib/gem-links';
+import { gemRewardNpc } from '../lib/gem-rewards';
+
+const acquisitionDocuments = new WeakMap<object, JSONContent>();
+
+function GemEditorView({ node, editor, getPos, updateAttributes }: NodeViewProps) {
+  const [price, setPrice] = useState<GemVendorCost | null>(null);
+  const [inheritedAcquisition, setInheritedAcquisition] = useState<'reward' | 'buy' | null>(null);
+  const position = getPos();
+  const resolved = typeof position === 'number' ? editor.state.doc.resolve(position) : null;
+  const inGemSetup = resolved ? Array.from({ length: resolved.depth + 1 }, (_, depth) => resolved.node(depth).type.name).includes('gemSetup') : false;
+  function currentAct(): number | null {
+    if (typeof position !== 'number') return null;
+    let act: number | null = null;
+    editor.state.doc.forEach((item, offset) => {
+      if (offset >= position) return;
+      if (item.type.name !== 'heading' || item.attrs.level !== 2) return;
+      const match = /^Act\s+(10|[1-9])\b/i.exec(item.textContent.trim());
+      act = match ? Number(match[1]) : null;
+    });
+    return act;
+  }
+  useEffect(() => {
+    function refresh() {
+      const position = getPos();
+      if (typeof position !== 'number') return;
+      const resolved = editor.state.doc.resolve(position);
+      let normalized = acquisitionDocuments.get(editor.state.doc);
+      if (!normalized) {
+        normalized = carryGemAcquisitions(editor.getJSON());
+        acquisitionDocuments.set(editor.state.doc, normalized);
+      }
+      let effective: JSONContent | undefined = normalized;
+      for (let depth = 0; depth <= resolved.depth; depth++) effective = effective?.content?.[resolved.index(depth)];
+      const acquisition = effective?.attrs?.acquisition;
+      setInheritedAcquisition(acquisition === 'reward' || acquisition === 'buy' ? acquisition : null);
+      if (resolved.parent.type.name !== 'paragraph') { setPrice(null); return; }
+      setPrice(gemVendorCostAt(resolved.parent.toJSON().content ?? [], resolved.index(), editor.view.dom.dataset.guideLeague ?? ''));
+    }
+    editor.on('update', refresh);
+    editor.view.dom.addEventListener('gem-vendor-league', refresh);
+    refresh();
+    return () => { editor.off('update', refresh); editor.view.dom.removeEventListener('gem-vendor-league', refresh); };
+  }, [editor, getPos, node.attrs.name]);
+  const explicitAcquisition = node.attrs.acquisition === 'reward' || node.attrs.acquisition === 'buy' ? node.attrs.acquisition as 'reward' | 'buy' : null;
+  const acquisitionAct = Number(node.attrs.acquisitionAct) || currentAct();
+  const suggestedNpc = explicitAcquisition === 'reward'
+    ? gemRewardNpc(node.attrs.name, acquisitionAct, editor.view.dom.dataset.guideAscendancy ?? '', editor.view.dom.dataset.guideLeague ?? '')
+    : explicitAcquisition === 'buy' ? acquisitionVendorForAct(acquisitionAct, 'buy') : null;
+  return <NodeViewWrapper as="span" contentEditable={false}><button type="button" className={`gem gem-${node.attrs.color}`} data-gem-info={node.attrs.name} aria-haspopup="dialog" aria-label={`${gemDisplayName(node.attrs.name)}: gem details`}>{gemDisplayName(node.attrs.name)}</button>{inGemSetup && <select className="gem-acquisition-select" aria-label={`How to get ${gemDisplayName(node.attrs.name)} in this setup`} title="R reward · B buy · — clear · R/B carry previous choice" value={node.attrs.acquisition === 'none' ? 'none' : node.attrs.acquisition ?? inheritedAcquisition ?? ''} onChange={event => updateAttributes({ acquisition: event.target.value || null, acquisitionAct: event.target.value === 'reward' || event.target.value === 'buy' ? currentAct() : null, acquisitionVendor: null })}><option value="">R/B</option><option value="reward">R</option><option value="buy">B</option><option value="none">—</option></select>}{inGemSetup && explicitAcquisition && <input key={`${node.attrs.name}-${explicitAcquisition}`} className="gem-acquisition-vendor" aria-label={`${explicitAcquisition === 'reward' ? 'Reward NPC' : 'Vendor'} for ${gemDisplayName(node.attrs.name)}`} title="NPC name; leave blank to use the suggested name" placeholder={suggestedNpc ?? 'NPC name'} defaultValue={node.attrs.acquisitionVendor ?? ''} onBlur={event => { const vendor = event.currentTarget.value.trim(); if (vendor !== (node.attrs.acquisitionVendor ?? '')) updateAttributes({ acquisitionVendor: vendor || null }); }} />}{price && <> - {price.cost} <img className="inline-icon" src={assetUrl(price.icon)} alt={price.currency} title={price.currency} /></>}</NodeViewWrapper>;
+}
 
 export const Gem = Node.create({
   name: 'gem', group: 'inline', inline: true, atom: true,
-  addAttributes() { return { name: { default: '' }, color: { default: 'red' } }; },
+  addAttributes() { return { name: { default: '' }, color: { default: 'red' }, acquisition: { default: null, parseHTML: element => element.getAttribute('data-acquisition'), renderHTML: attrs => attrs.acquisition ? { 'data-acquisition': attrs.acquisition } : {} }, acquisitionAct: { default: null, parseHTML: element => { const value = Number(element.getAttribute('data-acquisition-act')); return value >= 1 && value <= 10 ? value : null; }, renderHTML: attrs => attrs.acquisitionAct ? { 'data-acquisition-act': attrs.acquisitionAct } : {} }, acquisitionVendor: { default: null, parseHTML: element => element.getAttribute('data-acquisition-vendor'), renderHTML: attrs => attrs.acquisitionVendor ? { 'data-acquisition-vendor': attrs.acquisitionVendor } : {} } }; },
   parseHTML() { return [{ tag: 'span[data-gem]' }]; },
   renderHTML({ HTMLAttributes }) { return ['span', mergeAttributes(HTMLAttributes, { 'data-gem': '', class: `gem gem-${HTMLAttributes.color}` }), HTMLAttributes.name]; },
-  addNodeView() { return ReactNodeViewRenderer(({ node }: NodeViewProps) => <NodeViewWrapper as="span" className={`gem gem-${node.attrs.color}`} contentEditable={false}><button type="button" className={`gem gem-${node.attrs.color}`} data-gem-info={node.attrs.name} aria-haspopup="dialog" aria-label={`${gemDisplayName(node.attrs.name)}: gem details`}>{gemDisplayName(node.attrs.name)}</button></NodeViewWrapper>); },
+  addNodeView() { return ReactNodeViewRenderer(GemEditorView); },
 });
 
 export const Icon = Node.create({
@@ -95,6 +147,12 @@ export const PobLinks = Node.create({
 
 function GemSetupEditor({ node, editor, getPos, updateAttributes }: NodeViewProps) {
   const [editing, setEditing] = useState(!JSON.stringify(node.toJSON()).includes('"type":"gem"'));
+  const [, refreshPreview] = useState(0);
+  useEffect(() => {
+    const refresh = () => refreshPreview(value => value + 1);
+    editor.on('update', refresh);
+    return () => { editor.off('update', refresh); };
+  }, [editor]);
   function earlierSetups() {
     const sources: { title: string; position: number }[] = [];
     const position = getPos(); let heading = 'Earlier setup';
@@ -142,6 +200,11 @@ function GemSetupEditor({ node, editor, getPos, updateAttributes }: NodeViewProp
     });
     setEditing(false);
   }
+  const normalized = carryGemAcquisitions(editor.getJSON());
+  let previewNode = node.toJSON();
+  editor.state.doc.forEach((_candidate, offset, index) => {
+    if (offset === getPos()) previewNode = normalized.content?.[index] ?? previewNode;
+  });
   return <NodeViewWrapper className="gem-setup-editor">
     <div className="gem-setup-controls" contentEditable={false}><span className="block-eyebrow">GEM LINKS</span><button type="button" onClick={() => setEditing(!editing)}>{editing ? 'Preview setup' : 'Edit setup'}</button></div>
     <div className="gem-setup-continuation" contentEditable={false} hidden={!editing}>
@@ -150,8 +213,8 @@ function GemSetupEditor({ node, editor, getPos, updateAttributes }: NodeViewProp
       {node.attrs.previousSetup && <button type="button" onClick={() => updateAttributes({ previousSetup: null, changeOverrides: null })}>Remove comparison</button>}
     </div>
     {editing && <GemChangeControls content={node.toJSON().content ?? []} baseline={node.attrs.previousSetup} value={node.attrs.changeOverrides} onChange={value => updateAttributes({ changeOverrides: value })} />}
-    <div contentEditable={false} hidden={editing} className="gem-setup-preview"><fieldset disabled><GuideDocument content={{ type: 'doc', content: [node.toJSON()] }} slug="editor-gem-preview" /></fieldset></div>
-    <div hidden={!editing} className="gem-setup-source"><p contentEditable={false} className="gem-setup-hint">Use + for linked gems, “or” for alternatives, and commas for independent gems. Add headings for level stages and keep labels such as Link 1: or Utility: consistent. Each stage tracks changes from the latest links; omitted setups stay unchanged.</p><NodeViewContent /><div contentEditable={false}><GemSetupChanges content={node.toJSON().content ?? []} baseline={node.attrs.previousSetup} overrides={node.attrs.changeOverrides} /></div></div>
+    <div contentEditable={false} hidden={editing} className="gem-setup-preview"><fieldset disabled><GuideDocument content={{ type: 'doc', content: [previewNode] }} slug="editor-gem-preview" league={editor.view.dom.dataset.guideLeague ?? ''} ascendancy={editor.view.dom.dataset.guideAscendancy ?? ''} normalized /></fieldset></div>
+    <div hidden={!editing} className="gem-setup-source"><p contentEditable={false} className="gem-setup-hint">Use + for linked gems, “or” for alternatives, and commas for independent gems. Choose R (reward) or B (buy) beside a gem; the choice carries into later setups. Enter an NPC name when the suggested one differs, or choose — to clear it. Add headings for level stages and keep labels such as Link 1: or Utility: consistent. Each stage tracks changes from the latest links; omitted setups stay unchanged.</p><NodeViewContent /><div contentEditable={false}><GemSetupChanges content={node.toJSON().content ?? []} baseline={node.attrs.previousSetup} overrides={node.attrs.changeOverrides} /></div></div>
   </NodeViewWrapper>;
 }
 

@@ -9,8 +9,10 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "refresh:gems": "node scripts/refresh-gems.mjs && node scripts/refresh-gem-vendors.mjs",
+    "refresh:gems": "node scripts/refresh-gems.mjs && node scripts/refresh-gem-vendors.mjs && node scripts/refresh-gem-rewards.mjs",
+    "refresh:gem-data": "node scripts/refresh-gem-vendors.mjs && node scripts/refresh-gem-rewards.mjs",
     "refresh:gem-vendors": "node scripts/refresh-gem-vendors.mjs",
+    "refresh:gem-rewards": "node scripts/refresh-gem-rewards.mjs",
     "refresh:trees": "node scripts/refresh-trees.mjs",
     "check:trees": "node scripts/check-trees.mjs",
     "check:gem-links": "node scripts/check-gem-links.mjs"

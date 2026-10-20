@@ -73,6 +73,8 @@
 .gem-setup-preview .gem-setup > .block-eyebrow { display: none; }
 .gem-setup-source { border: 1px solid #252c32; border-radius: 4px; padding: 9px 12px; }
 .tiptap .gem-setup-hint { font-size: 12px; color: #929aa3; margin: 0 0 8px; }
+.gem-acquisition-select { margin: 0 3px; padding: 0 2px; border: 1px solid #526071; border-radius: 3px; background: #141c27; color: #e8d27e; font-size: 11px; line-height: 1.2; vertical-align: 2px; cursor: pointer; }
+.gem-acquisition-vendor { width: 95px; margin: 0 3px 0 0; padding: 1px 3px; border: 1px solid #526071; border-radius: 3px; background: #141c27; color: #dce3e8; font-size: 11px; line-height: 1.2; vertical-align: 2px; }
 .editor-special { background: #0e1216; border: 1px solid #252c32; border-radius: 5px; padding: 10px; margin: 10px 0; }
 .editor-special.is-selected { border-color: #b89a48; }
 .editor-special input, .editor-special textarea { display: block; width: 100%; background: #090c0f; border: 1px solid #292f35; border-radius: 3px; color: #d5d7d5; padding: 6px 8px; outline: none; margin-top: 6px; font-size: 14px; }

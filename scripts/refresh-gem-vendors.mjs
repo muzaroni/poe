@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const directory = path.join(root, 'public', 'data', 'gem-vendors');
+const directory = path.join(root, 'src', 'data', 'gem-vendors');
 const versionResponse = await fetch('https://repoe-fork.github.io/exported-version.txt', { signal: AbortSignal.timeout(15000) });
 if (!versionResponse.ok) throw new Error(`Could not read the current game version: ${versionResponse.status}`);
 const gameVersion = (await versionResponse.text()).trim();

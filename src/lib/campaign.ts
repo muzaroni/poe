@@ -3,7 +3,7 @@ import type { PassiveTree } from './passive-tree';
 import { normalizeSnapshot } from './tree-snapshot';
 import type { JSONContent } from '@tiptap/core';
 import { plainText } from './guide';
-import { gemProgressionStages, setupRows } from './gem-links';
+import { carryGemAcquisitions, gemProgressionStages, setupRows } from './gem-links';
 
 export function campaignMarkers(markers: TreeMarker[], act: number) {
   let currentAct = 1;
@@ -59,13 +59,17 @@ export function campaignAscendancySteps(tree: PassiveTree, snapshot: TreeSnapsho
   return notables.map((node, index) => ({ node, act: index < 2 ? 4 : index < 4 ? 9 : 10, lab: index < 2 ? 'Normal Lab' : index < 4 ? 'Cruel Lab' : 'Merciless Lab', action: 'allocate' as const }));
 }
 
-// Use the final cumulative gem setup in each written Act section.
-export function guideGemLinksByAct(document: JSONContent): Record<string, JSONContent[]> {
-  const result: Record<string, JSONContent[]> = {};
+export type CampaignGemStage = { title: string; rows: JSONContent[]; acquisitionNodes: JSONContent[] };
+
+// Keep every setup in guide order, while carrying unchanged links into each stage.
+export function guideGemProgressionByAct(document: JSONContent): Record<string, CampaignGemStage[]> {
+  const result: Record<string, CampaignGemStage[]> = {};
   let sectionActs: number[] = [];
-  let sectionSetups: JSONContent[] = [];
+  let sectionSetups: { node: JSONContent; title: string }[] = [];
+  let sectionHeading = '';
   let carried: JSONContent[] = [];
   function finishSection() {
+    const stages: CampaignGemStage[] = [];
     if (sectionSetups.length) {
       const latest = new Map(setupRows(carried).map(row => [row.key, row.paragraph]));
       let baselineBlocks: JSONContent[] = [];
@@ -77,31 +81,41 @@ export function guideGemLinksByAct(document: JSONContent): Record<string, JSONCo
         latest.clear();
         for (const [key, paragraph] of ordered) latest.set(key, paragraph);
       }
-      for (const setup of sectionSetups) {
+      for (const { node: setup, title } of sectionSetups) {
         baselineBlocks = [];
         for (const node of setup.attrs?.previousSetup?.content ?? []) {
           if (node.type === 'heading') { remember(baselineBlocks); baselineBlocks = []; }
           else baselineBlocks.push(node);
         }
         remember(baselineBlocks);
-        for (const stage of gemProgressionStages(setup.content ?? [], setup.attrs?.previousSetup)) remember(stage.content);
+        for (const stage of gemProgressionStages(setup.content ?? [], setup.attrs?.previousSetup)) {
+          remember(stage.content);
+          if (setupRows(stage.content).length) stages.push({ title: stage.title === 'Starting links' ? title || 'Gem links' : stage.title, rows: [...latest.values()], acquisitionNodes: stage.content });
+        }
       }
       carried = [...latest.values()];
     }
-    for (const act of sectionActs) if (carried.length) result[act] = carried;
+    for (const act of sectionActs) if (carried.length) result[act] = stages.length ? stages : [{ title: 'Current links', rows: carried, acquisitionNodes: [] }];
     sectionSetups = [];
+    sectionHeading = '';
   }
-  for (const node of document.content ?? []) {
+  for (const node of carryGemAcquisitions(document).content ?? []) {
     if (node.type === 'heading' && Number(node.attrs?.level) === 2) {
       finishSection();
       const heading = /^Act\s+(10|[1-9])(?:\s*[-–]\s*(10|[1-9]))?\b/i.exec(plainText(node).trim());
       if (!heading) { sectionActs = []; continue; }
       const first = Number(heading[1]), last = Number(heading[2] ?? heading[1]);
       sectionActs = first <= last ? Array.from({ length: last - first + 1 }, (_, index) => first + index) : [];
-    } else if (node.type === 'gemSetup' && sectionActs.length) sectionSetups.push(node);
+    } else if (node.type === 'heading' && Number(node.attrs?.level) === 3 && sectionActs.length) sectionHeading = plainText(node).trim();
+    else if (node.type === 'gemSetup' && sectionActs.length) sectionSetups.push({ node, title: sectionHeading });
   }
   finishSection();
   return result;
+}
+
+// The final stage remains useful to callers that need the end-of-act links.
+export function guideGemLinksByAct(document: JSONContent): Record<string, JSONContent[]> {
+  return Object.fromEntries(Object.entries(guideGemProgressionByAct(document)).map(([act, stages]) => [act, stages.at(-1)?.rows ?? []]));
 }
 
 export type GuideRegex = { label: string; value: string };

@@ -90,7 +90,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     ],
     content: guide.content,
     editorProps: {
-      attributes: { class: 'tiptap guide-content' },
+      attributes: { class: 'tiptap guide-content', 'data-guide-league': guide.league, 'data-guide-ascendancy': buildDetails(guide).ascendancy, 'data-guide-slug': guide.slug },
       handleTextInput: (view, from, to, text) => {
         if (text !== '@' || from !== to || view.composing) return false;
         const position = view.state.doc.resolve(from);
@@ -118,6 +118,14 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     onUpdate: ({ editor: current }) => setGuide((previous) => ({ ...previous, content: current.getJSON() })),
     immediatelyRender: false,
   });
+
+  useEffect(() => {
+    if (!editor) return;
+    editor.view.dom.dataset.guideLeague = guide.league;
+    editor.view.dom.dataset.guideAscendancy = buildDetails(guide).ascendancy;
+    editor.view.dom.dataset.guideSlug = guide.slug;
+    editor.view.dom.dispatchEvent(new Event('gem-vendor-league'));
+  }, [editor, guide.league, guide.ascendancy, guide.slug]);
 
   useEffect(() => {
     fetch(`${API}/health`).then((response) => {

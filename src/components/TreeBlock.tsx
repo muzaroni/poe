@@ -1,7 +1,6 @@
 import { createPortal } from 'react-dom';
 import type { CSSProperties } from 'react';
-import type { JSONContent } from '@tiptap/core';
-import type { CampaignAscendancySnapshot, GuideRegex } from '../lib/campaign';
+import type { CampaignAscendancySnapshot, CampaignGemStage, GuideRegex } from '../lib/campaign';
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { loadPassiveTree, loadTreeSprites } from '../lib/tree-assets';
 import { drawPassiveTree } from '../lib/tree-render';
@@ -16,7 +15,7 @@ export function TreePicker({ snapshot, previousSnapshot, previousSnapshots, onAp
   return <Suspense fallback={<p className="tree-block-loading">Loading tree picker…</p>}><Viewer initialSnapshot={snapshot} previousSnapshot={previousSnapshot} previousSnapshots={previousSnapshots} onApply={onApply} onCancel={onCancel} /></Suspense>;
 }
 
-export default function TreeBlock({ snapshot: value, guideGemLinks, guideRegexes, guideAscendancy }: { snapshot: Partial<TreeSnapshotData>; guideGemLinks?: Record<string, JSONContent[]>; guideRegexes?: GuideRegex[]; guideAscendancy?: CampaignAscendancySnapshot[] }) {
+export default function TreeBlock({ snapshot: value, guideGemLinks, guideRegexes, guideAscendancy, guideCharacterAscendancy = '', guideLeague = '', guideSlug = '' }: { snapshot: Partial<TreeSnapshotData>; guideGemLinks?: Record<string, CampaignGemStage[]>; guideRegexes?: GuideRegex[]; guideAscendancy?: CampaignAscendancySnapshot[]; guideCharacterAscendancy?: string; guideLeague?: string; guideSlug?: string }) {
   const baseSnapshot = useMemo(() => normalizeSnapshot(value), [value]);
   const [tree, setTree] = useState<PassiveTree | null>(null);
   const snapshot = useMemo(() => tree ? { ...baseSnapshot, markers: ascendancyStepMarkers(tree, baseSnapshot) } : baseSnapshot, [tree, baseSnapshot]);
@@ -84,6 +83,12 @@ export default function TreeBlock({ snapshot: value, guideGemLinks, guideRegexes
     if (expanded) dialog.current?.showModal();
     else if (dialog.current?.open) { dialog.current.close(); expandButton.current?.focus(); }
   }, [expanded]);
+  useEffect(() => {
+    if (!expanded || !snapshot.campaignMode) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = previous; };
+  }, [expanded, snapshot.campaignMode]);
 
   return <section ref={wrapper} className={`tree-block${hasSidebar ? ' tree-block-with-steps' : ''}`} style={{ width: snapshot.campaignMode ? Math.max(snapshot.width, 800) : hasSidebar ? snapshot.width + 360 : snapshot.width, maxWidth: '100%', '--tree-snapshot-width': `${snapshot.campaignMode ? Math.max(snapshot.width, 800) : snapshot.width}px` } as CSSProperties} aria-label={snapshot.title || 'Passive tree snapshot'}>
     <header className="tree-block-heading"><strong>{snapshot.title || 'Passive tree'}</strong><span>{snapshot.version.split('.').slice(0, 2).join('.')}</span>{snapshot.campaignMode && <span>{snapshot.markers.length} steps · 10 acts</span>}{configured && <button ref={expandButton} type="button" onClick={() => setExpanded(true)}>{snapshot.campaignMode ? 'Open campaign view ↗' : 'Expand tree ↗'}</button>}</header>
@@ -111,6 +116,6 @@ export default function TreeBlock({ snapshot: value, guideGemLinks, guideRegexes
     </aside>}
     </div>
     {missing > 0 && <p className="tree-block-warning">{missing} jewel-added or unavailable nodes are not shown.</p>}
-    {mounted && createPortal(<dialog ref={dialog} className={`tree-block-dialog${snapshot.campaignMode ? ' campaign-dialog' : ''}`} aria-label={snapshot.campaignMode ? 'Full campaign view' : 'Expanded passive tree'} onCancel={event => { event.preventDefault(); event.stopPropagation(); setExpanded(false); }} onClick={event => { if (event.target === dialog.current) setExpanded(false); }}>{expanded && <Suspense fallback={<p>Loading viewer…</p>}>{snapshot.campaignMode ? <Campaign snapshot={snapshot} tree={tree} sprites={sprites} guideGemLinks={guideGemLinks} guideRegexes={guideRegexes} guideAscendancy={guideAscendancy} onClose={() => setExpanded(false)} /> : <div><div className="tree-block-dialog-bar"><strong>{snapshot.title}</strong><button type="button" onClick={() => setExpanded(false)}>Close</button></div><Viewer initialSnapshot={snapshot} /></div>}</Suspense>}</dialog>, document.body)}
+    {mounted && createPortal(<dialog ref={dialog} className={`tree-block-dialog${snapshot.campaignMode ? ' campaign-dialog' : ''}`} aria-label={snapshot.campaignMode ? 'Full campaign view' : 'Expanded passive tree'} onCancel={event => { event.preventDefault(); event.stopPropagation(); setExpanded(false); }} onClick={event => { if (event.target === dialog.current) setExpanded(false); }}>{expanded && <Suspense fallback={<p>Loading viewer…</p>}>{snapshot.campaignMode ? <Campaign snapshot={snapshot} tree={tree} sprites={sprites} guideGemLinks={guideGemLinks} guideRegexes={guideRegexes} guideAscendancy={guideAscendancy} guideCharacterAscendancy={guideCharacterAscendancy} guideLeague={guideLeague} guideSlug={guideSlug} onClose={() => setExpanded(false)} /> : <div><div className="tree-block-dialog-bar"><strong>{snapshot.title}</strong><button type="button" onClick={() => setExpanded(false)}>Close</button></div><Viewer initialSnapshot={snapshot} /></div>}</Suspense>}</dialog>, document.body)}
   </section>;
 }

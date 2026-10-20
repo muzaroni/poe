@@ -6,13 +6,18 @@ import type { JSONContent } from '@tiptap/core';
 import { ExternalLink } from 'lucide-react';
 import { assetUrl, headingId, plainText } from '../lib/guide';
 import GemLinkList, { gemLinkGroups } from './GemLinkList';
-import { guideAscendancySnapshots, guideGemLinksByAct, guideRegexes, type CampaignAscendancySnapshot, type GuideRegex } from '../lib/campaign';
+import { guideAscendancySnapshots, guideGemProgressionByAct, guideRegexes, type CampaignAscendancySnapshot, type CampaignGemStage, type GuideRegex } from '../lib/campaign';
 import RegexCopyButton from './RegexCopyButton';
+import { gemVendorCostAt } from '../lib/gem-vendor';
+import { carryGemAcquisitions } from '../lib/gem-links';
+import GemAcquisitionSummary from './GemAcquisitionSummary';
 
-type Props = { content: JSONContent; slug: string };
-const CampaignGemsContext = createContext<Record<string, JSONContent[]>>({});
+type Props = { content: JSONContent; slug: string; league?: string; ascendancy?: string; normalized?: boolean };
+const CampaignGemsContext = createContext<Record<string, CampaignGemStage[]>>({});
 const CampaignRegexContext = createContext<GuideRegex[]>([]);
 const CampaignAscendancyContext = createContext<CampaignAscendancySnapshot[]>([]);
+const VendorLeagueContext = createContext('');
+const GuideAscendancyContext = createContext('');
 
 function hash(value: string) {
   let result = 2166136261;
@@ -59,11 +64,16 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
   const campaignGemLinks = useContext(CampaignGemsContext);
   const campaignRegexes = useContext(CampaignRegexContext);
   const campaignAscendancy = useContext(CampaignAscendancyContext);
+  const vendorLeague = useContext(VendorLeagueContext);
+  const guideAscendancyName = useContext(GuideAscendancyContext);
   const children = (node.content ?? []).map((child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup || node.type === 'gemSetup'} />);
   const attrs = node.attrs ?? {};
   switch (node.type) {
     case 'text': return <Text node={node} />;
-    case 'paragraph': return gemSetup && gemLinkGroups(node) ? <GemLinkList node={node} renderInline={(child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} />} /> : <p>{children}</p>;
+    case 'paragraph': return gemSetup && gemLinkGroups(node) ? <GemLinkList node={node} renderInline={(child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} />} /> : <p>{(node.content ?? []).map((child, index) => {
+      const price = gemSetup ? null : gemVendorCostAt(node.content ?? [], index, vendorLeague);
+      return <span key={index}><Node node={child} slug={slug} section={section} path={`${path}.${index}`} />{price && <> - {price.cost} <img className="inline-icon" src={assetUrl(price.icon)} alt={price.currency} title={price.currency} /></>}</span>;
+    })}</p>;
     case 'heading': {
       const level = Number(attrs.level ?? 2);
       const id = headingId(plainText(node));
@@ -83,8 +93,8 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
       return <figure><img className={width == null ? undefined : 'has-custom-width'} style={width == null ? undefined : { width: `${width}%`, height: 'auto' }} src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? '')} loading="lazy" />{caption && <figcaption>{String(caption)}</figcaption>}</figure>;
     }
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
-    case 'passiveTree': return <TreeBlock snapshot={attrs.snapshot ?? {}} guideGemLinks={campaignGemLinks} guideRegexes={campaignRegexes} guideAscendancy={campaignAscendancy} />;
-    case 'gemSetup': return <section className="gem-setup" title={attrs.previousSetup ? `Changes from ${attrs.previousSetup.title}` : undefined}><div className="block-eyebrow">GEM LINKS</div><GemSetupComparison content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides}>{children}</GemSetupComparison><GemSetupChanges content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides} /></section>;
+    case 'passiveTree': return <TreeBlock snapshot={attrs.snapshot ?? {}} guideGemLinks={campaignGemLinks} guideRegexes={campaignRegexes} guideAscendancy={campaignAscendancy} guideCharacterAscendancy={guideAscendancyName} guideLeague={vendorLeague} guideSlug={slug} />;
+    case 'gemSetup': return <section className="gem-setup" title={attrs.previousSetup ? `Changes from ${attrs.previousSetup.title}` : undefined}><div className="block-eyebrow">GEM LINKS</div><GemAcquisitionSummary nodes={node.content ?? []} ascendancy={guideAscendancyName} league={vendorLeague} /><GemSetupComparison content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides}>{children}</GemSetupComparison><GemSetupChanges content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides} /></section>;
     case 'callout': return <aside className={`callout ${attrs.tone === 'important' ? 'callout-important' : ''}`}>{children}</aside>;
     case 'pobLinks': return <div className="pob-grid">{(attrs.links ?? []).map((link: { label: string; url: string }, index: number) => <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="pob-card"><span>{link.label}</span><ExternalLink size={17} /></a>)}</div>;
     case 'horizontalRule': return <hr />;
@@ -93,12 +103,13 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
   }
 }
 
-export default function GuideDocument({ content, slug }: Props) {
-  const campaignGemLinks = useMemo(() => guideGemLinksByAct(content), [content]);
-  const campaignRegexes = useMemo(() => guideRegexes(content), [content]);
-  const campaignAscendancy = useMemo(() => guideAscendancySnapshots(content), [content]);
+export default function GuideDocument({ content, slug, league = '', ascendancy = '', normalized = false }: Props) {
+  const displayContent = useMemo(() => normalized ? content : carryGemAcquisitions(content), [content, normalized]);
+  const campaignGemLinks = useMemo(() => guideGemProgressionByAct(displayContent), [displayContent]);
+  const campaignRegexes = useMemo(() => guideRegexes(displayContent), [displayContent]);
+  const campaignAscendancy = useMemo(() => guideAscendancySnapshots(displayContent), [displayContent]);
   const sections: { heading?: JSONContent; title: string; items: { node: JSONContent; index: number }[] }[] = [{ title: 'intro', items: [] }];
-  for (const [index, node] of (content.content ?? []).entries()) {
+  for (const [index, node] of (displayContent.content ?? []).entries()) {
     if (node.type === 'heading' && Number(node.attrs?.level) === 2) sections.push({ heading: node, title: plainText(node), items: [] });
     else sections[sections.length - 1].items.push({ node, index });
   }
@@ -112,13 +123,13 @@ export default function GuideDocument({ content, slug }: Props) {
     openHashSection();
     window.addEventListener('hashchange', openHashSection);
     return () => window.removeEventListener('hashchange', openHashSection);
-  }, [content]);
+  }, [displayContent]);
   const headingCount = sections.length - 1;
-  return <CampaignGemsContext.Provider value={campaignGemLinks}><CampaignRegexContext.Provider value={campaignRegexes}><CampaignAscendancyContext.Provider value={campaignAscendancy}><div className="guide-content">
+  return <VendorLeagueContext.Provider value={league}><GuideAscendancyContext.Provider value={ascendancy}><CampaignGemsContext.Provider value={campaignGemLinks}><CampaignRegexContext.Provider value={campaignRegexes}><CampaignAscendancyContext.Provider value={campaignAscendancy}><div className="guide-content">
     {headingCount > 0 && <div className="guide-section-controls" aria-label="Guide section controls"><button type="button" onClick={() => setCollapsed({})}>Show all</button><button type="button" onClick={() => setCollapsed(Object.fromEntries(sections.map((section, index) => [index, !!section.heading])))}>Collapse all</button></div>}
     {sections.map((section, index) => <div className={`guide-section${collapsed[index] ? ' is-collapsed' : ''}`} key={index}>
       {section.heading && <h2 id={headingId(section.title)}><button type="button" aria-expanded={!collapsed[index]} aria-controls={`guide-section-${index}`} onClick={() => setCollapsed(current => ({ ...current, [index]: !current[index] }))}><span>{(section.heading.content ?? []).map((child, childIndex) => <Node key={childIndex} node={child} slug={slug} section={section.title} path={`${index}.heading.${childIndex}`} />)}</span><span className="guide-section-toggle">{collapsed[index] ? 'Show' : 'Hide'} <span className="guide-section-chevron" aria-hidden="true">▴</span></span></button></h2>}
       <div className={section.heading ? 'guide-section-body' : undefined} id={section.heading ? `guide-section-${index}` : undefined} aria-hidden={section.heading ? !!collapsed[index] : undefined} inert={section.heading ? !!collapsed[index] : undefined}><div className={section.heading ? 'guide-section-inner' : undefined}>{section.items.map(({ node, index: nodeIndex }) => <Node key={nodeIndex} node={node} slug={slug} section={section.title} path={String(nodeIndex)} />)}</div></div>
     </div>)}
-  </div></CampaignAscendancyContext.Provider></CampaignRegexContext.Provider></CampaignGemsContext.Provider>;
+  </div></CampaignAscendancyContext.Provider></CampaignRegexContext.Provider></CampaignGemsContext.Provider></GuideAscendancyContext.Provider></VendorLeagueContext.Provider>;
 }

@@ -1,21 +1,46 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { JSONContent } from '@tiptap/core';
-import { campaignAscendancySteps, campaignMarkers, type CampaignAscendancySnapshot, type GuideRegex } from '../lib/campaign';
-import { assetUrl } from '../lib/guide';
+import { campaignAscendancySteps, campaignMarkers, type CampaignAscendancySnapshot, type CampaignGemStage, type GuideRegex } from '../lib/campaign';
+import { assetUrl, plainText } from '../lib/guide';
 import { gemDisplayName } from '../lib/gems';
 import { gemLinkGroups, gemSocketOptions } from '../lib/gem-links';
+import { gemRequiredLevel } from '../lib/gem-vendor';
 import { drawPassiveTree } from '../lib/tree-render';
 import { cameraForFrame, frameNodes, markerPositions, progressionNodes, snapshotNodes, snapshotStage, stepNodeIds, treeEdges, type TreeSnapshotData } from '../lib/tree-snapshot';
-import { nodeRadius, type PassiveTree } from '../lib/passive-tree';
+import { nodeRadius, type PassiveNode, type PassiveTree } from '../lib/passive-tree';
 import RegexCopyButton from './RegexCopyButton';
+import GemAcquisitionSummary from './GemAcquisitionSummary';
 import '../styles/campaign.css';
 
-type Props = { snapshot: TreeSnapshotData; tree: PassiveTree | null; sprites: HTMLImageElement[]; guideGemLinks?: Record<string, JSONContent[]>; guideRegexes?: GuideRegex[]; guideAscendancy?: CampaignAscendancySnapshot[]; onClose: () => void };
+type Props = { snapshot: TreeSnapshotData; tree: PassiveTree | null; sprites: HTMLImageElement[]; guideGemLinks?: Record<string, CampaignGemStage[]>; guideRegexes?: GuideRegex[]; guideAscendancy?: CampaignAscendancySnapshot[]; guideCharacterAscendancy?: string; guideLeague?: string; guideSlug?: string; onClose: () => void };
 const acts = Array.from({ length: 10 }, (_, index) => index + 1);
 const emptyAscendancy: CampaignAscendancySnapshot[] = [];
 
-function GemInline({ node }: { node: JSONContent }) {
-  if (node.type === 'gem') return <button type="button" className={`gem gem-${node.attrs?.color ?? 'red'}`} data-gem-info={String(node.attrs?.name ?? '')}>{gemDisplayName(String(node.attrs?.name ?? ''))}</button>;
+function AscendancyIcon({ node, sprites }: { node: PassiveNode; sprites: HTMLImageElement[] }) {
+  const canvas = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const element = canvas.current;
+    const icon = node.active ?? node.inactive;
+    if (!element || !icon) return;
+    const image = sprites[icon[0]];
+    if (!image?.naturalWidth) return;
+    const context = element.getContext('2d');
+    if (!context) return;
+    context.clearRect(0, 0, 36, 36);
+    context.save();
+    context.beginPath(); context.arc(18, 18, 17, 0, Math.PI * 2); context.clip();
+    context.drawImage(image, icon[1], icon[2], icon[3], icon[4], 1, 1, 34, 34);
+    context.restore();
+  }, [node, sprites]);
+  return <canvas className="campaign-ascendancy-icon" ref={canvas} width="36" height="36" aria-hidden="true" />;
+}
+
+function GemInline({ node, league }: { node: JSONContent; league: string }) {
+  if (node.type === 'gem') {
+    const name = String(node.attrs?.name ?? '');
+    const level = gemRequiredLevel(name, league);
+    return <><span className={`gem gem-${node.attrs?.color ?? 'red'}`}>{gemDisplayName(name)}</span>{level !== null && <span className="campaign-gem-level" title={`Requires level ${level}`}> [{level}]</span>}</>;
+  }
   if (node.type === 'icon') return <img className="inline-icon" src={assetUrl(String(node.attrs?.src ?? ''))} alt={String(node.attrs?.name ?? '')} />;
   let value: ReactNode = node.text ?? '';
   for (const mark of node.marks ?? []) {
@@ -26,10 +51,10 @@ function GemInline({ node }: { node: JSONContent }) {
   return <>{value}</>;
 }
 
-function CampaignGemRow({ node }: { node: JSONContent }) {
+function CampaignGemRow({ node, league, checked, onToggle }: { node: JSONContent; league: string; checked: boolean; onToggle: (checked: boolean) => void }) {
   const setup = gemLinkGroups(node);
   if (!setup) return null;
-  return <div className="campaign-gem-row"><strong>{setup.title}</strong><span>{setup.groups.map((group, groupIndex) => <span key={groupIndex}>{groupIndex > 0 && <span className="campaign-gem-separator">, </span>}{group.map((row, rowIndex) => <span key={rowIndex}>{rowIndex > 0 && <span className="campaign-gem-separator"> + </span>}{gemSocketOptions(row).map((option, optionIndex) => <span key={optionIndex}>{optionIndex > 0 && <span className="campaign-gem-separator"> or </span>}{option.map((item, itemIndex) => <GemInline key={itemIndex} node={item} />)}</span>)}</span>)}</span>)}</span></div>;
+  return <label className={`campaign-gem-row${checked ? ' is-done' : ''}`}><input type="checkbox" checked={checked} onChange={event => onToggle(event.target.checked)} aria-label={`Mark ${setup.title} gem links complete`} /><strong>{setup.title}</strong><span>{setup.groups.map((group, groupIndex) => <span key={groupIndex}>{groupIndex > 0 && <span className="campaign-gem-separator">, </span>}{group.map((row, rowIndex) => <span key={rowIndex}>{rowIndex > 0 && <span className="campaign-gem-separator"> + </span>}{gemSocketOptions(row).map((option, optionIndex) => <span key={optionIndex}>{optionIndex > 0 && <span className="campaign-gem-separator"> or </span>}{option.map((item, itemIndex) => <GemInline key={itemIndex} node={item} league={league} />)}</span>)}</span>)}</span>)}</span></label>;
 }
 
 function zoomAt(camera: { x: number; y: number; scale: number }, factor: number, x: number, y: number, size: { width: number; height: number }) {
@@ -37,7 +62,7 @@ function zoomAt(camera: { x: number; y: number; scale: number }, factor: number,
   return { scale, x: camera.x + (x - size.width / 2) * (1 / camera.scale - 1 / scale), y: camera.y + (y - size.height / 2) * (1 / camera.scale - 1 / scale) };
 }
 
-export default function CampaignView({ snapshot, tree, sprites, guideGemLinks, guideRegexes = [], guideAscendancy = emptyAscendancy, onClose }: Props) {
+export default function CampaignView({ snapshot, tree, sprites, guideGemLinks, guideRegexes = [], guideAscendancy = emptyAscendancy, guideCharacterAscendancy = '', guideLeague = '', guideSlug = '', onClose }: Props) {
   const [act, setAct] = useState(1);
   const [treeView, setTreeView] = useState<'tree' | 'ascendancy'>('tree');
   const [selected, setSelected] = useState<number | null>(null);
@@ -46,6 +71,9 @@ export default function CampaignView({ snapshot, tree, sprites, guideGemLinks, g
   const [size, setSize] = useState({ width: 900, height: 600, dpr: 1 });
   const [camera, setCamera] = useState({ x: 0, y: 0, scale: .03 });
   const [sideScale, setSideScale] = useState(1);
+  const [checkedGems, setCheckedGems] = useState<Record<string, boolean>>(() => {
+    try { return JSON.parse(localStorage.getItem(`poe-campaign-gems:${guideSlug}`) ?? '{}'); } catch { return {}; }
+  });
   const map = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const side = useRef<HTMLElement>(null);
@@ -163,7 +191,14 @@ export default function CampaignView({ snapshot, tree, sprites, guideGemLinks, g
   }, [act]);
 
   const gemLines = (snapshot.campaignGems?.[act] ?? '').split(/\r?\n/).map(line => line.trim()).filter(Boolean);
-  const guideRows = guideGemLinks?.[act] ?? [];
+  const guideStages = guideGemLinks?.[act] ?? [];
+  function toggleGemRow(key: string, checked: boolean) {
+    setCheckedGems(current => {
+      const next = { ...current, [key]: checked };
+      try { localStorage.setItem(`poe-campaign-gems:${guideSlug}`, JSON.stringify(next)); } catch { /* private browsing */ }
+      return next;
+    });
+  }
   function chooseAct(next: number) { setAct(next); setSelected(null); setInspected(null); }
   return <div className="campaign-view" aria-label="Full campaign view">
     <header className="campaign-header"><div><strong>{snapshot.title}</strong><span>Full campaign · Tree {snapshot.version}</span></div><div className="campaign-header-actions"><button type="button" disabled={act === 1} onClick={() => chooseAct(act - 1)}>← Previous</button><button type="button" disabled={act === 10} onClick={() => chooseAct(act + 1)}>Next →</button><button type="button" onClick={onClose}>Close</button></div></header>
@@ -171,8 +206,8 @@ export default function CampaignView({ snapshot, tree, sprites, guideGemLinks, g
     {regex && <div className="campaign-regex"><span>REGEX</span>{regexes.length > 1 ? <select aria-label="Choose regex" value={regexIndex} onChange={event => setRegexIndex(Number(event.target.value))}>{regexes.map((item, index) => <option key={index} value={index}>{item.label}</option>)}</select> : <strong title={regex.label}>{regex.label}</strong>}<code title={regex.value}>{regex.value}</code><RegexCopyButton label={regex.label} value={regex.value} /></div>}
     <div className="campaign-main"><div className="campaign-map" ref={map}><canvas ref={canvas} aria-label={`${treeView === 'tree' ? 'Full passive' : 'Ascendancy'} tree with Act ${act} markers. Click any node to inspect it; drag to pan and scroll to zoom.`} onPointerDown={event => { if (event.button !== 0) return; event.currentTarget.setPointerCapture(event.pointerId); pointer.current = { x: event.clientX, y: event.clientY, moved: false }; }} onPointerMove={event => { const previous = pointer.current; if (!previous) return; const dx = event.clientX - previous.x, dy = event.clientY - previous.y; if (Math.abs(dx) + Math.abs(dy) > 2) previous.moved = true; pointer.current = { x: event.clientX, y: event.clientY, moved: previous.moved }; if (previous.moved) setCamera(current => ({ ...current, x: current.x - dx / current.scale, y: current.y - dy / current.scale })); }} onPointerUp={event => { ignoreClick.current = !!pointer.current?.moved; pointer.current = null; if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); }} onPointerCancel={() => { pointer.current = null; }} onClick={event => { if (ignoreClick.current) { ignoreClick.current = false; return; } const rect = event.currentTarget.getBoundingClientRect(); inspectAt(event.clientX - rect.left, event.clientY - rect.top); }} /><div className="campaign-map-controls"><button type="button" aria-pressed={treeView === 'tree'} onClick={() => { setTreeView('tree'); setSelected(null); setInspected(null); }}>Passive tree</button><button type="button" aria-pressed={treeView === 'ascendancy'} disabled={!ascendancySteps.length} onClick={() => { setTreeView('ascendancy'); setSelected(null); setInspected(null); }}>Ascendancy</button><button type="button" onClick={() => setCamera(fittedCamera)}>Fit tree</button><button type="button" aria-label="Zoom in" onClick={() => setCamera(current => zoomAt(current, 1.3, size.width / 2, size.height / 2, size))}>+</button><button type="button" aria-label="Zoom out" onClick={() => setCamera(current => zoomAt(current, 1 / 1.3, size.width / 2, size.height / 2, size))}>−</button></div>{inspectedNode && <div className="campaign-node-detail"><button type="button" aria-label="Close passive details" onClick={() => setInspected(null)}>×</button><small>{inspectedNode.kind} · #{inspectedNode.id}</small><strong>{inspectedNode.name}</strong>{inspectedNode.stats.map((stat, index) => <p key={index}>{stat}</p>)}{masteryEffect && <div className="campaign-mastery-detail"><b>Selected mastery effect</b>{masteryEffect.stats.map((stat, index) => <p key={index}>{stat}</p>)}</div>}</div>}{!tree && <p>Loading passive tree…</p>}</div>
       <aside className="campaign-side" ref={side}><div className="campaign-side-content" ref={sideContent} style={{ transform: `scale(${sideScale})` }}><section className="campaign-steps"><h2>Act {act} tree steps <span>{actMarkers.length}</span></h2><div className="campaign-step-scroll">{actMarkers.length ? actMarkers.map(marker => <button type="button" key={marker.nodeId} className={marker.nodeId === selected ? 'is-selected' : ''} onClick={() => focusNode(marker.nodeId, tree?.nodes.find(node => node.id === marker.nodeId)?.ascendancy ? 'ascendancy' : 'tree')}><b>{marker.displayNumber}</b><span><strong>{tree?.nodes.find(node => node.id === marker.nodeId)?.name ?? `Node ${marker.nodeId}`}</strong>{marker.note && <small>{marker.note}</small>}</span></button>) : <p>No tree steps assigned to this act yet.</p>}</div></section>
-        {(actAscendancySnapshot || actAscendancy.length > 0) && <section className="campaign-ascendancy"><h2>{actAscendancySnapshot?.snapshot.title ?? actAscendancy[0].lab}<button type="button" onClick={() => { setTreeView('ascendancy'); setSelected(null); setInspected(null); }}>View tree</button></h2><div className="campaign-step-scroll">{actAscendancy.length ? actAscendancy.map(step => <button type="button" key={`${step.action}-${step.node.id}`} className={`${step.node.id === selected ? 'is-selected ' : ''}${step.action === 'refund' ? 'is-refund' : ''}`} onClick={() => focusNode(step.node.id, 'ascendancy')}><b>{step.action === 'refund' ? 'Refund' : 'Take'}</b><span><strong>{step.node.name}</strong><small>{step.node.stats.join(' · ')}</small></span></button>) : <p>No notable changes in this tree.</p>}</div></section>}
-        <section className="campaign-gems"><h2>Act {act} gem links</h2>{guideRows.length ? <div className="campaign-gem-list">{guideRows.map((row, index) => <CampaignGemRow key={index} node={row} />)}</div> : gemLines.length ? <ul>{gemLines.map((line, index) => <li key={index}>{line}</li>)}</ul> : <p>No gem links added for this act yet.</p>}</section></div></aside>
+        {(actAscendancySnapshot || actAscendancy.length > 0) && <section className="campaign-ascendancy"><h2>{actAscendancySnapshot?.snapshot.title ?? actAscendancy[0].lab}<button type="button" onClick={() => { setTreeView('ascendancy'); setSelected(null); setInspected(null); }}>View tree</button></h2><div className="campaign-step-scroll">{actAscendancy.length ? actAscendancy.map(step => <button type="button" key={`${step.action}-${step.node.id}`} className={`${step.node.id === selected ? 'is-selected ' : ''}${step.action === 'refund' ? 'is-refund' : ''}`} onClick={() => focusNode(step.node.id, 'ascendancy')}><b>{step.action === 'refund' ? 'Refund' : 'Take'}</b><AscendancyIcon node={step.node} sprites={sprites} /><span><strong>{step.node.name}</strong><small>{step.node.stats.join(' · ')}</small></span></button>) : <p>No notable changes in this tree.</p>}</div></section>}
+        <section className="campaign-gems"><h2>Act {act} gem links</h2>{guideStages.length ? guideStages.map((stage, stageIndex) => <div className="campaign-gem-stage" key={`${stageIndex}:${stage.title}`}><h3><span className="campaign-stage-number">{String(stageIndex + 1).padStart(2, '0')}</span>{stage.title}</h3><GemAcquisitionSummary nodes={stage.acquisitionNodes} ascendancy={guideCharacterAscendancy} league={guideLeague} /><div className="campaign-gem-list">{stage.rows.map((row, index) => { const key = stageIndex === guideStages.length - 1 ? `${act}:${index}:${plainText(row)}` : `${act}:stage${stageIndex}:${index}:${plainText(row)}`; return <CampaignGemRow key={key} node={row} league={guideLeague || snapshot.version} checked={!!checkedGems[key]} onToggle={checked => toggleGemRow(key, checked)} />; })}</div></div>) : gemLines.length ? <div className="campaign-gem-list">{gemLines.map((line, index) => { const key = `${act}:raw:${index}:${line}`; return <label key={key} className={`campaign-gem-row is-raw${checkedGems[key] ? ' is-done' : ''}`}><input type="checkbox" checked={!!checkedGems[key]} onChange={event => toggleGemRow(key, event.target.checked)} aria-label={`Mark ${line} complete`} /><span>{line}</span></label>; })}</div> : <p>No gem links added for this act yet.</p>}</section></div></aside>
     </div>
   </div>;
 }

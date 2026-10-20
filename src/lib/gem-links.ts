@@ -1,4 +1,86 @@
 import type { JSONContent } from '@tiptap/core';
+import { gemRewardNpc } from './gem-rewards';
+
+type Acquisition = { kind: 'reward' | 'buy' | 'none'; act: number | null; vendor: string | null };
+
+export function acquisitionVendorForAct(act: number | null, kind: 'reward' | 'buy'): string | null {
+  if (kind === 'reward') return null;
+  if (act === 2) return 'Yeena';
+  if (kind === 'buy') return ({ 1: 'Nessa', 3: 'Clarissa', 4: 'Petarus and Vanja' } as Record<number, string>)[act ?? 0] ?? null;
+  return null;
+}
+
+export function gemAcquisitionGroups(nodes: JSONContent[], act?: number, ascendancy = '', league = '') {
+  const reward: { name: string; vendor: string | null; color: string; quantity: number }[] = [], buy: { name: string; vendor: string | null; color: string; quantity: number }[] = [];
+  const groups = new Map<string, { name: string; vendor: string | null; color: string; quantity: number; kind: 'reward' | 'buy'; first: boolean }>();
+  function visit(node: JSONContent) {
+    if (node.type === 'gem' && (node.attrs?.acquisition === 'reward' || node.attrs?.acquisition === 'buy')
+      && (act === undefined || node.attrs?.acquisitionAct === act)) {
+      const name = String(node.attrs?.name ?? '');
+      const key = `${name.toLowerCase()}:${node.attrs.acquisition}`;
+      const kind = node.attrs.acquisition as 'reward' | 'buy';
+      const existing = groups.get(key);
+      if (existing) { existing.quantity += kind === 'buy' ? 1 : 0; existing.first ||= node.attrs?.acquisitionFirst === true; }
+      else {
+        const acquisitionAct = Number(node.attrs?.acquisitionAct) || null;
+        const vendor = String(node.attrs?.acquisitionVendor ?? '').trim() || (kind === 'reward'
+          ? gemRewardNpc(name, acquisitionAct, ascendancy, league)
+          : acquisitionVendorForAct(acquisitionAct, kind));
+        groups.set(key, { name, vendor, color: String(node.attrs?.color ?? 'red'), quantity: 1, kind, first: node.attrs?.acquisitionFirst === true });
+      }
+    }
+    node.content?.forEach(visit);
+  }
+  nodes.forEach(visit);
+  for (const { kind, first, ...gem } of groups.values()) if (first) (kind === 'reward' ? reward : buy).push(gem);
+  return { reward, buy };
+}
+
+// A gem keeps its acquisition choice in later setups unless the author changes it.
+export function carryGemAcquisitions(document: JSONContent): JSONContent {
+  const choices = new Map<string, Acquisition[]>();
+  const obtained = new Map<string, number | null>();
+  const earlierActGems = new Set<string>();
+  let actGems = new Set<string>();
+  let currentAct: number | null = null;
+  function copyNode(node: JSONContent, occurrences: Map<string, number>): JSONContent {
+    if (node.type === 'gem') {
+      const name = String(node.attrs?.name ?? '').toLowerCase();
+      actGems.add(name);
+      const index = occurrences.get(name) ?? 0;
+      occurrences.set(name, index + 1);
+      const explicit = node.attrs?.acquisition;
+      const inherited = choices.get(name)?.[index];
+      const choice: Acquisition | undefined = explicit === 'reward' || explicit === 'buy' || explicit === 'none'
+        ? { kind: explicit, act: Number(node.attrs?.acquisitionAct) || currentAct, vendor: String(node.attrs?.acquisitionVendor ?? '').trim() || (inherited?.kind === explicit ? inherited?.vendor ?? null : null) } : inherited;
+      const isAcquisition = choice?.kind === 'reward' || choice?.kind === 'buy';
+      const first = isAcquisition && !obtained.has(name) && !earlierActGems.has(name);
+      if (first) obtained.set(name, choice.act);
+      if (isAcquisition && obtained.has(name)) choice.act = obtained.get(name) ?? null;
+      else if (isAcquisition && earlierActGems.has(name)) choice.act = null;
+      if (choice) {
+        const list = [...(choices.get(name) ?? [])];
+        list[index] = choice;
+        choices.set(name, list);
+      }
+      return { ...node, attrs: { ...node.attrs, acquisition: choice?.kind ?? null, acquisitionAct: choice?.act ?? null, acquisitionVendor: choice?.vendor ?? null, acquisitionFirst: first } };
+    }
+    return { ...node, content: node.content?.map(child => copyNode(child, occurrences)) };
+  }
+  return { ...document, content: document.content?.map(node => {
+    if (node.type === 'heading' && Number(node.attrs?.level) === 2) {
+      for (const name of actGems) earlierActGems.add(name);
+      actGems = new Set<string>();
+      currentAct = Number(/^Act\s+(10|[1-9])\b/i.exec(node.content?.map(child => child.text ?? '').join('') ?? '')?.[1]) || null;
+    }
+    if (node.type !== 'gemSetup') return node;
+    let occurrences = new Map<string, number>();
+    return { ...node, content: node.content?.map(child => {
+      if (child.type === 'heading') occurrences = new Map<string, number>();
+      return copyNode(child, occurrences);
+    }) };
+  }) };
+}
 
 // Keep the original document intact: punctuation describes the link relationships.
 export function gemLinkGroups(node: JSONContent) {

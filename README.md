@@ -24,10 +24,11 @@ The Sunder → RF guide was imported from [the existing guide](https://muzaroni.
 - `npm run dev` — start the site and local save service
 - `npm run check` — check TypeScript and Astro components
 - `npm run build` — check and build the static site
-- `npm run refresh:gems` — refresh gem card data and icons, then cache vendor prices for the current league
-- `npm run refresh:gem-vendors` — check RePoE's game version and fetch PoE Levelling Planner vendor prices only if that league is not already cached in `public/data/gem-vendors/`
+- `npm run refresh:gems` — refresh gem card data and icons, then cache vendor prices and quest reward NPCs for the current league
+- `npm run refresh:gem-vendors` — check RePoE's game version and fetch PoE Levelling Planner vendor prices only if that league is not already cached in `src/data/gem-vendors/`
+- `npm run refresh:gem-rewards` — cache class-specific gem rewards from the PoE Wiki's quest reward list and the reward NPC from each quest page in `src/data/gem-rewards/`
 
-GitHub Actions checks for a new league daily. When RePoE reports a new league and PoE Levelling Planner has its prices, the workflow commits one versioned cache file and triggers the normal site deployment. Normal builds use the committed file and do not call the vendor API.
+GitHub Actions checks for a new league daily and commits versioned price and reward NPC caches when one appears. Builds use these committed files and make no gem data requests. An NPC entered in the gem setup editor overrides the suggested reward NPC.
 
 The local save service listens only on `127.0.0.1:4322` and accepts requests from the local editor origin.
 

@@ -188,6 +188,13 @@ ol.prose-list, .tiptap ol { list-style-type: decimal; padding-left: 24px; }
 .gem-red { color: #ff6655; }
 .gem-green { color: #65ed7f; }
 .gem-blue { color: #58a6ff; }
+.gem-acquisition-summary { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 2px 0 9px; color: #aab7c4; font-size: 12px; line-height: 1.45; overflow-wrap: anywhere; }
+.gem-acquisition-summary strong { margin-right: 5px; color: #dfc77e; font-weight: 700; }
+.gem-acquisition-count { color: #d4dce3; white-space: nowrap; }
+.gem-acquisition-summary .gem.gem-acquisition-name[data-gem-info] { color: inherit; text-decoration: underline; text-decoration-color: #ff6655; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.gem-acquisition-summary .gem-acquisition-name.gem-green[data-gem-info] { text-decoration-color: #65ed7f; }
+.gem-acquisition-summary .gem-acquisition-name.gem-blue[data-gem-info] { text-decoration-color: #58a6ff; }
+.gem-acquisition-summary .gem-acquisition-name[data-gem-info]:hover { text-decoration-thickness: 2px; }
 .inline-icon { width: 24px; height: 24px; display: inline; vertical-align: -6px; object-fit: contain; margin: 0 1px; }
 .reader-task-list { list-style: none; padding: 0; margin: 4px 0; line-height: 1.35; }
 .reader-task { padding: 0; margin: 1px 0; }
