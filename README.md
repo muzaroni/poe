@@ -24,7 +24,10 @@ The Sunder → RF guide was imported from [the existing guide](https://muzaroni.
 - `npm run dev` — start the site and local save service
 - `npm run check` — check TypeScript and Astro components
 - `npm run build` — check and build the static site
-- `npm run refresh:gems` — refresh the locally bundled gem card data and icons from RePoE and the Path of Exile CDN
+- `npm run refresh:gems` — refresh gem card data and icons, then cache vendor prices for the current league
+- `npm run refresh:gem-vendors` — check RePoE's game version and fetch PoE Levelling Planner vendor prices only if that league is not already cached in `public/data/gem-vendors/`
+
+GitHub Actions checks for a new league daily. When RePoE reports a new league and PoE Levelling Planner has its prices, the workflow commits one versioned cache file and triggers the normal site deployment. Normal builds use the committed file and do not call the vendor API.
 
 The local save service listens only on `127.0.0.1:4322` and accepts requests from the local editor origin.
 
