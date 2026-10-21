@@ -143,6 +143,45 @@
 .tree-step-row small { color: #8797a8; font-size: 11px; white-space: nowrap; }
 
 .tree-group-select { display: grid; gap: 5px; color: #b7c6d5; font-size: 12px; margin-bottom: 12px; }
+.tree-edit-side { display: contents; }
+.tree-edit-scroll { display: contents; }
+.tree-edit-side > .tree-campaign-settings, .tree-edit-side > .tree-campaign-regex, .tree-edit-side > .tree-step-list { grid-column: 1 / -1; }
+.tree-edit-scroll > .tree-campaign-settings, .tree-edit-scroll > .tree-campaign-regex, .tree-edit-scroll > .tree-step-list { grid-column: 1 / -1; }
+.tree-block-dialog:has(.is-campaign-editor) { inset: 0; width: 100vw; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; border-radius: 0; overflow: hidden; }
+.tree-block-dialog:has(.is-campaign-editor) > div { height: 100%; }
+.passive-viewer.is-campaign-editor { display: flex; flex-direction: column; height: 100%; min-height: 0; border: 0; border-radius: 0; }
+.is-campaign-editor .tree-authoring, .is-campaign-editor .tree-picker-settings, .is-campaign-editor .tree-legend, .is-campaign-editor .tree-source { flex: none; }
+.is-campaign-editor .tree-layout { flex: 1; min-height: 0; grid-template-columns: minmax(0, 1fr) minmax(420px, 42%); }
+.is-campaign-editor .tree-map { height: 100%; min-height: 0; }
+.is-campaign-editor .tree-edit-side { display: flex; flex-direction: column; min-width: 0; min-height: 0; overflow: hidden; border-left: 1px solid #29313b; }
+.is-campaign-editor .tree-inspector { display: flex; flex-direction: column; flex: none; max-height: min(36dvh, 330px); overflow-y: auto; border-left: 0; border-bottom: 1px solid #29313b; }
+.is-campaign-editor .tree-manual-respec { order: -2; padding-bottom: 9px; border-bottom: 1px solid #29313b; margin-bottom: 8px; }
+.tree-manual-respec label { display: flex; align-items: center; gap: 8px; color: #d9c681; font-size: 12px; }
+.tree-manual-respec strong { display: block; margin: 7px 0; color: #d8e2ec; font-size: 14px; }
+.tree-manual-respec p { margin: 6px 0 0; color: #92a3b5; font-size: 12px; }
+.tree-manual-respec > div { display: flex; flex-wrap: wrap; gap: 5px; }
+.tree-manual-respec button.respec-remove { color: #ef9a91; }
+.tree-manual-respec button.respec-add { color: #8de2aa; }
+.is-campaign-editor .tree-node-detail { order: -1; padding-top: 0; }
+.is-campaign-editor .tree-node-detail h3 { margin: 4px 0 8px; }
+.is-campaign-editor .tree-selection-actions { margin-bottom: 7px; }
+.is-campaign-editor .tree-edit-scroll { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow-y: auto; scrollbar-width: thin; }
+.is-campaign-editor .tree-step-list { order: 1; flex: none; }
+.is-campaign-editor .tree-editor-gems { order: 2; }
+.is-campaign-editor .tree-campaign-settings { order: 3; }
+.is-campaign-editor .tree-campaign-regex { order: 4; }
+.is-campaign-editor .tree-step-row { flex-wrap: wrap; }
+.is-campaign-editor .tree-step-content { flex-basis: 100%; }
+.is-campaign-editor .tree-step-heading { flex-basis: auto; }
+.is-campaign-editor .tree-campaign-gems { grid-template-columns: 1fr; }
+.is-campaign-editor .tree-campaign-gems small { grid-column: 1; }
+.tree-editor-gems { border-top: 1px solid #29313b; padding: 9px 12px; color: #b8c6d3; }
+.tree-editor-gems > header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+.tree-editor-gems h3 { margin: 0; color: #e7ca83; font-size: 16px; }
+.tree-editor-gems p { margin: 4px 0; font-size: 13px; line-height: 1.4; overflow-wrap: anywhere; white-space: pre-line; }
+.tree-editor-gem-stage { padding: 7px 0; border-top: 1px solid #26303a; }
+.tree-editor-gem-stage > strong { display: block; margin-bottom: 4px; color: #cbd8e6; font-size: 13px; }
+@media (max-width: 850px) { .is-campaign-editor .tree-layout { display: flex; flex-direction: column; overflow-y: auto; } .is-campaign-editor .tree-map { flex: none; height: 42dvh; min-height: 240px; } .is-campaign-editor .tree-edit-side { flex: none; overflow: visible; border-left: 0; border-top: 1px solid #29313b; } .is-campaign-editor .tree-edit-scroll { overflow: visible; } }
 .tree-group-select select { width: 100%; }
 
 .tree-respec-controls, .tree-respec-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 7px 10px; font-size: 12px; color: #97a6b6; }

@@ -16,7 +16,9 @@ const sx = (x: number) => (x - camera.x) * camera.scale + size.width / 2;
 const sy = (y: number) => (y - camera.y) * camera.scale + size.height / 2;
 const active = (n: PassiveNode) => allocated.has(n.id) || (stage && n.classStart === stage.classId);
 for (const [a, b] of edges) {
-  const on = active(a) && active(b), old = previous && (removed.has(a.id) || removed.has(b.id)) && previous.nodes.includes(a.id) && previous.nodes.includes(b.id);
+  const on = active(a) && active(b) && !removed.has(a.id) && !removed.has(b.id);
+  const manuallyRemoved = !previous && (removed.has(a.id) || removed.has(b.id)) && (active(a) || removed.has(a.id)) && (active(b) || removed.has(b.id));
+  const old = manuallyRemoved || !!(previous && (removed.has(a.id) || removed.has(b.id)) && previous.nodes.includes(a.id) && previous.nodes.includes(b.id));
   const later = on && progression !== null && (!progression.has(a.id) || !progression.has(b.id));
   const retained = inherited.has(a.id) && inherited.has(b.id);
   ctx.strokeStyle = old && !on ? '#ef7a78' : later && !added.has(a.id) && !added.has(b.id) ? '#413b2d' : on && retained ? '#88764b' : on ? added.has(a.id) || added.has(b.id) ? '#70e79b' : '#d8bd75' : old ? '#ef7a78' : '#1b222b';

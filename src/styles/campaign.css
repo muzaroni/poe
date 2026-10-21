@@ -53,6 +53,12 @@
 .campaign-step-scroll small { display: block; color: #aebbc8; font-size: 13px; line-height: 1.35; margin-top: 2px; }
 .campaign-step-scroll > p, .campaign-gems > p { margin: 12px; color: #8796a5; font-size: 13px; }
 .campaign-ascendancy { border-top: 1px solid #303943; }
+.campaign-respec { border-top: 1px solid #303943; }
+.campaign-respec > div { display: flex; flex-wrap: wrap; gap: 5px; padding: 7px 10px; }
+.campaign-respec button { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #39444d; border-radius: 4px; padding: 4px 7px; background: #121a22; color: #d1dce6; font: inherit; font-size: 13px; cursor: pointer; }
+.campaign-respec button b { font-size: 11px; }
+.campaign-respec .is-refund b { color: #ef9a91; }
+.campaign-respec .is-take b { color: #8de2aa; }
 .campaign-ascendancy h2 { align-items: center; }
 .campaign-ascendancy h2 button { border: 1px solid #5f5840; border-radius: 4px; padding: 3px 7px; background: #201d17; color: #f0cf70; cursor: pointer; font-size: 12px; font-family: inherit; }
 .campaign-ascendancy .campaign-step-scroll b { width: auto; min-width: 43px; padding: 0 5px; border-color: #e4bd5b; background: #5b4217; color: #ffe18a; font-size: 11px; }

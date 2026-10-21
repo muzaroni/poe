@@ -3,10 +3,11 @@ import type { PassiveNode, PassiveTree, TreeStage } from './passive-tree';
 export type TreeMarker = { nodeId: number; note: string; actDivider?: string; displayNumber?: number; nodeIds?: number[]; positionX?: number; positionY?: number; offsetX?: number; offsetY?: number };
 export type TreeFrame = { x: number; y: number; width: number; height: number };
 export type TreeRespec = { title: string; version: string; classId: number; ascendancyId: number; nodes: number[]; mastery: Record<string, number>; note: string };
+export type CampaignRespec = Record<string, { removed: number[]; added: number[] }>;
 export type TreeSnapshotData = {
   title: string; version: string; classId: number; ascendancyId: number;
   respec?: TreeRespec; nodes: number[]; inheritedNodes?: number[]; mastery: Record<string, number>; markers: TreeMarker[];
-  ascendancyNumbering?: 'automatic' | 'manual'; campaignMode?: boolean; campaignGems?: Record<string, string>; campaignRegex?: { label: string; value: string }; width: number; height: number; view: 'tree' | 'ascendancy'; frame: TreeFrame | null;
+  ascendancyNumbering?: 'automatic' | 'manual'; campaignMode?: boolean; campaignGems?: Record<string, string>; campaignRegex?: { label: string; value: string }; campaignRespec?: CampaignRespec; width: number; height: number; view: 'tree' | 'ascendancy'; frame: TreeFrame | null;
 };
 export type TreeCamera = { x: number; y: number; scale: number };
 export type TreeSize = { width: number; height: number; dpr: number };
@@ -31,6 +32,10 @@ export function normalizeSnapshot(value: Partial<TreeSnapshotData> = {}): TreeSn
     campaignMode: value.campaignMode === true || undefined,
     campaignGems: value.campaignGems && typeof value.campaignGems === 'object' ? Object.fromEntries(Object.entries(value.campaignGems).filter(([act, links]) => /^(?:10|[1-9])$/.test(act) && typeof links === 'string').map(([act, links]) => [act, links.slice(0, 3000)])) : undefined,
     campaignRegex: value.campaignRegex && typeof value.campaignRegex.value === 'string' && value.campaignRegex.value.trim() ? { label: String(value.campaignRegex.label ?? 'Regex').slice(0, 160), value: value.campaignRegex.value.slice(0, 3000) } : undefined,
+    campaignRespec: value.campaignRespec && typeof value.campaignRespec === 'object' ? Object.fromEntries(Object.entries(value.campaignRespec).filter(([act]) => /^(?:10|[1-9])$/.test(act)).map(([act, marks]) => [act, {
+      removed: [...new Set((Array.isArray(marks?.removed) ? marks.removed : []).filter(id => Number.isInteger(id) && id >= 0))].slice(0, 500),
+      added: [...new Set((Array.isArray(marks?.added) ? marks.added : []).filter(id => Number.isInteger(id) && id >= 0))].slice(0, 500),
+    }])) : undefined,
     markers, frame, view: value.view === 'ascendancy' ? 'ascendancy' : 'tree',
     width: bounded(value.width, 480, 240, 1000), height: bounded(value.height, 240, 120, 1200),
   };
@@ -108,6 +113,29 @@ export function progressionNodes(nodes: PassiveNode[], snapshot: TreeSnapshotDat
   }
   }
   return highlighted;
+}
+
+// Rebuild campaign paths in step order. A completed tree may contain a shortcut
+// through a branch that was only connected several acts later.
+export function campaignProgressionNodes(nodes: PassiveNode[], snapshot: TreeSnapshotData, selected: number | null): Set<number> | null {
+  const step = snapshot.markers.findIndex(marker => marker.nodeId === selected);
+  if (step < 0) return null;
+  const roots = nodes.filter(node => node.classStart === snapshot.classId);
+  const finalNodes = new Set([...snapshot.nodes, ...(snapshot.inheritedNodes ?? []), ...snapshot.markers.flatMap(stepNodeIds)]);
+  const available = new Set<number>([...roots.map(node => node.id), ...(snapshot.inheritedNodes ?? [])]);
+  const visible = new Set(available);
+  for (let index = 0; index <= step; index++) {
+    const future = new Set(snapshot.markers.slice(index + 1).flatMap(stepNodeIds));
+    for (const id of stepNodeIds(snapshot.markers[index])) future.delete(id);
+    const eligible = nodes.filter(node => (finalNodes.has(node.id) || node.classStart === snapshot.classId) && !future.has(node.id));
+    for (const destination of stepNodeIds(snapshot.markers[index])) {
+      const path = shortestAllocationPath(eligible, available, snapshot.classId, destination)
+        ?? shortestAllocationPath(nodes.filter(node => finalNodes.has(node.id) || node.classStart === snapshot.classId), available, snapshot.classId, destination);
+      if (path) for (const id of path) { available.add(id); visible.add(id); }
+      else visible.add(destination);
+    }
+  }
+  return visible;
 }
 
 // Find the fewest new connections from the existing, connected allocation.

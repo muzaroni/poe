@@ -1,4 +1,6 @@
 import { loadPassiveTree, loadTreeSprites, treeBase } from '../lib/tree-assets';
+import type { CampaignGemStage } from '../lib/campaign';
+import { plainText } from '../lib/guide';
 import { drawPassiveTree } from '../lib/tree-render';
 import { normalizeSnapshot, ascendancyStepMarkers, respecBaseline, stepNodeIds, progressionNodes, continueFromSnapshot, shortestAllocationPath, unallocateBranch, snapshotStage, cropViewport, saveMarkerPositions, captureFrame, cameraForFrame, markerPositions, type TreeSnapshotData, type TreeRespec, type TreeMarker } from '../lib/tree-snapshot';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -26,8 +28,8 @@ function zoomAt(camera: Camera, factor: number, px: number, py: number, size: Si
   return { scale, x: camera.x + (px - size.width / 2) * (1 / camera.scale - 1 / scale), y: camera.y + (py - size.height / 2) * (1 / camera.scale - 1 / scale) };
 }
 
-type ViewerProps = { initialSnapshot?: TreeSnapshotData; previousSnapshot?: TreeSnapshotData; previousSnapshots?: TreeSnapshotData[]; onApply?: (snapshot: TreeSnapshotData) => void; onCancel?: () => void };
-export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, previousSnapshots, onApply, onCancel }: ViewerProps = {}) {
+type ViewerProps = { initialSnapshot?: TreeSnapshotData; previousSnapshot?: TreeSnapshotData; previousSnapshots?: TreeSnapshotData[]; guideGemLinks?: Record<string, CampaignGemStage[]>; onApply?: (snapshot: TreeSnapshotData) => void; onCancel?: () => void };
+export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, previousSnapshots, guideGemLinks, onApply, onCancel }: ViewerProps = {}) {
   const initial = useRef(initialSnapshot ? normalizeSnapshot(initialSnapshot) : null).current;
   const sources = previousSnapshots ?? (previousSnapshot ? [previousSnapshot] : []);
   const [sourceIndex, setSourceIndex] = useState(Math.max(0, sources.length - 1));
@@ -37,8 +39,10 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
   const [snapshotHeight, setSnapshotHeight] = useState(initial?.height ?? 240);
   const [campaignMode, setCampaignMode] = useState(!!initial?.campaignMode);
   const [campaignGems, setCampaignGems] = useState<Record<string, string>>(initial?.campaignGems ?? {});
+  const [campaignRespec, setCampaignRespec] = useState(initial?.campaignRespec ?? {});
   const [campaignRegex, setCampaignRegex] = useState(initial?.campaignRegex ?? { label: 'Regex', value: '' });
   const [campaignAct, setCampaignAct] = useState(1);
+  const manualRespec = useMemo(() => campaignRespec[campaignAct] ?? { removed: [], added: [] }, [campaignRespec, campaignAct]);
   const [ascendancyNumbering, setAscendancyNumbering] = useState<'automatic' | 'manual'>(initial?.ascendancyNumbering ?? 'automatic');
   const [markers, setMarkers] = useState<TreeMarker[]>(initial?.markers ?? []);
   const [respec, setRespec] = useState<TreeRespec | undefined>(initial?.respec);
@@ -61,6 +65,7 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
   const [ascendancy, setAscendancy] = useState('Chieftain');
   const [view, setView] = useState<'tree' | 'ascendancy'>(initial?.view ?? 'tree');
   const [selected, setSelected] = useState<number | null>(null);
+  const [respecSelection, setRespecSelection] = useState<number[]>([]);
   const [hover, setHover] = useState<{ node: PassiveNode; x: number; y: number } | null>(null);
   const [query, setQuery] = useState('');
   const [camera, setCamera] = useState<Camera>({ x: 0, y: 0, scale: .03 });
@@ -70,6 +75,9 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
   const [importError, setImportError] = useState('');
   const [importBusy, setImportBusy] = useState(false);
   const container = useRef<HTMLDivElement>(null);
+  const inspector = useRef<HTMLElement>(null);
+  const markerScroll = useRef<HTMLDivElement>(null);
+  const previousMarkerCount = useRef(markers.length);
   const canvas = useRef<HTMLCanvasElement>(null);
   const pointer = useRef(new Map<number, { x: number; y: number; startX: number; startY: number }>());
   const moved = useRef(false);
@@ -97,6 +105,11 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
   }, [nodes, query]);
   const matchIds = useMemo(() => new Set(matches.map(n => n.id)), [matches]);
   const selectedNode = selected == null ? undefined : allById.get(selected);
+  useEffect(() => { inspector.current?.scrollTo({ top: 0 }); }, [selected]);
+  useEffect(() => {
+    if (campaignMode && markers.length > previousMarkerCount.current) markerScroll.current?.querySelector('.tree-step-group:last-child')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    previousMarkerCount.current = markers.length;
+  }, [campaignMode, markers.length]);
   const missing = stage?.nodes.filter(id => !allById.has(id)).length ?? 0;
   const currentClass = tree?.classes.find(c => c.id === classId);
   useEffect(() => {
@@ -108,7 +121,7 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
 
   useEffect(() => {
     let cancelled = false;
-    setTree(null); setError(''); setSprites([]); setSpriteWarning(false); setSelected(null); setHover(null);
+    setTree(null); setError(''); setSprites([]); setSpriteWarning(false); setSelected(null); setRespecSelection([]); setHover(null);
     loadTree(version).then(data => { if (!cancelled) setTree(data); }).catch(e => { if (!cancelled) setError(e.message); });
     return () => { cancelled = true; };
   }, [version]);
@@ -168,16 +181,16 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
     const element = canvas.current, ctx = element?.getContext('2d');
     if (!element || !ctx || !tree) return;
     const frame = requestAnimationFrame(() => {
-      drawPassiveTree(element, { camera, size, nodes, edges, sprites, allocated, inherited, added, removed, selected,
-        emphasized: new Set(markers.filter(m => m.nodeId === (editingStep ?? selected)).flatMap(stepNodeIds)),
-        progression: !onApply && initial ? progressionNodes(nodes, { ...initial, markers }, selected) : null, hoverId: hover?.node.id, matchIds, stage, previous, classId, markers: stage ? markers : [] });
+      drawPassiveTree(element, { camera, size, nodes, edges, sprites, allocated, inherited, added: onApply && campaignMode ? new Set(manualRespec.added) : added, removed: onApply && campaignMode ? new Set(manualRespec.removed) : removed, selected,
+        emphasized: new Set([...markers.filter(m => m.nodeId === (editingStep ?? selected)).flatMap(stepNodeIds), ...(campaignMode ? respecSelection : [])]),
+        progression: !onApply && initial ? progressionNodes(nodes, { ...initial, markers }, selected) : null, hoverId: hover?.node.id, matchIds, stage, previous: campaignMode ? undefined : previous, classId, markers: stage ? markers : [] });
       if (onApply) {
         const crop = cropViewport(size, snapshotWidth, snapshotHeight);
         ctx.strokeStyle = "#b5c8ee"; ctx.lineWidth = 1; ctx.setLineDash([6, 5]); ctx.strokeRect(crop.x, crop.y, crop.width, crop.height); ctx.setLineDash([]);
       }
     });
     return () => cancelAnimationFrame(frame);
-  }, [tree, camera, size, edges, nodes, sprites, allocated, inherited, added, removed, selected, hover?.node.id, matchIds, stage, previous, classId, markers, editingStep, onApply, snapshotWidth, snapshotHeight]);
+  }, [tree, camera, size, edges, nodes, sprites, allocated, inherited, added, removed, selected, respecSelection, hover?.node.id, matchIds, stage, previous, classId, markers, editingStep, onApply, snapshotWidth, snapshotHeight, campaignMode, manualRespec]);
 
   function local(event: React.PointerEvent<HTMLCanvasElement>) { const rect = event.currentTarget.getBoundingClientRect(); return { x: event.clientX - rect.left, y: event.clientY - rect.top }; }
   function hit(point: { x: number; y: number }) {
@@ -218,7 +231,7 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
     const kept = new Set(remaining);
     updateCurrent({ nodes: remaining, mastery: Object.fromEntries(Object.entries(stage?.mastery ?? {}).filter(([id]) => kept.has(Number(id)))) });
     const visibleSteps = new Set([...remaining, ...(respec?.nodes ?? [])]);
-    setMarkers(current => current.filter(marker => visibleSteps.has(marker.nodeId)).map(marker => ({ ...marker, nodeIds: marker.nodeIds?.filter(id => visibleSteps.has(id)) })));
+    if (!campaignMode) setMarkers(current => current.filter(marker => visibleSteps.has(marker.nodeId)).map(marker => ({ ...marker, nodeIds: marker.nodeIds?.filter(id => visibleSteps.has(id)) })));
     setError('');
   }
   function editGroupNode(node: PassiveNode) {
@@ -249,9 +262,24 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
   function moveMarker(index: number, offset: number) {
     setMarkers(current => { const next = [...current], other = index + offset; if (other < 0 || other >= next.length) return current; [next[index], next[other]] = [next[other], next[index]]; return next; });
   }
+  function selectRespecNode(id: number, extend: boolean) {
+    setSelected(id);
+    setRespecSelection(current => extend ? current.includes(id) ? current.filter(nodeId => nodeId !== id) : [...current, id] : [id]);
+  }
+  function markCampaignRespec(ids: number[], action: 'removed' | 'added' | 'clear') {
+    setCampaignRespec(current => {
+      const marks = current[campaignAct] ?? { removed: [], added: [] };
+      const selectedIds = new Set(ids);
+      const removed = marks.removed.filter(nodeId => !selectedIds.has(nodeId));
+      const added = marks.added.filter(nodeId => !selectedIds.has(nodeId));
+      if (action === 'removed') removed.push(...ids);
+      if (action === 'added') added.push(...ids);
+      return { ...current, [campaignAct]: { removed, added } };
+    });
+  }
   function applySnapshot() {
     if (!onApply || !stage) return;
-    onApply(normalizeSnapshot({ title: snapshotTitle.trim() || 'Passive tree', version, classId: stage.classId, ascendancyId: stage.ascendancyId, nodes: stage.nodes, inheritedNodes, ascendancyNumbering, respec, mastery: stage.mastery, markers: saveMarkerPositions(markers, tree?.nodes ?? nodes, camera, size), campaignMode, campaignGems, campaignRegex, width: snapshotWidth, height: snapshotHeight, view, frame: manualCrop ? captureFrame(camera, size, snapshotWidth, snapshotHeight) : null }));
+    onApply(normalizeSnapshot({ title: snapshotTitle.trim() || 'Passive tree', version, classId: stage.classId, ascendancyId: stage.ascendancyId, nodes: stage.nodes, inheritedNodes, ascendancyNumbering, respec, mastery: stage.mastery, markers: saveMarkerPositions(markers, tree?.nodes ?? nodes, camera, size), campaignMode, campaignGems, campaignRegex, campaignRespec, width: snapshotWidth, height: snapshotHeight, view, frame: manualCrop ? captureFrame(camera, size, snapshotWidth, snapshotHeight) : null }));
   }
   function continuePrevious() {
     if (!continuationSource) return;
@@ -279,10 +307,10 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
     catch (e) { setImportError(e instanceof Error ? e.message : 'Could not read this PoB.'); }
     finally { setImportBusy(false); }
   }
-  function focusNode(node: PassiveNode) { setSelected(node.id); setCamera(current => ({ x: node.x, y: node.y, scale: Math.max(.24, current.scale) })); setHover(null); }
+  function focusNode(node: PassiveNode, extendSelection = false) { if (campaignMode) selectRespecNode(node.id, extendSelection); else setSelected(node.id); setCamera(current => ({ x: node.x, y: node.y, scale: Math.max(.24, current.scale) })); setHover(null); }
   const pointCount = stage?.nodes.filter(id => { const node = allById.get(id); return node && node.classStart === null && !node.ascendancyStart && !node.ascendancy; }).length ?? 0;
 
-  return <section className="passive-viewer" aria-label="Interactive passive tree viewer">
+  return <section className={`passive-viewer${onApply && campaignMode ? ' is-campaign-editor' : ''}`} aria-label="Interactive passive tree viewer">
     {onApply && <div className="tree-authoring">
       <label>Snapshot title<input value={snapshotTitle} onChange={e => setSnapshotTitle(e.target.value)} /></label>
       <label className="tree-continue-source">{respec ? 'Before tree' : 'Continue from'}<select aria-label="Previous tree" value={sources.length ? sourceIndex : ''} disabled={!sources.length} onChange={e => setSourceIndex(Number(e.target.value))}>
@@ -311,7 +339,7 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
       <button type="button" disabled={!example} onClick={() => example && useBuild(example)}>Sunder / RF example · 3.28</button></>}
       {build && <button type="button" onClick={() => { setRespec(undefined); setBuild(null); setInheritedNodes([]); setMarkers([]); setStageIndex(0); setSelected(null); }}>Clear build</button>}
     </div>
-      {onApply && <p className="tree-picker-help">Click to allocate a path; click allocated nodes to refund. Drag numbers to reposition. Previous paths are dim gold; new paths are bright.</p>}
+      {onApply && <p className="tree-picker-help">{campaignMode ? 'Click a node to inspect it; Shift-click to select several nodes. Mark refund or Mark take applies to the selection for this Act. Earlier step markers keep their numbers. Use the allocation buttons for actual tree changes.' : 'Click to allocate a path; click allocated nodes to refund. Drag numbers to reposition. Previous paths are dim gold; new paths are bright.'}</p>}
     </details> : <div className="tree-toolbar">
       <label>Tree version<select value={version} onChange={e => { setVersion(e.target.value); setStageIndex(0); setQuery(''); if (onApply) { setRespec(undefined); setBuild(null); setInheritedNodes([]); setMarkers([]); setManualCrop(false); } }}>{treeVersions.map(v => <option key={v} value={v}>{v}{v === '3.29.1' ? ' · Current' : ' · Guide example'}</option>)}</select></label>
       <label>Class<select value={classId} disabled={!!stage && !onApply} onChange={e => { const id = Number(e.target.value); setClassId(id); setSelected(null); setHover(null); setAscendancy(tree?.classes.find(c => c.id === id)?.ascendancies[0]?.id ?? ''); if (onApply) { updateCurrent({ classId: id, ascendancyId: 1, nodes: [], mastery: {} }); setRespec(undefined); setInheritedNodes([]); setMarkers([]); } }}>{tree?.classes.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
@@ -353,7 +381,7 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
               if (distance > 0) setCamera(c => zoomAt(c, next / distance, (point.x + other.x) / 2, (point.y + other.y) / 2, size));
             } else setCamera(c => ({ ...c, x: c.x - (point.x - old.x) / c.scale, y: c.y - (point.y - old.y) / c.scale }));
           }}
-          onPointerUp={e => { if (markerDrag.current?.pointerId === e.pointerId) markerDrag.current = null; if (pointer.current.has(e.pointerId) && !moved.current) { const point = local(e), marker = markerPositions(stage ? markers : [], nodes, camera, size).find(m => Math.hypot(point.x - m.x, point.y - m.y) <= 18); if (marker) { const destination = allById.get(marker.nodeId); if (destination && !(respec && removed.has(destination.id))) allocateNode(destination); setSelected(marker.nodeId); pointer.current.delete(e.pointerId); return; } const node = hit(point); if (node) { setSelected(node.id); if (editingStep !== null) editGroupNode(node); else toggleNode(node); } else setSelected(null); } pointer.current.delete(e.pointerId); }}
+          onPointerUp={e => { if (markerDrag.current?.pointerId === e.pointerId) markerDrag.current = null; if (pointer.current.has(e.pointerId) && !moved.current) { const point = local(e), marker = markerPositions(stage ? markers : [], nodes, camera, size).find(m => Math.hypot(point.x - m.x, point.y - m.y) <= 18); if (marker) { const destination = allById.get(marker.nodeId); if (!campaignMode && destination && !(respec && removed.has(destination.id))) allocateNode(destination); if (campaignMode) selectRespecNode(marker.nodeId, e.shiftKey); else setSelected(marker.nodeId); pointer.current.delete(e.pointerId); return; } const node = hit(point); if (node) { if (campaignMode) selectRespecNode(node.id, e.shiftKey); else setSelected(node.id); if (editingStep !== null) editGroupNode(node); else if (!campaignMode) toggleNode(node); } else if (!e.shiftKey) { setSelected(null); setRespecSelection([]); } } pointer.current.delete(e.pointerId); }}
           onLostPointerCapture={e => { if (markerDrag.current?.pointerId === e.pointerId) markerDrag.current = null; pointer.current.delete(e.pointerId); }}
           onPointerCancel={e => { markerDrag.current = null; pointer.current.delete(e.pointerId); moved.current = true; }} onPointerLeave={() => setHover(null)}
           onKeyDown={e => {
@@ -361,30 +389,33 @@ export default function PassiveTreeViewer({ initialSnapshot, previousSnapshot, p
             if (e.key.startsWith('Arrow')) { e.preventDefault(); setCamera(c => ({ ...c, x: c.x + (e.key === 'ArrowRight' ? delta : e.key === 'ArrowLeft' ? -delta : 0), y: c.y + (e.key === 'ArrowDown' ? delta : e.key === 'ArrowUp' ? -delta : 0) })); }
             else if (['+', '=', '-'].includes(e.key)) { e.preventDefault(); setCamera(c => zoomAt(c, e.key === '-' ? .8 : 1.25, size.width / 2, size.height / 2, size)); }
             else if (e.key === 'Home') { e.preventDefault(); fitBuild(); }
-            else if (e.key === 'Escape') { setSelected(null); setHover(null); }
+            else if (e.key === 'Escape') { setSelected(null); setRespecSelection([]); setHover(null); }
           }} />
         {!tree && <div className="tree-loading" role="status">{error || `Loading tree ${version}…`}{error && <button type="button" onClick={() => { setError(''); loadTree(version).then(setTree).catch(e => setError(e.message)); }}>Try again</button>}</div>}
         <div className="tree-map-controls"><button type="button" aria-pressed={view === 'tree'} onClick={() => { setView('tree'); setSelected(null); setHover(null); }}>Passive tree</button><button type="button" aria-pressed={view === 'ascendancy'} disabled={!ascendancy} onClick={() => { setView('ascendancy'); setSelected(null); setHover(null); }}>Ascendancy</button><button type="button" aria-label="Zoom in" onClick={() => setCamera(c => zoomAt(c, 1.3, size.width / 2, size.height / 2, size))}>+</button><button type="button" aria-label="Zoom out" onClick={() => setCamera(c => zoomAt(c, 1 / 1.3, size.width / 2, size.height / 2, size))}>−</button><button type="button" onClick={fitBuild}>{stage ? 'Fit build' : 'Fit tree'}</button><button type="button" onClick={() => setCamera(fit(nodes, size))}>Overview</button></div>
         {hover && !pointer.current.size && <div className="tree-hover" role="tooltip" style={{ left: Math.max(8, Math.min(hover.x + 14, size.width - 248)), top: hover.y > size.height - 130 ? Math.max(55, hover.y - 105) : hover.y + 14 }}><strong>{hover.node.name}</strong><span>{hover.node.stats.slice(0, 2).join(' · ') || (hover.node.kind === 'mastery' ? 'Mastery · click to inspect effects' : 'Class starting point')}</span><small>Click for node details</small></div>}
-        <div className="tree-map-hint">Drag to pan · Scroll / pinch to zoom · Click to inspect</div>
+        <div className="tree-map-hint">Drag to pan · Scroll / pinch to zoom · Click to inspect{campaignMode && onApply ? ' · Shift-click to select multiple nodes' : ''}</div>
       </div>
-      <aside className="tree-inspector" aria-label="Node details">
+      <div className="tree-edit-side"><aside ref={inspector} className="tree-inspector" aria-label="Node details">
+        {onApply && campaignMode && <div className="tree-manual-respec"><label>Manual respec for <select aria-label="Act for manual respec marks" value={campaignAct} onChange={event => setCampaignAct(Number(event.target.value))}>{Array.from({ length: 10 }, (_, index) => <option value={index + 1} key={index + 1}>Act {index + 1}</option>)}</select></label>{respecSelection.length ? <><strong>{respecSelection.length === 1 ? allById.get(respecSelection[0])?.name ?? '1 node selected' : `${respecSelection.length} nodes selected`}</strong><div><button type="button" className="respec-remove" aria-pressed={respecSelection.every(id => manualRespec.removed.includes(id))} onClick={() => markCampaignRespec(respecSelection, 'removed')}>Mark refund</button><button type="button" className="respec-add" aria-pressed={respecSelection.every(id => manualRespec.added.includes(id))} onClick={() => markCampaignRespec(respecSelection, 'added')}>Mark take</button><button type="button" disabled={!respecSelection.some(id => manualRespec.removed.includes(id) || manualRespec.added.includes(id))} onClick={() => markCampaignRespec(respecSelection, 'clear')}>Clear marks</button>{respecSelection.length > 1 && <button type="button" onClick={() => { setRespecSelection([]); setSelected(null); }}>Clear selection</button>}</div></> : <p>Select a node, then Shift-click more nodes to mark them together.</p>}</div>}
         {onApply && markers.length > 0 && <label className="tree-group-select">Assign nodes to step<select aria-label="Assign nodes to step" value={editingStep ?? ''} onChange={event => setEditingStep(event.target.value === '' ? null : Number(event.target.value))}>
           <option value="">Normal allocation</option>{markers.map((marker, index) => <option key={marker.nodeId} value={marker.nodeId}>Step {index + 1}: {allById.get(marker.nodeId)?.name ?? marker.nodeId}</option>)}
         </select></label>}
 
         <label className="tree-search-label">Find a passive<input type="search" placeholder="Name or stat…" value={query} onChange={e => setQuery(e.target.value)} /></label>
-        {query.trim() && <div className="tree-search-results"><p role="status">{matches.length} matching passives</p>{matches.slice(0, 12).map(n => <button type="button" key={n.id} onClick={() => { focusNode(n); if (editingStep !== null) editGroupNode(n); else if (!(respec && removed.has(n.id))) allocateNode(n); }}>{n.name}<small>{n.kind}</small></button>)}{matches.length > 12 && <p>Showing first 12. Refine your search.</p>}</div>}
+        {query.trim() && <div className="tree-search-results"><p role="status">{matches.length} matching passives</p>{matches.slice(0, 12).map(n => <button type="button" key={n.id} onClick={event => { focusNode(n, event.shiftKey); if (editingStep !== null) editGroupNode(n); else if (!campaignMode && !(respec && removed.has(n.id))) allocateNode(n); }}>{n.name}<small>{n.kind}</small></button>)}{matches.length > 12 && <p>Showing first 12. Refine your search.</p>}</div>}
         {selectedNode ? <div className="tree-node-detail" aria-live="polite"><span className="tree-node-kind">{selectedNode.kind} · #{selectedNode.id}</span><h3>{selectedNode.name}</h3>{onApply && <div className="tree-selection-actions"><button type="button" disabled={selectedNode.classStart !== null || selectedNode.ascendancyStart} onClick={() => toggleNode(selectedNode)}>{allocated.has(selectedNode.id) ? 'Deselect node' : 'Allocate path'}</button><button type="button" disabled={markers.some(m => m.nodeId === selectedNode.id) || markers.length >= 50} onClick={() => addMarker(selectedNode)}>Add step marker</button></div>}<p className={`tree-node-status ${removed.has(selectedNode.id) ? 'is-removed' : added.has(selectedNode.id) ? 'is-added' : ''}`}>{removed.has(selectedNode.id) ? 'Removed since previous stage' : added.has(selectedNode.id) ? 'Added in this stage' : allocated.has(selectedNode.id) ? 'Allocated in this stage' : 'Not allocated'}</p><ul>{selectedNode.stats.map((stat, i) => <li key={i}>{stat}</li>)}</ul>{selectedNode.reminder.map((r, i) => <p className="tree-reminder" key={i}>{r}</p>)}{selectedNode.masteryEffects.length > 0 && <div className="tree-mastery-effects"><h4>Mastery effects</h4>{selectedNode.masteryEffects.map(effect => <div key={effect.effect} className={stage?.mastery[selectedNode.id] === effect.effect ? 'is-selected' : ''}>{stage?.mastery[selectedNode.id] === effect.effect && <strong>Selected in this stage</strong>}{effect.stats.map((stat, i) => <p key={i}>{stat}</p>)}{onApply && <button type="button" onClick={() => useMasteryEffect(selectedNode, effect)}>Use this effect</button>}</div>)}</div>}<button type="button" onClick={() => focusNode(selectedNode)}>Center on node</button></div> : <div className="tree-inspector-empty"><h3>Inspect a passive</h3><p>Click a node for its stats, or search above to find one.</p><p>{onApply ? 'Click a destination to allocate its shortest connecting path. The numbered markers explain which destination to take first.' : 'This is a read-only viewer. Clicking does not allocate points.'}</p></div>}
       </aside>
-    </div>
-    {onApply && <div className="tree-campaign-settings"><label><input type="checkbox" checked={campaignMode} onChange={event => setCampaignMode(event.target.checked)} /> Full campaign view</label>{campaignMode && <><p>The campaign view uses the final GEM LINKS block in each written Act section. Use the fields below only for acts without a guide gem setup.</p><p>Each Ascendancy tree block appears in the campaign tab for its written Act section. Edit Normal, Cruel, and Merciless Lab in those blocks; the campaign view compares each tree with the previous one to show nodes taken and refunded.</p><div className="tree-campaign-gems"><label>Fallback gem links for <select value={campaignAct} onChange={event => setCampaignAct(Number(event.target.value))}>{Array.from({ length: 10 }, (_, index) => <option value={index + 1} key={index + 1}>Act {index + 1}</option>)}</select></label><textarea aria-label={`Fallback gem links for Act ${campaignAct}`} value={campaignGems[campaignAct] ?? ''} onChange={event => setCampaignGems(current => ({ ...current, [campaignAct]: event.target.value }))} placeholder="Main: Fireball + Combustion Support&#10;Movement: Flame Dash" rows={3} /><small>One setup per line. Use + between linked gems.</small></div></>}</div>}
+      <div className="tree-edit-scroll" ref={markerScroll}>
+      {onApply && campaignMode && <section className="tree-editor-gems" aria-label="Campaign gem links"><header><h3>Act {campaignAct} gem links</h3><select aria-label="Preview gem links for act" value={campaignAct} onChange={event => setCampaignAct(Number(event.target.value))}>{Array.from({ length: 10 }, (_, index) => <option value={index + 1} key={index + 1}>Act {index + 1}</option>)}</select></header>{guideGemLinks?.[campaignAct]?.length ? guideGemLinks[campaignAct].map((setup, index) => <div className="tree-editor-gem-stage" key={`${index}:${setup.title}`}><strong>{setup.title}</strong>{setup.rows.map((row, rowIndex) => <p key={rowIndex}>{plainText(row)}</p>)}</div>) : <p>{campaignGems[campaignAct]?.trim() || 'No written gem setup for this act. Add one in the guide or use the fallback field below.'}</p>}</section>}
+    {onApply && <div className="tree-campaign-settings"><label><input type="checkbox" checked={campaignMode} onChange={event => setCampaignMode(event.target.checked)} /> Full campaign view</label>{campaignMode && <><p>The campaign view uses every GEM LINKS setup in each written Act section. Use the field below only for acts without a guide gem setup.</p><p>Each Ascendancy tree block appears in the campaign tab for its written Act section. Edit Normal, Cruel, and Merciless Lab in those blocks; the campaign view compares each tree with the previous one to show nodes taken and refunded.</p><div className="tree-campaign-gems"><label>Fallback gem links for Act {campaignAct}</label><textarea aria-label={`Fallback gem links for Act ${campaignAct}`} value={campaignGems[campaignAct] ?? ''} onChange={event => setCampaignGems(current => ({ ...current, [campaignAct]: event.target.value }))} placeholder="Main: Fireball + Combustion Support&#10;Movement: Flame Dash" rows={3} /><small>One setup per line. Use + between linked gems.</small></div></>}</div>}
     {onApply && campaignMode && <div className="tree-campaign-regex"><label>Fallback regex label<input value={campaignRegex.label} maxLength={160} onChange={event => setCampaignRegex(current => ({ ...current, label: event.target.value }))} /></label><label>Fallback regex<input value={campaignRegex.value} maxLength={3000} onChange={event => setCampaignRegex(current => ({ ...current, value: event.target.value }))} placeholder="Paste a regex here if the guide has no Regex block" /></label><small>The Campaign view uses the written guide's Regex block when one is present.</small></div>}
     {!!stage && !!markers.length && <div className="tree-step-list"><h3>Take these in order</h3>{markers.map((marker, index) => <div className="tree-step-group" key={marker.nodeId}>{marker.actDivider && <div className="tree-act-divider">{marker.actDivider}</div>}<div className={`tree-step-row${selected === marker.nodeId || editingStep === marker.nodeId ? ' is-selected' : ''}`}>
-      <div className="tree-step-content"><div className="tree-step-heading"><button type="button" className="tree-step-number" aria-label={`Show step ${index + 1}: ${allById.get(marker.nodeId)?.name ?? marker.nodeId}`} onClick={() => { const node = allById.get(marker.nodeId); if (node) { if (!(respec && removed.has(node.id))) allocateNode(node); if (node.ascendancy) { setAscendancy(node.ascendancy); setView('ascendancy'); } else setView('tree'); focusNode(node); } }}>{index + 1}</button><strong>{allById.get(marker.nodeId)?.name ?? `Node ${marker.nodeId}`}</strong><small>{stepNodeIds(marker).length} {stepNodeIds(marker).length === 1 ? 'node' : 'nodes'}</small></div>
+      <div className="tree-step-content"><div className="tree-step-heading"><button type="button" className="tree-step-number" aria-label={`Show step ${index + 1}: ${allById.get(marker.nodeId)?.name ?? marker.nodeId}`} onClick={() => { const node = allById.get(marker.nodeId); if (node) { if (!campaignMode && !(respec && removed.has(node.id))) allocateNode(node); if (node.ascendancy) { setAscendancy(node.ascendancy); setView('ascendancy'); } else setView('tree'); focusNode(node); } }}>{index + 1}</button><strong>{allById.get(marker.nodeId)?.name ?? `Node ${marker.nodeId}`}</strong><small>{stepNodeIds(marker).length} {stepNodeIds(marker).length === 1 ? 'node' : 'nodes'}</small></div>
       {onApply ? <input aria-label={`Step ${index + 1} note`} placeholder="Optional instruction…" value={marker.note} onChange={e => setMarkers(current => current.map((m, i) => i === index ? { ...m, note: e.target.value } : m))} /> : marker.note && <p>{marker.note}</p>}</div>
       {onApply && <><ActDividerControl value={marker.actDivider} step={index + 1} onChange={actDivider => setMarkers(current => current.map(m => m.nodeId === marker.nodeId ? { ...m, actDivider } : m))} /><button type="button" aria-pressed={editingStep === marker.nodeId} aria-label={`Choose nodes for step ${index + 1}`} onClick={() => { setEditingStep(editingStep === marker.nodeId ? null : marker.nodeId); const node = allById.get(marker.nodeId); if (node) focusNode(node); }}>{editingStep === marker.nodeId ? 'Done' : 'Choose nodes'}</button><button type="button" aria-label={`Move step ${index + 1} up`} disabled={index === 0} onClick={() => moveMarker(index, -1)}>↑</button><button type="button" aria-label={`Move step ${index + 1} down`} disabled={index === markers.length - 1} onClick={() => moveMarker(index, 1)}>↓</button><button type="button" aria-label={`Reset step ${index + 1} position`} disabled={!marker.offsetX && !marker.offsetY && marker.positionX === undefined} onClick={() => setMarkers(current => current.map((m, i) => i === index ? { ...m, offsetX: undefined, offsetY: undefined, positionX: undefined, positionY: undefined } : m))}>Reset position</button><button type="button" aria-label={`Remove step ${index + 1}`} onClick={() => { if (view === 'ascendancy') setAscendancyNumbering('manual'); if (editingStep === marker.nodeId) setEditingStep(null); setMarkers(current => current.filter((_, i) => i !== index)); }}>Remove</button></>}
     </div></div>)}</div>}
+    </div></div></div>
     {onApply && tree && error && <p className="tree-warning" role="alert">{error}</p>}
     <div className="tree-legend"><span className="legend-allocated">Allocated</span>{previous && <><span className="legend-added">Added: +{added.size}</span><span className="legend-removed">Removed: −{removed.size}</span></>}<span className="legend-found">Search match</span><span>Tree {version}</span></div>
     {!!missing && <p className="tree-warning">{missing} allocated node IDs are not in this base-tree export. Jewel-added nodes and item modifications are not rendered.</p>}

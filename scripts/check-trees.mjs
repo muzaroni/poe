@@ -94,6 +94,12 @@ for (const path of [pathToFirst, pathToSecond]) {
   for (let i = 1; i < path.length; i++) assert.ok(edgesForCheck.some(([a, b]) => (a.id === path[i - 1] && b.id === path[i]) || (b.id === path[i - 1] && a.id === path[i])), 'Auto-allocation cannot skip connecting nodes');
 }
 const stub = (id, out, classStart = null, kind = 'normal') => ({ id, out, classStart, kind, ascendancy: null, bloodline: false, ascendancyStart: false });
+const futureShortcut = [stub(0, [1, 3], 1), stub(1, [5]), stub(5, [2]), stub(2, []), stub(3, [2])];
+const shortcutSnapshot = normalizeSnapshot({ classId: 1, nodes: [1, 5, 2, 3], markers: [{ nodeId: 2, note: '', actDivider: 'Act 2' }, { nodeId: 3, note: '', actDivider: 'Act 7' }] });
+const earlyCampaignPath = snapshotContext.exports.campaignProgressionNodes(futureShortcut, shortcutSnapshot, 2);
+assert.ok(earlyCampaignPath.has(1) && earlyCampaignPath.has(5), 'Earlier acts follow their available route');
+assert.ok(!earlyCampaignPath.has(3), 'A later marker cannot create an early shortcut');
+assert.ok(snapshotContext.exports.campaignProgressionNodes(futureShortcut, shortcutSnapshot, 3).has(3), 'The shortcut appears when its later step is reached');
 const branch = [stub(0, [1, 3], 1), stub(1, [2]), stub(2, [5]), stub(3, [5]), stub(5, [])];
 assert.equal(shortestAllocationPath(branch, new Set(), 1, 5).join(','), '0,3,5', 'Use the shortest route rather than the first discovered branch');
 assert.equal(shortestAllocationPath(branch, new Set([1, 2]), 1, 5).join(','), '2,5', 'Prefer connecting to existing allocated nodes');

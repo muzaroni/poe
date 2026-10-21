@@ -11,8 +11,8 @@ import '../styles/tree-block.css';
 const Viewer = lazy(() => import('./PassiveTreeViewer'));
 const Campaign = lazy(() => import('./CampaignView'));
 
-export function TreePicker({ snapshot, previousSnapshot, previousSnapshots, onApply, onCancel }: { snapshot: TreeSnapshotData; previousSnapshot?: TreeSnapshotData; previousSnapshots?: TreeSnapshotData[]; onApply: (value: TreeSnapshotData) => void; onCancel: () => void }) {
-  return <Suspense fallback={<p className="tree-block-loading">Loading tree picker…</p>}><Viewer initialSnapshot={snapshot} previousSnapshot={previousSnapshot} previousSnapshots={previousSnapshots} onApply={onApply} onCancel={onCancel} /></Suspense>;
+export function TreePicker({ snapshot, previousSnapshot, previousSnapshots, guideGemLinks, onApply, onCancel }: { snapshot: TreeSnapshotData; previousSnapshot?: TreeSnapshotData; previousSnapshots?: TreeSnapshotData[]; guideGemLinks?: Record<string, CampaignGemStage[]>; onApply: (value: TreeSnapshotData) => void; onCancel: () => void }) {
+  return <Suspense fallback={<p className="tree-block-loading">Loading tree picker…</p>}><Viewer initialSnapshot={snapshot} previousSnapshot={previousSnapshot} previousSnapshots={previousSnapshots} guideGemLinks={guideGemLinks} onApply={onApply} onCancel={onCancel} /></Suspense>;
 }
 
 export default function TreeBlock({ snapshot: value, guideGemLinks, guideRegexes, guideAscendancy, guideCharacterAscendancy = '', guideLeague = '', guideSlug = '' }: { snapshot: Partial<TreeSnapshotData>; guideGemLinks?: Record<string, CampaignGemStage[]>; guideRegexes?: GuideRegex[]; guideAscendancy?: CampaignAscendancySnapshot[]; guideCharacterAscendancy?: string; guideLeague?: string; guideSlug?: string }) {

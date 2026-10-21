@@ -3,7 +3,7 @@
   "title": "Sunder Leveling",
   "subtitle": "Level with Sunder, then swap to Righteous Fire at Blood Aqueducts.",
   "league": "3.29",
-  "updated": "2026-10-18",
+  "updated": "2026-10-20",
   "content": {
     "type": "doc",
     "content": [
@@ -18,38 +18,65 @@
             "content": [
               {
                 "type": "text",
-                "text": "This guide adapts "
-              },
-              {
-                "type": "text",
-                "marks": [
-                  {
-                    "type": "link",
-                    "attrs": {
-                      "href": "https://pohx.net/",
-                      "target": "_blank",
-                      "rel": "noopener noreferrer nofollow",
-                      "class": null,
-                      "title": null
-                    }
-                  }
-                ],
-                "text": "Pohx's RF guide"
-              },
-              {
-                "type": "text",
-                "text": " by using "
+                "text": "This guide is designed to level you efficiently through the campaign using "
               },
               {
                 "type": "gem",
                 "attrs": {
                   "name": "Sunder",
-                  "color": "red"
+                  "color": "red",
+                  "acquisition": null,
+                  "acquisitionAct": null,
+                  "acquisitionVendor": null
                 }
               },
               {
                 "type": "text",
-                "text": " for leveling instead of the traditional caster approach. Play Sunder until Level 52-55, then use the free campaign respec and gold at Blood Aqueducts to hard-swap into Righteous Fire and follow Pohx's instructions. This approach allows you to level significantly quicker while still transitioning smoothly into the powerful RF setup once you reach maps."
+                "text": ", with the goal of transitioning into "
+              },
+              {
+                "type": "gem",
+                "attrs": {
+                  "name": "Righteous Fire",
+                  "color": "blue",
+                  "acquisition": null,
+                  "acquisitionAct": null,
+                  "acquisitionVendor": null
+                }
+              },
+              {
+                "type": "text",
+                "text": " or "
+              },
+              {
+                "type": "gem",
+                "attrs": {
+                  "name": "Cast when Stunned Support",
+                  "color": "blue",
+                  "acquisition": null,
+                  "acquisitionAct": null,
+                  "acquisitionVendor": null
+                }
+              },
+              {
+                "type": "text",
+                "text": " upon reaching "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "#975b07"
+                    }
+                  }
+                ],
+                "text": "Blood Aqueducts"
+              },
+              {
+                "type": "text",
+                "text": " (BA) at approximately level 52–55. Once you reach BA, you'll use the free respec points earned throughout the campaign, along with gold for any additional passive refunds, to fully transition into your chosen build. From there, you can follow the dedicated guides from Pohx, Emiracles, or SpicySushi for your skill setup, passive tree progression, gearing, and eventual transition into maps and endgame content."
               }
             ]
           }
@@ -148,22 +175,378 @@
       {
         "type": "regex",
         "attrs": {
-          "label": "Gear Regex - works for full campaign",
-          "value": "-\\w-.-|r-r-r|g-[gr]-r|r-[gr]-g|g-r-g|r-g-r|Runn|s:.+ax"
+          "label": "Axes, 3L, 4L, gems A1-6",
+          "value": "\"-\\w-.-|(-\\w){4}|Runn|rint|s:.+ax|male|^burning damage s|^purity of f|sand$|od rag|bly|^dete|dati|^fire t|stbl|d of p|^elemental f|^righteous f|^trap a|leed s|^mom\""
         }
       },
       {
-        "type": "regex",
+        "type": "heading",
         "attrs": {
-          "label": "Gear Regex - A1 ONLY, useful for 2 links early",
-          "value": "r-r-|-r-r|r-.-r|g-g-r|g-r-g|r-g-g|r-r|g-r|r-g|Runn|s:.+ax"
-        }
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Campaign Snapshot"
+          }
+        ]
       },
       {
-        "type": "regex",
+        "type": "passiveTree",
         "attrs": {
-          "label": "Gem Regex for only Acts 1-3",
-          "value": "\"Frostblink|Jade|ida|eter|^purity of f|od r|urity$\""
+          "snapshot": {
+            "title": "Passive tree",
+            "version": "3.29.1",
+            "classId": 1,
+            "ascendancyId": 3,
+            "nodes": [
+              47175,
+              31628,
+              33988,
+              32480,
+              30335,
+              40535,
+              58449,
+              39768,
+              12795,
+              38777,
+              2454,
+              14606,
+              60169,
+              34130,
+              55649,
+              44429,
+              53118,
+              30380,
+              59928,
+              63282,
+              31961,
+              63723,
+              25682,
+              49571,
+              57953,
+              12407,
+              23038,
+              24224,
+              34590,
+              48199,
+              32739,
+              24383,
+              49412,
+              15438,
+              28728,
+              35436,
+              25934,
+              40653,
+              62108,
+              28311,
+              63422,
+              53793,
+              12247,
+              56359,
+              62017,
+              33287,
+              2219,
+              48822,
+              30302,
+              53517,
+              63048,
+              36047,
+              15868,
+              22627,
+              50904,
+              22285,
+              2841,
+              5152,
+              61198,
+              29353,
+              44202,
+              23027,
+              6712,
+              36949,
+              60472,
+              26270,
+              64210,
+              5935,
+              25831,
+              21974,
+              32932,
+              6446,
+              10221,
+              54396,
+              2550,
+              48267,
+              27166,
+              48929,
+              25989,
+              29061,
+              55993,
+              8198,
+              13164,
+              5743,
+              58218,
+              7444,
+              4713,
+              6245,
+              29049,
+              10031,
+              15064,
+              12536,
+              33435,
+              44799,
+              41472,
+              1203,
+              49254
+            ],
+            "mastery": {
+              "2841": 64875,
+              "24224": 50175,
+              "25934": 27095,
+              "48267": 55308,
+              "53517": 45653
+            },
+            "inheritedNodes": [],
+            "campaignMode": true,
+            "campaignGems": {},
+            "campaignRespec": {
+              "1": {
+                "removed": [],
+                "added": []
+              },
+              "8": {
+                "removed": [],
+                "added": []
+              },
+              "9": {
+                "removed": [
+                  31628,
+                  33988,
+                  32480,
+                  30335,
+                  40535,
+                  58449,
+                  39768,
+                  38777,
+                  2454,
+                  14606,
+                  60169,
+                  34130,
+                  15438,
+                  28728,
+                  35436,
+                  25934,
+                  24224,
+                  23038,
+                  12407,
+                  57953,
+                  49571,
+                  25682,
+                  63723,
+                  31961,
+                  34590,
+                  48199
+                ],
+                "added": [
+                  48267,
+                  2550,
+                  54396,
+                  10221,
+                  25989,
+                  48929,
+                  27166,
+                  13164,
+                  55993,
+                  29061,
+                  5743,
+                  58218,
+                  7444,
+                  4713,
+                  6245,
+                  29049,
+                  10031,
+                  33435,
+                  12536,
+                  15064,
+                  44799,
+                  41472,
+                  1203,
+                  49254
+                ]
+              }
+            },
+            "markers": [
+              {
+                "nodeId": 58449,
+                "note": "",
+                "actDivider": "Act 1",
+                "positionX": -4515.367522988014,
+                "positionY": 1870.7150217781195
+              },
+              {
+                "nodeId": 12795,
+                "note": "",
+                "positionX": -4677.367522988014,
+                "positionY": 2499.16502177812
+              },
+              {
+                "nodeId": 14606,
+                "note": "",
+                "positionX": -5441.6175229880155,
+                "positionY": 1535.7150217781204
+              },
+              {
+                "nodeId": 53118,
+                "note": "",
+                "actDivider": "Act 2",
+                "positionX": -6994.967522988015,
+                "positionY": 2032.71502177812
+              },
+              {
+                "nodeId": 31961,
+                "note": "",
+                "positionX": -8031.767522988015,
+                "positionY": 562.8400217781195
+              },
+              {
+                "nodeId": 24224,
+                "note": "30% increased Damage while in Blood Stance; 15% increased Area of Effect while in Sand Stance",
+                "actDivider": "Act 3",
+                "positionX": -8364.967522988016,
+                "positionY": 2499.0350217781192
+              },
+              {
+                "nodeId": 48199,
+                "note": "Don't need the notable only the 2 nodes",
+                "positionX": -7553.357699394286,
+                "positionY": 291.23452202732597
+              },
+              {
+                "nodeId": 24383,
+                "note": "",
+                "positionX": -4515.367522988014,
+                "positionY": 3142.1850217781175
+              },
+              {
+                "nodeId": 25934,
+                "note": "40% increased Damage with Hits against Rare and Unique Enemies",
+                "actDivider": "Act 4",
+                "positionX": -4110.80842569796,
+                "positionY": 3859.869497829417
+              },
+              {
+                "nodeId": 63422,
+                "note": "",
+                "positionX": -6294.223638401093,
+                "positionY": 3950.9350217781193
+              },
+              {
+                "nodeId": 56359,
+                "note": "",
+                "actDivider": "Act 5",
+                "positionX": -6670.856224435793,
+                "positionY": 3613.5863203303416
+              },
+              {
+                "nodeId": 33287,
+                "note": "",
+                "positionX": -7143.1575229880145,
+                "positionY": 3082.888906365042
+              },
+              {
+                "nodeId": 53517,
+                "note": "Regenerate 50 Life per second",
+                "actDivider": "Act 6",
+                "positionX": -7182.093569201235,
+                "positionY": 1475.2644339801186
+              },
+              {
+                "nodeId": 50904,
+                "note": "Take these 5 life/ar nodes",
+                "positionX": -3173.3811632737493,
+                "positionY": 2704.586016217069,
+                "nodeIds": [
+                  50904,
+                  22627,
+                  15868,
+                  36047,
+                  63048
+                ]
+              },
+              {
+                "nodeId": 2841,
+                "note": "12% increased Mana Reservation Efficiency of Skills",
+                "actDivider": "Act 7",
+                "positionX": -6849.394364213068,
+                "positionY": 3414.7070378082144
+              },
+              {
+                "nodeId": 61198,
+                "note": "",
+                "positionX": -4125.512960426337,
+                "positionY": 2431.2787370715887
+              },
+              {
+                "nodeId": 22285,
+                "note": "",
+                "positionX": -6288.823569201235,
+                "positionY": 2553.1544339801176
+              },
+              {
+                "nodeId": 36949,
+                "note": "",
+                "actDivider": "Act 8",
+                "positionX": -7038.423569201236,
+                "positionY": -1586.4916814329606
+              },
+              {
+                "nodeId": 32932,
+                "note": "",
+                "positionX": -6662.897453788158,
+                "positionY": -4263.935566019882
+              },
+              {
+                "nodeId": 48267,
+                "note": "Regenerate 1 Life per second for each 1% Uncapped Fire Resistance",
+                "actDivider": "Act 9",
+                "positionX": -5175.859647971902,
+                "positionY": 463.2181039140312
+              },
+              {
+                "nodeId": 25989,
+                "note": "",
+                "positionX": -6323.351512392472,
+                "positionY": 677.1558439856451
+              },
+              {
+                "nodeId": 13164,
+                "note": "",
+                "positionX": -8660.716815327545,
+                "positionY": -2233.1451223212725
+              },
+              {
+                "nodeId": 58218,
+                "note": "",
+                "positionX": -6301.896815327545,
+                "positionY": -4537.379006908193
+              },
+              {
+                "nodeId": 29049,
+                "note": "",
+                "positionX": -7063.206815327545,
+                "positionY": -5851.785122321272
+              },
+              {
+                "nodeId": 49254,
+                "note": "",
+                "positionX": -4632.3968153275455,
+                "positionY": -2812.7251223212725
+              }
+            ],
+            "frame": null,
+            "view": "tree",
+            "width": 480,
+            "height": 240
+          }
         }
       },
       {
@@ -179,14 +562,21 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "End of Act 1: 20-23 mins - Level 12"
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "End of Act 1: 20-23 mins - Level 12"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -251,7 +641,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Heavy Strike",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -262,7 +655,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Ruthless",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -363,7 +759,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Ground Slam",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -374,7 +773,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Heavy Strike",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -480,7 +882,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Shield Charge",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -554,7 +959,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Decoy Totem",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -582,7 +990,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Shield Charge",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -606,7 +1017,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Chance to Bleed",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -617,7 +1031,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Momentum",
-                      "color": "green"
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -633,7 +1050,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Momentum",
-                      "color": "green"
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -644,7 +1064,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Shield Charge",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -733,7 +1156,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Frostblink",
-                      "color": "blue"
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -772,7 +1198,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Momentum",
-                      "color": "green"
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -783,7 +1212,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Chance to Bleed",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -839,7 +1271,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Blood & Sand",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -895,7 +1330,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Faster Attacks",
-                      "color": "green"
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -919,7 +1357,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "mana potions",
-                      "color": "blue"
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -964,7 +1405,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Leap Slam",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -988,7 +1432,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Indimidating Cry",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -1029,7 +1476,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Sunder",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -1077,7 +1527,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Ground Slam",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1088,7 +1541,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Ruthless",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1099,7 +1555,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Chance to Bleed",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1110,7 +1569,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1134,7 +1596,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Shield Charge",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1145,7 +1610,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1169,7 +1637,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1180,7 +1651,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood & Sand",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1191,7 +1665,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Intimidating Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1232,7 +1709,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Ground Slam",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1243,7 +1723,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Ruthless",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1254,7 +1737,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Chance to Bleed",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1265,7 +1751,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1289,7 +1778,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Leap Slam",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1300,7 +1792,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1324,7 +1819,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1335,7 +1833,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood & Sand",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1346,7 +1847,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Intimidating Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1387,7 +1891,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1398,7 +1905,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Ruthless",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1409,7 +1919,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Chance to Bleed",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1420,7 +1933,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1444,7 +1960,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Leap Slam",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1455,7 +1974,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1479,7 +2001,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1490,7 +2015,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood & Sand",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -1501,7 +2029,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Intimidating Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -1525,14 +2056,21 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "End of Act 2: 38-40 mins, Level 20"
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "End of Act 2: 38-40 mins, Level 20"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -1634,7 +2172,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Herald of Ash",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -1658,7 +2199,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Blood Rage",
-                      "color": "green"
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -1697,7 +2241,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Herald of Purity",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -1781,7 +2328,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Melee Physical Damage",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -2286,7 +2836,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -2297,7 +2850,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Melee Physical Damage",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -2308,7 +2864,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Ruthless",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -2319,7 +2878,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Close Combat",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -2343,7 +2905,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Leap Slam",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -2354,7 +2919,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Faster Attacks",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -2365,7 +2933,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -2389,7 +2960,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Herald of Ash",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -2400,7 +2974,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood and Sand",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "buy",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -2424,7 +3001,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -2435,7 +3015,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Intimidating Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -2446,7 +3029,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood Rage",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -2501,14 +3087,21 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "End of Act 3: 55-60 mins, Level 28-30"
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "End of Act 3: 55-60 mins, Level 28-30"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -2647,7 +3240,10 @@
             "type": "gem",
             "attrs": {
               "name": "Righteous Fire",
-              "color": "blue"
+              "color": "blue",
+              "acquisition": null,
+              "acquisitionAct": null,
+              "acquisitionVendor": null
             }
           },
           {
@@ -2733,7 +3329,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Vulnerability",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   }
                 ]
@@ -2993,7 +3592,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3004,7 +3606,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Melee Physical Damage",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3015,7 +3620,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Cruelty",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "buy",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3026,7 +3634,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Ruthless",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3037,7 +3648,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Close Combat",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -3061,7 +3675,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Leap Slam",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3072,7 +3689,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Faster Attacks",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3083,7 +3703,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -3107,7 +3730,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Herald of Ash",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3118,7 +3744,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood and Sand",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -3142,7 +3771,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3153,7 +3785,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Intimidating Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3164,7 +3799,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood Rage",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3175,7 +3813,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Vulnerability",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -3208,14 +3849,21 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "End of Act 4: 1h20, Level 35"
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "End of Act 4: 1h20, Level 35"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -3456,7 +4104,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Fist of War",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -3467,7 +4118,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Cruelty",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -3477,9 +4131,16 @@
                   {
                     "type": "gem",
                     "attrs": {
-                      "name": "Close Combat",
-                      "color": "green"
+                      "name": "Ruthless Support",
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
                   }
                 ]
               }
@@ -3738,7 +4399,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3749,7 +4413,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Melee Physical Damage",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3760,18 +4427,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Cruelty Support",
-                          "color": "red"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " or "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Ruthless Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3782,7 +4441,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Fist of War",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -3806,7 +4468,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Leap Slam",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3817,7 +4482,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Faster Attacks",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3828,7 +4496,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -3852,7 +4523,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Herald of Ash",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3863,7 +4537,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood and Sand",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3891,7 +4568,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3902,7 +4582,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Intimidating Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3913,7 +4596,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood Rage",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -3924,7 +4610,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Vulnerability",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -3957,14 +4646,21 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "End of Act 5: 1h35, Level 40"
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "End of Act 5: 1h35, Level 40"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -4140,7 +4836,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4151,7 +4850,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Melee Physical Damage",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4162,7 +4864,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Cruelty Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4173,7 +4878,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Ruthless Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4184,7 +4892,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Fist of War",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -4208,7 +4919,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Leap Slam",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4219,7 +4933,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Faster Attacks",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4230,7 +4947,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -4254,7 +4974,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Herald of Ash",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4265,7 +4988,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood and Sand",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4293,7 +5019,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4304,7 +5033,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Intimidating Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4315,7 +5047,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood Rage",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4326,7 +5061,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Vulnerability",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -4359,14 +5097,21 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "End of Act 6: 2h, Level 45"
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "End of Act 6: 2h, Level 45"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -4600,7 +5345,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Fire Trap",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -4624,7 +5372,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Swift Assembly Support",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -4644,7 +5395,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Trap and Mine Damage Support",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -4664,7 +5418,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Elemental Focus Support",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -4684,7 +5441,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Malevolence",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -4704,7 +5464,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Burning Damage Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -4779,7 +5542,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Righteous Fire",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4832,7 +5598,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Fire Trap",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4939,14 +5708,21 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "End of Act 7: 2h15, Level 49"
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "End of Act 7: 2h15, Level 49"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -5191,7 +5967,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Righteous Fire",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5244,7 +6023,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Fire Trap",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5482,14 +6264,21 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
+        "type": "bulletList",
         "content": [
           {
-            "type": "text",
-            "text": "End of Act 8: 2h30, Level 52"
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "End of Act 8: 2h30, Level 52"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -5566,7 +6355,13 @@
               23027,
               60472,
               6712,
-              36949
+              36949,
+              26270,
+              64210,
+              5935,
+              25831,
+              21974,
+              32932
             ],
             "mastery": {
               "2841": 64875,
@@ -5635,6 +6430,8 @@
               61198,
               22285
             ],
+            "campaignGems": {},
+            "campaignRespec": {},
             "markers": [
               {
                 "nodeId": 36949,
@@ -5647,13 +6444,19 @@
                 "note": "",
                 "positionX": -7480.110313794446,
                 "positionY": -2390.5502012476763
+              },
+              {
+                "nodeId": 32932,
+                "note": "",
+                "positionX": -6599.584048728982,
+                "positionY": -4323.916686602258
               }
             ],
             "frame": {
-              "x": -7308.834040210188,
-              "y": -1118.4649787480369,
-              "width": 3168.666664835372,
-              "height": 4158.874997596426
+              "x": -6600.319789815778,
+              "y": -3023.3015426320267,
+              "width": 3704.198721134201,
+              "height": 4861.7608214886395
             },
             "view": "tree",
             "width": 320,
@@ -5707,20 +6510,22 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Time at BA: 2h30, Level 52"
-          }
-        ]
-      },
-      {
         "type": "bulletList",
         "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Time at BA: 2h30, Level 52"
+                  }
+                ]
+              }
+            ]
+          },
           {
             "type": "listItem",
             "content": [
@@ -6066,7 +6871,13 @@
                 23027,
                 60472,
                 6712,
-                36949
+                36949,
+                26270,
+                64210,
+                5935,
+                25831,
+                21974,
+                32932
               ],
               "mastery": {
                 "2841": 64875,
@@ -6076,18 +6887,20 @@
               },
               "note": ""
             },
+            "campaignGems": {},
+            "campaignRespec": {},
             "markers": [
               {
                 "nodeId": 48267,
                 "note": "Regenerate 1 Life per second for each 1% Uncapped Fire Resistance",
                 "positionX": -5129.547929692868,
-                "positionY": 255.25991157258
+                "positionY": 255.25991157257977
               },
               {
                 "nodeId": 42792,
                 "note": "Corrupted Blood cannot be inflicted on you",
                 "positionX": -6170.927733917565,
-                "positionY": 173.66766563602891
+                "positionY": 173.6676656360287
               },
               {
                 "nodeId": 13164,
@@ -6112,12 +6925,6 @@
                 "note": "",
                 "positionX": -7068.12373259812,
                 "positionY": -5808.257635435153
-              },
-              {
-                "nodeId": 32932,
-                "note": "",
-                "positionX": -6318.986791237967,
-                "positionY": -4188.308043694617
               }
             ],
             "frame": null,
@@ -6256,7 +7063,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Righteous Fire",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -6305,7 +7115,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Fire Trap",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -6515,7 +7328,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6526,7 +7342,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Enduring Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6537,7 +7356,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Vitality",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -6561,7 +7383,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Punishment",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -6585,7 +7410,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6596,7 +7424,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Arrogance Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6607,7 +7438,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Summon Skitterbots",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -6647,7 +7481,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Determination",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -6658,7 +7495,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Malevolence",
-                      "color": "blue"
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -6669,7 +7509,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Haste",
-                      "color": "green"
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -6709,7 +7552,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Righteous Fire",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6720,7 +7566,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Elemental Focus",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6731,7 +7580,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6742,7 +7594,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Burning Damage",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6753,7 +7608,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Efficacy",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -6777,7 +7635,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Fire Trap",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6788,7 +7649,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Swift Affliction",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6799,7 +7663,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6810,7 +7677,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Trap & Mine Damage",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -6834,7 +7704,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Shield Charge",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6845,7 +7718,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6856,7 +7732,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Faster Attacks",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6867,7 +7746,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -6891,7 +7773,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Vitality",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6902,7 +7787,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Arrogance",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -6926,7 +7814,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Punishment",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6937,7 +7828,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6948,7 +7842,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Enduring Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6959,7 +7856,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6987,7 +7887,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Determination",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -6998,7 +7901,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Malevolence",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7009,7 +7915,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Skitterbots",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -7033,7 +7942,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood Rage",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -7073,7 +7985,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Righteous Fire",
-                      "color": "blue"
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -7084,7 +7999,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Swift Affliction Support",
-                      "color": "green"
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -7095,7 +8013,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Lifetap Support",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -7120,7 +8041,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Purity of Fire",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -7131,7 +8055,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Determination",
-                      "color": "red"
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -7156,7 +8083,10 @@
                     "type": "gem",
                     "attrs": {
                       "name": "Haste",
-                      "color": "green"
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
                     }
                   },
                   {
@@ -7196,7 +8126,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Righteous Fire",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7207,7 +8140,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Burning Damage Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7218,7 +8154,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Elemental Focus Support",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7229,7 +8168,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Efficacy",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7240,7 +8182,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7251,7 +8196,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Swift Affliction Support",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -7275,7 +8223,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Fire Trap",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7286,7 +8237,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Swift Affliction",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7297,7 +8251,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7308,7 +8265,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Trap & Mine Damage",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -7332,7 +8292,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Shield Charge",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7343,7 +8306,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7354,7 +8320,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Faster Attacks",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7365,7 +8334,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7393,7 +8365,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Vitality",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7404,7 +8379,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Arrogance",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -7428,7 +8406,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Punishment",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7439,7 +8420,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Lifetap Support",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7450,7 +8434,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Enduring Cry",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -7474,7 +8461,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Determination",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7485,7 +8475,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Purity of Fire",
-                          "color": "red"
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7496,7 +8489,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Malevolence",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       },
                       {
@@ -7507,7 +8503,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Skitterbots",
-                          "color": "blue"
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
@@ -7531,7 +8530,10 @@
                         "type": "gem",
                         "attrs": {
                           "name": "Blood Rage",
-                          "color": "green"
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
                         }
                       }
                     ]
