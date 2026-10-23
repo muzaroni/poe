@@ -12,10 +12,13 @@
   "subtitle": "KBoC early leveling and progression guide",
   "league": "3.30",
   "ascendancy": "Necromancer",
-  "updated": "2026-10-19",
+  "updated": "2026-10-22",
   "content": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph"
+      },
       {
         "type": "heading",
         "attrs": {
@@ -303,6 +306,7 @@
             "inheritedNodes": [],
             "campaignMode": true,
             "campaignGems": {},
+            "campaignRespec": {},
             "markers": [
               {
                 "nodeId": 11420,
@@ -321,7 +325,7 @@
                 "nodeId": 56128,
                 "note": "Intelligence is added to Accuracy Rating with Wands",
                 "actDivider": "Act 2",
-                "positionX": 954.5168989287808,
+                "positionX": 954.5168989287811,
                 "positionY": -6435.6014350581045
               },
               {
@@ -341,27 +345,20 @@
                 "nodeId": 52031,
                 "note": "",
                 "actDivider": "Act 4",
-                "positionX": 3400.2435213458693,
+                "positionX": 3400.2435213458707,
                 "positionY": -8733.231500428106
               },
               {
                 "nodeId": 41476,
                 "note": "",
-                "positionX": 2982.3436923199756,
+                "positionX": 2982.343692319976,
                 "positionY": -8419.695707561697
               },
               {
-                "nodeId": 32345,
+                "nodeId": 27163,
                 "note": "",
-                "actDivider": "Act 4",
-                "positionX": 3534.6109841300317,
-                "positionY": -6168.967234537422
-              },
-              {
-                "nodeId": 13387,
-                "note": "Hits have 15% chance to treat Enemy Monster Elemental Resistance values as inverted",
-                "positionX": 4832.765542505986,
-                "positionY": -4925.536692330107
+                "positionX": 626.356182159444,
+                "positionY": -5263.35690941421
               },
               {
                 "nodeId": 13862,
@@ -371,42 +368,54 @@
                 "positionY": -6247.186909414211
               },
               {
+                "nodeId": 32345,
+                "note": "",
+                "positionX": 3534.6109841300313,
+                "positionY": -6168.967234537422
+              },
+              {
+                "nodeId": 13387,
+                "note": "Hits have 15% chance to treat Enemy Monster Elemental Resistance values as inverted",
+                "actDivider": "Act 6",
+                "positionX": 4832.765542505986,
+                "positionY": -4925.536692330107
+              },
+              {
                 "nodeId": 18769,
                 "note": "",
                 "positionX": 5880.716293826998,
                 "positionY": -5072.601299902755
               },
               {
-                "nodeId": 26148,
-                "note": "+500 to Accuracy Rating; -2 to Accuracy Rating per Level",
-                "actDivider": "Act 6",
-                "positionX": 7576.206542430248,
-                "positionY": -1810.0871653586473
-              },
-              {
                 "nodeId": 7488,
                 "note": "5% of Leech is Instant",
                 "actDivider": "Act 7",
-                "positionX": 6714.532759834543,
-                "positionY": -1131.8531905407995
+                "positionX": 6714.532759834541,
+                "positionY": -1131.853190540799
+              },
+              {
+                "nodeId": 26148,
+                "note": "+500 to Accuracy Rating; -2 to Accuracy Rating per Level",
+                "positionX": 7576.206542430247,
+                "positionY": -1810.0871653586482
               },
               {
                 "nodeId": 32657,
                 "note": "10% chance to gain a Frenzy Charge when you Hit your Marked Enemy",
-                "positionX": 8097.177904627955,
-                "positionY": -1292.5290365231426
+                "positionX": 8097.1779046279535,
+                "positionY": -1292.5290365231422
               },
               {
                 "nodeId": 292,
                 "note": "15% increased maximum Life if there are no Life Modifiers on Equipped Body Armour",
                 "actDivider": "Act 8",
                 "positionX": 6755.286820249412,
-                "positionY": -1565.0082365290423
+                "positionY": -1565.0082365290427
               },
               {
                 "nodeId": 27203,
                 "note": "",
-                "positionX": -9.495727254767644,
+                "positionX": -9.49572725476719,
                 "positionY": -4793.887454114385
               },
               {
@@ -419,20 +428,20 @@
                 "nodeId": 9586,
                 "note": "+25% to Critical Strike Multiplier against Unique Enemies",
                 "actDivider": "Act 9",
-                "positionX": 3562.557085255647,
+                "positionX": 3562.5570852556466,
                 "positionY": -6534.364259202228
               },
               {
                 "nodeId": 32278,
                 "note": "20% increased effect of Offerings",
-                "positionX": 3164.9261821594455,
+                "positionX": 3164.9261821594464,
                 "positionY": -4860.386909414212
               },
               {
                 "nodeId": 37532,
                 "note": "40% of Physical Damage Converted to Lightning Damage",
                 "actDivider": "Act 10",
-                "positionX": 7321.557417297795,
+                "positionX": 7321.557417297792,
                 "positionY": -4005.9041046584853
               },
               {
@@ -444,25 +453,19 @@
               {
                 "nodeId": 32176,
                 "note": "",
-                "positionX": 6688.296182159448,
+                "positionX": 6688.296182159447,
                 "positionY": -3465.0430248272905
               },
               {
                 "nodeId": 35255,
                 "note": "",
                 "positionX": 7261.606182159447,
-                "positionY": -3444.556909414212
-              },
-              {
-                "nodeId": 27163,
-                "note": "",
-                "positionX": 626.356182159444,
-                "positionY": -5263.35690941421
+                "positionY": -3444.556909414211
               },
               {
                 "nodeId": 36017,
                 "note": "",
-                "positionX": 917.2606355110006,
+                "positionX": 917.2606355110008,
                 "positionY": -10293.69814623637
               }
             ],
@@ -1175,10 +1178,6 @@
                       "acquisitionAct": null,
                       "acquisitionVendor": null
                     }
-                  },
-                  {
-                    "type": "text",
-                    "text": " (Used for Kinetic Fusillade)"
                   }
                 ]
               }
@@ -1517,7 +1516,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Fairgraves"
+            "text": "Fairgraves (Caverns Waypoint)"
           }
         ]
       },
@@ -1686,7 +1685,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " "
+                    "text": " (if you have extra money)"
                   }
                 ]
               }
@@ -1835,20 +1834,6 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Multiple Projectiles Support",
-                          "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " or "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
                           "name": "Volley Support",
                           "color": "green",
                           "acquisition": null,
@@ -1858,7 +1843,7 @@
                       },
                       {
                         "type": "text",
-                        "text": " supports because that allows you to just cast 1-2 times before reaching max stacks for max damage, this allows more smooth gameplay so you can kite and move around after 1-2 casts per KF gem, do not spam more than 2 times per gem for stacking projectiles or else you are just wasting damage"
+                        "text": " support because that allows you to just cast 1-2 times before reaching max stacks for max damage, this allows more smooth gameplay so you can kite and move around after 1-2 casts per KF gem, do not spam more than 2 times per gem for stacking projectiles or else you are just wasting damage"
                       }
                     ]
                   }
@@ -2393,7 +2378,7 @@
               40271
             ],
             "mastery": {
-              "56128": 63280
+              "56128": 42540
             },
             "inheritedNodes": [
               57264,
@@ -2407,10 +2392,12 @@
               11420,
               27929
             ],
+            "campaignGems": {},
+            "campaignRespec": {},
             "markers": [
               {
                 "nodeId": 56128,
-                "note": "Intelligence is added to Accuracy Rating with Wands",
+                "note": "Wand Attacks fire an additional Projectile",
                 "positionX": 982.5265108136373,
                 "positionY": -6431.297303934026
               },
@@ -2422,10 +2409,10 @@
               }
             ],
             "frame": {
-              "x": 2176.2457573227534,
-              "y": -5711.052006255892,
-              "width": 3755.5669829309377,
-              "height": 2816.675237198204
+              "x": 1146.06,
+              "y": -6404.42,
+              "width": 3555.555555555555,
+              "height": 2666.666666666667
             },
             "view": "tree",
             "width": 480,
@@ -2516,6 +2503,75 @@
                   {
                     "type": "text",
                     "text": " "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Mana becomes the biggest issue once you start using "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ". For now, spamming your mana pot until you start getting more mana nodes."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "You can try a low level "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Clarity",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " if you want, I did not test."
+                      }
+                    ]
                   }
                 ]
               }
@@ -3158,7 +3214,7 @@
               53828
             ],
             "mastery": {
-              "53828": 42540,
+              "53828": 15133,
               "56128": 63280
             },
             "inheritedNodes": [
@@ -3185,6 +3241,8 @@
               38849,
               40271
             ],
+            "campaignGems": {},
+            "campaignRespec": {},
             "markers": [
               {
                 "nodeId": 16243,
@@ -3194,16 +3252,16 @@
               },
               {
                 "nodeId": 53828,
-                "note": "Wand Attacks fire an additional Projectile",
+                "note": "0.5% of Attack Damage Leeched as Life; 0.5% of Attack Damage Leeched as Mana. This should help with mana sustain.",
                 "positionX": 3238.386013848018,
                 "positionY": -8152.9226902977
               }
             ],
             "frame": {
-              "x": 3330.610761441645,
-              "y": -7984.052462088865,
-              "width": 2234.268539976752,
-              "height": 1675.701404982564
+              "x": 1430.4625,
+              "y": -5965.384255133893,
+              "width": 7681.051264324845,
+              "height": 5760.788448243634
             },
             "view": "tree",
             "width": 320,
@@ -3369,7 +3427,7 @@
                   {
                     "type": "gem",
                     "attrs": {
-                      "name": "Elemental Weakness",
+                      "name": "Spellslinger",
                       "color": "blue",
                       "acquisition": null,
                       "acquisitionAct": null,
@@ -3400,7 +3458,7 @@
                   {
                     "type": "gem",
                     "attrs": {
-                      "name": "Spellslinger",
+                      "name": "Elemental Weakness",
                       "color": "blue",
                       "acquisition": null,
                       "acquisitionAct": null,
@@ -3409,23 +3467,17 @@
                   },
                   {
                     "type": "text",
-                    "text": " - 1 "
-                  },
-                  {
-                    "type": "icon",
-                    "attrs": {
-                      "src": "/images/sunder-rf/alt.png",
-                      "name": "Orb of Alteration"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " "
+                    "text": " (Optional)"
                   }
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
           {
             "type": "taskItem",
             "attrs": {
@@ -3555,6 +3607,89 @@
                   {
                     "type": "text",
                     "text": " (Act 1)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "The damage at this point should be pretty damn good and you should basically be flying through the rest of the campaign. "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "You can use "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Elemental Weakness",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " if you want to squeeze our more damage. "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "You can do Library for "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sniper's Mark",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", I personally will not do this and get it in Act 6."
+                      }
+                    ]
                   }
                 ]
               }
@@ -4100,11 +4235,25 @@
                       {
                         "type": "gem",
                         "attrs": {
+                          "name": "Elemental Weakness",
+                          "color": "blue",
+                          "acquisition": "buy",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
                           "name": "Sniper's Mark",
                           "color": "green",
                           "acquisition": "buy",
                           "acquisitionAct": 3,
-                          "acquisitionVendor": null
+                          "acquisitionVendor": "Library Optional"
                         }
                       },
                       {
@@ -4183,7 +4332,7 @@
                         "attrs": {
                           "name": "Spellslinger",
                           "color": "blue",
-                          "acquisition": "buy",
+                          "acquisition": "reward",
                           "acquisitionAct": 3,
                           "acquisitionVendor": null
                         }
@@ -4304,9 +4453,10 @@
               32345,
               43000,
               10115,
-              4502,
-              20852,
-              13862
+              13862,
+              22315,
+              48514,
+              27163
             ],
             "mastery": {
               "53828": 42540,
@@ -4344,43 +4494,45 @@
               16243,
               53828
             ],
+            "campaignGems": {},
+            "campaignRespec": {},
             "markers": [
               {
                 "nodeId": 41476,
                 "note": "",
-                "positionX": 3060.496631955863,
+                "positionX": 3060.4966319558625,
                 "positionY": -8076.7988828667785
               },
               {
                 "nodeId": 32345,
                 "note": "",
-                "positionX": 3530.0768181515537,
+                "positionX": 3530.076818151554,
                 "positionY": -6465.865708112861
               },
               {
                 "nodeId": 10115,
                 "note": "",
-                "positionX": 732.7250856205137,
-                "positionY": -6788.552031292554
+                "positionX": 743.4212092216835,
+                "positionY": -6601.506975618232
               },
               {
                 "nodeId": 13862,
                 "note": "12% increased Mana Reservation Efficiency of Skills",
-                "positionX": 259.5561586848621,
+                "positionX": 259.556158684862,
                 "positionY": -6150.327735599383
               },
               {
-                "nodeId": 20852,
-                "note": "",
-                "positionX": 4882.526384323657,
-                "positionY": -4460.1318092053725
+                "nodeId": 27163,
+                "note": "This should start helping with mana sustain",
+                "positionX": 670.5288389440288,
+                "positionY": -5305.204689525922
               }
             ],
             "frame": {
-              "x": 2331.1811581857983,
-              "y": -6049.134255133893,
-              "width": 6784.601317899047,
-              "height": 5936.526153161667
+              "x": 1068.5728128161873,
+              "y": -6116.502132690736,
+              "width": 3278.489574361888,
+              "height": 2868.6783775666527
             },
             "view": "tree",
             "width": 480,
@@ -4600,10 +4752,6 @@
                       "src": "/images/currency/alchemy.png",
                       "name": "Orb of Alchemy"
                     }
-                  },
-                  {
-                    "type": "text",
-                    "text": " "
                   }
                 ]
               }
@@ -4754,7 +4902,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "You don't have to swap "
+                        "text": "You don't have to swap to "
                       },
                       {
                         "type": "gem",
@@ -5660,6 +5808,47 @@
         ]
       },
       {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Take these tree nodes as you fit. I'd recommend the leech nodes first to help with sustain but after that it's up to you. "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "If you need more general damage take the accuracy, if you need more single target take the mark, if you need life take the life, up to you on the order."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "type": "passiveTree",
         "attrs": {
           "snapshot": {
@@ -5803,13 +5992,9 @@
               61653,
               18769
             ],
+            "campaignGems": {},
+            "campaignRespec": {},
             "markers": [
-              {
-                "nodeId": 26148,
-                "note": "+500 to Accuracy Rating  -2 to Accuracy Rating per Level",
-                "positionX": 7560.1567616603625,
-                "positionY": -1732.0088452009418
-              },
               {
                 "nodeId": 7488,
                 "note": "5% of Leech is Instant",
@@ -5817,10 +6002,16 @@
                 "positionY": -1034.6353808037675
               },
               {
+                "nodeId": 26148,
+                "note": "+500 to Accuracy Rating  -2 to Accuracy Rating per Level",
+                "positionX": 7560.1567616603625,
+                "positionY": -1732.0088452009418
+              },
+              {
                 "nodeId": 32657,
                 "note": "10% chance to gain a Frenzy Charge when you Hit your Marked Enemy",
                 "positionX": 8155.273443098647,
-                "positionY": -1249.0921234874859
+                "positionY": -1249.0921234874863
               },
               {
                 "nodeId": 292,
@@ -5835,6 +6026,75 @@
             "height": 240
           }
         }
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Gem links below are only if you decide to swap to "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Blast",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ". Personally, I will skip KB and stay with "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " to farm a few Chaos and purchase "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Blast of Clustering",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " immediately."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "gemSetup",
@@ -6413,8 +6673,8 @@
                         "attrs": {
                           "name": "Sigil of Power",
                           "color": "blue",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "buy",
+                          "acquisitionAct": 6,
                           "acquisitionVendor": null
                         }
                       },
@@ -6477,8 +6737,8 @@
                         "attrs": {
                           "name": "Tornado",
                           "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "buy",
+                          "acquisitionAct": 6,
                           "acquisitionVendor": null
                         }
                       },
@@ -6508,8 +6768,8 @@
                         "attrs": {
                           "name": "Spellslinger",
                           "color": "blue",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "buy",
+                          "acquisitionAct": 6,
                           "acquisitionVendor": null
                         }
                       },
@@ -6522,8 +6782,8 @@
                         "attrs": {
                           "name": "Desecrate",
                           "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "buy",
+                          "acquisitionAct": 6,
                           "acquisitionVendor": null
                         }
                       },
@@ -6536,8 +6796,8 @@
                         "attrs": {
                           "name": "Volatile Dead",
                           "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "buy",
+                          "acquisitionAct": 6,
                           "acquisitionVendor": null
                         }
                       },
@@ -6550,8 +6810,8 @@
                         "attrs": {
                           "name": "Spell Cascade Support",
                           "color": "blue",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "buy",
+                          "acquisitionAct": 6,
                           "acquisitionVendor": null
                         }
                       },
@@ -6576,6 +6836,89 @@
           {
             "type": "text",
             "text": "Act 9"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "I do Cruel Lab once I enter Act 9, at this point you can "
+                      },
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "#ff6655"
+                            }
+                          }
+                        ],
+                        "text": "remove "
+                      },
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "#975b07"
+                            }
+                          }
+                        ],
+                        "text": "Commander of Darkness"
+                      },
+                      {
+                        "type": "text",
+                        "text": " and "
+                      },
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "#65ed7f"
+                            }
+                          }
+                        ],
+                        "text": "add "
+                      },
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "textStyle",
+                            "attrs": {
+                              "color": "#975b07"
+                            }
+                          }
+                        ],
+                        "text": "Corpse Pact"
+                      },
+                      {
+                        "type": "text",
+                        "text": " which is the primary reason to play Necro."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -6644,6 +6987,33 @@
           {
             "type": "text",
             "text": "Act 10"
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Undertaker + Minion mastery is only good once you have Merciless lab for offering."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -6748,9 +7118,6 @@
               60259,
               32176,
               35255,
-              22315,
-              48514,
-              27163,
               12913
             ],
             "mastery": {
@@ -6840,13 +7207,8 @@
               292
             ],
             "campaignGems": {},
+            "campaignRespec": {},
             "markers": [
-              {
-                "nodeId": 32278,
-                "note": "20% increased effect of Offerings",
-                "positionX": 3274.384824702766,
-                "positionY": -4781.860083619757
-              },
               {
                 "nodeId": 27203,
                 "note": "",
@@ -6864,6 +7226,12 @@
                 "note": "Intelligence is added to Accuracy Rating with Wands",
                 "positionX": 2761.942174883974,
                 "positionY": -5930.160998667465
+              },
+              {
+                "nodeId": 32278,
+                "note": "20% increased effect of Offerings",
+                "positionX": 3274.384824702766,
+                "positionY": -4781.860083619757
               },
               {
                 "nodeId": 9586,
@@ -6888,12 +7256,6 @@
                 "note": "",
                 "positionX": 7540.367538919736,
                 "positionY": -3656.695839296571
-              },
-              {
-                "nodeId": 27163,
-                "note": "",
-                "positionX": 547.1852589169907,
-                "positionY": -5227.423856539126
               },
               {
                 "nodeId": 12913,

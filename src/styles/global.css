@@ -223,7 +223,10 @@ ol.prose-list, .tiptap ol { list-style-type: decimal; padding-left: 24px; }
 .guide-content .gem-link-list ul.gem-link-group + ul.gem-link-group { margin-top: 5px; }
 .guide-content .gem-link-group > li { display: block; position: relative; margin: 0; padding: 0 0 0 18px; overflow-wrap: anywhere; }
 .gem-link-dot { position: absolute; left: 2px; top: .45em; width: 7px; height: 7px; border: 1px solid currentColor; border-radius: 50%; background: currentColor; z-index: 1; }
-.gem-link-group.is-linked > li:not(:last-child)::before { content: ''; position: absolute; left: 5px; top: .7em; height: 100%; border-left: 1px solid #3a485c; }
+.gem-link-group.is-linked > li:not(:last-child)::before { content: ''; position: absolute; left: 5px; top: .7em; height: 100%; border-left: 2px solid; }
+.gem-link-group.is-linked > li:has(> .gem-link-dot.gem-red)::before { border-left-color: #ff6655; }
+.gem-link-group.is-linked > li:has(> .gem-link-dot.gem-green)::before { border-left-color: #65ed7f; }
+.gem-link-group.is-linked > li:has(> .gem-link-dot.gem-blue)::before { border-left-color: #58a6ff; }
 .regex-card { border: 1px solid #252a30; background: #0b0e12; border-radius: 5px; margin: 9px 0; overflow: hidden; }
 .regex-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; background: #11151a; padding: 6px 9px; color: #d0d1cf; font-size: 15px; }
 .regex-head button { display: flex; align-items: center; gap: 5px; border: 1px solid #30363d; background: #171c21; color: #c7c9c8; border-radius: 3px; padding: 3px 6px; font-size: 14px; }
