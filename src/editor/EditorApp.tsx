@@ -1,4 +1,4 @@
-import { assetUrl } from '../lib/guide';
+import { assetUrl, plainText } from '../lib/guide';
 import { gemDisplayName } from '../lib/gems';
 import { useEffect, useRef, useState } from 'react';
 import { EditorContent, useEditor } from '@tiptap/react';
@@ -276,6 +276,17 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     const sameTitle = guideOptions.filter((entry) => entry.title.trim().toLowerCase() === item.title.trim().toLowerCase()).length > 1;
     return sameTitle ? `${item.title} — /${item.slug}${initialGuides.some((saved) => saved.slug === item.slug) ? ' (project)' : ' (browser draft)'}` : item.title;
   };
+  const headings: { title: string; position: number }[] = [];
+  editor?.state.doc.forEach((node, position) => {
+    if (node.type.name === 'heading' && node.attrs.level === 2) {
+      headings.push({ title: plainText(node.toJSON()) || 'Untitled section', position });
+    }
+  });
+  function jumpToHeading(position: number) {
+    if (!editor) return;
+    const element = editor.view.nodeDOM(position);
+    if (element instanceof HTMLElement) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   return <div className="editor-app">
     <div className="editor-controls">
@@ -308,11 +319,11 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
         <button title="Redo" aria-label="Redo" onClick={() => editor?.chain().focus().redo().run()}><Redo2 /></button>
       </div>
     </div>
-    <div className="editor-workspace"><div className="editor-utility"><span role="status" className={`editor-status ${localServer ? '' : 'offline'}`}>{status}</span><a href={`${BASE}${contentPath(guide)}`}>View page ↗</a><button className="discard-draft" type="button" onClick={discardDraft}>Discard local draft</button></div><div className="editor-page">
+    <div className="editor-workspace"><div className="editor-utility"><span role="status" className={`editor-status ${localServer ? '' : 'offline'}`}>{status}</span><a href={`${BASE}${contentPath(guide)}`}>View page ↗</a><button className="discard-draft" type="button" onClick={discardDraft}>Discard local draft</button></div><div className="editor-layout"><aside className="editor-outline" aria-label="On this page"><div className="nav-label">ON THIS PAGE</div>{headings.length ? headings.map((item, index) => <button type="button" key={`${item.position}-${index}`} onClick={() => jumpToHeading(item.position)}><span>{String(index + 1).padStart(2, '0')}</span>{item.title}</button>) : <p>Add a heading to create an outline.</p>}</aside><div className="editor-page">
       <div className="editor-meta"><div className="block-eyebrow">{guide.kind === 'article' ? 'ARTICLE' : 'BUILD GUIDE'}</div><input className="editor-title" aria-label="Guide title" value={guide.title} onChange={(event) => setGuide({ ...guide, title: event.target.value })} placeholder="Build title" /><input className="editor-subtitle" aria-label="Guide summary" value={guide.subtitle} onChange={(event) => setGuide({ ...guide, subtitle: event.target.value })} placeholder="One sentence about this build" /><div className="meta-row"><label>Content type<select value={guide.kind ?? 'build'} onChange={(event) => setGuide({ ...guide, kind: event.target.value as 'build' | 'article' })}><option value="build">Build guide</option><option value="article">Article</option></select></label>{guide.kind !== 'article' && <><label>League number<input inputMode="decimal" value={buildDetails(guide).league} onChange={(event) => setGuide({ ...guide, ...buildDetails(guide), league: event.target.value })} placeholder="e.g. 3.28" /></label><label>Ascendancy<input value={buildDetails(guide).ascendancy} onChange={(event) => setGuide({ ...guide, ...buildDetails(guide), ascendancy: event.target.value })} placeholder="e.g. Chieftain" /></label></>}<label>Page address <input value={guide.slug} onChange={(event) => setGuide({ ...guide, slug: event.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '-') })} /></label></div><TagInput tags={guide.tags ?? []} onChange={(tags) => setGuide((current) => ({ ...current, tags }))} /></div>
       <input ref={fileInput} type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden onChange={(event) => { void pickImage(event.target.files?.[0]); event.target.value = ''; }} />
       <EditorContent editor={editor} className="editor-document" />
-    </div></div>
+    </div></div></div>
     <Dialog.Root open={modal !== null} onOpenChange={(open) => { if (!open && !deleting) setModal(null); }}><Dialog.Portal><Dialog.Overlay className="dialog-overlay" /><Dialog.Content className="dialog-content" onOpenAutoFocus={(event) => { if (modal === 'gem') { event.preventDefault(); gemSearch.current?.focus(); } }} onCloseAutoFocus={(event) => { if (returnToWriting.current) { event.preventDefault(); returnToWriting.current = false; editor?.commands.focus(); } }}><Dialog.Close className="dialog-close" aria-label="Close" disabled={deleting}><X size={18} /></Dialog.Close>
       {modal === 'delete' && <><Dialog.Title>Delete this page?</Dialog.Title><Dialog.Description>This removes “{guide.title}” (/{guide.slug}) from your local project and this browser's drafts. The published page stays online until you push to GitHub. A recovery copy is kept in the project's .deleted-pages folder.</Dialog.Description><div className="text-color-actions"><Button variant="secondary" disabled={deleting} onClick={() => setModal(null)}>Cancel</Button><Button className="ui-button-danger" variant="secondary" disabled={deleting} onClick={() => void deletePage()}>{deleting ? 'Deleting…' : 'Delete page'}</Button></div></>}
       {modal === 'cost' && <><Dialog.Title>Insert currency cost</Dialog.Title><Dialog.Description>Choose a currency and amount. Insert beside a gem or in a total-cost line. You can edit the amount as normal text afterward.</Dialog.Description><div className="currency-presets" role="group" aria-label="Currency">{currencies.map((currency) => <button type="button" key={currency.src} aria-pressed={costCurrency.src === currency.src} onClick={() => setCostCurrency(currency)}><img src={assetUrl(currency.src)} alt="" />{currency.name}</button>)}</div><label htmlFor="cost-amount">Amount</label><input id="cost-amount" className="dialog-input" placeholder="1, 1–2, or 3+" value={costAmount} onChange={(event) => setCostAmount(event.target.value)} /><label className="currency-name-option"><input type="checkbox" checked={costShowName} onChange={(event) => setCostShowName(event.target.checked)} /> Include currency name</label><div className="currency-preview" aria-label="Cost preview">{costAmount} <img className="inline-icon" src={assetUrl(costCurrency.src)} alt={costCurrency.name} />{costShowName && <> {costCurrency.name}</>}</div><Button variant="primary" disabled={!costAmount.trim()} onClick={() => { editor?.chain().focus().insertContent([{ type: 'text', text: `${costAmount.trim()} ` }, { type: 'icon', attrs: { src: costCurrency.src, name: costCurrency.name } }, { type: 'text', text: costShowName ? ` ${costCurrency.name} ` : ' ' }]).run(); setModal(null); }}>Insert cost</Button></>}

@@ -6,7 +6,7 @@ import TreeBlockEditor from './TreeBlockEditor';
 import { gemDisplayName } from '../lib/gems';
 import { Node, mergeAttributes } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper, ReactNodeViewRenderer, type NodeViewProps } from '@tiptap/react';
-import { X, Plus } from 'lucide-react';
+import { ArrowDown, ArrowUp, X, Plus } from 'lucide-react';
 import Image from '@tiptap/extension-image';
 import { assetUrl } from '../lib/guide';
 import { useEffect, useState } from 'react';
@@ -127,12 +127,18 @@ function PobView({ node, updateAttributes }: NodeViewProps) {
   function update(index: number, key: 'label' | 'url', value: string) {
     saveLinks(links.map((link, i) => i === index ? { ...link, [key]: value } : link));
   }
+  function move(index: number, direction: -1 | 1) {
+    const next = [...links];
+    [next[index], next[index + direction]] = [next[index + direction], next[index]];
+    saveLinks(next);
+  }
   return <NodeViewWrapper className="editor-special pob-editor" contentEditable={false}>
-    <div className="block-eyebrow">PATH OF BUILDING LINKS</div>
     {links.map((link, index) => <div className="pob-editor-row" key={index}>
       <input aria-label={`PoB ${index + 1} label`} value={link.label} onChange={(e) => update(index, 'label', e.target.value)} placeholder="Label" />
       <input aria-label={`PoB ${index + 1} URL`} value={link.url} onChange={(e) => update(index, 'url', e.target.value)} placeholder="https://pobb.in/..." />
-      <button type="button" aria-label="Remove link" onClick={() => saveLinks(links.filter((_, i) => i !== index))}><X size={16} /></button>
+      <button type="button" aria-label={`Move PoB link ${index + 1} up`} title="Move up" disabled={index === 0} onClick={() => move(index, -1)}><ArrowUp size={16} /></button>
+      <button type="button" aria-label={`Move PoB link ${index + 1} down`} title="Move down" disabled={index === links.length - 1} onClick={() => move(index, 1)}><ArrowDown size={16} /></button>
+      <button type="button" aria-label={`Remove PoB link ${index + 1}`} title="Remove link" onClick={() => saveLinks(links.filter((_, i) => i !== index))}><X size={16} /></button>
     </div>)}
     <button type="button" className="editor-add-link" onClick={() => saveLinks([...links, { label: '', url: '' }])}><Plus size={15} /> Add PoB link</button>
   </NodeViewWrapper>;

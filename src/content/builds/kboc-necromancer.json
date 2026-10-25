@@ -12,7 +12,7 @@
   "subtitle": "KBoC early leveling and progression guide",
   "league": "3.30",
   "ascendancy": "Necromancer",
-  "updated": "2026-10-22",
+  "updated": "2026-10-24",
   "content": {
     "type": "doc",
     "content": [
@@ -503,6 +503,10 @@
             {
               "label": "Redviles YT Guide",
               "url": "https://www.youtube.com/watch?v=QOXeHiSK-9U"
+            },
+            {
+              "label": "Redviles DPS/Defence Checklist Day 1-3 Video",
+              "url": "https://www.youtube.com/watch?v=4MV_4Qij48I"
             },
             {
               "label": "3.28 - Legi 2 Stone VOD",
@@ -2398,7 +2402,7 @@
               {
                 "nodeId": 56128,
                 "note": "Wand Attacks fire an additional Projectile",
-                "positionX": 982.5265108136373,
+                "positionX": 982.5265108136375,
                 "positionY": -6431.297303934026
               },
               {
@@ -2409,10 +2413,10 @@
               }
             ],
             "frame": {
-              "x": 1146.06,
-              "y": -6404.42,
-              "width": 3555.555555555555,
-              "height": 2666.666666666667
+              "x": 2198.3070090811852,
+              "y": -5695.770136783331,
+              "width": 3894.646478045391,
+              "height": 2920.9848585340437
             },
             "view": "tree",
             "width": 480,
@@ -3258,10 +3262,10 @@
               }
             ],
             "frame": {
-              "x": 1430.4625,
-              "y": -5965.384255133893,
-              "width": 7681.051264324845,
-              "height": 5760.788448243634
+              "x": 3615.6611650666423,
+              "y": -7919.088423527046,
+              "width": 3094.6212745420526,
+              "height": 2320.9659559065394
             },
             "view": "tree",
             "width": 320,
@@ -8135,7 +8139,1277 @@
         ]
       },
       {
-        "type": "paragraph"
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Post Campaign Checklist"
+          }
+        ]
+      },
+      {
+        "type": "pobLinks",
+        "attrs": {
+          "links": [
+            {
+              "label": "Redviles DPS/Defence Checklist video",
+              "url": "https://www.youtube.com/watch?v=4MV_4Qij48I"
+            }
+          ]
+        }
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Notes below are from this video. Watch that for a more in depth explanation on everything"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Damage & Offense"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              },
+              {
+                "type": "underline"
+              }
+            ],
+            "text": "Gems & Curses"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Assassin's Mark",
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": ":"
+                  },
+                  {
+                    "type": "text",
+                    "text": " Get at least 10–20% quality for single-target power charge generation. Socket it in a blue socket."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Kinetic Blast of Clustering",
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": ": Must have at least 10% quality and be socketed in a blue socket."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Volatile Dead of Seething",
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": ":"
+                  },
+                  {
+                    "type": "text",
+                    "text": " Use this for faster corpse consumption."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Anathema"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": ":"
+                  },
+                  {
+                    "type": "text",
+                    "text": " Enables the Arcanist Brand triple-curse setup, providing roughly 50% more damage against cursed targets without slowing down your KB ramp-up like totems do. Overall, this can provide over 70% more damage against the branded target."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              },
+              {
+                "type": "underline"
+              }
+            ],
+            "text": "Gear & Ascendancy"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wand"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": ":"
+                  },
+                  {
+                    "type": "text",
+                    "text": " Prioritize mana, critical strike chance, and attack speed on a Kinetic Wand. Spell damage, crit multi, and chaos penetration are good bonus mods."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Uber Lab"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": ":"
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Farrul Bloodline's "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      },
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "text": "Huntleader"
+                  },
+                  {
+                    "type": "text",
+                    "text": " grants 30% more damage and helps cap crit. If unavailable, take "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "text": "Essence Glutton"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for better recovery."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              },
+              {
+                "type": "underline"
+              }
+            ],
+            "text": "Chaos Conversion"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Overwhelming Malice"
+                  },
+                  {
+                    "type": "text",
+                    "text": " on a medium cluster jewel as early as possible."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Replace Physical to Lightning Support with another damage support after converting to chaos."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Refund any elemental damage passives once you switch to the chaos cluster setup."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff6655"
+                        }
+                      }
+                    ],
+                    "text": "Avoid "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Void Manipulation Support",
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " if you have extra flat elemental damage on gear (such as T1 flat lightning on your wand) or are using "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Headhunter"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", since it prevents elemental damage from being dealt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Defense & Survivability"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              },
+              {
+                "type": "underline"
+              }
+            ],
+            "text": "Block & Endurance Charges"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Aim for "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#65ed7f"
+                        }
+                      }
+                    ],
+                    "text": "75/75 attack and spell block"
+                  },
+                  {
+                    "type": "text",
+                    "text": " where possible. A high-roll "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Rumi's Concoction"
+                  },
+                  {
+                    "type": "text",
+                    "text": " and "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Replica Reckless Defense"
+                  },
+                  {
+                    "type": "text",
+                    "text": " can help."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Quality "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Bone Offering",
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " and socket it in a blue socket for additional block chance."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get endurance charge generation early. Options include:"
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#975b07"
+                                }
+                              }
+                            ],
+                            "text": "Aggressive Bastion"
+                          },
+                          {
+                            "type": "text",
+                            "text": " amulet anoint (easiest)."
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#975b07"
+                                }
+                              }
+                            ],
+                            "text": "Enduring Composure"
+                          },
+                          {
+                            "type": "text",
+                            "text": " small cluster jewel."
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Jun's unveiled endurance charge on kill modifier (temporary option)."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              },
+              {
+                "type": "underline"
+              }
+            ],
+            "text": "Before Switching to CI"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Prioritize both life and energy shield on gear, with a greater focus on ES."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      },
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Ghost Reaver"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for ES leech. You'll still have life recovery on kill and a life flask."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Aim for roughly "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#65ed7f"
+                        }
+                      }
+                    ],
+                    "text": "5,500 combined life + ES"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for comfortable T16 mapping."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Prioritize mana prefixes on gloves and boots."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Don't facetank everything yet! The build is naturally squishier before CI. Use your extremely fast Shield Charge to dodge boss attacks and spells."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              },
+              {
+                "type": "underline"
+              }
+            ],
+            "text": "CI Transition Requirements"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Don't switch to CI until you have:"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#58a6ff"
+                        }
+                      }
+                    ],
+                    "text": "800+ ES chest"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.pathofexile.com/trade/search/Allflame/H4sIAAAAAAAACiXL3QpAQBAG0Hf5rjf5iZhXkbQYNbWx2VG07bsL16cTEdTqGUARu1fZNxACz-dhJ8dI5vMA6iP09gyC3RYYrOKUjx9kAYEv72QWzd4wlm1VVF1R5w3SkIb0ALQ3w9FoAAAA",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      },
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Watcher's Eye"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "link",
+                        "attrs": {
+                          "href": "https://www.pathofexile.com/trade/search/Allflame/H4sIAAAAAAAACiXL3QpAQBAG0Hf5rjf5iZhXkbQYNbWx2VG07bsL16cTEdTqGUARu1fZNxACz-dhJ8dI5vMA6iP09gyC3RYYrOKUjx9kAYEv72QWzd4wlm1VVF1R5w3SkIb0ALQ3w9FoAAAA",
+                          "target": "_blank",
+                          "rel": "noopener noreferrer nofollow",
+                          "class": null,
+                          "title": null
+                        }
+                      }
+                    ],
+                    "text": " with the Clarity ES modifier"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Recover % of Energy Shield when you Block"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Shaper mod) with decent attack/spell block"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Around "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#58a6ff"
+                        }
+                      }
+                    ],
+                    "text": "6,000+ total ES"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ideally "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#65ed7f"
+                        }
+                      }
+                    ],
+                    "text": "75/75 attack and spell block"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Early Unique Upgrade Priority"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Prismweave "
+                  },
+                  {
+                    "type": "text",
+                    "text": "> "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Foulborn Auxium"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Foulborn Kikazaru"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Whispers of Infinity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Healthy Mind"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Crown of the Inward Eye"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Anathema"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Light of Meaning"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#975b07"
+                        }
+                      }
+                    ],
+                    "text": "Shavronne's Revelation"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Important:"
+          },
+          {
+            "type": "text",
+            "text": " Only use Shavronne's ring after switching to CI, otherwise you'll run into mana issues."
+          }
+        ]
       }
     ]
   }

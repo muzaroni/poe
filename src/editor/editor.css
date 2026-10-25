@@ -15,10 +15,18 @@
 .ui-button:disabled { opacity: .45; cursor: not-allowed; }
 .save-status { color: #737b82; font-size: 14px; }
 .editor-workspace { max-width: 1700px; margin: auto; padding: 12px 20px 18px; }
+.editor-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 32px; align-items: start; }
+.editor-outline { position: sticky; top: calc(var(--site-header-height) + 112px); max-height: calc(100vh - var(--site-header-height) - 128px); overflow: auto; padding: 14px 4px 16px 0; scrollbar-width: thin; }
+.editor-outline .nav-label { margin: 0 0 9px 8px; }
+.editor-outline button { display: flex; gap: 9px; width: 100%; padding: 6px 8px; border: 0; border-radius: 4px; background: transparent; color: #858d94; font: inherit; font-size: 16px; line-height: 1.35; text-align: left; cursor: pointer; }
+.editor-outline button span { font-size: 12px; color: #58616a; min-width: 17px; }
+.editor-outline button:hover, .editor-outline button:focus-visible { background: #101419; color: var(--accent-light); }
+.editor-outline p { margin: 6px 8px; color: #858d94; font-size: 14px; }
 .editor-utility { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding: 0 0 10px; }
 .editor-utility .editor-status { margin-right: auto; }
 .editor-utility > a { color: var(--accent-light); font-size: 14px; }
 .editor-page { background: #0d1014; border: 1px solid #20262d; border-radius: 6px; min-height: 80vh; box-shadow: 0 14px 45px #0006; overflow: hidden; }
+.editor-document .tiptap > h2 { scroll-margin-top: calc(var(--site-header-height) + 120px); }
 .editor-meta { padding: 29px 26px 18px; }
 .editor-meta .block-eyebrow { margin-bottom: 11px; }
 .editor-meta input { display: block; width: 100%; background: transparent; border: 0; color: #e0e1de; outline: none; }
@@ -79,8 +87,9 @@
 .editor-special.is-selected { border-color: #b89a48; }
 .editor-special input, .editor-special textarea { display: block; width: 100%; background: #090c0f; border: 1px solid #292f35; border-radius: 3px; color: #d5d7d5; padding: 6px 8px; outline: none; margin-top: 6px; font-size: 14px; }
 .editor-special textarea { resize: vertical; font-family: "Reddit Mono", monospace; color: var(--accent-light); }
-.pob-editor-row { display: grid; grid-template-columns: 1fr 1fr 26px; gap: 5px; align-items: center; }
+.pob-editor-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) repeat(3, 26px); gap: 5px; align-items: center; }
 .pob-editor-row button, .editor-add-link { border: 0; color: #aeb6bb; background: transparent; display: inline-flex; align-items: center; gap: 4px; font-size: 14px; }
+.pob-editor-row button:disabled { color: #596168; cursor: not-allowed; }
 .editor-add-link { margin-top: 6px; color: var(--accent); }
 .editor-status { color: #9cc0aa; font-size: 13px; line-height: 1.5; }
 .editor-status.offline { color: var(--accent-light); }
@@ -102,9 +111,11 @@
 .discard-draft:hover { color: var(--accent-light); }
 
 @media (max-width: 1100px) {
-  .editor-workspace { grid-template-columns: 1fr; }
+  .editor-layout { grid-template-columns: 175px minmax(0, 1fr); gap: 20px; }
 }
 @media (max-width: 730px) {
+  .editor-layout { display: block; }
+  .editor-outline { position: static; max-height: 180px; padding: 8px 0; margin-bottom: 10px; }
   .editor-topbar { flex-wrap: wrap; padding: 6px 10px; }
   .editor-topbar-main, .editor-topbar-actions { gap: 5px; }
   .editor-select { min-width: 170px; }
