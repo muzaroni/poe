@@ -307,11 +307,12 @@ ol.prose-list, .tiptap ol { list-style-type: decimal; padding-left: 24px; }
 
 .build-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-.site-header .site-breadcrumb { height: 28px; display: flex; align-items: center; border-top: 1px solid #181c22; font-size: 13px; color: #919ba5; }
+.site-header .site-breadcrumb { height: 28px; display: flex; align-items: center; border-top: 1px solid #181c22; font-size: 15px; color: #919ba5; }
 .site-breadcrumb ol { display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0; min-width: 0; overflow: hidden; }
 .site-breadcrumb li { display: flex; align-items: center; gap: 8px; min-width: 0; flex: 0 0 auto; }
 .site-breadcrumb li:last-child { flex: 0 1 auto; }
-.site-breadcrumb a { white-space: nowrap; }
+.site-breadcrumb a { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.breadcrumb-icon { flex: none; }
 .site-breadcrumb .breadcrumb-current { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #c8ccd1; }
 .site-breadcrumb .breadcrumb-separator { color: #515b65; flex: none; }
 .site-breadcrumb a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
@@ -357,3 +358,10 @@ ol.prose-list, .tiptap ol { list-style-type: decimal; padding-left: 24px; }
 .gem-manual-removals > strong { font-size: 12px; color: #b89a96; }
 .gem-manual-changes > button { font: inherit; font-size: 12px; padding: 4px 7px; background: #151c24; color: #c6ced7; border: 1px solid #35404b; border-radius: 3px; cursor: pointer; }
 @media (max-width: 600px) { .gem-manual-changes label { grid-template-columns: minmax(0, 1fr); gap: 3px; } }
+
+.guide-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.site-breadcrumb .breadcrumb-current[class*="ascendancy-"] { color: var(--class-start); background: linear-gradient(100deg, var(--class-start) 20%, var(--class-end) 80%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+@media (forced-colors: active) { .site-breadcrumb .breadcrumb-current[class*="ascendancy-"] { background: none; -webkit-text-fill-color: CanvasText; } }
+
+.site-breadcrumb .breadcrumb-current.breadcrumb-article { color: var(--accent-light); }

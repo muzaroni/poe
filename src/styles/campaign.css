@@ -2,8 +2,8 @@
 .campaign-view { display: flex; flex-direction: column; height: 100%; min-height: 0; background: #0b0f14; }
 .campaign-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 9px 14px; border-bottom: 1px solid #333c46; }
 .campaign-header > div:first-child { display: flex; flex-direction: column; min-width: 0; }
-.campaign-header strong { color: #ead8a0; font-family: var(--header-font); font-size: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.campaign-header span { color: #8796a5; font-size: 13px; }
+.campaign-header > div:first-child strong { color: #ead8a0; font-family: var(--header-font); font-size: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.campaign-header > div:first-child span { color: #8796a5; font-size: 13px; }
 .campaign-header-actions { display: flex; gap: 6px; flex: none; }
 .campaign-header button, .campaign-acts button { border: 1px solid #3b4752; border-radius: 4px; background: #151c24; color: #cbd5df; cursor: pointer; font-size: 14px; padding: 6px 9px; }
 .campaign-header button:disabled { opacity: .4; cursor: default; }
@@ -87,3 +87,18 @@
 .campaign-gems > .gem-acquisition-summary { padding: 7px 11px 5px; margin: 0; border-bottom: 1px solid #1f2831; font-size: 13px; }
 @media (max-width: 900px) { .campaign-main { grid-template-columns: minmax(0, 1fr) minmax(340px, 48%); } .campaign-header { flex-wrap: wrap; } .campaign-regex { grid-template-columns: auto minmax(0, 1fr) auto; } .campaign-regex code { display: none; } }
 @media (max-width: 600px) { .campaign-main { grid-template-columns: 1fr; grid-template-rows: minmax(180px, 1fr) minmax(260px, 1fr); } .campaign-side { border-left: 0; border-top: 1px solid #303943; } .campaign-gem-row { grid-template-columns: 16px 70px minmax(0, 1fr); } }
+
+.campaign-log-follow { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-left: auto; min-width: 0; max-width: 900px; color: #aab8c6; font-size: 12px; flex: 0 1 900px; }
+.campaign-log-follow button { border: 1px solid #3b4752; border-radius: 4px; background: #151c24; color: #cbd5df; padding: 4px 8px; cursor: pointer; }
+.campaign-log-follow button:disabled { opacity: .5; cursor: default; }
+.campaign-log-follow label { display: inline-flex; align-items: center; gap: 5px; }
+.campaign-log-follow > span { flex: 1 1 180px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.campaign-log-notice { position: relative; flex-basis: 100%; }
+.campaign-log-notice summary { cursor: pointer; }
+.campaign-log-notice p { position: absolute; left: 0; top: 100%; z-index: 20; width: min(500px, calc(100vw - 40px)); box-sizing: border-box; margin: 8px 0 0; padding: 12px; border: 1px solid #3b4752; border-radius: 4px; background: #151c24; box-shadow: 0 6px 20px #0008; line-height: 1.5; }
+.campaign-log-notice a { color: #e4c76e; text-decoration: underline; }
+
+@media (max-width: 900px) { .campaign-log-follow { order: 3; flex-basis: 100%; max-width: none; margin-left: 0; } }
+
+.campaign-log-follow > .campaign-log-unsupported { white-space: normal; overflow: visible; }

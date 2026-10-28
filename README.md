@@ -19,6 +19,16 @@ To remove a page, select it in the local editor and choose **Delete page**. The 
 
 The Sunder → RF guide was imported from [the existing guide](https://muzaroni.github.io/328_sunder_rf.html). Acts 9 and 10 have clearly labeled placeholders because the reference did not include full instructions for those acts. Review them in the editor before treating this as a complete campaign guide.
 
+## Follow the game log
+
+In **Full campaign view**, **Connect game log** lets supported browsers read your selected Path of Exile `logs/Client.txt` locally. No download or installation is required, and log contents are not uploaded. Browsers without the required file access API show a short explanation; manual act tabs remain available.
+
+**Auto-follow act** switches tabs from English `Generating level ... area` entries. Maps, hideouts, and Labyrinth leave the act unchanged. Manually choosing an act pauses following; enable the checkbox to return to the latest detected act. **Disconnect** stops reading. Select the file again after refreshing or closing the campaign view. Background tabs may update less frequently.
+
+The connection area includes an account-risk notice and links to GGG policy. The feature is optional, is not GGG-approved, and cannot be guaranteed to avoid account restrictions.
+
+Validation: `node --experimental-strip-types --test scripts/client-log.test.mjs`.
+
 ## Commands
 
 - `npm run dev` — start the site and local save service

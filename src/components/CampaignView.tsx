@@ -9,6 +9,7 @@ import { drawPassiveTree } from '../lib/tree-render';
 import { cameraForFrame, campaignProgressionNodes, frameNodes, markerPositions, snapshotNodes, snapshotStage, stepNodeIds, treeEdges, type TreeSnapshotData } from '../lib/tree-snapshot';
 import { nodeRadius, type PassiveNode, type PassiveTree } from '../lib/passive-tree';
 import RegexCopyButton from './RegexCopyButton';
+import CampaignLogFollow from './CampaignLogFollow';
 import GemAcquisitionSummary from './GemAcquisitionSummary';
 import '../styles/campaign.css';
 
@@ -64,6 +65,7 @@ function zoomAt(camera: { x: number; y: number; scale: number }, factor: number,
 
 export default function CampaignView({ snapshot, tree, sprites, guideGemLinks, guideRegexes = [], guideAscendancy = emptyAscendancy, guideCharacterAscendancy = '', guideLeague = '', guideSlug = '', onClose }: Props) {
   const [act, setAct] = useState(1);
+  const [followingLog, setFollowingLog] = useState(false);
   const [treeView, setTreeView] = useState<'tree' | 'ascendancy'>('tree');
   const [selected, setSelected] = useState<number | null>(null);
   const [inspected, setInspected] = useState<number | null>(null);
@@ -189,8 +191,8 @@ export default function CampaignView({ snapshot, tree, sprites, guideGemLinks, g
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
-      if (event.key === 'ArrowRight' && act < 10) { event.preventDefault(); setAct(act + 1); setSelected(null); }
-      if (event.key === 'ArrowLeft' && act > 1) { event.preventDefault(); setAct(act - 1); setSelected(null); }
+      if (event.key === 'ArrowRight' && act < 10) { event.preventDefault(); chooseAct(act + 1); }
+      if (event.key === 'ArrowLeft' && act > 1) { event.preventDefault(); chooseAct(act - 1); }
     }
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
@@ -205,9 +207,9 @@ export default function CampaignView({ snapshot, tree, sprites, guideGemLinks, g
       return next;
     });
   }
-  function chooseAct(next: number) { setAct(next); setSelected(null); setInspected(null); }
+  function chooseAct(next: number) { setFollowingLog(false); setAct(next); setSelected(null); setInspected(null); }
   return <div className="campaign-view" aria-label="Full campaign view">
-    <header className="campaign-header"><div><strong>{snapshot.title}</strong><span>Full campaign · Tree {snapshot.version}</span></div><div className="campaign-header-actions"><button type="button" disabled={act === 1} onClick={() => chooseAct(act - 1)}>← Previous</button><button type="button" disabled={act === 10} onClick={() => chooseAct(act + 1)}>Next →</button><button type="button" onClick={onClose}>Close</button></div></header>
+    <header className="campaign-header"><div><strong>{snapshot.title}</strong><span>Full campaign · Tree {snapshot.version}</span></div><CampaignLogFollow following={followingLog} onFollowing={setFollowingLog} onAct={next => { if (next !== act) { setAct(next); setSelected(null); setInspected(null); } }} /><div className="campaign-header-actions"><button type="button" disabled={act === 1} onClick={() => chooseAct(act - 1)}>← Previous</button><button type="button" disabled={act === 10} onClick={() => chooseAct(act + 1)}>Next →</button><button type="button" onClick={onClose}>Close</button></div></header>
     <nav className="campaign-acts" aria-label="Choose campaign act">{acts.map(number => <button type="button" key={number} className={number === act ? 'is-current' : ''} aria-current={number === act ? 'step' : undefined} onClick={() => chooseAct(number)}>Act {number}{campaignMarkers(snapshot.markers, number).length > 0 && <small>{campaignMarkers(snapshot.markers, number).length}</small>}{guideAscendancy.some(source => source.act === number && source.snapshot.classId === snapshot.classId && source.snapshot.ascendancyId === snapshot.ascendancyId) && <small className="campaign-act-lab">Lab</small>}</button>)}</nav>
     {regex && <div className="campaign-regex"><span>REGEX</span>{regexes.length > 1 ? <select aria-label="Choose regex" value={regexIndex} onChange={event => setRegexIndex(Number(event.target.value))}>{regexes.map((item, index) => <option key={index} value={index}>{item.label}</option>)}</select> : <strong title={regex.label}>{regex.label}</strong>}<code title={regex.value}>{regex.value}</code><RegexCopyButton label={regex.label} value={regex.value} /></div>}
     <div className="campaign-main"><div className="campaign-map" ref={map}><canvas ref={canvas} aria-label={`${treeView === 'tree' ? 'Full passive' : 'Ascendancy'} tree with Act ${act} markers. Click any node to inspect it; drag to pan and scroll to zoom.`} onPointerDown={event => { if (event.button !== 0) return; event.currentTarget.setPointerCapture(event.pointerId); pointer.current = { x: event.clientX, y: event.clientY, moved: false }; }} onPointerMove={event => { const previous = pointer.current; if (!previous) return; const dx = event.clientX - previous.x, dy = event.clientY - previous.y; if (Math.abs(dx) + Math.abs(dy) > 2) previous.moved = true; pointer.current = { x: event.clientX, y: event.clientY, moved: previous.moved }; if (previous.moved) setCamera(current => ({ ...current, x: current.x - dx / current.scale, y: current.y - dy / current.scale })); }} onPointerUp={event => { ignoreClick.current = !!pointer.current?.moved; pointer.current = null; if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); }} onPointerCancel={() => { pointer.current = null; }} onClick={event => { if (ignoreClick.current) { ignoreClick.current = false; return; } const rect = event.currentTarget.getBoundingClientRect(); inspectAt(event.clientX - rect.left, event.clientY - rect.top); }} /><div className="campaign-map-controls"><button type="button" aria-pressed={treeView === 'tree'} onClick={() => { setTreeView('tree'); setSelected(null); setInspected(null); }}>Passive tree</button><button type="button" aria-pressed={treeView === 'ascendancy'} disabled={!ascendancySteps.length} onClick={() => { setTreeView('ascendancy'); setSelected(null); setInspected(null); }}>Ascendancy</button><button type="button" onClick={() => setCamera(fittedCamera)}>Fit tree</button><button type="button" aria-label="Zoom in" onClick={() => setCamera(current => zoomAt(current, 1.3, size.width / 2, size.height / 2, size))}>+</button><button type="button" aria-label="Zoom out" onClick={() => setCamera(current => zoomAt(current, 1 / 1.3, size.width / 2, size.height / 2, size))}>−</button></div>{inspectedNode && <div className="campaign-node-detail"><button type="button" aria-label="Close passive details" onClick={() => setInspected(null)}>×</button><small>{inspectedNode.kind} · #{inspectedNode.id}</small><strong>{inspectedNode.name}</strong>{inspectedNode.stats.map((stat, index) => <p key={index}>{stat}</p>)}{masteryEffect && <div className="campaign-mastery-detail"><b>Selected mastery effect</b>{masteryEffect.stats.map((stat, index) => <p key={index}>{stat}</p>)}</div>}</div>}{!tree && <p>Loading passive tree…</p>}</div>

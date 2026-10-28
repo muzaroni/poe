@@ -12,7 +12,7 @@
   "subtitle": "KBoC early leveling and progression guide",
   "league": "3.30",
   "ascendancy": "Necromancer",
-  "updated": "2026-10-24",
+  "updated": "2026-10-27",
   "content": {
     "type": "doc",
     "content": [
@@ -85,7 +85,22 @@
         "content": [
           {
             "type": "text",
-            "text": "This build highly excels at fast mapping and content such as Breach, Legion, Blight. Single target is high once you invest. Starting out you're very defensive being CI with capped block, over 7K ES pool, 12k armor, great movement and recovery once you invest more. Probably one of the best all-rounder builds over the last few leagues that can do all content around 20-30 divines and scale into hundreds of divines if you want."
+            "marks": [
+              {
+                "type": "textStyle",
+                "attrs": {
+                  "color": "#58a6ff"
+                }
+              },
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "What this build is good at"
+          },
+          {
+            "type": "text",
+            "text": ": highly excels at fast mapping and content such as Breach, Legion, Blight or anything that needs to kill a lot and spread wide. Single target is high once you invest. Right out of maps you have decent life and ES pool with eventual swap to CI with capped block, over 7K ES pool, 12k armor, great movement and excellent recovery. Probably one of the best all-rounder builds over the last few leagues that can do all content around 20-30 divines and scale into hundreds of divines if you want."
           }
         ]
       },
@@ -111,10 +126,25 @@
                     "type": "text",
                     "marks": [
                       {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff6655"
+                        }
+                      },
+                      {
                         "type": "bold"
                       }
                     ],
-                    "text": "Written Guide (Act Breakdown):"
+                    "text": "Written Guide"
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": ":"
                   },
                   {
                     "type": "text",
@@ -134,14 +164,56 @@
                     "type": "text",
                     "marks": [
                       {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "#ff6655"
+                        }
+                      },
+                      {
                         "type": "bold"
                       }
                     ],
-                    "text": "Snapshot Viewer:"
+                    "text": "Snapshot Viewer"
                   },
                   {
                     "type": "text",
-                    "text": " A simplified version of the guide designed to sit on your second monitor while you play. It keeps all the important information easily accessible without the extra explanations, including full campaign pathing, gem links at the end of each Act, and regex you can copy to your clipboard with a single click."
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": ":"
+                  },
+                  {
+                    "type": "text",
+                    "text": " A streamlined guide designed to sit on your second monitor while you play. It shows full campaign pathing, gem links per act, one click regex copying. "
+                  }
+                ]
+              },
+              {
+                "type": "bulletList",
+                "content": [
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "textStyle",
+                                "attrs": {
+                                  "color": "#65ed7f"
+                                }
+                              }
+                            ],
+                            "text": "If using Chrome, Edge or Opera, this viewer has option to read your client.txt file and auto change the acts."
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
@@ -493,6 +565,10 @@
         "attrs": {
           "links": [
             {
+              "label": "3.30 Muzaroni POB (THIS GUIDE). Use the Loadouts on top right",
+              "url": "https://pob.codes/b/yXGVVLelhBl"
+            },
+            {
               "label": "3.29 Redviles POB",
               "url": "https://pobb.in/APXuY7dhcv9q"
             },
@@ -534,7 +610,7 @@
       {
         "type": "regex",
         "attrs": {
-          "label": "3L, MS boots, Gems",
+          "label": "3L, MS boots, Gems (Full Campaign)",
           "value": "\"-\\w-.-|(-\\w){4}|-\\w-|Runn|rint|^added l|pris|ombu|oly f|ter at|ld ch|usil|^voll|^added co|akn|f thu|ld of i|^has|lsl|do$|iper'|^mark|^greater m|r v|mmol|^fork|^returni|c bl|^balli|ta s|crate$|atile|^sig|mpes|bone o|^spell c|^lightning p|cis|sacred\""
         }
       },
