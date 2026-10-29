@@ -1,3 +1,4 @@
+import { prepareGemPathContent } from '../lib/gem-paths';
 import { assetUrl, plainText } from '../lib/guide';
 import { gemDisplayName } from '../lib/gems';
 import { useEffect, useRef, useState } from 'react';
@@ -13,7 +14,7 @@ import { Bold, CheckSquare, ChevronDown, Code2, Heading2, Heading3, ImagePlus, I
 import type { JSONContent } from '@tiptap/core';
 import { Button } from '../components/ui/Button';
 import { deleteDraft, listDrafts, saveDraft } from './drafts';
-import { Callout, Gem, GemSetup, GuideImage, Icon, PobLinks, Regex, PassiveTreeBlock } from './extensions';
+import { Callout, Gem, GemSetup, GemPathChoice, GemPathMerge, GemPathText, GuideImage, Icon, PobLinks, Regex, PassiveTreeBlock } from './extensions';
 import TagInput from './TagInput';
 import { contentPath } from '../lib/search';
 import { buildDetails } from '../lib/build';
@@ -36,7 +37,7 @@ type Modal = 'gem' | 'link' | 'new' | 'color' | 'cost' | 'delete' | null;
 
 function newGuide(title: string, kind: 'build' | 'article' = 'build'): Guide {
   const slug = title.toLowerCase().normalize('NFKD').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').slice(0, 70) || 'new-build';
-  const sections = kind === 'article' ? ['Overview'] : ['Overview', 'PoB Links', 'Leveling', ...Array.from({ length: 10 }, (_, i) => `Act ${i + 1} Progression`), 'Transition', 'Endgame'];
+  const sections = kind === 'article' ? ['Overview'] : ['Overview', 'PoB Links', 'Leveling', ...Array.from({ length: 10 }, (_, i) => `Act ${i + 1} Progression`), 'Maps', 'Transition', 'Endgame'];
   return { slug, title, kind, tags: [], subtitle: '', league: '', ascendancy: '', updated: localDate(), content: { type: 'doc', content: sections.flatMap((section) => [
     { type: 'heading', attrs: { level: 2 }, content: [{ type: 'text', text: section }] },
     { type: 'paragraph' },
@@ -86,9 +87,9 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
       Placeholder.configure({ placeholder: 'Write your guide here…' }),
       TaskList,
       TaskItem.configure({ nested: true }),
-      Gem, Icon, Regex, PobLinks, GemSetup, Callout, PassiveTreeBlock,
+      Gem, Icon, Regex, PobLinks, GemSetup, GemPathChoice, GemPathMerge, GemPathText, Callout, PassiveTreeBlock,
     ],
-    content: guide.content,
+    content: prepareGemPathContent(guide.content),
     editorProps: {
       attributes: { class: 'tiptap guide-content', 'data-guide-league': guide.league, 'data-guide-ascendancy': buildDetails(guide).ascendancy, 'data-guide-slug': guide.slug },
       handleTextInput: (view, from, to, text) => {
@@ -149,7 +150,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
       const selected = merged.find((item) => item.slug === activeSlug) ?? merged.find((item) => item.slug === guide.slug);
       if (selected) {
         setGuide(selected);
-        editor.commands.setContent(selected.content, { emitUpdate: false });
+        editor.commands.setContent(prepareGemPathContent(selected.content), { emitUpdate: false });
         if (drafts.some((item) => item.slug === selected.slug)) setDraftState('Recovered local draft');
       }
       setReady(true);
@@ -172,7 +173,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
       void saveDraft(outgoing).catch(() => setDraftState('Draft storage unavailable'));
     }
     setGuide(next);
-    editor?.commands.setContent(next.content, { emitUpdate: false });
+    editor?.commands.setContent(prepareGemPathContent(next.content), { emitUpdate: false });
     try { localStorage.setItem('poe-active-guide', next.slug); } catch { /* private browsing */ }
     setDraftState('');
   }
@@ -306,11 +307,19 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
         <span className="toolbar-divider" />
         <button title="Insert gem (@ or Ctrl+Shift+G)" aria-label="Insert gem" className="toolbar-gem" onClick={openGemPicker}>+ Gem</button>
         <button title="Gem links" aria-label="Gem links" onClick={() => insert({ type: 'gemSetup', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Link 1: ' }] }] })}><ListChecks /></button>
+        <button title="Insert a leveling path choice" onClick={() => insert(prepareGemPathContent({ type: 'gemPathChoice', attrs: { id: crypto.randomUUID() } }))}>Path choice</button><button title="Merge leveling paths" onClick={() => insert({ type: 'gemPathMerge' })}>Merge paths</button>
         <button className="toolbar-cost" title="Insert currency cost" aria-label="Insert currency cost" onClick={() => setModal('cost')}>Cost</button>
         <button className="toolbar-note" title="Callout" aria-label="Callout" onClick={() => insert({ type: 'callout', attrs: { tone: 'note' }, content: [{ type: 'paragraph' }] })}>Note</button>
         <button className="toolbar-important" title="Important block" aria-label="Important block" onClick={() => insert({ type: 'callout', attrs: { tone: 'important' }, content: [{ type: 'paragraph' }] })}>Important</button>
         <button title="Copyable regex" aria-label="Copyable regex" onClick={() => insert({ type: 'regex', attrs: { label: 'Regex', value: '' } })}><Code2 /></button>
         <button className="toolbar-pob" title="PoB links" aria-label="PoB links" onClick={() => insert({ type: 'pobLinks', attrs: { links: [{ label: '', url: '' }] } })}>PoB</button>
+        <button title="Add or jump to the Maps section" onClick={() => {
+          if (!editor) return;
+          let position: number | undefined;
+          editor.state.doc.forEach((node, offset) => { if (node.type.name === 'heading' && node.attrs.level === 2 && /^Maps\b/i.test(node.textContent)) position ??= offset; });
+          if (position !== undefined) editor.chain().focus().setTextSelection(position + 1).scrollIntoView().run();
+          else editor.chain().focus().insertContentAt(editor.state.doc.content.size, [{ type: 'heading', attrs: { level: 2 }, content: [{ type: 'text', text: 'Maps' }] }, { type: 'paragraph' }]).scrollIntoView().run();
+        }}>Maps section</button>
         <button title="Insert passive tree snapshot" aria-label="Insert passive tree snapshot" className="toolbar-tree" onClick={() => insert({ type: 'passiveTree', attrs: { snapshot: { version: guide.league.startsWith('3.28') ? '3.28.0' : '3.29.1', title: 'Passive tree', width: 480, height: 240 } } })}>Tree</button>
         <button title="Image" aria-label="Image" onClick={() => fileInput.current?.click()}><ImagePlus /></button>
         <button title="Link" aria-label="Link" onClick={() => { setUrl(editor?.getAttributes('link').href ?? ''); setModal('link'); }}><Link2 /></button>

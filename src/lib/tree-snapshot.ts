@@ -30,9 +30,9 @@ export function normalizeSnapshot(value: Partial<TreeSnapshotData> = {}): TreeSn
     } : undefined,
     ascendancyNumbering: value.ascendancyNumbering === 'manual' ? 'manual' : undefined,
     campaignMode: value.campaignMode === true || undefined,
-    campaignGems: value.campaignGems && typeof value.campaignGems === 'object' ? Object.fromEntries(Object.entries(value.campaignGems).filter(([act, links]) => /^(?:10|[1-9])$/.test(act) && typeof links === 'string').map(([act, links]) => [act, links.slice(0, 3000)])) : undefined,
+    campaignGems: value.campaignGems && typeof value.campaignGems === 'object' ? Object.fromEntries(Object.entries(value.campaignGems).filter(([act, links]) => /^(?:11|10|[1-9])$/.test(act) && typeof links === 'string').map(([act, links]) => [act, links.slice(0, 3000)])) : undefined,
     campaignRegex: value.campaignRegex && typeof value.campaignRegex.value === 'string' && value.campaignRegex.value.trim() ? { label: String(value.campaignRegex.label ?? 'Regex').slice(0, 160), value: value.campaignRegex.value.slice(0, 3000) } : undefined,
-    campaignRespec: value.campaignRespec && typeof value.campaignRespec === 'object' ? Object.fromEntries(Object.entries(value.campaignRespec).filter(([act]) => /^(?:10|[1-9])$/.test(act)).map(([act, marks]) => [act, {
+    campaignRespec: value.campaignRespec && typeof value.campaignRespec === 'object' ? Object.fromEntries(Object.entries(value.campaignRespec).filter(([act]) => /^(?:11|10|[1-9])$/.test(act)).map(([act, marks]) => [act, {
       removed: [...new Set((Array.isArray(marks?.removed) ? marks.removed : []).filter(id => Number.isInteger(id) && id >= 0))].slice(0, 500),
       added: [...new Set((Array.isArray(marks?.added) ? marks.added : []).filter(id => Number.isInteger(id) && id >= 0))].slice(0, 500),
     }])) : undefined,

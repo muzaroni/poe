@@ -12,13 +12,10 @@
   "subtitle": "KBoC early leveling and progression guide",
   "league": "3.30",
   "ascendancy": "Necromancer",
-  "updated": "2026-10-27",
+  "updated": "2026-10-29",
   "content": {
     "type": "doc",
     "content": [
-      {
-        "type": "paragraph"
-      },
       {
         "type": "heading",
         "attrs": {
@@ -101,123 +98,6 @@
           {
             "type": "text",
             "text": ": highly excels at fast mapping and content such as Breach, Legion, Blight or anything that needs to kill a lot and spread wide. Single target is high once you invest. Right out of maps you have decent life and ES pool with eventual swap to CI with capped block, over 7K ES pool, 12k armor, great movement and excellent recovery. Probably one of the best all-rounder builds over the last few leagues that can do all content around 20-30 divines and scale into hundreds of divines if you want."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "There are two ways to follow this guide, depending on how much detail you want:"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#ff6655"
-                        }
-                      },
-                      {
-                        "type": "bold"
-                      }
-                    ],
-                    "text": "Written Guide"
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "bold"
-                      }
-                    ],
-                    "text": ":"
-                  },
-                  {
-                    "type": "text",
-                    "text": " A more detailed, step-by-step breakdown of the campaign, including when to pick up gems, how much they cost, and general tips to help you along the way."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#ff6655"
-                        }
-                      },
-                      {
-                        "type": "bold"
-                      }
-                    ],
-                    "text": "Snapshot Viewer"
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "bold"
-                      }
-                    ],
-                    "text": ":"
-                  },
-                  {
-                    "type": "text",
-                    "text": " A streamlined guide designed to sit on your second monitor while you play. It shows full campaign pathing, gem links per act, one click regex copying. "
-                  }
-                ]
-              },
-              {
-                "type": "bulletList",
-                "content": [
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "#65ed7f"
-                                }
-                              }
-                            ],
-                            "text": "If using Chrome, Edge or Opera, this viewer has option to read your client.txt file and auto change the acts."
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
           }
         ]
       },
@@ -390,20 +270,20 @@
               {
                 "nodeId": 27929,
                 "note": "",
-                "positionX": 738.571182159445,
+                "positionX": 738.5711821594446,
                 "positionY": -4403.376909414212
               },
               {
                 "nodeId": 56128,
                 "note": "Intelligence is added to Accuracy Rating with Wands",
                 "actDivider": "Act 2",
-                "positionX": 954.5168989287811,
+                "positionX": 954.5168989287813,
                 "positionY": -6435.6014350581045
               },
               {
                 "nodeId": 40271,
                 "note": "Critical Strikes do not inherently Ignite; 100% increased Damage with Hits against Ignited Enemies",
-                "positionX": 2931.811851561384,
+                "positionX": 2931.8118515613846,
                 "positionY": -6665.459352541713
               },
               {
@@ -417,7 +297,7 @@
                 "nodeId": 52031,
                 "note": "",
                 "actDivider": "Act 4",
-                "positionX": 3400.2435213458707,
+                "positionX": 3400.2435213458702,
                 "positionY": -8733.231500428106
               },
               {
@@ -455,7 +335,7 @@
               {
                 "nodeId": 18769,
                 "note": "",
-                "positionX": 5880.716293826998,
+                "positionX": 5880.716293826997,
                 "positionY": -5072.601299902755
               },
               {
@@ -463,26 +343,26 @@
                 "note": "5% of Leech is Instant",
                 "actDivider": "Act 7",
                 "positionX": 6714.532759834541,
-                "positionY": -1131.853190540799
+                "positionY": -1131.8531905408
               },
               {
-                "nodeId": 26148,
-                "note": "+500 to Accuracy Rating; -2 to Accuracy Rating per Level",
-                "positionX": 7576.206542430247,
-                "positionY": -1810.0871653586482
+                "nodeId": 292,
+                "note": "15% increased maximum Life if there are no Life Modifiers on Equipped Body Armour",
+                "positionX": 6755.286820249412,
+                "positionY": -1565.0082365290423
               },
               {
                 "nodeId": 32657,
                 "note": "10% chance to gain a Frenzy Charge when you Hit your Marked Enemy",
                 "positionX": 8097.1779046279535,
-                "positionY": -1292.5290365231422
+                "positionY": -1292.5290365231426
               },
               {
-                "nodeId": 292,
-                "note": "15% increased maximum Life if there are no Life Modifiers on Equipped Body Armour",
+                "nodeId": 26148,
+                "note": "+500 to Accuracy Rating; -2 to Accuracy Rating per Level",
                 "actDivider": "Act 8",
-                "positionX": 6755.286820249412,
-                "positionY": -1565.0082365290427
+                "positionX": 7576.206542430247,
+                "positionY": -1810.0871653586482
               },
               {
                 "nodeId": 27203,
@@ -514,30 +394,30 @@
                 "note": "40% of Physical Damage Converted to Lightning Damage",
                 "actDivider": "Act 10",
                 "positionX": 7321.557417297792,
-                "positionY": -4005.9041046584853
+                "positionY": -4005.904104658485
               },
               {
                 "nodeId": 42804,
                 "note": "",
-                "positionX": 6903.086182159446,
-                "positionY": -2711.570794001134
+                "positionX": 6903.086182159445,
+                "positionY": -2711.5707940011334
               },
               {
                 "nodeId": 32176,
                 "note": "",
-                "positionX": 6688.296182159447,
-                "positionY": -3465.0430248272905
+                "positionX": 6688.296182159448,
+                "positionY": -3465.04302482729
               },
               {
                 "nodeId": 35255,
                 "note": "",
-                "positionX": 7261.606182159447,
-                "positionY": -3444.556909414211
+                "positionX": 7261.606182159448,
+                "positionY": -3444.5569094142115
               },
               {
                 "nodeId": 36017,
                 "note": "",
-                "positionX": 917.2606355110008,
+                "positionX": 917.2606355110015,
                 "positionY": -10293.69814623637
               }
             ],
@@ -893,6 +773,8 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": null
         },
@@ -1327,6 +1209,8 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
             "title": "Nessa · Main",
@@ -1936,6 +1820,8 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
             "title": "Brutus · Main, Movement, Aura, Utility",
@@ -2662,6 +2548,8 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
             "title": "Fairgraves · Main, Main 2, Movement, Aura, Utility",
@@ -3780,6 +3668,8 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
             "title": "Fidelitas · Main, Main 2, Movement, Aura, Utility",
@@ -4321,24 +4211,6 @@
                           "acquisitionAct": 3,
                           "acquisitionVendor": null
                         }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Sniper's Mark",
-                          "color": "green",
-                          "acquisition": "buy",
-                          "acquisitionAct": 3,
-                          "acquisitionVendor": "Library Optional"
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " "
                       }
                     ]
                   }
@@ -5060,6 +4932,8 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
             "title": "Piety · Main, Main 2, Movement, Curse, Aura, Utility",
@@ -5084,7 +4958,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Kinetic Fusillade",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5095,7 +4972,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Added Lightning Damage Support",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5106,7 +4986,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Volley Support",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5117,7 +5000,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Multiple Projectiles Support",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": "Act 1 Nessa"
                             }
                           },
                           {
@@ -5145,7 +5031,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Kinetic Fusillade",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5156,7 +5045,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Added Lightning Damage Support",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5167,7 +5059,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Volley Support",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5178,7 +5073,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Multiple Projectiles Support",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": "Act 1 Nessa"
                             }
                           },
                           {
@@ -5206,7 +5104,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Shield Charge",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5217,7 +5118,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Faster Attacks Support",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5228,7 +5132,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Momentum Support",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5239,7 +5146,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Frostblink",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
@@ -5262,13 +5172,12 @@
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Sniper's Mark",
-                              "color": "green"
+                              "name": "Elemental Weakness",
+                              "color": "blue",
+                              "acquisition": "buy",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": null
                             }
-                          },
-                          {
-                            "type": "text",
-                            "text": " "
                           }
                         ]
                       }
@@ -5296,7 +5205,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Precision",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5307,7 +5219,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Wrath",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "buy",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5335,7 +5250,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Spellslinger",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -5346,12 +5264,46 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Flame Wall",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
                       }
                     ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Total Cost: 2 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " Orb of Transmutation, 2 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/alt.png",
+                      "name": "Orb of Alteration"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " Orb of Alteration "
                   }
                 ]
               }
@@ -5593,23 +5545,9 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Sniper's Mark",
-                          "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " + "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Mark On Hit Support",
-                          "color": "green",
-                          "acquisition": "buy",
+                          "name": "Elemental Weakness",
+                          "color": "blue",
+                          "acquisition": "reward",
                           "acquisitionAct": 4,
                           "acquisitionVendor": null
                         }
@@ -5876,6 +5814,774 @@
         }
       },
       {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Gem's do not change in this act, keep exact same links as Act 4."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "If you're missing something like "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " or "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Greater Multiple Projectiles Support",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " then go buy those in Act 4."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {
+          "pathChoice": null,
+          "pathId": null,
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Malachai · Main, Main 2, Movement, Curse, Aura, Utility",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Immolate Support",
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Greater Multiple Projectiles Support",
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main 2: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Immolate Support",
+                              "color": "blue",
+                              "acquisition": "buy",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Greater Multiple Projectiles Support",
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Shield Charge",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Curse: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Elemental Weakness",
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Precision",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Wrath",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Spellslinger",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Flame Wall",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue",
+                          "acquisition": "reward",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Greater Multiple Projectiles Support",
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue",
+                          "acquisition": "buy",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Greater Multiple Projectiles Support",
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Curse: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Elemental Weakness",
+                          "color": "blue",
+                          "acquisition": "reward",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Precision",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Wrath",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spellslinger",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "type": "heading",
         "attrs": {
           "level": 2
@@ -5883,9 +6589,143 @@
         "content": [
           {
             "type": "text",
-            "text": "Act 6-9"
+            "text": "Act 6"
           }
         ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "important"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "#ff6655"
+                    }
+                  }
+                ],
+                "text": "IMPORTANT"
+              },
+              {
+                "type": "text",
+                "text": ": Act 6 is where you decide if you want to keep leveling with "
+              },
+              {
+                "type": "gem",
+                "attrs": {
+                  "name": "Kinetic Fusillade",
+                  "color": "blue",
+                  "acquisition": null,
+                  "acquisitionAct": null,
+                  "acquisitionVendor": null
+                }
+              },
+              {
+                "type": "text",
+                "text": " or swap to "
+              },
+              {
+                "type": "gem",
+                "attrs": {
+                  "name": "Kinetic Blast",
+                  "color": "blue",
+                  "acquisition": null,
+                  "acquisitionAct": null,
+                  "acquisitionVendor": null
+                }
+              },
+              {
+                "type": "text",
+                "text": " set up. Since I only play SC Trade, "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "underline"
+                  }
+                ],
+                "text": "I stay with KF"
+              },
+              {
+                "type": "text",
+                "text": " and purchase KBoC from trade for A10/Maps swap. Around hour 3-4 of league start most trans gems are a few chaos, KBoC included, and it'll be the literal first purchase I make. "
+              }
+            ]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "The 2 most popular creators (Redviles & Legi) who I stole this guide from, both swap from KBolt (A1) > KF (A2-A5) > KB (A6-Early maps) > KBoC. I am a shitter and prefer the 2 IQ route so KF just makes sense to me until I buy KBoC, because fuck doing labs."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Also note, you can literally play KF with SSF campaign gear deep into yellow maps with relative ease on a 5 link, so feel free farm up a few chaos if you need or just enter lab prison till you get KBoC. I have personally tested this in 3.29 in SSF for practice."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "If you decide to stick to KF for campaign the only thing that changes is addition of "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sniper's Mark",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " to gem links. The tree stays identical for both KF and KB leveling methods."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph"
       },
       {
         "type": "callout",
@@ -6082,10 +6922,10 @@
                 "positionY": -1034.6353808037675
               },
               {
-                "nodeId": 26148,
-                "note": "+500 to Accuracy Rating  -2 to Accuracy Rating per Level",
-                "positionX": 7560.1567616603625,
-                "positionY": -1732.0088452009418
+                "nodeId": 292,
+                "note": "15% increased maximum Life if there are no Life Modifiers on Equipped Body Armour",
+                "positionX": 6825.277321985874,
+                "positionY": -1383.1942507802219
               },
               {
                 "nodeId": 32657,
@@ -6094,10 +6934,10 @@
                 "positionY": -1249.0921234874863
               },
               {
-                "nodeId": 292,
-                "note": "15% increased maximum Life if there are no Life Modifiers on Equipped Body Armour",
-                "positionX": 6825.277321985874,
-                "positionY": -1383.1942507802219
+                "nodeId": 26148,
+                "note": "+500 to Accuracy Rating  -2 to Accuracy Rating per Level",
+                "positionX": 7560.1567616603625,
+                "positionY": -1732.0088452009418
               }
             ],
             "frame": null,
@@ -6108,37 +6948,502 @@
         }
       },
       {
-        "type": "callout",
+        "type": "gemPathChoice",
         "attrs": {
-          "tone": "note"
+          "id": "c513cda9-493e-443f-90d5-a3569989a3a1",
+          "title": "Choose your leveling path",
+          "defaultPath": "a",
+          "options": [
+            {
+              "id": "a",
+              "label": "Kinetic Fusillade",
+              "description": "This continues Kinetic Fusillade and is my preferred choice for rest of campaign for Act 6-10 and gems do not change till you swap to KB or KBoC in maps."
+            },
+            {
+              "id": "b",
+              "label": "Kinetic Blast",
+              "description": "This swaps into Kinetic Blast + Kinetic Bolt Totems for rest of campaign for Act 6-10. This is not my preferred choice however I put this in because both Redviles & Legi do this option and it requires more braincells which I don't have."
+            }
+          ]
         },
         "content": [
           {
-            "type": "bulletList",
+            "type": "gemPathText",
+            "attrs": {
+              "role": "title",
+              "optionId": ""
+            },
             "content": [
               {
-                "type": "listItem",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "#58a6ff"
+                    }
+                  },
+                  {
+                    "type": "bold"
+                  }
+                ],
+                "text": "Choose your leveling path"
+              }
+            ]
+          },
+          {
+            "type": "gemPathText",
+            "attrs": {
+              "role": "label",
+              "optionId": "a"
+            },
+            "content": [
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ],
+                "text": "Kinetic Fusillade"
+              }
+            ]
+          },
+          {
+            "type": "gemPathText",
+            "attrs": {
+              "role": "description",
+              "optionId": "a"
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "This continues Kinetic Fusillade and is "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "#ff6655"
+                    }
+                  }
+                ],
+                "text": "my preferred choice"
+              },
+              {
+                "type": "text",
+                "text": " for rest of campaign for Act 6-10 and gems do not change till you swap to KB or KBoC in maps."
+              }
+            ]
+          },
+          {
+            "type": "gemPathText",
+            "attrs": {
+              "role": "label",
+              "optionId": "b"
+            },
+            "content": [
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ],
+                "text": "Kinetic Blast"
+              }
+            ]
+          },
+          {
+            "type": "gemPathText",
+            "attrs": {
+              "role": "description",
+              "optionId": "b"
+            },
+            "content": [
+              {
+                "type": "text",
+                "text": "This swaps into Kinetic Blast + Kinetic Bolt Totems for rest of campaign for Act 6-10. This is not my preferred choice however I put this in because both Redviles & Legi do this option and it requires more braincells which I don't have."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph"
+      },
+      {
+        "type": "gemSetup",
+        "attrs": {
+          "pathChoice": "c513cda9-493e-443f-90d5-a3569989a3a1",
+          "pathId": "a",
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Malachai · Main, Main 2, Movement, Curse, Aura, Utility",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Immolate Support",
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Greater Multiple Projectiles Support",
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main 2: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Kinetic Fusillade",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Immolate Support",
+                              "color": "blue",
+                              "acquisition": "buy",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Volley Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Greater Multiple Projectiles Support",
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Movement: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Shield Charge",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Curse: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Elemental Weakness",
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Precision",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Wrath",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Utility: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Spellslinger",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Flame Wall",
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "content": [
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
                 "content": [
                   {
                     "type": "paragraph",
                     "content": [
                       {
                         "type": "text",
-                        "text": "Gem links below are only if you decide to swap to "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Kinetic Blast",
-                          "color": "blue",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ". Personally, I will skip KB and stay with "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
@@ -6152,12 +7457,71 @@
                       },
                       {
                         "type": "text",
-                        "text": " to farm a few Chaos and purchase "
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Kinetic Blast of Clustering",
+                          "name": "Immolate Support",
+                          "color": "blue",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Greater Multiple Projectiles Support",
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main 2: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
                           "color": "blue",
                           "acquisition": null,
                           "acquisitionAct": null,
@@ -6166,7 +7530,254 @@
                       },
                       {
                         "type": "text",
-                        "text": " immediately."
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Immolate Support",
+                          "color": "blue",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Volley Support",
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Greater Multiple Projectiles Support",
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Movement: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Shield Charge",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Curse: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sniper's Mark",
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 6,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Mark On Hit Support",
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Precision",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Wrath",
+                          "color": "blue",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Utility: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Spellslinger",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Flame Wall",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
                       }
                     ]
                   }
@@ -6177,8 +7788,13 @@
         ]
       },
       {
+        "type": "paragraph"
+      },
+      {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": "c513cda9-493e-443f-90d5-a3569989a3a1",
+          "pathId": "b",
           "changeOverrides": null,
           "previousSetup": {
             "title": "Malachai · Main, Main 2, Movement, Curse, Aura, Utility",
@@ -6936,7 +8552,21 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "I do Cruel Lab once I enter Act 9, at this point you can "
+                        "text": "Gems + tree is same as what's posted above so keep following that."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Biggest change is Cruel Lab which I do once I enter Act 9, at this point you can "
                       },
                       {
                         "type": "text",
@@ -7088,6 +8718,34 @@
                       {
                         "type": "text",
                         "text": "Undertaker + Minion mastery is only good once you have Merciless lab for offering."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Remember the notes from Act 6, you can keep playing "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Kinetic Fusillade",
+                          "color": "blue",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " deep into yellow maps or start thinking about transitioning to KB or KBoC, the tree remains the same no matter what you decide."
                       }
                     ]
                   }
@@ -7408,8 +9066,29 @@
         }
       },
       {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Maps"
+          }
+        ]
+      },
+      {
+        "type": "gemPathMerge",
+        "attrs": {
+          "choiceId": "c513cda9-493e-443f-90d5-a3569989a3a1",
+          "title": "Continue with Kinetic Blast of Clustering"
+        }
+      },
+      {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
             "title": "Act 6-9 · Main, Main 2, Movement, Curse, Utility, Utility 2",
@@ -8238,6 +9917,47 @@
         }
       },
       {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Notes below are stolen from Redviles' video, go watch that for a more in depth explanation on everything. You should be following anyways, dude is insane."
+          }
+        ]
+      },
+      {
+        "type": "paragraph"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Lightning or Chaos?"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              },
+              {
+                "type": "underline"
+              }
+            ],
+            "text": "Lightning KBoC"
+          }
+        ]
+      },
+      {
         "type": "bulletList",
         "content": [
           {
@@ -8248,7 +9968,170 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Notes below are from this video. Watch that for a more in depth explanation on everything"
+                    "text": "Typically right out of campaign you play "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Kinetic Blast of Clustering",
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " as a Phys to light conversion setup since it's the cheaper route. That's why you'll see a lot of conversion nodes on the tree and the gem as a 5th link. However, if it's cheap enough to swap to Chaos version (Medium cluster required) then you can skip all of that and follow the notes below. This is most likely what I will do and is what Redviles did in 3.29."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              },
+              {
+                "type": "underline"
+              }
+            ],
+            "text": "Chaos Conversion"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(151, 91, 7)"
+                        }
+                      }
+                    ],
+                    "text": "Overwhelming Malice"
+                  },
+                  {
+                    "type": "text",
+                    "text": " on a medium cluster jewel as early as possible."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Replace Physical to Lightning Support with another damage support after converting to chaos."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Refund any elemental damage passives once you switch to the chaos cluster setup."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(255, 102, 85)"
+                        }
+                      }
+                    ],
+                    "text": "Avoid "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Void Manipulation Support",
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " if you have extra flat elemental damage on gear (such as T1 flat lightning on your wand) or are using "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "textStyle",
+                        "attrs": {
+                          "color": "rgb(151, 91, 7)"
+                        }
+                      }
+                    ],
+                    "text": "Headhunter"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", since it prevents elemental damage from being dealt."
                   }
                 ]
               }
@@ -8546,150 +10429,6 @@
                   {
                     "type": "text",
                     "text": " for better recovery."
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "marks": [
-              {
-                "type": "bold"
-              },
-              {
-                "type": "underline"
-              }
-            ],
-            "text": "Chaos Conversion"
-          }
-        ]
-      },
-      {
-        "type": "taskList",
-        "content": [
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Get "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Overwhelming Malice"
-                  },
-                  {
-                    "type": "text",
-                    "text": " on a medium cluster jewel as early as possible."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Replace Physical to Lightning Support with another damage support after converting to chaos."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Refund any elemental damage passives once you switch to the chaos cluster setup."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#ff6655"
-                        }
-                      }
-                    ],
-                    "text": "Avoid "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Void Manipulation Support",
-                      "color": "green",
-                      "acquisition": null,
-                      "acquisitionAct": null,
-                      "acquisitionVendor": null
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " if you have extra flat elemental damage on gear (such as T1 flat lightning on your wand) or are using "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Headhunter"
-                  },
-                  {
-                    "type": "text",
-                    "text": ", since it prevents elemental damage from being dealt."
                   }
                 ]
               }

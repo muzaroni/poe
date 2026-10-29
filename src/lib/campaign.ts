@@ -9,6 +9,7 @@ export function campaignMarkers(markers: TreeMarker[], act: number) {
   let currentAct = 1;
   return markers.flatMap((marker, index) => {
     const divider = /^Act (10|[1-9])$/i.exec(marker.actDivider ?? '');
+    if (/^Maps$/i.test(marker.actDivider ?? '')) currentAct = 11;
     if (divider) currentAct = Number(divider[1]);
     return currentAct === act ? [{ ...marker, displayNumber: index + 1 }] : [];
   });
@@ -22,6 +23,7 @@ export function guideAscendancySnapshots(document: JSONContent): CampaignAscenda
     if (node.type === 'heading' && Number(node.attrs?.level) === 2) {
       const heading = /^Act\s+(10|[1-9])(?:\s*[-–]\s*(10|[1-9]))?\b/i.exec(plainText(node).trim());
       if (heading) act = Number(heading[2] ?? heading[1]);
+      else if (/^Maps\b/i.test(plainText(node).trim())) act = 11;
     } else if (node.type === 'passiveTree' && node.attrs?.snapshot?.view === 'ascendancy') {
       snapshots.push({ snapshot: normalizeSnapshot(node.attrs.snapshot), act });
     }
@@ -59,7 +61,7 @@ export function campaignAscendancySteps(tree: PassiveTree, snapshot: TreeSnapsho
   return notables.map((node, index) => ({ node, act: index < 2 ? 4 : index < 4 ? 9 : 10, lab: index < 2 ? 'Normal Lab' : index < 4 ? 'Cruel Lab' : 'Merciless Lab', action: 'allocate' as const }));
 }
 
-export type CampaignGemStage = { title: string; rows: JSONContent[]; acquisitionNodes: JSONContent[] };
+export type CampaignGemStage = { title: string; rows: JSONContent[]; acquisitionNodes: JSONContent[]; sourceAct?: number; carried?: boolean };
 
 // Keep every setup in guide order, while carrying unchanged links into each stage.
 export function guideGemProgressionByAct(document: JSONContent): Record<string, CampaignGemStage[]> {
@@ -68,6 +70,7 @@ export function guideGemProgressionByAct(document: JSONContent): Record<string, 
   let sectionSetups: { node: JSONContent; title: string }[] = [];
   let sectionHeading = '';
   let carried: JSONContent[] = [];
+  let sourceAct = 0;
   function finishSection() {
     const stages: CampaignGemStage[] = [];
     if (sectionSetups.length) {
@@ -94,8 +97,9 @@ export function guideGemProgressionByAct(document: JSONContent): Record<string, 
         }
       }
       carried = [...latest.values()];
+      sourceAct = sectionActs[0] ?? sourceAct;
     }
-    for (const act of sectionActs) if (carried.length) result[act] = stages.length ? stages : [{ title: 'Current links', rows: carried, acquisitionNodes: [] }];
+    for (const act of sectionActs) if (carried.length) result[act] = stages.length && act === sectionActs[0] ? stages.map(stage => ({ ...stage, sourceAct })) : [{ title: 'Current gem links', rows: carried, acquisitionNodes: [], sourceAct, carried: true }];
     sectionSetups = [];
     sectionHeading = '';
   }
@@ -103,13 +107,20 @@ export function guideGemProgressionByAct(document: JSONContent): Record<string, 
     if (node.type === 'heading' && Number(node.attrs?.level) === 2) {
       finishSection();
       const heading = /^Act\s+(10|[1-9])(?:\s*[-–]\s*(10|[1-9]))?\b/i.exec(plainText(node).trim());
+      if (/^Maps\b/i.test(plainText(node).trim())) { sectionActs = [11]; continue; }
       if (!heading) { sectionActs = []; continue; }
       const first = Number(heading[1]), last = Number(heading[2] ?? heading[1]);
       sectionActs = first <= last ? Array.from({ length: last - first + 1 }, (_, index) => first + index) : [];
-    } else if (node.type === 'heading' && Number(node.attrs?.level) === 3 && sectionActs.length) sectionHeading = plainText(node).trim();
+    } else if (node.type === 'gemPathMerge') { finishSection(); carried = []; }
+    else if (node.type === 'heading' && Number(node.attrs?.level) === 3 && sectionActs.length) sectionHeading = plainText(node).trim();
     else if (node.type === 'gemSetup' && sectionActs.length) sectionSetups.push({ node, title: sectionHeading });
   }
   finishSection();
+  let previous: CampaignGemStage | undefined;
+  for (let act = 1; act <= 11; act++) {
+    if (result[act]?.length) previous = result[act].at(-1);
+    else if (previous) result[act] = [{ title: 'Current gem links', rows: previous.rows, acquisitionNodes: [], sourceAct: previous.sourceAct, carried: true }];
+  }
   return result;
 }
 

@@ -1,3 +1,5 @@
+import { gemPathAttributes } from '../lib/gem-paths';
+import { GemPathsContext, GemPathCards, useGemPaths } from '../components/GemPaths';
 import { setupRows, type GemSetupBaseline } from '../lib/gem-links';
 import GemChangeControls from './GemChangeControls';
 import GemSetupChanges from '../components/GemSetupChanges';
@@ -30,7 +32,7 @@ function GemEditorView({ node, editor, getPos, updateAttributes }: NodeViewProps
       if (offset >= position) return;
       if (item.type.name !== 'heading' || item.attrs.level !== 2) return;
       const match = /^Act\s+(10|[1-9])\b/i.exec(item.textContent.trim());
-      act = match ? Number(match[1]) : null;
+      act = match ? Number(match[1]) : /^Maps\b/i.test(item.textContent.trim()) ? 11 : null;
     });
     return act;
   }
@@ -151,6 +153,59 @@ export const PobLinks = Node.create({
   addNodeView() { return ReactNodeViewRenderer(PobView); },
 });
 
+function GemPathEditor({ node, editor, updateAttributes }: NodeViewProps) {
+  const [preview, setPreview] = useState(false);
+  const a = gemPathAttributes(node.toJSON());
+  const paths = useGemPaths(editor.getJSON(), editor.view.dom.dataset.guideSlug ?? '');
+  if (node.type.name === 'gemPathMerge') {
+    const choices = editor.getJSON().content?.filter(n => n.type === 'gemPathChoice') ?? [];
+    return <NodeViewWrapper className="gem-path-choice" contentEditable={false}><strong>MERGE GEM PATHS</strong><label>End choice<select value={a.choiceId} onChange={e => updateAttributes({ choiceId: e.target.value })}><option value="">Choose a branch</option>{choices.map(n => <option key={n.attrs?.id} value={n.attrs?.id}>{n.attrs?.title}</option>)}</select></label><input aria-label="Merge title" value={a.title} onChange={e => updateAttributes({ title: e.target.value })} /><p>Add the common gem setup below this block.</p></NodeViewWrapper>;
+  }
+  const options = a.options as { id: string; label: string; description: string }[];
+  return <NodeViewWrapper className="gem-path-choice gem-path-rich-editor">
+    <div className="gem-setup-controls" contentEditable={false}><strong>GEM PATH CHOICE</strong><button type="button" onClick={() => setPreview(!preview)}>{preview ? 'Edit cards' : 'Try reader choice'}</button></div>
+    <div hidden={!preview} contentEditable={false}><GemPathsContext.Provider value={paths.value}><GemPathCards node={node.toJSON()} /></GemPathsContext.Provider></div>
+    <div hidden={preview}>
+      <p contentEditable={false} className="gem-path-format-hint">Select text below and use the toolbar for bold, italic, underline, or color.</p>
+      <NodeViewContent className="gem-path-rich-fields" />
+      <div className="gem-path-defaults" contentEditable={false}><span>Default path</span>{options.map(o => <label key={o.id}><input type="radio" name={a.id} checked={a.defaultPath === o.id} onChange={() => updateAttributes({ defaultPath: o.id })} /> {o.label || 'Untitled path'}</label>)}</div>
+      <p contentEditable={false}>Assign the gem setups below to these paths. Both stay visible while editing.</p>
+    </div>
+  </NodeViewWrapper>;
+
+}
+export const GemPathText = Node.create({
+  name: 'gemPathText', content: 'inline*', marks: '_', defining: true,
+  addKeyboardShortcuts() { return { Enter: () => this.editor.isActive('gemPathText') ? this.editor.commands.setHardBreak() : false }; },
+  addAttributes() { return { role: { default: 'description', parseHTML: element => element.getAttribute('data-path-field'), renderHTML: attrs => ({ 'data-path-field': attrs.role }) }, optionId: { default: '', parseHTML: element => element.getAttribute('data-option-id') ?? '', renderHTML: attrs => ({ 'data-option-id': attrs.optionId }) } }; },
+  parseHTML() { return [{ tag: 'div[data-path-field]' }]; },
+  renderHTML({ HTMLAttributes }) { return ['div', mergeAttributes(HTMLAttributes, { class: 'gem-path-text' }), 0]; },
+});
+export const GemPathChoice = Node.create({
+  name: 'gemPathChoice', group: 'block', content: 'gemPathText+', defining: true,
+  onUpdate() {
+    const tr = this.editor.state.tr;
+    this.editor.state.doc.descendants((node, pos) => {
+      if (node.type.name !== 'gemPathChoice') return;
+      const attrs = gemPathAttributes(node.toJSON());
+      if (attrs.title !== node.attrs.title || JSON.stringify(attrs.options) !== JSON.stringify(node.attrs.options)) tr.setNodeMarkup(pos, undefined, attrs);
+      return false;
+    });
+    if (tr.docChanged) this.editor.view.dispatch(tr);
+  },
+  addAttributes() { return { id: { default: '' }, title: { default: 'Choose your leveling path' }, defaultPath: { default: 'a' }, options: { default: [{ id: 'a', label: 'Continue current setup', description: '' }, { id: 'b', label: 'Alternative setup', description: '' }] } }; },
+  parseHTML() { return [{ tag: 'section[data-gem-path-choice]' }]; },
+  renderHTML({ HTMLAttributes }) { return ['section', mergeAttributes(HTMLAttributes, { 'data-gem-path-choice': '' }), 0]; },
+  addNodeView() { return ReactNodeViewRenderer(GemPathEditor); },
+});
+export const GemPathMerge = Node.create({
+  name: 'gemPathMerge', group: 'block', atom: true,
+  addAttributes() { return { choiceId: { default: '' }, title: { default: 'Continue with shared gem links' } }; },
+  parseHTML() { return [{ tag: 'div[data-gem-path-merge]' }]; },
+  renderHTML({ HTMLAttributes }) { return ['div', mergeAttributes(HTMLAttributes, { 'data-gem-path-merge': '' })]; },
+  addNodeView() { return ReactNodeViewRenderer(GemPathEditor); },
+});
+
 function GemSetupEditor({ node, editor, getPos, updateAttributes }: NodeViewProps) {
   const [editing, setEditing] = useState(!JSON.stringify(node.toJSON()).includes('"type":"gem"'));
   const [, refreshPreview] = useState(0);
@@ -206,27 +261,28 @@ function GemSetupEditor({ node, editor, getPos, updateAttributes }: NodeViewProp
     });
     setEditing(false);
   }
+  const pathChoices = editor.getJSON().content?.filter(n => n.type === 'gemPathChoice') ?? [];
   const normalized = carryGemAcquisitions(editor.getJSON());
   let previewNode = node.toJSON();
   editor.state.doc.forEach((_candidate, offset, index) => {
     if (offset === getPos()) previewNode = normalized.content?.[index] ?? previewNode;
   });
   return <NodeViewWrapper className="gem-setup-editor">
-    <div className="gem-setup-controls" contentEditable={false}><span className="block-eyebrow">GEM LINKS</span><button type="button" onClick={() => setEditing(!editing)}>{editing ? 'Preview setup' : 'Edit setup'}</button></div>
+    <div className="gem-setup-controls" contentEditable={false}><span className="block-eyebrow">GEM LINKS</span><label>Applies to <select aria-label="Gem setup path" value={node.attrs.pathChoice ? `${node.attrs.pathChoice}:${node.attrs.pathId}` : ''} onChange={e => { const [pathChoice, pathId] = e.target.value.split(':'); updateAttributes({ pathChoice: pathChoice || null, pathId: pathId || null }); }}><option value="">All paths</option>{pathChoices.flatMap(choice => (choice.attrs?.options ?? []).map((o: { id: string; label: string }) => <option key={`${choice.attrs?.id}:${o.id}`} value={`${choice.attrs?.id}:${o.id}`}>{choice.attrs?.title} · {o.label}</option>))}</select></label><button type="button" onClick={() => setEditing(!editing)}>{editing ? 'Preview setup' : 'Edit setup'}</button></div>
     <div className="gem-setup-continuation" contentEditable={false} hidden={!editing}>
       <label>Continue from<select aria-label="Previous gem links" value={sourcePosition} disabled={!sources.length} onFocus={refreshSources} onChange={event => setSourcePosition(Number(event.target.value))}>{!sources.length && <option value="">No earlier gem links</option>}{sources.map((source, index) => <option key={source.position} value={source.position}>{index + 1}. {source.title}</option>)}</select></label>
       <button type="button" disabled={!sources.length} onClick={continueSetup}>Continue gem links</button><button type="button" disabled={!sources.length} onClick={compareSetup} title="Compare the existing setup without replacing its gems">Compare only</button>
       {node.attrs.previousSetup && <button type="button" onClick={() => updateAttributes({ previousSetup: null, changeOverrides: null })}>Remove comparison</button>}
     </div>
     {editing && <GemChangeControls content={node.toJSON().content ?? []} baseline={node.attrs.previousSetup} value={node.attrs.changeOverrides} onChange={value => updateAttributes({ changeOverrides: value })} />}
-    <div contentEditable={false} hidden={editing} className="gem-setup-preview"><fieldset disabled><GuideDocument content={{ type: 'doc', content: [previewNode] }} slug="editor-gem-preview" league={editor.view.dom.dataset.guideLeague ?? ''} ascendancy={editor.view.dom.dataset.guideAscendancy ?? ''} normalized /></fieldset></div>
+    <div contentEditable={false} hidden={editing} className="gem-setup-preview"><fieldset disabled><GuideDocument content={{ type: 'doc', content: [{ ...previewNode, attrs: { ...previewNode.attrs, pathChoice: null, pathId: null } }] }} slug="editor-gem-preview" league={editor.view.dom.dataset.guideLeague ?? ''} ascendancy={editor.view.dom.dataset.guideAscendancy ?? ''} normalized /></fieldset></div>
     <div hidden={!editing} className="gem-setup-source"><p contentEditable={false} className="gem-setup-hint">Use + for linked gems, “or” for alternatives, and commas for independent gems. Choose R (reward) or B (buy) beside a gem; the choice carries into later setups. Enter an NPC name when the suggested one differs, or choose — to clear it. Add headings for level stages and keep labels such as Link 1: or Utility: consistent. Each stage tracks changes from the latest links; omitted setups stay unchanged.</p><NodeViewContent /><div contentEditable={false}><GemSetupChanges content={node.toJSON().content ?? []} baseline={node.attrs.previousSetup} overrides={node.attrs.changeOverrides} /></div></div>
   </NodeViewWrapper>;
 }
 
 export const GemSetup = Node.create({
   name: 'gemSetup', group: 'block', content: 'block+', defining: true,
-  addAttributes() { return { changeOverrides: { default: null, parseHTML: element => { try { return JSON.parse(element.getAttribute('data-gem-change-overrides') ?? 'null'); } catch { return null; } }, renderHTML: attrs => attrs.changeOverrides ? { 'data-gem-change-overrides': JSON.stringify(attrs.changeOverrides) } : {} }, previousSetup: { default: null, parseHTML: element => { try { return JSON.parse(element.getAttribute('data-previous-setup') ?? 'null'); } catch { return null; } }, renderHTML: attrs => attrs.previousSetup ? { 'data-previous-setup': JSON.stringify(attrs.previousSetup) } : {} } }; },
+  addAttributes() { return { pathChoice: { default: null }, pathId: { default: null }, changeOverrides: { default: null, parseHTML: element => { try { return JSON.parse(element.getAttribute('data-gem-change-overrides') ?? 'null'); } catch { return null; } }, renderHTML: attrs => attrs.changeOverrides ? { 'data-gem-change-overrides': JSON.stringify(attrs.changeOverrides) } : {} }, previousSetup: { default: null, parseHTML: element => { try { return JSON.parse(element.getAttribute('data-previous-setup') ?? 'null'); } catch { return null; } }, renderHTML: attrs => attrs.previousSetup ? { 'data-previous-setup': JSON.stringify(attrs.previousSetup) } : {} } }; },
   parseHTML() { return [{ tag: 'section[data-gem-setup]' }]; },
   renderHTML({ HTMLAttributes }) { return ['section', mergeAttributes(HTMLAttributes, { 'data-gem-setup': '', class: 'gem-setup' }), 0]; },
   addNodeView() { return ReactNodeViewRenderer(GemSetupEditor); },

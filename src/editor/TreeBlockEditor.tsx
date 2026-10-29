@@ -1,3 +1,4 @@
+import { GemPathsContext, useGemPaths } from '../components/GemPaths';
 import { createPortal } from 'react-dom';
 import { NodeViewWrapper, type NodeViewProps } from '@tiptap/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -6,6 +7,9 @@ import { normalizeSnapshot } from '../lib/tree-snapshot';
 import { guideAscendancySnapshots, guideGemProgressionByAct, guideRegexes } from '../lib/campaign';
 
 export default function TreeBlockEditor({ node, updateAttributes, editor, getPos }: NodeViewProps) {
+  const [pathDocument, setPathDocument] = useState(() => editor.getJSON());
+  const paths = useGemPaths(pathDocument, editor.view.dom.dataset.guideSlug ?? '');
+  const pathLinks = useMemo(() => guideGemProgressionByAct(paths.resolved), [paths.resolved]);
   const snapshot = useMemo(() => normalizeSnapshot(node.attrs.snapshot ?? {}), [node.attrs.snapshot]);
   const [editing, setEditing] = useState(false);
   const [guideGemLinks, setGuideGemLinks] = useState(() => guideGemProgressionByAct(editor.getJSON()));
@@ -18,7 +22,7 @@ export default function TreeBlockEditor({ node, updateAttributes, editor, getPos
     else if (dialog.current?.open) { dialog.current.close(); editButton.current?.focus(); }
   }, [editing]);
   useEffect(() => {
-    const update = () => { const document = editor.getJSON(); setGuideGemLinks(guideGemProgressionByAct(document)); setGuideRegex(guideRegexes(document)); setGuideAscendancy(guideAscendancySnapshots(document)); };
+    const update = () => { const document = editor.getJSON(); setPathDocument(document); setGuideGemLinks(guideGemProgressionByAct(document)); setGuideRegex(guideRegexes(document)); setGuideAscendancy(guideAscendancySnapshots(document)); };
     editor.on('update', update);
     return () => { editor.off('update', update); };
   }, [editor]);
@@ -30,7 +34,7 @@ export default function TreeBlockEditor({ node, updateAttributes, editor, getPos
   });
   return <NodeViewWrapper className="tree-block-editor" contentEditable={false}>
     <div className="tree-block-editor-bar"><span>PASSIVE TREE</span><button ref={editButton} type="button" onClick={() => setEditing(true)}>{snapshot.nodes.length ? 'Edit tree snapshot' : 'Choose nodes & steps'}</button></div>
-    <TreeBlock snapshot={snapshot} guideGemLinks={guideGemLinks} guideRegexes={guideRegex} guideAscendancy={guideAscendancy} guideCharacterAscendancy={editor.view.dom.dataset.guideAscendancy ?? ''} guideLeague={editor.view.dom.dataset.guideLeague ?? ''} guideSlug={editor.view.dom.dataset.guideSlug ?? ''} />
+    <GemPathsContext.Provider value={paths.value}><TreeBlock snapshot={snapshot} guideGemLinks={pathLinks} guideRegexes={guideRegex} guideAscendancy={guideAscendancy} guideCharacterAscendancy={editor.view.dom.dataset.guideAscendancy ?? ''} guideLeague={editor.view.dom.dataset.guideLeague ?? ''} guideSlug={editor.view.dom.dataset.guideSlug ?? ''} /></GemPathsContext.Provider>
     {typeof document !== 'undefined' && createPortal(<dialog ref={dialog} className="tree-block-dialog" aria-label="Edit tree snapshot" onCancel={event => { event.preventDefault(); event.stopPropagation(); setEditing(false); }} onClick={event => { if (event.target === dialog.current) setEditing(false); }}><div>{editing && <TreePicker snapshot={snapshot} previousSnapshots={previousSnapshots} guideGemLinks={guideGemLinks} onApply={value => { updateAttributes({ snapshot: value }); setEditing(false); }} onCancel={() => setEditing(false)} />}</div></dialog>, document.body)}
   </NodeViewWrapper>;
 }

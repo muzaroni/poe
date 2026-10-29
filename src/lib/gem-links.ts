@@ -71,7 +71,8 @@ export function carryGemAcquisitions(document: JSONContent): JSONContent {
     if (node.type === 'heading' && Number(node.attrs?.level) === 2) {
       for (const name of actGems) earlierActGems.add(name);
       actGems = new Set<string>();
-      currentAct = Number(/^Act\s+(10|[1-9])\b/i.exec(node.content?.map(child => child.text ?? '').join('') ?? '')?.[1]) || null;
+      const heading = node.content?.map(child => child.text ?? '').join('') ?? '';
+      currentAct = /^Maps\b/i.test(heading) ? 11 : Number(/^Act\s+(10|[1-9])\b/i.exec(heading)?.[1]) || null;
     }
     if (node.type !== 'gemSetup') return node;
     let occurrences = new Map<string, number>();
