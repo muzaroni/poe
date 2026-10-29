@@ -102,31 +102,40 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 2
-        },
+        "type": "paragraph",
         "content": [
           {
             "type": "text",
-            "text": "Campaign Snapshot"
-          }
-        ]
-      },
-      {
-        "type": "callout",
-        "attrs": {
-          "tone": "important"
-        },
-        "content": [
-          {
-            "type": "paragraph",
-            "content": [
+            "marks": [
               {
-                "type": "text",
-                "text": "Click the Passive tree below to open the snapshot viewer."
+                "type": "textStyle",
+                "attrs": {
+                  "color": "#58a6ff"
+                }
+              },
+              {
+                "type": "bold"
               }
-            ]
+            ],
+            "text": "What this guide focuses on"
+          },
+          {
+            "type": "text",
+            "text": ": is leveling with "
+          },
+          {
+            "type": "gem",
+            "attrs": {
+              "name": "Kinetic Fusillade",
+              "color": "blue",
+              "acquisition": null,
+              "acquisitionAct": null,
+              "acquisitionVendor": null
+            }
+          },
+          {
+            "type": "text",
+            "text": " for the entire campaign then swapping to KBoC in maps where you can then follow the excellent guides from legi and redviles linked below."
           }
         ]
       },
