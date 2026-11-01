@@ -46,18 +46,19 @@ export function carryGemAcquisitions(document: JSONContent): JSONContent {
   function copyNode(node: JSONContent, occurrences: Map<string, number>): JSONContent {
     if (node.type === 'gem') {
       const name = String(node.attrs?.name ?? '').toLowerCase();
-      actGems.add(name);
       const index = occurrences.get(name) ?? 0;
       occurrences.set(name, index + 1);
+      const copyKey = JSON.stringify([name, index]);
+      actGems.add(copyKey);
       const explicit = node.attrs?.acquisition;
       const inherited = choices.get(name)?.[index];
       const choice: Acquisition | undefined = explicit === 'reward' || explicit === 'buy' || explicit === 'none'
         ? { kind: explicit, act: Number(node.attrs?.acquisitionAct) || currentAct, vendor: String(node.attrs?.acquisitionVendor ?? '').trim() || (inherited?.kind === explicit ? inherited?.vendor ?? null : null) } : inherited;
       const isAcquisition = choice?.kind === 'reward' || choice?.kind === 'buy';
-      const first = isAcquisition && !obtained.has(name) && !earlierActGems.has(name);
-      if (first) obtained.set(name, choice.act);
-      if (isAcquisition && obtained.has(name)) choice.act = obtained.get(name) ?? null;
-      else if (isAcquisition && earlierActGems.has(name)) choice.act = null;
+      const first = isAcquisition && !obtained.has(copyKey) && !earlierActGems.has(copyKey);
+      if (first) obtained.set(copyKey, choice.act);
+      if (isAcquisition && obtained.has(copyKey)) choice.act = obtained.get(copyKey) ?? null;
+      else if (isAcquisition && earlierActGems.has(copyKey)) choice.act = null;
       if (choice) {
         const list = [...(choices.get(name) ?? [])];
         list[index] = choice;

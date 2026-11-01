@@ -125,6 +125,7 @@ export default function EditorApp({ initialGuides }: { initialGuides: Guide[] })
     editor.view.dom.dataset.guideLeague = guide.league;
     editor.view.dom.dataset.guideAscendancy = buildDetails(guide).ascendancy;
     editor.view.dom.dataset.guideSlug = guide.slug;
+    editor.view.dom.dataset.guideTitle = guide.title;
     editor.view.dom.dispatchEvent(new Event('gem-vendor-league'));
   }, [editor, guide.league, guide.ascendancy, guide.slug]);
 

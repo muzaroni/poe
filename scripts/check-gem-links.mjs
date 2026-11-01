@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import ts from 'typescript';
+import { Schema } from '@tiptap/pm/model';
+import { EditorState } from '@tiptap/pm/state';
 const source = fs.readFileSync(new URL('../src/lib/gem-links.ts', import.meta.url), 'utf8');
 const context = { exports: {}, require: name => {
   if (name === './gem-rewards') return { gemRewardNpc: () => null };
@@ -148,6 +150,70 @@ console.log('Alternative checks passed: shared sockets, option order, separate a
 
 const { gemProgressionStages } = context.exports;
 const heading = title => ({ type: 'heading', attrs: { level: 3 }, content: [text(title)] });
+const { carryGemAcquisitions } = context.exports;
+const lightning = acquisition => ({ ...gem('Added Lightning Damage Support', 'blue'), attrs: { ...gem('Added Lightning Damage Support', 'blue').attrs, acquisition } });
+const actHeading = number => ({ ...heading(`Act ${number}`), attrs: { level: 2 } });
+const acquisitionDoc = { type: 'doc', content: [actHeading(1), { type: 'gemSetup', content: [
+  heading('Earlier reward'), row('Main', lightning('reward')),
+  heading('Merveil'), row('Main', lightning(null)), row('Main 2', lightning('buy')),
+  heading('Later stage'), row('Main', lightning(null)), row('Main 2', lightning(null)),
+] }, actHeading(2), { type: 'gemSetup', content: [
+  row('Main', lightning(null)), row('Main 2', lightning(null)), row('Main 3', lightning('buy')),
+] }] };
+const acquisitionSaved = JSON.stringify(acquisitionDoc);
+const carried = carryGemAcquisitions(acquisitionDoc);
+const merveil = carried.content[1].content.slice(3, 5);
+assert.equal(gemAcquisitionGroups(merveil, 1).reward.length, 0, 'The earlier reward is already owned');
+assert.equal(gemAcquisitionGroups(merveil, 1).buy[0]?.quantity, 1, 'A new copy must appear under Buy even when an earlier copy was a reward');
+assert.equal(gemAcquisitionGroups(carried.content[1].content.slice(6), 1).buy.length, 0, 'Carried purchases must not be listed again at later stages');
+assert.equal(gemAcquisitionGroups(carried.content[3].content, 2).buy[0]?.quantity, 1, 'A new copy in a later act must retain its own acquisition act');
+assert.equal(JSON.stringify(acquisitionDoc), acquisitionSaved, 'Carrying acquisitions must not mutate the saved document');
+assert.equal(JSON.stringify(carryGemAcquisitions(carried)), JSON.stringify(carried), 'Acquisition normalization must be stable');
+console.log('Acquisition checks passed: earlier reward, new purchase, later stages, later acts, and immutable normalization.');
+const costContext = { exports: {}, require: name => {
+  if (name === './gem-vendor') return { gemVendorCost: gemName => gemName === 'Unknown Gem' ? null : { cost: 1, currency: gemName === 'Volley Support' ? 'Scroll of Wisdom' : 'Orb of Transmutation', icon: '/currency.png' } };
+  throw new Error(`Unexpected import: ${name}`);
+} };
+vm.runInNewContext(ts.transpileModule(fs.readFileSync(new URL('../src/lib/gem-costs.ts', import.meta.url), 'utf8'), { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS } }).outputText, costContext);
+const { withGemCosts } = costContext.exports;
+const stageCosts = withGemCosts(carried.content[1]);
+const totalText = node => node.content.map(child => child.text ?? '').join('');
+const totalLines = stageCosts.content.filter(node => node.type === 'paragraph' && totalText(node).startsWith('Total Cost:'));
+assert.deepEqual(Array.from(totalLines, totalText), ['Total Cost: None', 'Total Cost: 1  Orb of Transmutation', 'Total Cost: None']);
+const purchases = { type: 'gemSetup', content: [row('Main', purchase('Volley Support', true), purchase('Volley Support', true), purchase('Unknown Gem', true)), { type: 'paragraph', content: [text('Total Cost: 99')] }] };
+const priced = withGemCosts(purchases);
+assert.equal(priced.content.length, 2, 'Replace the existing manual total');
+assert.equal(totalText(priced.content[1]), 'Total Cost: 2  Scroll of Wisdom (price unavailable: Unknown Gem)');
+assert.equal(JSON.stringify(withGemCosts(priced)), JSON.stringify(priced), 'Cost updates must be stable');
+assert.equal(JSON.stringify(purchases).includes('99'), true, 'Cost calculation must preserve input');
+console.log('Automatic cost checks passed: stage totals, rewards, carried copies, duplicate purchases, currency totals, missing prices, replacement, and stability.');
+const editorSource = fs.readFileSync(new URL('../src/editor/extensions.tsx', import.meta.url), 'utf8');
+const refreshSource = editorSource.slice(editorSource.indexOf('function refreshGemCosts('), editorSource.indexOf('export const GemSetup ='));
+const refreshContext = { exports: {}, carryGemAcquisitions, withGemCosts };
+vm.runInNewContext(ts.transpileModule(`${refreshSource}\nexports.refreshGemCosts = refreshGemCosts;`, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS } }).outputText, refreshContext);
+const schema = new Schema({ nodes: {
+  doc: { content: 'block+' }, text: { group: 'inline' },
+  paragraph: { group: 'block', content: 'inline*' },
+  heading: { group: 'block', content: 'inline*', attrs: { level: { default: 2 } } },
+  gemSetup: { group: 'block', content: 'block+' },
+  gem: { group: 'inline', inline: true, atom: true, attrs: { name: {}, color: { default: 'blue' }, acquisition: { default: null } } },
+  icon: { group: 'inline', inline: true, atom: true, attrs: { src: {}, name: {} } },
+} });
+const editor = { schema, state: EditorState.create({ schema, doc: schema.nodeFromJSON({ type: 'doc', content: [actHeading(1), { type: 'gemSetup', content: [row('Main', lightning('reward')), { type: 'paragraph', content: [text('Total Cost: None')] }] }] }) }),
+  getJSON() { return this.state.doc.toJSON(); }, view: { dom: { dataset: {} }, dispatch(tr) { editor.state = editor.state.apply(tr); } } };
+for (const acquisition of ['buy', 'reward', 'buy', 'none', 'buy']) {
+  let gemPosition;
+  editor.state.doc.descendants((node, pos) => { if (node.type.name === 'gem') gemPosition = pos; });
+  editor.view.dispatch(editor.state.tr.setNodeMarkup(gemPosition, undefined, { ...editor.state.doc.nodeAt(gemPosition).attrs, acquisition }));
+  refreshContext.exports.refreshGemCosts(editor);
+  const saved = JSON.stringify(editor.getJSON());
+  refreshContext.exports.refreshGemCosts(editor);
+  assert.equal(JSON.stringify(editor.getJSON()), saved, 'Repeated editor updates must settle without extra cost paragraphs');
+  const blocks = editor.getJSON().content[1].content;
+  assert.equal(blocks.length, 2, 'Changing Buy/Reward must preserve one gem row and one total paragraph');
+  assert.equal(totalText(blocks[1]), acquisition === 'buy' ? 'Total Cost: 1  Orb of Transmutation' : 'Total Cost: None');
+}
+console.log('Editor transaction checks passed: repeated Buy/Reward changes keep exactly one complete total paragraph.');
 const link1 = row('Link 1', gem('Ground Slam'), text(' + '), gem('Ruthless Support'));
 const link2 = row('Link 2', gem('Shield Charge'), text(' + '), gem('Momentum Support', 'green'));
 const utility = row('Util', gem('Frostblink', 'blue'));

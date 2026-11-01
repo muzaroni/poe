@@ -12,8 +12,11 @@ import RegexCopyButton from './RegexCopyButton';
 import { gemVendorCostAt } from '../lib/gem-vendor';
 import { carryGemAcquisitions } from '../lib/gem-links';
 import GemAcquisitionSummary from './GemAcquisitionSummary';
+import { withGemCosts } from '../lib/gem-costs';
 
-type Props = { content: JSONContent; slug: string; league?: string; ascendancy?: string; normalized?: boolean; companionEntry?: boolean };
+const GuideTitleContext = createContext('');
+
+type Props = { title?: string; content: JSONContent; slug: string; league?: string; ascendancy?: string; normalized?: boolean; companionEntry?: boolean };
 const CampaignGemsContext = createContext<Record<string, CampaignGemStage[]>>({});
 const CampaignRegexContext = createContext<GuideRegex[]>([]);
 const CampaignAscendancyContext = createContext<CampaignAscendancySnapshot[]>([]);
@@ -69,7 +72,8 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
   const campaignAscendancy = useContext(CampaignAscendancyContext);
   const vendorLeague = useContext(VendorLeagueContext);
   const guideAscendancyName = useContext(GuideAscendancyContext);
-  const children = (node.content ?? []).map((child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup || node.type === 'gemSetup'} />);
+  const guideTitle = useContext(GuideTitleContext);
+  const children = ((node.type === 'gemSetup' ? withGemCosts(node, node, vendorLeague) : node).content ?? []).map((child, index) => <Node key={index} node={child} slug={slug} section={section} path={`${path}.${index}`} gemSetup={gemSetup || node.type === 'gemSetup'} />);
   const attrs = node.attrs ?? {};
   switch (node.type) {
     case 'text': return <Text node={node} />;
@@ -96,7 +100,7 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
       return <figure><img className={width == null ? undefined : 'has-custom-width'} style={width == null ? undefined : { width: `${width}%`, height: 'auto' }} src={assetUrl(String(attrs.src ?? ''))} alt={String(attrs.alt ?? '')} loading="lazy" />{caption && <figcaption>{String(caption)}</figcaption>}</figure>;
     }
     case 'regex': return <Regex label={String(attrs.label ?? 'Regex')} value={String(attrs.value ?? '')} />;
-    case 'passiveTree': return <TreeBlock compactCompanion={compactCompanion} snapshot={attrs.snapshot ?? {}} guideGemLinks={campaignGemLinks} guideRegexes={campaignRegexes} guideAscendancy={campaignAscendancy} guideCharacterAscendancy={guideAscendancyName} guideLeague={vendorLeague} guideSlug={slug} />;
+    case 'passiveTree': return <TreeBlock compactCompanion={compactCompanion} snapshot={attrs.snapshot ?? {}} guideGemLinks={campaignGemLinks} guideRegexes={campaignRegexes} guideAscendancy={campaignAscendancy} guideCharacterAscendancy={guideAscendancyName} guideLeague={vendorLeague} guideSlug={slug} guideTitle={guideTitle} />;
     case 'gemPathChoice': return <GemPathCards node={node} />;
     case 'gemPathMerge': return <div className="gem-path-merge">Paths merge · {attrs.title || 'Continue with shared gem links'}</div>;
     case 'gemSetup': return <section className="gem-setup" title={attrs.previousSetup ? `Changes from ${attrs.previousSetup.title}` : undefined}><div className="block-eyebrow">GEM LINKS</div><GemAcquisitionSummary nodes={node.content ?? []} ascendancy={guideAscendancyName} league={vendorLeague} /><GemSetupComparison content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides}>{children}</GemSetupComparison><GemSetupChanges content={node.content ?? []} baseline={attrs.previousSetup} overrides={attrs.changeOverrides} /></section>;
@@ -108,7 +112,7 @@ function Node({ node, slug, section, path, gemSetup = false }: { node: JSONConte
   }
 }
 
-export default function GuideDocument({ content, slug, league = '', ascendancy = '', normalized = false, companionEntry = false }: Props) {
+export default function GuideDocument({ content, slug, title = '', league = '', ascendancy = '', normalized = false, companionEntry = false }: Props) {
   const paths = useGemPaths(content, slug);
   const companion = companionEntry ? content.content?.find(node => node.type === 'passiveTree' && node.attrs?.snapshot?.campaignMode && node.attrs.snapshot.nodes?.length) : undefined;
   const chooser = useRef<HTMLElement>(null);
@@ -223,7 +227,7 @@ export default function GuideDocument({ content, slug, league = '', ascendancy =
     return () => window.removeEventListener('poe-close-companion', returnToGuide);
   }, [companionEntry, slug, displayContent]);
   const headingCount = sections.length - 1;
-  return <CompanionEntryContext.Provider value={companionEntry}><GemPathsContext.Provider value={paths.value}><VendorLeagueContext.Provider value={league}><GuideAscendancyContext.Provider value={ascendancy}><CampaignGemsContext.Provider value={campaignGemLinks}><CampaignRegexContext.Provider value={campaignRegexes}><CampaignAscendancyContext.Provider value={campaignAscendancy}><div ref={documentRoot} className="guide-content">
+  return <GuideTitleContext.Provider value={title}><CompanionEntryContext.Provider value={companionEntry}><GemPathsContext.Provider value={paths.value}><VendorLeagueContext.Provider value={league}><GuideAscendancyContext.Provider value={ascendancy}><CampaignGemsContext.Provider value={campaignGemLinks}><CampaignRegexContext.Provider value={campaignRegexes}><CampaignAscendancyContext.Provider value={campaignAscendancy}><div ref={documentRoot} className="guide-content">
     {companion && <section ref={chooser} className="guide-follow-choice" aria-label="Choose how to follow this build">
       <h2>How do you want to follow this build?</h2>
       <div className="guide-follow-options">
@@ -237,5 +241,5 @@ export default function GuideDocument({ content, slug, league = '', ascendancy =
       {section.heading && <h2 id={headingId(section.title)}><button type="button" aria-expanded={!collapsed[index]} aria-controls={`guide-section-${index}`} onClick={() => setCollapsed(current => ({ ...current, [index]: !current[index] }))}><span>{(section.heading.content ?? []).map((child, childIndex) => <Node key={childIndex} node={child} slug={slug} section={section.title} path={`${index}.heading.${childIndex}`} />)}</span><span className="guide-section-toggle">{collapsed[index] ? 'Show' : 'Hide'} <span className="guide-section-chevron" aria-hidden="true">▴</span></span></button></h2>}
       <div className={section.heading ? 'guide-section-body' : undefined} id={section.heading ? `guide-section-${index}` : undefined} aria-hidden={section.heading ? !!collapsed[index] : undefined} inert={section.heading ? !!collapsed[index] : undefined}><div className={section.heading ? 'guide-section-inner' : undefined}>{section.items.map(({ node, index: nodeIndex }) => <Node key={nodeIndex} node={node} slug={slug} section={section.title} path={String(nodeIndex)} />)}</div></div>
     </div>)}
-  </div></CampaignAscendancyContext.Provider></CampaignRegexContext.Provider></CampaignGemsContext.Provider></GuideAscendancyContext.Provider></VendorLeagueContext.Provider></GemPathsContext.Provider></CompanionEntryContext.Provider>;
+  </div></CampaignAscendancyContext.Provider></CampaignRegexContext.Provider></CampaignGemsContext.Provider></GuideAscendancyContext.Provider></VendorLeagueContext.Provider></GemPathsContext.Provider></CompanionEntryContext.Provider></GuideTitleContext.Provider>;
 }

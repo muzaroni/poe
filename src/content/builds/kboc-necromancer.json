@@ -12,7 +12,7 @@
   "subtitle": "KBoC early leveling and progression guide",
   "league": "3.30",
   "ascendancy": "Necromancer",
-  "updated": "2026-10-29",
+  "updated": "2026-10-31",
   "content": {
     "type": "doc",
     "content": [
@@ -851,6 +851,26 @@
                 ]
               }
             ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 1 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/wisdom.png",
+                  "name": "Scroll of Wisdom"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Scroll of Wisdom"
+              }
+            ]
           }
         ]
       },
@@ -1113,109 +1133,6 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Dweller"
-          }
-        ]
-      },
-      {
-        "type": "taskList",
-        "content": [
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Get "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Added Lightning Damage Support",
-                      "color": "blue",
-                      "acquisition": null,
-                      "acquisitionAct": null,
-                      "acquisitionVendor": null
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Brutus"
-          }
-        ]
-      },
-      {
-        "type": "taskList",
-        "content": [
-          {
-            "type": "taskItem",
-            "attrs": {
-              "checked": false
-            },
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Buy "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Precision",
-                      "color": "green",
-                      "acquisition": null,
-                      "acquisitionAct": null,
-                      "acquisitionVendor": null
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " - 1 "
-                  },
-                  {
-                    "type": "icon",
-                    "attrs": {
-                      "src": "/images/sunder-rf/trans.png",
-                      "name": "Orb of Transmutation"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " "
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
         "type": "gemSetup",
         "attrs": {
           "pathChoice": null,
@@ -1244,7 +1161,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Kinetic Bolt",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -1255,7 +1175,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Prismatic Burst Support",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "buy",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -1266,7 +1189,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Momentum Support",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": "Mule Ranger"
                             }
                           },
                           {
@@ -1402,37 +1328,6 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Aura: "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Precision",
-                          "color": "green",
-                          "acquisition": "buy",
-                          "acquisitionAct": 1,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " "
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "taskItem",
-                "attrs": {
-                  "checked": false
-                },
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
                         "text": "Utility: "
                       },
                       {
@@ -1474,6 +1369,129 @@
                         }
                       }
                     ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 2 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/wisdom.png",
+                  "name": "Scroll of Wisdom"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Scroll of Wisdom"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dweller"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Get "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Added Lightning Damage Support",
+                      "color": "blue",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brutus"
+          }
+        ]
+      },
+      {
+        "type": "taskList",
+        "content": [
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Precision",
+                      "color": "green",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " - 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " "
                   }
                 ]
               }
@@ -1833,7 +1851,7 @@
           "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
-            "title": "Brutus · Main, Movement, Aura, Utility",
+            "title": "Hailrake · Main, Movement, Utility",
             "content": [
               {
                 "type": "taskList",
@@ -1855,7 +1873,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Kinetic Bolt",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -1866,7 +1887,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Added Lightning Damage Support",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -1877,7 +1901,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Prismatic Burst Support",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -1905,7 +1932,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Shield Charge",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "buy",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -1916,7 +1946,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Momentum Support",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
@@ -1939,41 +1972,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": "Aura: "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Precision",
-                              "color": "green"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " "
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "taskItem",
-                    "attrs": {
-                      "checked": false
-                    },
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
                             "text": "Utility: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Frostblink",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -1984,7 +1992,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Holy Flame Totem",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "buy",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -1995,7 +2006,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Flame Wall",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
@@ -2008,18 +2022,6 @@
           }
         },
         "content": [
-          {
-            "type": "heading",
-            "attrs": {
-              "level": 3
-            },
-            "content": [
-              {
-                "type": "text",
-                "text": "Level 12: Mervail"
-              }
-            ]
-          },
           {
             "type": "taskList",
             "content": [
@@ -2055,7 +2057,7 @@
                         "attrs": {
                           "name": "Added Lightning Damage Support",
                           "color": "blue",
-                          "acquisition": "none",
+                          "acquisition": null,
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -2159,7 +2161,21 @@
                         "attrs": {
                           "name": "Shield Charge",
                           "color": "red",
-                          "acquisition": "none",
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum Support",
+                          "color": "green",
+                          "acquisition": null,
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -2175,52 +2191,6 @@
                           "color": "green",
                           "acquisition": "buy",
                           "acquisitionAct": 1,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " + "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Momentum Support",
-                          "color": "green",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "taskList",
-            "content": [
-              {
-                "type": "taskItem",
-                "attrs": {
-                  "checked": false
-                },
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": "Aura: "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Precision",
-                          "color": "green",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
                       },
@@ -2243,6 +2213,42 @@
                     "content": [
                       {
                         "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Precision",
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
                         "text": "Utility: "
                       },
                       {
@@ -2250,8 +2256,22 @@
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Holy Flame Totem",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
                           "acquisitionVendor": null
                         }
                       },
@@ -2264,8 +2284,8 @@
                         "attrs": {
                           "name": "Flame Wall",
                           "color": "blue",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
                           "acquisitionVendor": null
                         }
                       }
@@ -2285,24 +2305,24 @@
               {
                 "type": "icon",
                 "attrs": {
-                  "src": "/images/sunder-rf/wisdom.png",
-                  "name": "Scroll of Wisdom"
-                }
-              },
-              {
-                "type": "text",
-                "text": " Scroll of Wisdom, 5 "
-              },
-              {
-                "type": "icon",
-                "attrs": {
                   "src": "/images/sunder-rf/trans.png",
                   "name": "Orb of Transmutation"
                 }
               },
               {
                 "type": "text",
-                "text": " Orb of Transmutation "
+                "text": " Orb of Transmutation, 2 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/wisdom.png",
+                  "name": "Scroll of Wisdom"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Scroll of Wisdom"
               }
             ]
           }
@@ -3132,7 +3152,7 @@
               },
               {
                 "type": "text",
-                "text": " Orb of Alteration "
+                "text": " Orb of Alteration"
               }
             ]
           }
@@ -4345,7 +4365,7 @@
               },
               {
                 "type": "text",
-                "text": " Orb of Alteration "
+                "text": " Orb of Alteration"
               }
             ]
           }
@@ -5661,6 +5681,26 @@
                 ]
               }
             ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 3 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/currency/alchemy.png",
+                  "name": "Orb of Alchemy"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Alchemy"
+              }
+            ]
           }
         ]
       },
@@ -6585,6 +6625,15 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
               }
             ]
           }
@@ -7793,6 +7842,26 @@
                 ]
               }
             ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 1 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/currency/alchemy.png",
+                  "name": "Orb of Alchemy"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Alchemy (price unavailable: Sniper's Mark)"
+              }
+            ]
           }
         ]
       },
@@ -8527,6 +8596,59 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 2 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/chance.png",
+                  "name": "Orb of Chance"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Chance, 2 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/alt.png",
+                  "name": "Orb of Alteration"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Alteration, 1 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/trans.png",
+                  "name": "Orb of Transmutation"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Transmutation, 1 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/wisdom.png",
+                  "name": "Scroll of Wisdom"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Scroll of Wisdom"
               }
             ]
           }
@@ -9897,6 +10019,15 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
               }
             ]
           }

@@ -18,6 +18,9 @@ const trail = breadcrumbs ?? (isHome ? [] : [{ label: title }]);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#07090c" />
+    <link rel="icon" href={`${base}favicon.ico`} sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32.png`} />
+    <link rel="icon" type="image/png" sizes="16x16" href={`${base}favicon-16.png`} />
     <meta name="description" content={description} />
     <title>{title} · Muzaroni PoE</title>
     <Analytics />

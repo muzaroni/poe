@@ -3,7 +3,8 @@ import { GemPathsContext, GemPathCards, useGemPaths } from '../components/GemPat
 import { setupRows, type GemSetupBaseline } from '../lib/gem-links';
 import GemChangeControls from './GemChangeControls';
 import GemSetupChanges from '../components/GemSetupChanges';
-import type { JSONContent } from '@tiptap/core';
+import type { Editor, JSONContent } from '@tiptap/core';
+import { withGemCosts } from '../lib/gem-costs';
 import TreeBlockEditor from './TreeBlockEditor';
 import { gemDisplayName } from '../lib/gems';
 import { Node, mergeAttributes } from '@tiptap/core';
@@ -280,8 +281,28 @@ function GemSetupEditor({ node, editor, getPos, updateAttributes }: NodeViewProp
   </NodeViewWrapper>;
 }
 
+function refreshGemCosts(editor: Editor) {
+  const normalized = carryGemAcquisitions(editor.getJSON());
+  const tr = editor.state.tr;
+  editor.state.doc.forEach((node, offset, index) => {
+    if (node.type.name !== 'gemSetup') return;
+    const calculated = withGemCosts(node.toJSON(), normalized.content?.[index], editor.view.dom.dataset.guideLeague ?? '');
+    const next = editor.schema.nodeFromJSON(calculated);
+    const start = node.content.findDiffStart(next.content);
+    if (start === null) return;
+    const end = node.content.findDiffEnd(next.content)!;
+    const overlap = start - Math.min(end.a, end.b);
+    if (overlap > 0) { end.a += overlap; end.b += overlap; }
+    // Preserve open paragraph boundaries when a change starts inside a total's text.
+    tr.replace(tr.mapping.map(offset + 1 + start), tr.mapping.map(offset + 1 + end.a), next.slice(start, end.b));
+  });
+  if (tr.docChanged) editor.view.dispatch(tr);
+}
+
 export const GemSetup = Node.create({
   name: 'gemSetup', group: 'block', content: 'block+', defining: true,
+  onCreate() { refreshGemCosts(this.editor); },
+  onUpdate() { refreshGemCosts(this.editor); },
   addAttributes() { return { pathChoice: { default: null }, pathId: { default: null }, changeOverrides: { default: null, parseHTML: element => { try { return JSON.parse(element.getAttribute('data-gem-change-overrides') ?? 'null'); } catch { return null; } }, renderHTML: attrs => attrs.changeOverrides ? { 'data-gem-change-overrides': JSON.stringify(attrs.changeOverrides) } : {} }, previousSetup: { default: null, parseHTML: element => { try { return JSON.parse(element.getAttribute('data-previous-setup') ?? 'null'); } catch { return null; } }, renderHTML: attrs => attrs.previousSetup ? { 'data-previous-setup': JSON.stringify(attrs.previousSetup) } : {} } }; },
   parseHTML() { return [{ tag: 'section[data-gem-setup]' }]; },
   renderHTML({ HTMLAttributes }) { return ['section', mergeAttributes(HTMLAttributes, { 'data-gem-setup': '', class: 'gem-setup' }), 0]; },
