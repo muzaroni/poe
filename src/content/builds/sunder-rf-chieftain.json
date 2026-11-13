@@ -2,8 +2,8 @@
   "slug": "sunder-rf-chieftain",
   "title": "Sunder Leveling",
   "subtitle": "Level with Sunder, then swap to Righteous Fire at Blood Aqueducts.",
-  "league": "3.29",
-  "updated": "2026-10-20",
+  "league": "3.30",
+  "updated": "2026-11-12",
   "content": {
     "type": "doc",
     "content": [
@@ -99,6 +99,37 @@
         "attrs": {
           "links": [
             {
+              "label": "3.29 Hour 6 POB - Mapping progression",
+              "url": "https://pob.codes/b/wVEGkUF4SGp"
+            },
+            {
+              "label": "3.29 Day 1 POB - First Inscribed",
+              "url": "https://pob.codes/b/s65GbKOsKXr"
+            },
+            {
+              "label": "3.29 Day 2 POB - Final with MB",
+              "url": "https://pob.codes/b/_msgt0nm8xD"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Old POB Links - Good for progression"
+          }
+        ]
+      },
+      {
+        "type": "pobLinks",
+        "attrs": {
+          "links": [
+            {
               "label": "3.28 Guide POB : This Guide USE THIS",
               "url": "https://pobb.in/Mte0VuKLso3C"
             },
@@ -176,7 +207,7 @@
         "type": "regex",
         "attrs": {
           "label": "Axes, 3L, 4L, gems A1-6",
-          "value": "\"-\\w-.-|(-\\w){4}|Runn|rint|s:.+ax|male|^burning damage s|^purity of f|sand$|od rag|bly|^dete|dati|^fire t|stbl|d of p|^elemental f|^righteous f|^trap a|leed s|^mom\""
+          "value": "\"-\\w-.-|(-\\w){4}|-[rgbw]-|Runn|rint|s:.+ax|ster at|male|ess su|^burning damage s|^purity of f|sand$|od rag|^dete|dati|sunder$|^fire t|stbl|lood$|d of p|^elemental f|^righteous f|^melee p|f ash$|leed s|^mom\""
         }
       },
       {
@@ -380,7 +411,7 @@
                 "note": "",
                 "actDivider": "Act 1",
                 "positionX": -4515.367522988014,
-                "positionY": 1870.7150217781195
+                "positionY": 1870.7150217781193
               },
               {
                 "nodeId": 12795,
@@ -392,7 +423,7 @@
                 "nodeId": 14606,
                 "note": "",
                 "positionX": -5441.6175229880155,
-                "positionY": 1535.7150217781204
+                "positionY": 1535.7150217781202
               },
               {
                 "nodeId": 53118,
@@ -410,9 +441,10 @@
               {
                 "nodeId": 24224,
                 "note": "30% increased Damage while in Blood Stance; 15% increased Area of Effect while in Sand Stance",
+                "label": "Blood Stance",
                 "actDivider": "Act 3",
-                "positionX": -8364.967522988016,
-                "positionY": 2499.0350217781192
+                "positionX": -8512.49963537354,
+                "positionY": 2421.170729067198
               },
               {
                 "nodeId": 48199,
@@ -424,19 +456,20 @@
                 "nodeId": 24383,
                 "note": "",
                 "positionX": -4515.367522988014,
-                "positionY": 3142.1850217781175
+                "positionY": 3142.185021778117
               },
               {
                 "nodeId": 25934,
                 "note": "40% increased Damage with Hits against Rare and Unique Enemies",
+                "label": "40% Damage",
                 "actDivider": "Act 4",
-                "positionX": -4110.80842569796,
-                "positionY": 3859.869497829417
+                "positionX": -4078.023634119737,
+                "positionY": 3929.537592645782
               },
               {
                 "nodeId": 63422,
                 "note": "",
-                "positionX": -6294.223638401093,
+                "positionX": -6294.223638401092,
                 "positionY": 3950.9350217781193
               },
               {
@@ -455,14 +488,15 @@
               {
                 "nodeId": 53517,
                 "note": "Regenerate 50 Life per second",
+                "label": "Regen 50 Life",
                 "actDivider": "Act 6",
-                "positionX": -7182.093569201235,
-                "positionY": 1475.2644339801186
+                "positionX": -7137.014343210298,
+                "positionY": 1462.9699995674048
               },
               {
                 "nodeId": 50904,
                 "note": "Take these 5 life/ar nodes",
-                "positionX": -3173.3811632737493,
+                "positionX": -3173.38116327375,
                 "positionY": 2704.586016217069,
                 "nodeIds": [
                   50904,
@@ -475,9 +509,10 @@
               {
                 "nodeId": 2841,
                 "note": "12% increased Mana Reservation Efficiency of Skills",
+                "label": "15% RMR",
                 "actDivider": "Act 7",
-                "positionX": -6849.394364213068,
-                "positionY": 3414.7070378082144
+                "positionX": -6883.1863314853,
+                "positionY": 3425.204186504868
               },
               {
                 "nodeId": 61198,
@@ -496,20 +531,21 @@
                 "note": "",
                 "actDivider": "Act 8",
                 "positionX": -7038.423569201236,
-                "positionY": -1586.4916814329606
+                "positionY": -1586.4916814329608
               },
               {
                 "nodeId": 32932,
                 "note": "",
                 "positionX": -6662.897453788158,
-                "positionY": -4263.935566019882
+                "positionY": -4263.935566019883
               },
               {
                 "nodeId": 48267,
                 "note": "Regenerate 1 Life per second for each 1% Uncapped Fire Resistance",
+                "label": "Uncapped Fire Res",
                 "actDivider": "Act 9",
-                "positionX": -5175.859647971902,
-                "positionY": 463.2181039140312
+                "positionX": -5482.417304820356,
+                "positionY": 528.0668694631622
               },
               {
                 "nodeId": 25989,
@@ -1491,7 +1527,11 @@
       {
         "type": "gemSetup",
         "attrs": {
-          "changeOverrides": null,
+          "pathChoice": null,
+          "pathId": null,
+          "changeOverrides": {
+            "stages": {}
+          },
           "previousSetup": null
         },
         "content": [
@@ -1521,7 +1561,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
@@ -1556,21 +1596,7 @@
                         "attrs": {
                           "name": "Chance to Bleed",
                           "color": "red",
-                          "acquisition": "buy",
-                          "acquisitionAct": 1,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " or "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Momentum",
-                          "color": "green",
-                          "acquisition": "buy",
+                          "acquisition": "reward",
                           "acquisitionAct": 1,
                           "acquisitionVendor": null
                         }
@@ -1590,7 +1616,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 2: "
+                        "text": "Move: "
                       },
                       {
                         "type": "gem",
@@ -1609,12 +1635,16 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Momentum",
+                          "name": "Momentum Support",
                           "color": "green",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -1650,20 +1680,6 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Blood & Sand",
-                          "color": "red",
-                          "acquisition": "buy",
-                          "acquisitionAct": 1,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
                           "name": "Intimidating Cry",
                           "color": "red",
                           "acquisition": "buy",
@@ -1674,6 +1690,68 @@
                     ]
                   }
                 ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red",
+                          "acquisition": "buy",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: 3 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/wisdom.png",
+                  "name": "Scroll of Wisdom"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Scroll of Wisdom, 1 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/trans.png",
+                  "name": "Orb of Transmutation"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Transmutation"
               }
             ]
           },
@@ -1703,7 +1781,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
@@ -1742,20 +1820,6 @@
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
-                      },
-                      {
-                        "type": "text",
-                        "text": " or "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Momentum",
-                          "color": "green",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
                       }
                     ]
                   }
@@ -1772,7 +1836,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 2: "
+                        "text": "Move: "
                       },
                       {
                         "type": "gem",
@@ -1797,6 +1861,24 @@
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -1827,21 +1909,7 @@
                       },
                       {
                         "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Blood & Sand",
-                          "color": "red",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
+                        "text": " , "
                       },
                       {
                         "type": "gem",
@@ -1856,6 +1924,46 @@
                     ]
                   }
                 ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
               }
             ]
           },
@@ -1885,7 +1993,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
@@ -1924,20 +2032,6 @@
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
-                      },
-                      {
-                        "type": "text",
-                        "text": " or "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Momentum",
-                          "color": "green",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
                       }
                     ]
                   }
@@ -1954,7 +2048,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": "Link 2: "
+                        "text": "Move: "
                       },
                       {
                         "type": "gem",
@@ -1979,6 +2073,24 @@
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -2014,20 +2126,6 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Blood & Sand",
-                          "color": "red",
-                          "acquisition": "none",
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
                           "name": "Intimidating Cry",
                           "color": "red",
                           "acquisition": "none",
@@ -2038,6 +2136,46 @@
                     ]
                   }
                 ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
               }
             ]
           }
@@ -2343,9 +2481,11 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
-            "title": "Fairgraves (Enter Caverns) · Link 1, Link 2, Util, Link 1, Link 2, Util, Link 1, Link 2, Util",
+            "title": "Fairgraves (Enter Caverns) · Main, Move, Util, Aura, Main, Move, Util, Aura, Main, Move, Util, Aura",
             "content": [
               {
                 "type": "heading",
@@ -2373,13 +2513,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": "Link 1: "
+                            "text": "Main: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Ground Slam",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2390,7 +2533,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Ruthless",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2401,18 +2547,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Chance to Bleed",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " or "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Momentum",
-                              "color": "green"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
@@ -2430,13 +2568,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": "Link 2: "
+                            "text": "Move: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Shield Charge",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2446,9 +2587,16 @@
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Momentum",
-                              "color": "green"
+                              "name": "Momentum Support",
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
                           }
                         ]
                       }
@@ -2471,18 +2619,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Frostblink",
-                              "color": "blue"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": ", "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Blood & Sand",
-                              "color": "red"
+                              "color": "blue",
+                              "acquisition": "buy",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2493,12 +2633,77 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Intimidating Cry",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "buy",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
                       }
                     ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood and Sand",
+                              "color": "red",
+                              "acquisition": "buy",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Total Cost: 3 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/wisdom.png",
+                      "name": "Scroll of Wisdom"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " Scroll of Wisdom, 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/trans.png",
+                      "name": "Orb of Transmutation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " Orb of Transmutation"
                   }
                 ]
               },
@@ -2528,13 +2733,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": "Link 1: "
+                            "text": "Main: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Ground Slam",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2545,7 +2753,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Ruthless",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2556,18 +2767,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Chance to Bleed",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " or "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Momentum",
-                              "color": "green"
+                              "color": "red",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
@@ -2585,13 +2788,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": "Link 2: "
+                            "text": "Move: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Leap Slam",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2602,8 +2808,29 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Momentum",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
                           }
                         ]
                       }
@@ -2626,34 +2853,69 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Frostblink",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
                             "type": "text",
-                            "text": ", "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Blood & Sand",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": ", "
+                            "text": " , "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Intimidating Cry",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
                       }
                     ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood and Sand",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Total Cost: None"
                   }
                 ]
               },
@@ -2683,13 +2945,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": "Link 1: "
+                            "text": "Main: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Sunder",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2700,7 +2965,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Ruthless",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2711,18 +2979,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Chance to Bleed",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " or "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Momentum",
-                              "color": "green"
+                              "color": "red",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
@@ -2740,13 +3000,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": "Link 2: "
+                            "text": "Move: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Leap Slam",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2757,8 +3020,29 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Momentum",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
                           }
                         ]
                       }
@@ -2781,18 +3065,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Frostblink",
-                              "color": "blue"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": ", "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Blood & Sand",
-                              "color": "red"
+                              "color": "blue",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -2803,12 +3079,55 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Intimidating Cry",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           }
                         ]
                       }
                     ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood and Sand",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Total Cost: None"
                   }
                 ]
               }
@@ -2830,15 +3149,15 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
                           "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
                           "acquisitionVendor": null
                         }
                       },
@@ -2849,7 +3168,7 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Melee Physical Damage",
+                          "name": "Melee Physical Damage Support",
                           "color": "red",
                           "acquisition": "reward",
                           "acquisitionAct": 2,
@@ -2863,26 +3182,16 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Ruthless",
-                          "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "name": "Close Combat Support",
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 2,
                           "acquisitionVendor": null
                         }
                       },
                       {
                         "type": "text",
-                        "text": " or "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Close Combat",
-                          "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
+                        "text": " "
                       }
                     ]
                   }
@@ -2899,7 +3208,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 2: "
+                        "text": "Move: "
                       },
                       {
                         "type": "gem",
@@ -2918,9 +3227,9 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Faster Attacks",
+                          "name": "Momentum",
                           "color": "green",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -2932,12 +3241,16 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Momentum",
+                          "name": "Faster Attacks Support",
                           "color": "green",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -2954,55 +3267,14 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Aura: "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Herald of Ash",
-                          "color": "red",
-                          "acquisition": "reward",
-                          "acquisitionAct": 2,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Blood and Sand",
-                          "color": "red",
-                          "acquisition": "buy",
-                          "acquisitionAct": 2,
-                          "acquisitionVendor": null
-                        }
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "taskItem",
-                "attrs": {
-                  "checked": false
-                },
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": " Util: "
+                        "text": "Util: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -3016,7 +3288,7 @@
                         "attrs": {
                           "name": "Intimidating Cry",
                           "color": "red",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -3030,10 +3302,59 @@
                         "attrs": {
                           "name": "Blood Rage",
                           "color": "green",
-                          "acquisition": "buy",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red",
+                          "acquisition": "reward",
                           "acquisitionAct": 2,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -3046,7 +3367,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Total Cost: 2 "
+                "text": "Total Cost: 1 "
               },
               {
                 "type": "icon",
@@ -3057,18 +3378,7 @@
               },
               {
                 "type": "text",
-                "text": " Orb of Alteration , 3 "
-              },
-              {
-                "type": "icon",
-                "attrs": {
-                  "src": "/images/sunder-rf/wisdom.png",
-                  "name": "Scroll of Wisdom"
-                }
-              },
-              {
-                "type": "text",
-                "text": " Scroll of Wisdom "
+                "text": " Orb of Alteration"
               }
             ]
           }
@@ -3338,15 +3648,48 @@
                 ]
               }
             ]
+          },
+          {
+            "type": "taskItem",
+            "attrs": {
+              "checked": false
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buy "
+                  },
+                  {
+                    "type": "gem",
+                    "attrs": {
+                      "name": "Purity of Fire",
+                      "color": "red",
+                      "acquisition": null,
+                      "acquisitionAct": null,
+                      "acquisitionVendor": null
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Level offhand)"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
-            "title": "Weaver · Link 1, Link 2, Aura, Util",
+            "title": "Weaver · Main, Move, Util, Aura",
             "content": [
               {
                 "type": "taskList",
@@ -3362,13 +3705,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": " Link 1: "
+                            "text": "Main: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Sunder",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -3378,8 +3724,11 @@
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Melee Physical Damage",
-                              "color": "red"
+                              "name": "Melee Physical Damage Support",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -3389,20 +3738,16 @@
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Ruthless",
-                              "color": "red"
+                              "name": "Close Combat Support",
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
                             }
                           },
                           {
                             "type": "text",
-                            "text": " or "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Close Combat",
-                              "color": "green"
-                            }
+                            "text": " "
                           }
                         ]
                       }
@@ -3419,24 +3764,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": " Link 2: "
+                            "text": "Move: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Leap Slam",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " + "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Faster Attacks",
-                              "color": "green"
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -3447,8 +3784,29 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Momentum",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
                           }
                         ]
                       }
@@ -3465,48 +3823,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": " Aura: "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Herald of Ash",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": ", "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Blood and Sand",
-                              "color": "red"
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "taskItem",
-                    "attrs": {
-                      "checked": false
-                    },
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "text": " Util: "
+                            "text": "Util: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Frostblink",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -3517,7 +3843,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Intimidating Cry",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -3528,8 +3857,60 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Blood Rage",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood and Sand",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Herald of Ash",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
                           }
                         ]
                       }
@@ -3542,7 +3923,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Total Cost: 2 "
+                    "text": "Total Cost: 1 "
                   },
                   {
                     "type": "icon",
@@ -3553,18 +3934,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " Orb of Alteration , 3 "
-                  },
-                  {
-                    "type": "icon",
-                    "attrs": {
-                      "src": "/images/sunder-rf/wisdom.png",
-                      "name": "Scroll of Wisdom"
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " Scroll of Wisdom "
+                    "text": " Orb of Alteration"
                   }
                 ]
               }
@@ -3586,15 +3956,15 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
                           "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
                           "acquisitionVendor": null
                         }
                       },
@@ -3605,10 +3975,10 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Melee Physical Damage",
+                          "name": "Melee Physical Damage Support",
                           "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
                           "acquisitionVendor": null
                         }
                       },
@@ -3619,40 +3989,30 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Cruelty",
+                          "name": "Close Combat Support",
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Cruelty Support",
                           "color": "red",
                           "acquisition": "buy",
                           "acquisitionAct": 3,
-                          "acquisitionVendor": null
+                          "acquisitionVendor": "Act 2"
                         }
                       },
                       {
                         "type": "text",
-                        "text": " + "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Ruthless",
-                          "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " or "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Close Combat",
-                          "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
+                        "text": " "
                       }
                     ]
                   }
@@ -3669,7 +4029,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 2: "
+                        "text": "Move: "
                       },
                       {
                         "type": "gem",
@@ -3688,9 +4048,9 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Faster Attacks",
+                          "name": "Momentum",
                           "color": "green",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -3702,12 +4062,16 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Momentum",
+                          "name": "Faster Attacks Support",
                           "color": "green",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -3724,55 +4088,14 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Aura: "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Herald of Ash",
-                          "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Blood and Sand",
-                          "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "taskItem",
-                "attrs": {
-                  "checked": false
-                },
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": " Util: "
+                        "text": "Util: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -3786,7 +4109,7 @@
                         "attrs": {
                           "name": "Intimidating Cry",
                           "color": "red",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -3818,6 +4141,55 @@
                           "acquisitionAct": 3,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -3830,7 +4202,18 @@
             "content": [
               {
                 "type": "text",
-                "text": "Total Cost: None"
+                "text": "Total Cost: 1 "
+              },
+              {
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/alt.png",
+                  "name": "Orb of Alteration"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Alteration"
               }
             ]
           }
@@ -4109,38 +4492,6 @@
                       "acquisitionAct": null,
                       "acquisitionVendor": null
                     }
-                  },
-                  {
-                    "type": "text",
-                    "text": " replace "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Cruelty",
-                      "color": "red",
-                      "acquisition": null,
-                      "acquisitionAct": null,
-                      "acquisitionVendor": null
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " or "
-                  },
-                  {
-                    "type": "gem",
-                    "attrs": {
-                      "name": "Ruthless Support",
-                      "color": "red",
-                      "acquisition": null,
-                      "acquisitionAct": null,
-                      "acquisitionVendor": null
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "text": " "
                   }
                 ]
               }
@@ -4151,9 +4502,11 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": {
-            "title": "Piety · Link 1, Link 2, Aura, Util",
+            "title": "Piety · Main, Move, Util, Aura",
             "content": [
               {
                 "type": "taskList",
@@ -4169,13 +4522,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": " Link 1: "
+                            "text": "Main: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Sunder",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4185,8 +4541,11 @@
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Melee Physical Damage",
-                              "color": "red"
+                              "name": "Melee Physical Damage Support",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4196,8 +4555,11 @@
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Cruelty",
-                              "color": "red"
+                              "name": "Close Combat Support",
+                              "color": "green",
+                              "acquisition": "buy",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4207,20 +4569,16 @@
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Ruthless",
-                              "color": "red"
+                              "name": "Cruelty Support",
+                              "color": "red",
+                              "acquisition": "buy",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": "Act 2"
                             }
                           },
                           {
                             "type": "text",
-                            "text": " or "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Close Combat",
-                              "color": "green"
-                            }
+                            "text": " "
                           }
                         ]
                       }
@@ -4237,24 +4595,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": " Link 2: "
+                            "text": "Move: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Leap Slam",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " + "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Faster Attacks",
-                              "color": "green"
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4265,8 +4615,29 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Momentum",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
                           }
                         ]
                       }
@@ -4283,48 +4654,16 @@
                         "content": [
                           {
                             "type": "text",
-                            "text": " Aura: "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Herald of Ash",
-                              "color": "red"
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": ", "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Blood and Sand",
-                              "color": "red"
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "taskItem",
-                    "attrs": {
-                      "checked": false
-                    },
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "text": " Util: "
+                            "text": "Util: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
                               "name": "Frostblink",
-                              "color": "blue"
+                              "color": "blue",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4335,7 +4674,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Intimidating Cry",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4346,7 +4688,10 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Blood Rage",
-                              "color": "green"
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
                             }
                           },
                           {
@@ -4357,8 +4702,60 @@
                             "type": "gem",
                             "attrs": {
                               "name": "Vulnerability",
-                              "color": "red"
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": null
                             }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood and Sand",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Herald of Ash",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
                           }
                         ]
                       }
@@ -4371,7 +4768,18 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Total Cost: None"
+                    "text": "Total Cost: 1 "
+                  },
+                  {
+                    "type": "icon",
+                    "attrs": {
+                      "src": "/images/sunder-rf/alt.png",
+                      "name": "Orb of Alteration"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " Orb of Alteration"
                   }
                 ]
               }
@@ -4393,15 +4801,15 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
                           "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
                           "acquisitionVendor": null
                         }
                       },
@@ -4412,10 +4820,24 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Melee Physical Damage",
+                          "name": "Melee Physical Damage Support",
                           "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fist of War Support",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 4,
                           "acquisitionVendor": null
                         }
                       },
@@ -4428,24 +4850,14 @@
                         "attrs": {
                           "name": "Cruelty Support",
                           "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
+                          "acquisition": "buy",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": "Act 2"
                         }
                       },
                       {
                         "type": "text",
-                        "text": " + "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Fist of War",
-                          "color": "red",
-                          "acquisition": "reward",
-                          "acquisitionAct": 4,
-                          "acquisitionVendor": null
-                        }
+                        "text": " "
                       }
                     ]
                   }
@@ -4462,7 +4874,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 2: "
+                        "text": "Move: "
                       },
                       {
                         "type": "gem",
@@ -4481,9 +4893,9 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Faster Attacks",
+                          "name": "Momentum",
                           "color": "green",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -4495,50 +4907,9 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Momentum",
+                          "name": "Faster Attacks Support",
                           "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "taskItem",
-                "attrs": {
-                  "checked": false
-                },
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": " Aura: "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Herald of Ash",
-                          "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": ", "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Blood and Sand",
-                          "color": "red",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -4562,14 +4933,14 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Util: "
+                        "text": "Util: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -4583,7 +4954,7 @@
                         "attrs": {
                           "name": "Intimidating Cry",
                           "color": "red",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -4611,10 +4982,59 @@
                         "attrs": {
                           "name": "Vulnerability",
                           "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red",
                           "acquisition": null,
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -4801,21 +5221,340 @@
         }
       },
       {
-        "type": "paragraph",
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
         "content": [
           {
-            "type": "text",
-            "text": "Act 5-9 will keep the same gem links until the respec at Blood Aqueducts in A9"
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "If you complete the new league mechanic in "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(151, 91, 7)"
+                    }
+                  }
+                ],
+                "text": "Slave Pens"
+              },
+              {
+                "type": "text",
+                "text": " it will typically drop you a free 5-link. "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(255, 102, 85)"
+                    }
+                  }
+                ],
+                "text": "It's worth doing"
+              },
+              {
+                "type": "text",
+                "text": "."
+              }
+            ]
           }
         ]
       },
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
-          "previousSetup": null
+          "previousSetup": {
+            "title": "Malachai · Main, Move, Util, Aura",
+            "content": [
+              {
+                "type": "taskList",
+                "content": [
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Main: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Sunder",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Melee Physical Damage Support",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Fist of War Support",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Cruelty Support",
+                              "color": "red",
+                              "acquisition": "buy",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": "Act 2"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Move: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Leap Slam",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum",
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Util: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Frostblink",
+                              "color": "blue",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Intimidating Cry",
+                              "color": "red",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood Rage",
+                              "color": "green",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Vulnerability",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood and Sand",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Herald of Ash",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Total Cost: None"
+                  }
+                ]
+              }
+            ]
+          }
         },
         "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Act 5-9 will keep the same gem links until the respec at Blood Aqueducts in A9"
+              }
+            ]
+          },
           {
             "type": "taskList",
             "content": [
@@ -4830,57 +5569,15 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Sunder",
                           "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": "+"
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Melee Physical Damage",
-                          "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": "+ "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Cruelty Support",
-                          "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": " or "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Ruthless Support",
-                          "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
                           "acquisitionVendor": null
                         }
                       },
@@ -4891,12 +5588,44 @@
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Fist of War",
+                          "name": "Melee Physical Damage Support",
                           "color": "red",
-                          "acquisition": null,
-                          "acquisitionAct": null,
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fist of War Support",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Cruelty Support",
+                          "color": "red",
+                          "acquisition": "buy",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": "Act 2"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -4913,7 +5642,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 2: "
+                        "text": "Move: "
                       },
                       {
                         "type": "gem",
@@ -4927,69 +5656,28 @@
                       },
                       {
                         "type": "text",
-                        "text": "+"
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Faster Attacks",
-                          "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      },
-                      {
-                        "type": "text",
-                        "text": "+"
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Momentum",
                           "color": "green",
-                          "acquisition": null,
-                          "acquisitionAct": null,
-                          "acquisitionVendor": null
-                        }
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "taskItem",
-                "attrs": {
-                  "checked": false
-                },
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "text": " Aura: "
-                      },
-                      {
-                        "type": "gem",
-                        "attrs": {
-                          "name": "Herald of Ash",
-                          "color": "red",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
                       },
                       {
                         "type": "text",
-                        "text": ",  "
+                        "text": " + "
                       },
                       {
                         "type": "gem",
                         "attrs": {
-                          "name": "Blood and Sand",
-                          "color": "red",
-                          "acquisition": null,
+                          "name": "Faster Attacks Support",
+                          "color": "green",
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -5013,14 +5701,14 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Util: "
+                        "text": "Util: "
                       },
                       {
                         "type": "gem",
                         "attrs": {
                           "name": "Frostblink",
                           "color": "blue",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -5034,7 +5722,7 @@
                         "attrs": {
                           "name": "Intimidating Cry",
                           "color": "red",
-                          "acquisition": null,
+                          "acquisition": "none",
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
@@ -5062,10 +5750,59 @@
                         "attrs": {
                           "name": "Vulnerability",
                           "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red",
                           "acquisition": null,
                           "acquisitionAct": null,
                           "acquisitionVendor": null
                         }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -5265,6 +6002,55 @@
       {
         "type": "callout",
         "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "If you complete the new league mechanic in "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(151, 91, 7)"
+                    }
+                  }
+                ],
+                "text": "Twilight Strand"
+              },
+              {
+                "type": "text",
+                "text": " it will typically drop you 2nd free 5-link. "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "textStyle",
+                    "attrs": {
+                      "color": "rgb(255, 102, 85)"
+                    }
+                  }
+                ],
+                "text": "It's worth doing"
+              },
+              {
+                "type": "text",
+                "text": "."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "attrs": {
           "tone": "important"
         },
         "content": [
@@ -5318,14 +6104,7 @@
               },
               {
                 "type": "text",
-                "text": " below and level them in the off-hand weapon. "
-              },
-              {
-                "type": "hardBreak"
-              },
-              {
-                "type": "text",
-                "text": "You will need these once you respec in Blood Aqueducts for the RF swap."
+                "text": " below and level them in the off-hand weapon. You will need these once you respec in Blood Aqueducts for the RF swap."
               }
             ]
           },
@@ -5473,76 +6252,150 @@
                     ]
                   }
                 ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Purity of Fire",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " (From earlier)"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
         ]
       },
       {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
+        "type": "gemSetup",
+        "attrs": {
+          "pathChoice": null,
+          "pathId": null,
+          "changeOverrides": null,
+          "previousSetup": {
+            "title": "Act 5 · Main, Move, Util, Aura",
             "content": [
               {
                 "type": "paragraph",
                 "content": [
                   {
                     "type": "text",
-                    "text": "After killing "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Shavronne "
-                  },
-                  {
-                    "type": "text",
-                    "text": "grab the helmet reward from "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Sin "
-                  },
-                  {
-                    "type": "text",
-                    "text": "in town that matches your build armor type:"
+                    "text": "Act 5-9 will keep the same gem links until the respec at Blood Aqueducts in A9"
                   }
                 ]
               },
               {
-                "type": "bulletList",
+                "type": "taskList",
                 "content": [
                   {
-                    "type": "listItem",
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
                     "content": [
                       {
                         "type": "paragraph",
                         "content": [
                           {
                             "type": "text",
-                            "text": "For "
+                            "text": "Main: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Righteous Fire",
-                              "color": "blue",
+                              "name": "Sunder",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 1,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Melee Physical Damage Support",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Fist of War Support",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 4,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Cruelty Support",
+                              "color": "red",
+                              "acquisition": "buy",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": "Act 2"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Move: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Leap Slam",
+                              "color": "red",
                               "acquisition": null,
                               "acquisitionAct": null,
                               "acquisitionVendor": null
@@ -5550,54 +6403,85 @@
                           },
                           {
                             "type": "text",
-                            "text": " look for "
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Momentum",
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
                           },
                           {
                             "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "#58a6ff"
-                                }
-                              }
-                            ],
-                            "text": "BBB"
+                            "text": " + "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Faster Attacks Support",
+                              "color": "green",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
                           },
                           {
                             "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "#ff6655"
-                                }
-                              }
-                            ],
-                            "text": "R"
-                          },
-                          {
-                            "type": "text",
-                            "text": " links."
+                            "text": " "
                           }
                         ]
                       }
                     ]
                   },
                   {
-                    "type": "listItem",
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
                     "content": [
                       {
                         "type": "paragraph",
                         "content": [
                           {
                             "type": "text",
-                            "text": "For "
+                            "text": "Util: "
                           },
                           {
                             "type": "gem",
                             "attrs": {
-                              "name": "Fire Trap",
+                              "name": "Frostblink",
+                              "color": "blue",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Intimidating Cry",
+                              "color": "red",
+                              "acquisition": "none",
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood Rage",
                               "color": "green",
                               "acquisition": null,
                               "acquisitionAct": null,
@@ -5606,37 +6490,357 @@
                           },
                           {
                             "type": "text",
-                            "text": " look for "
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Vulnerability",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 3,
+                              "acquisitionVendor": null
+                            }
                           },
                           {
                             "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "#65ed7f"
-                                }
-                              }
-                            ],
-                            "text": "GGG"
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "#ff6655"
-                                }
-                              }
-                            ],
-                            "text": "R"
-                          },
-                          {
-                            "type": "text",
-                            "text": " links."
+                            "text": " "
                           }
                         ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "taskItem",
+                    "attrs": {
+                      "checked": false
+                    },
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Aura: "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Blood and Sand",
+                              "color": "red",
+                              "acquisition": null,
+                              "acquisitionAct": null,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": ", "
+                          },
+                          {
+                            "type": "gem",
+                            "attrs": {
+                              "name": "Herald of Ash",
+                              "color": "red",
+                              "acquisition": "reward",
+                              "acquisitionAct": 2,
+                              "acquisitionVendor": null
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "text": " "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Total Cost: None"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Act 5-9 will keep the same gem links until the respec at Blood Aqueducts in A9"
+              }
+            ]
+          },
+          {
+            "type": "taskList",
+            "content": [
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Main: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Sunder",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 1,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Melee Physical Damage Support",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Fist of War Support",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 4,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Cruelty Support",
+                          "color": "red",
+                          "acquisition": "buy",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": "Act 2"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Move: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Leap Slam",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Momentum",
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " + "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Faster Attacks Support",
+                          "color": "green",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Util: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Frostblink",
+                          "color": "blue",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Intimidating Cry",
+                          "color": "red",
+                          "acquisition": "none",
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood Rage",
+                          "color": "green",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Vulnerability",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 3,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "taskItem",
+                "attrs": {
+                  "checked": false
+                },
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Aura: "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Blood and Sand",
+                          "color": "red",
+                          "acquisition": null,
+                          "acquisitionAct": null,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Herald of Ash",
+                          "color": "red",
+                          "acquisition": "reward",
+                          "acquisitionAct": 2,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": ", "
+                      },
+                      {
+                        "type": "gem",
+                        "attrs": {
+                          "name": "Haste",
+                          "color": "green",
+                          "acquisition": "buy",
+                          "acquisitionAct": 6,
+                          "acquisitionVendor": null
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " "
                       }
                     ]
                   }
@@ -5645,51 +6849,22 @@
             ]
           },
           {
-            "type": "listItem",
+            "type": "paragraph",
             "content": [
               {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "If the reward has exactly those links, take it. It's ready to equip with your corresponding gems once you swap builds."
-                  }
-                ]
+                "type": "text",
+                "text": "Total Cost: 1 "
               },
               {
-                "type": "bulletList",
-                "content": [
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "text": "Check wiki if needed: "
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "link",
-                                "attrs": {
-                                  "href": "https://www.poewiki.net/wiki/Essence_of_Umbra",
-                                  "target": "_blank",
-                                  "rel": "noopener noreferrer nofollow",
-                                  "class": null,
-                                  "title": null
-                                }
-                              }
-                            ],
-                            "text": "Essence of Umbra Quest"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
+                "type": "icon",
+                "attrs": {
+                  "src": "/images/sunder-rf/alt.png",
+                  "name": "Orb of Alteration"
+                }
+              },
+              {
+                "type": "text",
+                "text": " Orb of Alteration"
               }
             ]
           }
@@ -5882,250 +7057,6 @@
       {
         "type": "bulletList",
         "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "rgb(238, 238, 238)"
-                        }
-                      }
-                    ],
-                    "text": "After killing "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Maligaro "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "rgb(238, 238, 238)"
-                        }
-                      }
-                    ],
-                    "text": "grab the boot reward for "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "#975b07"
-                        }
-                      }
-                    ],
-                    "text": "Helena "
-                  },
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "rgb(238, 238, 238)"
-                        }
-                      }
-                    ],
-                    "text": "in town that matches your builds armor type:"
-                  }
-                ]
-              },
-              {
-                "type": "bulletList",
-                "content": [
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "text": "For "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Righteous Fire",
-                              "color": "blue",
-                              "acquisition": null,
-                              "acquisitionAct": null,
-                              "acquisitionVendor": null
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " look for "
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(88, 166, 255)"
-                                }
-                              }
-                            ],
-                            "text": "BBB"
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(255, 102, 85)"
-                                }
-                              }
-                            ],
-                            "text": "R"
-                          },
-                          {
-                            "type": "text",
-                            "text": " links."
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "text": "For "
-                          },
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Fire Trap",
-                              "color": "green",
-                              "acquisition": null,
-                              "acquisitionAct": null,
-                              "acquisitionVendor": null
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " look for "
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(101, 237, 127)"
-                                }
-                              }
-                            ],
-                            "text": "GGG"
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(255, 102, 85)"
-                                }
-                              }
-                            ],
-                            "text": "R"
-                          },
-                          {
-                            "type": "text",
-                            "text": " links."
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "marks": [
-                      {
-                        "type": "textStyle",
-                        "attrs": {
-                          "color": "rgb(238, 238, 238)"
-                        }
-                      }
-                    ],
-                    "text": "If the reward has exactly those links, take it. It's ready to equip with your corresponding gems once you swap builds."
-                  }
-                ]
-              },
-              {
-                "type": "bulletList",
-                "content": [
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "text": "Check wiki if needed: "
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "link",
-                                "attrs": {
-                                  "href": "https://www.poewiki.net/wiki/Essence_of_the_Artist",
-                                  "target": "_blank",
-                                  "rel": "noopener noreferrer nofollow",
-                                  "class": null,
-                                  "title": null
-                                }
-                              }
-                            ],
-                            "text": "Essence of Artist Quest"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "type": "listItem",
             "content": [
@@ -6505,7 +7436,19 @@
         "content": [
           {
             "type": "text",
-            "text": "Act 9 Level 52 Respec at BA"
+            "text": "Act 9 "
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Level 52-55 Respec at BA"
           }
         ]
       },
@@ -7049,207 +7992,6 @@
                     "text": " colors if you did not get from quest rewards in A6 or A7."
                   }
                 ]
-              },
-              {
-                "type": "bulletList",
-                "content": [
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Righteous Fire",
-                              "color": "blue",
-                              "acquisition": null,
-                              "acquisitionAct": null,
-                              "acquisitionVendor": null
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " - "
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(88, 166, 255)"
-                                }
-                              }
-                            ],
-                            "text": "BBB"
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(255, 102, 85)"
-                                }
-                              }
-                            ],
-                            "text": "R"
-                          },
-                          {
-                            "type": "text",
-                            "text": " "
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "gem",
-                            "attrs": {
-                              "name": "Fire Trap",
-                              "color": "green",
-                              "acquisition": null,
-                              "acquisitionAct": null,
-                              "acquisitionVendor": null
-                            }
-                          },
-                          {
-                            "type": "text",
-                            "text": " - "
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(101, 237, 127)"
-                                }
-                              }
-                            ],
-                            "text": "GGG"
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(255, 102, 85)"
-                                }
-                              }
-                            ],
-                            "text": "R"
-                          },
-                          {
-                            "type": "text",
-                            "text": " "
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "text": "Curse - "
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "#ff6655"
-                                }
-                              }
-                            ],
-                            "text": "RRR"
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(88, 166, 255)"
-                                }
-                              }
-                            ],
-                            "text": "B"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "listItem",
-                    "content": [
-                      {
-                        "type": "paragraph",
-                        "content": [
-                          {
-                            "type": "text",
-                            "text": "Movement - "
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(101, 237, 127)"
-                                }
-                              }
-                            ],
-                            "text": "GG"
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(255, 102, 85)"
-                                }
-                              }
-                            ],
-                            "text": "R"
-                          },
-                          {
-                            "type": "text",
-                            "marks": [
-                              {
-                                "type": "textStyle",
-                                "attrs": {
-                                  "color": "rgb(88, 166, 255)"
-                                }
-                              }
-                            ],
-                            "text": "B"
-                          },
-                          {
-                            "type": "text",
-                            "text": " "
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
               }
             ]
           }
@@ -7453,16 +8195,7 @@
         ]
       },
       {
-        "type": "heading",
-        "attrs": {
-          "level": 2
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "RF Heist Gem Links"
-          }
-        ]
+        "type": "paragraph"
       },
       {
         "type": "bulletList",
@@ -7475,7 +8208,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Try to have these links as soon as you get to BA and start doing heists. You can swap around the auras to fit your needs. For example, if you think you're tanky enough or if you have enough damage, feel free to replace "
+                    "text": "Try to have these links as soon as you get to BA and start doing heists. You can swap around the auras to fit your needs. For example, if you think you're defensive enough or if you have enough damage, feel free to replace "
                   },
                   {
                     "type": "gem",
@@ -7528,6 +8261,8 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": null
         },
@@ -7546,7 +8281,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 1: "
+                        "text": "Main: "
                       },
                       {
                         "type": "gem",
@@ -7629,7 +8364,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 2: "
+                        "text": "Single: "
                       },
                       {
                         "type": "gem",
@@ -7698,7 +8433,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 3: "
+                        "text": "Move: "
                       },
                       {
                         "type": "gem",
@@ -7767,7 +8502,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 4: "
+                        "text": "Util: "
                       },
                       {
                         "type": "gem",
@@ -7808,7 +8543,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Link 5: "
+                        "text": "Curse: "
                       },
                       {
                         "type": "gem",
@@ -7881,7 +8616,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Aura: "
+                        "text": "Aura: "
                       },
                       {
                         "type": "gem",
@@ -7936,7 +8671,7 @@
                     "content": [
                       {
                         "type": "text",
-                        "text": " Util: "
+                        "text": "Util 2: "
                       },
                       {
                         "type": "gem",
@@ -7951,6 +8686,15 @@
                     ]
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
               }
             ]
           }
@@ -8102,6 +8846,8 @@
       {
         "type": "gemSetup",
         "attrs": {
+          "pathChoice": null,
+          "pathId": null,
           "changeOverrides": null,
           "previousSetup": null
         },
@@ -8541,6 +9287,15 @@
                 ]
               }
             ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Total Cost: None"
+              }
+            ]
           }
         ]
       },
@@ -8670,8 +9425,7 @@
     "sunder",
     "righteous fire",
     "leveling",
-    "league starter",
-    "3.29"
+    "league starter"
   ],
   "kind": "build",
   "ascendancy": "Chieftain"

@@ -76,6 +76,18 @@ for (const node of drawOrder) {
     ctx.shadowColor = 'transparent'; ctx.stroke();
     ctx.fillStyle = '#fff'; ctx.font = '700 17px "Reddit Sans", sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     ctx.fillText(String(marker.number), marker.x, marker.y + .5); ctx.textBaseline = 'alphabetic';
+    if (marker.label?.trim()) {
+      const label = marker.label.trim();
+      ctx.font = '600 12px "Reddit Sans", sans-serif';
+      const width = ctx.measureText(label).width;
+      // Keep labels readable at every zoom and inside the visible canvas.
+      const x = Math.max(6, Math.min(marker.x + 18, size.width - width - 6));
+      const y = Math.max(14, Math.min(marker.y + 4, size.height - 6));
+      ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+      ctx.lineWidth = 4; ctx.lineJoin = 'round'; ctx.strokeStyle = '#080b10';
+      ctx.strokeText(label, x, y);
+      ctx.fillStyle = '#e7ca83'; ctx.fillText(label, x, y);
+    }
     ctx.restore();
   }
 }

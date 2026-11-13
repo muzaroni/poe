@@ -1,0 +1,100 @@
+{
+  "slug": "cws-chieftain",
+  "title": "CWS Chieftain",
+  "kind": "build",
+  "tags": [
+    "chieftain",
+    "league starter",
+    "3.30",
+    "cws",
+    "cast when stun",
+    "rf"
+  ],
+  "subtitle": "Continuation from RF guide",
+  "league": "3.30",
+  "ascendancy": "Chieftain",
+  "updated": "2026-11-10",
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "callout",
+        "attrs": {
+          "tone": "note"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "This is meant to be a guide for CWS Chieftain for getting into Inscribed Ultimatums A S A P. It can do Ulti in maps but that's not really the focus of this guide. This build lists out the minimum gear required, item priorities and general things to look out for in this content. For an actual write up read Emiracles mobalytics and watch his video. This guide literally would not exist without his work on this build over the years."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "PoB Links"
+          }
+        ]
+      },
+      {
+        "type": "pobLinks",
+        "attrs": {
+          "links": [
+            {
+              "label": "3.29 Hour 6 POB - Mapping progression",
+              "url": "https://pob.codes/b/wVEGkUF4SGp"
+            },
+            {
+              "label": "3.29 Day 1 POB - First Inscribed",
+              "url": "https://pob.codes/b/s65GbKOsKXr"
+            },
+            {
+              "label": "3.29 Day 2 POB - Mageblood",
+              "url": "https://pob.codes/b/_msgt0nm8xD"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Useful Links"
+          }
+        ]
+      },
+      {
+        "type": "pobLinks",
+        "attrs": {
+          "links": [
+            {
+              "label": "Emiracles Mobalytics Guide - Excellent write up",
+              "url": "https://mobalytics.gg/poe/builds/cws-chieftain-emiracles"
+            },
+            {
+              "label": "Emiracles 3.29 Guide Video - Definitely watch this!",
+              "url": "https://www.youtube.com/watch?v=2fMifC2ZAao"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph"
+      }
+    ]
+  }
+}
