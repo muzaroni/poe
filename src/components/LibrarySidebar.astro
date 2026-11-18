@@ -1,0 +1,15 @@
+---
+import SocialLinks from './SocialLinks.astro';
+import ToolNavigation from './ToolNavigation.astro';
+import { guides } from '../lib/guide';
+import { contentPath } from '../lib/search';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+    <aside class="library-nav" aria-label="Guide library navigation">
+      <p class="nav-label">GUIDE LIBRARY</p>
+      <a class="library-nav-link" href={`${base}#search`}>All content <span>{guides.length}</span></a>
+      <p class="nav-label library-nav-subhead">GUIDES & ARTICLES</p>
+      {guides.map((guide) => <a class="library-nav-link" href={`${base}${contentPath(guide)}`}><span>{guide.title}</span><span aria-hidden="true">↗</span></a>)}
+      <ToolNavigation />
+      <SocialLinks />
+    </aside>

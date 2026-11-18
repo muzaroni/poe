@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from './SocialLinks.astro';
+import ToolNavigation from './ToolNavigation.astro';
 import GuideDocument from '../components/GuideDocument';
 import { headingId, plainText } from '../lib/guide';
 import type { Guide } from '../types';
@@ -19,6 +20,7 @@ const headings = (guide.content.content ?? []).filter((node) => node.type === 'h
         <div class="nav-label">ON THIS PAGE</div>
         {headings.map((item, index) => <a href={`#${item.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{item.title}</a>)}
       </nav>
+      <ToolNavigation />
       <div class="guide-nav-social"><SocialLinks /></div>
     </aside>
     <main class="guide-main">

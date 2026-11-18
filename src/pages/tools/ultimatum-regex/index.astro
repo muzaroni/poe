@@ -1,0 +1,18 @@
+---
+import LibrarySidebar from '../../../components/LibrarySidebar.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import UltimatumRegexPicker from '../../../tools/ultimatum-regex/UltimatumRegexPicker';
+import '../../../tools/ultimatum-regex/style.css';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<BaseLayout title="Ultimatum Regex Picker" description="Build Ultimatum search regexes, manage presets, and generate PoE Trade links." breadcrumbs={[{label: 'Tools', href: `${base}tools/`}, {label: 'Ultimatum Regex Picker'}]}>
+  <div class="shell library-shell tool-layout">
+  <LibrarySidebar />
+  <div class="tool-content">
+  <UltimatumRegexPicker client:only="react">
+    <p slot="fallback" class="shell">Loading Ultimatum Regex Picker…</p>
+  </UltimatumRegexPicker>
+  </div>
+  </div>
+  <noscript><p class="shell">Enable JavaScript to use the Ultimatum Regex Picker.</p></noscript>
+</BaseLayout>

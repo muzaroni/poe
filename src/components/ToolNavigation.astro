@@ -1,0 +1,8 @@
+---
+import { tools } from '../data/tools';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<nav class="sidebar-tools" aria-label="Tools">
+  <p class="nav-label library-nav-subhead"><a href={`${base}tools/`}>TOOLS</a></p>
+  {tools.map(tool => <a class:list={['library-nav-link', {'library-nav-current': Astro.url.pathname.replace(/\/$/, '') === `${base}${tool.path}`.replace(/\/$/, '')}]} href={`${base}${tool.path}`}><span>{tool.title}</span></a>)}
+</nav>
