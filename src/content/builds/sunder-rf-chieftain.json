@@ -410,27 +410,27 @@
                 "nodeId": 58449,
                 "note": "",
                 "actDivider": "Act 1",
-                "positionX": -4515.367522988014,
-                "positionY": 1870.7150217781193
+                "positionX": -4557.03418965468,
+                "positionY": 1904.8059539884055
               },
               {
                 "nodeId": 12795,
                 "note": "",
                 "positionX": -4677.367522988014,
-                "positionY": 2499.16502177812
+                "positionY": 2499.1650217781203
               },
               {
                 "nodeId": 14606,
                 "note": "",
-                "positionX": -5441.6175229880155,
-                "positionY": 1535.7150217781202
+                "positionX": -5362.071929726297,
+                "positionY": 1581.1696828295524
               },
               {
                 "nodeId": 53118,
                 "note": "",
                 "actDivider": "Act 2",
                 "positionX": -6994.967522988015,
-                "positionY": 2032.71502177812
+                "positionY": 2032.7150217781198
               },
               {
                 "nodeId": 31961,
@@ -443,8 +443,8 @@
                 "note": "30% increased Damage while in Blood Stance; 15% increased Area of Effect while in Sand Stance",
                 "label": "Blood Stance",
                 "actDivider": "Act 3",
-                "positionX": -8512.49963537354,
-                "positionY": 2421.170729067198
+                "positionX": -8478.408703163253,
+                "positionY": 2318.8980595929143
               },
               {
                 "nodeId": 48199,
@@ -477,13 +477,21 @@
                 "note": "",
                 "actDivider": "Act 5",
                 "positionX": -6670.856224435793,
-                "positionY": 3613.5863203303416
+                "positionY": 3613.586320330341
+              },
+              {
+                "nodeId": 2841,
+                "note": "12% increased Mana Reservation Efficiency of Skills",
+                "label": "15% RMR",
+                "actDivider": "Act 7",
+                "positionX": -6927.703381777343,
+                "positionY": 3367.086674053351
               },
               {
                 "nodeId": 33287,
                 "note": "",
                 "positionX": -7143.1575229880145,
-                "positionY": 3082.888906365042
+                "positionY": 3082.8889063650417
               },
               {
                 "nodeId": 53517,
@@ -491,7 +499,7 @@
                 "label": "Regen 50 Life",
                 "actDivider": "Act 6",
                 "positionX": -7137.014343210298,
-                "positionY": 1462.9699995674048
+                "positionY": 1462.969999567405
               },
               {
                 "nodeId": 50904,
@@ -505,14 +513,6 @@
                   36047,
                   63048
                 ]
-              },
-              {
-                "nodeId": 2841,
-                "note": "12% increased Mana Reservation Efficiency of Skills",
-                "label": "15% RMR",
-                "actDivider": "Act 7",
-                "positionX": -6883.1863314853,
-                "positionY": 3425.204186504868
               },
               {
                 "nodeId": 61198,
@@ -537,21 +537,21 @@
                 "nodeId": 32932,
                 "note": "",
                 "positionX": -6662.897453788158,
-                "positionY": -4263.935566019883
+                "positionY": -4263.935566019882
               },
               {
                 "nodeId": 48267,
                 "note": "Regenerate 1 Life per second for each 1% Uncapped Fire Resistance",
                 "label": "Uncapped Fire Res",
                 "actDivider": "Act 9",
-                "positionX": -5482.417304820356,
-                "positionY": 528.0668694631622
+                "positionX": -5505.13291816233,
+                "positionY": 423.57404151681385
               },
               {
                 "nodeId": 25989,
                 "note": "",
                 "positionX": -6323.351512392472,
-                "positionY": 677.1558439856451
+                "positionY": 677.1558439856449
               },
               {
                 "nodeId": 13164,
