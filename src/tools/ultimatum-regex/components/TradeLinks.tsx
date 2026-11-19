@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Settings } from "../lib/storage";
-import { generateTradeLinks, type TradeLink } from "../lib/trade";
+import { buildTradeQueries, generateTradeLinks, type TradeLink } from "../lib/trade";
 import { SectionHeading } from "./SectionHeading";
 
 export function TradeLinks({
@@ -28,7 +28,9 @@ export function TradeLinks({
     };
   }, [s]);
   const current = result?.settings === s ? result : null;
-  const links = current?.links ?? [];
+  const blockers = buildTradeQueries(s).errors;
+  const links = blockers.length ? [] : current?.links ?? [];
+  const errors = [...new Set([...blockers, ...(current?.errors ?? [])])];
   async function copyLinks() {
     try {
       await navigator.clipboard.writeText(links.map((l) => l.url).join("\n"));
@@ -67,13 +69,13 @@ export function TradeLinks({
           <option value="any">Any availability</option>
         </select>
         <div className="trade-buttons">
-          <button disabled={!links.length} onClick={copyLinks}>
+          {errors.length === 0 && <button disabled={!links.length} onClick={copyLinks}>
             {copy === "Copied!"
               ? "Copied!"
               : links.length > 1
                 ? "Copy Trade Links"
                 : "Copy Trade Link"}
-          </button>
+          </button>}
           {links.length === 1 && (
             <a
               className="primary trade-open"
@@ -84,11 +86,12 @@ export function TradeLinks({
               Open Trade ↗
             </a>
           )}
-          {!current && (
-            <span className="trade-note" role="status">
-              Generating…
-            </span>
+          {errors.length > 0 && (
+            <div className="trade-blocked" role="status">
+              {errors.map(error => <p key={error}>{error}</p>)}
+            </div>
           )}
+          {!current && !errors.length && <span className="trade-note" role="status">Generating…</span>}
         </div>
       </div>
       <details className="trade-options">
@@ -155,11 +158,7 @@ export function TradeLinks({
         </div>
       </details>
       <div aria-live="polite">
-        {current?.errors.map((error) => (
-          <p className="trade-error" key={error}>
-            {error}
-          </p>
-        ))}
+
         {current?.notices.map((notice) => (
           <p className="trade-note" key={notice}>
             {notice}

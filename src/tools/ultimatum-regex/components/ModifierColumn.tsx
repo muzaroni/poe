@@ -23,7 +23,12 @@ export function ModifierColumn({
     <section className={`modifier-panel ${side}`}>
       <div className="panel-heading">
         <div>
-          <span className="square">{side === "unwanted" ? "−" : "+"}</span>
+          <span className="square" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+              <path d="M3 8h10" />
+              {side === "wanted" && <path d="M8 3v10" />}
+            </svg>
+          </span>
           <h2>{side === "unwanted" ? "Don't Want" : "Want"}</h2>
           <span className="count">{selected.length}</span>
         </div>

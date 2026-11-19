@@ -1,6 +1,6 @@
 import { modifiers } from "../data/modifiers";
 import type { Settings } from "./storage";
-import { modifierFragments, challengeFragments } from "../data/searchFragments";
+import { modifierFragments, challengeFragments, familyFragments } from "../data/searchFragments";
 export interface Condition {
   label: string;
   pattern: string;
@@ -14,6 +14,8 @@ export const escapeRegex = (s: string) =>
 // stay untouched. Whole-family prefixes cover all known tiers; subsets keep
 // boundaries needed to distinguish the unselected tiers and similar families.
 export function compactPatterns(cs: Condition[]): string[] {
+  if (cs.some(c => c.group !== "wanted" && c.group !== "unwanted"))
+    return [...new Set(cs.map(c => c.pattern))];
   const groups = new Map<string, Condition[]>();
   for (const c of cs) {
     const m = modifiers.find((m) => m.pattern === c.pattern && m.tier !== null);
@@ -33,7 +35,7 @@ export function compactPatterns(cs: Condition[]): string[] {
         "^Stalking Ruin IV$",
       ].every((p) => originals.includes(p))
     )
-      return ["^stalking ruin"];
+      return ["^stalking"];
     if (
       family === "Ruin" &&
       originals.length === 3 &&
@@ -41,7 +43,7 @@ export function compactPatterns(cs: Condition[]): string[] {
         originals.includes(p),
       )
     )
-      return ["^ruin (ii|iv)"];
+      return ["^ruin i[iv]"];
     if (
       originals.length < 2 ||
       !entries.every((c) =>
@@ -65,6 +67,25 @@ export function compactPatterns(cs: Condition[]): string[] {
     return factored.length < originals.join("|").length
       ? [factored]
       : originals;
+  }).map((pattern) => {
+    const modifier = modifiers.find(m => m.pattern === pattern && m.tier === null);
+    if (modifier && pattern === `^${escapeRegex(modifier.name)}$`) {
+      const prefix = `^${escapeRegex(modifier.name.split(" ")[0].toLowerCase())}`;
+      // A whole first word is shorter without resorting to opaque fragments.
+      if (prefix.length < pattern.length &&
+          modifiers.filter(m => new RegExp(prefix, "i").test(m.name)).length === 1)
+        return prefix;
+    }
+    for (const [family, fragment] of Object.entries(familyFragments)) {
+      const prefix = `^${escapeRegex(family)}`;
+      if (pattern.startsWith(prefix)) {
+        // Only rewrite exact catalog labels or the tier groups factored above.
+        const suffix = pattern.slice(prefix.length);
+        if (suffix === "$" || suffix.startsWith(" ") || suffix.startsWith("("))
+          return fragment + suffix;
+      }
+    }
+    return pattern;
   });
 }
 export function validatePattern(pattern: string): string | null {
@@ -115,7 +136,8 @@ export function generate(s: Settings) {
   if (s.requiredItem.trim())
     conditions.push({
       label: `Required Item: ${s.requiredItem.trim()}`,
-      pattern: `sacrifice: ${escapeRegex(({ "Divine Orb": "divine", "Chaos Orb": "chaos" } as Record<string, string>)[s.requiredItem.trim()] ?? s.requiredItem.trim())}`,
+      // Keep the sacrifice-label suffix: an item name alone also matches rewards.
+      pattern: `ce: ${escapeRegex(({ "Divine Orb": "divine", "Chaos Orb": "chaos" } as Record<string, string>)[s.requiredItem.trim()] ?? s.requiredItem.trim())}`,
       negative: false,
       group: "filter",
     });

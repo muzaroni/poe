@@ -97,22 +97,14 @@ describe("trade query generation", () => {
       ).toEqual({ option });
     }
   });
-  it("represents a Not challenge with exactly the three remaining searches", () => {
-    const result = buildTradeQueries({
-      ...empty(),
-      challenge: "Stand in the Stone Circles",
-      challengeNot: true,
-    });
-    expect(
-      result.queries.map(
-        (q) =>
-          q.query.filters.ultimatum_filters.filters.ultimatum_challenge.option,
-      ),
-    ).toEqual(["Exterminate", "Survival", "Defense"]);
-    expect(result.notices.join()).toContain("three allowed");
-    expect(
-      buildTradeQueries({ ...empty(), challengeNot: true }).queries,
-    ).toHaveLength(1);
+  it("blocks Not challenges with an actionable reason", async () => {
+    const settings = { ...empty(), challenge: "Stand in the Stone Circles" as const, challengeNot: true };
+    const result = buildTradeQueries(settings);
+    expect(result.queries).toEqual([]);
+    expect(result.errors.join()).toContain("Turn off “Not Stand in the Stone Circles”");
+    expect((await generateTradeLinks(settings)).links).toEqual([]);
+    expect(buildTradeQueries({ ...settings, challengeNot: false }).queries).toHaveLength(1);
+    expect(buildTradeQueries({ ...empty(), challengeNot: true }).queries).toHaveLength(1);
   });
   it("blocks custom conditions instead of silently dropping them", () => {
     const result = buildTradeQueries({ ...empty(), custom: "sacrifice" });
@@ -180,14 +172,12 @@ describe("trade link encoding and persistence", () => {
       buildTradeQueries(s).queries[0].query,
     );
   });
-  it("produces three independently decodable Not-challenge links", async () => {
-    const s = { ...empty(), challenge: "Survive" as const, challengeNot: true };
-    const result = await generateTradeLinks(s);
-    expect(result.links).toHaveLength(3);
-    for (const [i, link] of result.links.entries())
-      expect(await decode(link.url)).toEqual(
-        buildTradeQueries(s).queries[i].query,
-      );
+  it("lists every blocker without producing partial trade links", async () => {
+    const result = await generateTradeLinks({ ...empty(), challenge: "Survive", challengeNot: true, custom: "test", wanted: ["unknown"] });
+    expect(result.links).toEqual([]);
+    expect(result.errors.join()).toContain("Not Survive");
+    expect(result.errors.join()).toContain("Custom text/regex");
+    expect(result.errors.join()).toContain("Remove this selection");
   });
   it("reports unavailable compression without producing a broken link", async () => {
     vi.stubGlobal("CompressionStream", undefined);

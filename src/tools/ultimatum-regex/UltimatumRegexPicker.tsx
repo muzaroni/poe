@@ -85,7 +85,7 @@ export default function UltimatumRegexPicker() {
     <main className="ultimatum-picker">
       <header>
         <h1>
-          Ultimatum <span>Regex Picker</span>
+          Ultimatum <span>Regex Generator</span>
         </h1>
         <div className="preset-bar">
           <label htmlFor="preset">PRESET</label>

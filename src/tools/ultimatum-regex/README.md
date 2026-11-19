@@ -1,4 +1,4 @@
-# Ultimatum Regex Picker
+# Ultimatum Regex Generator
 
 Imported from https://github.com/muzaroni/poe-regex at commit
 `be0fd2135d081b0c30f9d84788540a1762d572cb`.

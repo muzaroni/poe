@@ -1,5 +1,4 @@
 import { modifiers } from "../data/modifiers";
-import { challenges } from "../data/filters";
 import type { Settings } from "./storage";
 
 export const challengeOptions: Record<string, string> = {
@@ -34,7 +33,7 @@ export function buildTradeQueries(s: Settings) {
     errors.push("Enter a league for the trade search.");
   if (s.custom.trim())
     errors.push(
-      "Custom text/regex cannot be translated to trade filters. Clear it to generate a faithful link.",
+      "Clear Custom text/regex to get a trade link. PoE Trade cannot apply custom conditions.",
     );
   if (s.wanted.some((id) => s.unwanted.includes(id)))
     errors.push("A tier is both wanted and unwanted.");
@@ -42,7 +41,7 @@ export function buildTradeQueries(s: Settings) {
     [...new Set(ids)].map((id) => {
       const m = modifiers.find((m) => m.id === id);
       if (!m?.tradeIds.length)
-        errors.push(`No trade filter is available for ${m?.name ?? id}.`);
+        errors.push(`No trade filter is available for ${m?.name ?? id}. Remove this selection to get a trade link.`);
       return [...new Set(m?.tradeIds ?? [])];
     });
   const unwanted = resolve(s.unwanted);
@@ -102,16 +101,9 @@ export function buildTradeQueries(s: Settings) {
     notices.push(
       "Typed items must use an exact item name accepted by PoE Trade.",
     );
-  // A single-choice trade filter has no confirmed negation syntax. Represent
-  // Not exactly as one search per remaining challenge, rather than drop it.
-  const variants =
-    s.challenge && s.challengeNot
-      ? challenges.filter((c) => c !== s.challenge)
-      : [s.challenge];
   if (s.challenge && s.challengeNot)
-    notices.push(
-      `Not ${s.challenge}: open one of the three allowed challenge searches below.`,
-    );
+    errors.push(`Turn off “Not ${s.challenge}” to get a trade link. PoE Trade cannot exclude a challenge type.`);
+  const variants = [s.challenge];
   const queries = variants.map((challenge) => {
     const filters: TradeQuery["filters"] = {
       ultimatum_filters: { filters: { ...ultimatum } },

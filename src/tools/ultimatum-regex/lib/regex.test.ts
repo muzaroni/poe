@@ -14,7 +14,7 @@ describe("query engine (synthetic label fixtures, NOT verified item text)", () =
       challengeNot: true,
     };
     expect(generate(s).query).toBe(
-      '"!^stalking ruin|^ruin (ii|iv)|recovery ii$|drought" "sacrifice: divine" "!stone circles"',
+      '"!^stalking|^ruin i[iv]|recovery ii$|drought" "ce: divine" "!circles"',
     );
     expect(generate(s).query.length).toBeLessThan(100);
     expect(
@@ -87,7 +87,7 @@ describe("query engine (synthetic label fixtures, NOT verified item text)", () =
       .filter((m) => m.family === "Stalking Ruin")
       .map((m) => m.id);
     const r = generate({ ...empty(), unwanted: ids });
-    expect(r.query).toBe('"!^stalking ruin"');
+    expect(r.query).toBe('"!^stalking"');
     expect(r.query.length).toBeLessThan(35);
   });
   it("preserves every tier subset when compacting positive and negative terms", () => {
@@ -126,7 +126,7 @@ describe("query engine (synthetic label fixtures, NOT verified item text)", () =
   });
   it("adds a literal Required Item condition and checks the required-item line", () => {
     const settings = { ...empty(), requiredItem: "Divine Orb" };
-    expect(generate(settings).query).toBe('"sacrifice: divine"');
+    expect(generate(settings).query).toBe('"ce: divine"');
     expect(
       simulate(settings, "Requires Sacrifice: Divine Orb x1").highlight,
     ).toBe(true);
@@ -347,5 +347,58 @@ describe("selections and browser storage", () => {
     delete raw.presets[0].settings.challenge;
     delete raw.presets[0].settings.challengeNot;
     expect(restore({ getItem: () => JSON.stringify(raw) })).toEqual(state);
+  });
+});
+
+// Every selected tier must remain distinct from every other catalog entry.
+describe("compact fragment coverage", () => {
+  it("preserves all family subsets across the complete catalog", () => {
+    for (const family of new Set(modifiers.map(m => m.family))) {
+      const entries = modifiers.filter(m => m.family === family);
+      for (let mask = 1; mask < 1 << entries.length; mask++) {
+        const selected = entries.filter((_, i) => mask & (1 << i));
+        for (const side of ["wanted", "unwanted"] as const) {
+          const settings = { ...empty(), [side]: selected.map(m => m.id) };
+          for (const candidate of modifiers) {
+            expect(simulate(settings, candidate.name).highlight,
+              `${family} subset ${mask} ${side}: ${candidate.name}`,
+            ).toBe(side === "wanted" ? selected.includes(candidate) : !selected.includes(candidate));
+          }
+        }
+      }
+    }
+  });
+  it("shortens defaults and long labels without altering custom regex", () => {
+    expect(generate(defaults()).query.length).toBeLessThan(52);
+    const selected = modifiers.find(m => m.family === "Lightning Damage from Mana Costs")!;
+    expect(generate({ ...empty(), wanted: [selected.id] }).query).toBe('"^lightning"');
+    expect(generate({ ...empty(), custom: "^Choking Miasma$", customMode: "regex" }).query).toBe('"^Choking Miasma$"');
+  });
+});
+
+describe("compact item and challenge filters", () => {
+  it("keeps sacrifice currency distinct from rewards, other currencies and similar item names", () => {
+    for (const [requiredItem, expected] of [["Divine Orb", '"ce: divine"'], ["Chaos Orb", '"ce: chaos"']]) {
+      const settings = { ...empty(), requiredItem };
+      expect(generate(settings).query).toBe(expected);
+      expect(simulate(settings, `Requires Sacrifice: ${requiredItem} x1`).highlight).toBe(true);
+      for (const other of ["Exalted Orb", "Divination Distillate", requiredItem === "Divine Orb" ? "Chaos Orb" : "Divine Orb"])
+        expect(simulate(settings, `Requires Sacrifice: ${other} x1\nReward: ${requiredItem}`).highlight).toBe(false);
+      expect(simulate(settings, `Reward: ${requiredItem}`).highlight).toBe(false);
+    }
+  });
+  it("preserves literal custom required-item names", () => {
+    const settings = { ...empty(), requiredItem: "Orb (test)" };
+    expect(simulate(settings, "Requires Sacrifice: Orb (test) x1").highlight).toBe(true);
+    expect(simulate(settings, "Requires Sacrifice: Chaos Orb x1\nReward: Orb (test)").highlight).toBe(false);
+  });
+  it("distinguishes every challenge in positive and negative filters", () => {
+    const challenges = ["Defeat Waves of Enemies", "Survive", "Protect the Altar", "Stand in the Stone Circles"] as const;
+    for (const challenge of challenges)
+      for (const challengeNot of [false, true])
+        for (const candidate of challenges) {
+          const settings = { ...empty(), challenge, challengeNot };
+          expect(simulate(settings, `Challenge: ${candidate}\nRequires Sacrifice: Divine Orb x1\n${modifiers.map(m => m.name).join("\n")}`).highlight).toBe(challengeNot ? candidate !== challenge : candidate === challenge);
+        }
   });
 });

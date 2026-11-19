@@ -26,8 +26,8 @@
 .ultimatum-picker input,
 .ultimatum-picker select,
 .ultimatum-picker textarea {
-  border: 1px solid #39414b;
-  background: #15181c;
+  border: 1px solid #30363d;
+  background: #0c1014;
   color: #d4dae2;
   border-radius: 4px;
 }
@@ -36,7 +36,7 @@
 }
 .ultimatum-picker button:hover {
   border-color: #758297;
-  background: #20252c;
+  background: #14191f;
 }
 .ultimatum-picker button:disabled {
   opacity: 0.4;
@@ -70,7 +70,7 @@
   display: flex;
   align-items: center;
   gap: 13px;
-  border-bottom: 1px solid #343b45;
+  border-bottom: 1px solid var(--line);
   padding-bottom: 23px;
 }
 .ultimatum-picker .brand-mark {
@@ -146,7 +146,7 @@
 }
 .ultimatum-picker .preset-bar select {
   min-width: 170px;
-  background: #12161b;
+  background: var(--surface);
 }
 .ultimatum-picker .preset-bar button {
   background: transparent;
@@ -167,8 +167,8 @@
   gap: 16px;
 }
 .ultimatum-picker .modifier-panel {
-  border: 1px solid #353e49;
-  background: #121519;
+  border: 1px solid var(--line);
+  background: var(--surface);
   border-radius: 6px;
   overflow: hidden;
   min-width: 0;
@@ -243,13 +243,13 @@
 .ultimatum-picker .list-label {
   display: flex;
   justify-content: space-between;
-  background: #101317;
+  background: var(--surface-soft);
   padding: 8px 13px;
   font-size: calc(9px + 2pt);
   letter-spacing: 0.7px;
   color: #718095;
-  border-top: 1px solid #2e3741;
-  border-bottom: 1px solid #2e3741;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 .ultimatum-picker .modifier-list {
   --modifier-row-height: 41px;
@@ -264,17 +264,17 @@
   height: var(--modifier-row-height);
   min-height: var(--modifier-row-height);
   padding: 4px 11px;
-  border-bottom: 1px solid #2b323c;
+  border-bottom: 1px solid #191e25;
   gap: 8px;
 }
 .ultimatum-picker .modifier-row:nth-child(even) {
-  background: #171a1f;
+  background: #0e1217;
 }
 .ultimatum-picker .modifier-row.active {
-  background: #30272d;
+  background: #191216;
 }
 .ultimatum-picker .wanted .modifier-row.active {
-  background: #21352f;
+  background: #101b17;
 }
 .ultimatum-picker .family-name {
   border: none;
@@ -312,16 +312,16 @@
   height: 25px;
   font-size: calc(11px + 2pt);
   color: #8d9aab;
-  background: #1a1e24;
-  border-color: #3b4552;
+  background: var(--surface-raised);
+  border-color: #30363d;
 }
 .ultimatum-picker .unwanted .tiers button.selected {
-  background: #693d45;
+  background: #432830;
   border-color: #a4606e;
   color: #ffe0e1;
 }
 .ultimatum-picker .wanted .tiers button.selected {
-  background: #305e4c;
+  background: #203e32;
   border-color: #518b70;
   color: #d4ffe7;
 }
@@ -342,7 +342,7 @@
   border-radius: 6px;
   padding: 14px;
   margin-top: 16px;
-  background: #121519;
+  background: var(--surface);
 }
 .ultimatum-picker .section-title {
   display: flex;
@@ -378,18 +378,18 @@
   padding: 4px 8px;
 }
 .ultimatum-picker .segmented button.chosen {
-  background: #192432;
+  background: #151b23;
   color: #d4e7ff;
 }
 .ultimatum-picker .output-panel {
   border: 1px solid #3b4d64;
   border-radius: 6px;
-  background: #202731;
+  background: #171d25;
   padding: 15px;
   margin-top: 16px;
 }
 .ultimatum-picker .regex-output {
-  background: #151c25;
+  background: #10151c;
   color: #bfdbff;
   font:
     calc(13px + 2pt)/1.7 "Reddit Mono",
@@ -456,11 +456,11 @@
   font-size: calc(11px + 2pt);
 }
 .ultimatum-picker .testing-panel {
-  border: 1px solid #343f4b;
+  border: 1px solid var(--line);
   border-top: 2px solid #46515f;
   border-radius: 5px;
   margin-top: 12px;
-  background: #121519;
+  background: var(--surface);
   padding: 0 13px;
 }
 .ultimatum-picker .testing-panel summary {
@@ -657,7 +657,7 @@
   align-items: center;
   gap: 7px;
   padding: 0 12px;
-  border: 1px solid #39414b;
+  border: 1px solid #30363d;
   border-radius: 4px;
   font-weight: 400;
   color: #94a3b6;
@@ -745,7 +745,7 @@
   display: flex;
   flex-direction: column;
   padding: 4px;
-  background: #11151a;
+  background: var(--surface);
   border: 1px solid #303944;
   border-radius: 4px;
   box-shadow: 0 7px 20px #0008;
@@ -1040,12 +1040,12 @@
   flex: 1;
 }
 .ultimatum-picker .trade-panel {
-  border: 1px solid #2d3a49;
-  border-left: 3px solid #566f8e;
+  border: 1px solid #25252e;
+  border-left: 3px solid #47424f;
   border-radius: 4px;
   padding: 8px 10px 10px;
   margin: 12px 0 16px;
-  background: linear-gradient(110deg, #12192288, #0e101300 65%);
+  background: linear-gradient(110deg, #0e0f14 0%, var(--page) 75%);
 }
 .ultimatum-picker .trade-panel > .section-heading {
   padding-top: 0;
@@ -1066,24 +1066,24 @@
   margin-bottom: 14px;
 }
 .ultimatum-picker .modifier-panel {
-  border-top: 2px solid #57454a;
+  border-top: 2px solid #46353c;
 }
 .ultimatum-picker .modifier-panel.wanted {
-  border-top-color: #3e5b4d;
+  border-top-color: #304438;
 }
 .ultimatum-picker .custom-panel {
-  border: 1px solid #34313d;
-  border-left: 3px solid #786b8e;
+  border: 1px solid #29262e;
+  border-left: 3px solid #51485e;
   border-radius: 4px;
   padding: 5px 10px 10px;
-  background: linear-gradient(110deg, #19151f66, #121519 70%);
+  background: linear-gradient(110deg, #121017, var(--surface) 70%);
 }
 .ultimatum-picker .custom-panel .section-heading {
   margin-bottom: 7px;
 }
 .ultimatum-picker .testing-panel {
-  border-top: 1px solid #3b4653;
-  border-left: 3px solid #4d5968;
+  border-top: 1px solid #292e36;
+  border-left: 3px solid #333d49;
 }
 .ultimatum-picker .testing-panel summary {
   font-weight: 500;
@@ -1124,3 +1124,35 @@
 .ultimatum-picker { font-family: var(--header-font); color: var(--text); background: transparent; max-width: 1400px; padding-top: 18px; font-size: 15px; }
 .ultimatum-picker h1 { color: var(--bright); }
 .ultimatum-picker .primary { border-color: #79652f; background: #272110; color: var(--accent-light); }
+
+/* Replace unavailable trade actions with the settings that need attention. */
+.ultimatum-picker .trade-blocked { color: var(--accent-light); font-size: 13px; max-width: 540px; text-align: left; }
+.ultimatum-picker .trade-blocked p { margin: 0; overflow-wrap: anywhere; }
+.ultimatum-picker .trade-blocked p + p { margin-top: 5px; }
+
+.ultimatum-picker .trade-panel > .section-heading { --section-accent: #8c8798; }
+.ultimatum-picker .trade-panel > .section-heading h2 { color: var(--text); }
+
+.ultimatum-picker .square { flex: 0 0 21px; line-height: 1; }
+.ultimatum-picker .square svg { display: block; }
+.ultimatum-picker .primary:hover,
+.ultimatum-picker .primary:focus-visible {
+  background: #332a13;
+  border-color: var(--accent);
+  color: var(--accent-light);
+}
+.ultimatum-picker .primary:focus-visible { outline-color: var(--accent); }
+.ultimatum-picker .trade-panel input,
+.ultimatum-picker .trade-panel select {
+  background: #0c1014;
+  border-color: #30313b;
+  color: var(--text);
+}
+.ultimatum-picker .trade-panel input:hover,
+.ultimatum-picker .trade-panel select:hover { border-color: #575462; }
+.ultimatum-picker .trade-panel input:focus-visible,
+.ultimatum-picker .trade-panel select:focus-visible {
+  border-color: #8c8798;
+  outline-color: #8c8798;
+}
+.ultimatum-picker .trade-panel option { background: #0c1014; color: var(--text); }
