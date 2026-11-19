@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ModifierColumn } from "./components/ModifierColumn";
+import { CustomConditions } from "./components/CustomConditions";
 import { TradeLinks } from "./components/TradeLinks";
 import { SectionHeading } from "./components/SectionHeading";
 import { defaults, initial, persist, restore, toggle } from "./lib/storage";
@@ -299,49 +300,7 @@ export default function UltimatumRegexPicker() {
           />
         ))}
       </div>
-      <section className="custom-panel">
-        <div className="section-title">
-          <SectionHeading icon="✦" tone="violet">
-            Custom condition
-          </SectionHeading>
-        </div>
-        <div className="custom-controls">
-          <select
-            aria-label="Custom condition"
-            value={s.customCondition}
-            onChange={(e) =>
-              update({
-                customCondition: e.target.value as Settings["customCondition"],
-              })
-            }
-          >
-            <option value="include">Must contain</option>
-            <option value="exclude">Must not contain</option>
-          </select>
-          <input
-            aria-label="Custom text or regex"
-            placeholder={
-              s.customMode === "literal"
-                ? "Add text to match…"
-                : "Enter a regex pattern…"
-            }
-            value={s.custom}
-            onChange={(e) => update({ custom: e.target.value })}
-          />
-          <div className="segmented">
-            {(["literal", "regex"] as const).map((mode) => (
-              <button
-                key={mode}
-                className={s.customMode === mode ? "chosen" : ""}
-                aria-pressed={s.customMode === mode}
-                onClick={() => update({ customMode: mode })}
-              >
-                {mode === "literal" ? "Literal text" : "Advanced regex"}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CustomConditions settings={s} onChange={update} />
       <details className="testing-panel">
         <summary>
           <span>⌁ Test item text</span>

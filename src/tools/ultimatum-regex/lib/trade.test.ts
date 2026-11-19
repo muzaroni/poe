@@ -222,3 +222,9 @@ describe("trade link encoding and persistence", () => {
     expect(restore(storage).presets[1].settings.tradeMinPrice).toBe("3");
   });
 });
+
+it("blocks trade links when only an additional custom row has text", () => {
+  const result = buildTradeQueries({ ...empty(), customConditions: [{ text: "extra", condition: "exclude", mode: "literal" }] });
+  expect(result.queries).toEqual([]);
+  expect(result.errors.join()).toContain("Custom text/regex");
+});

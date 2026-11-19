@@ -1156,3 +1156,8 @@
   outline-color: #8c8798;
 }
 .ultimatum-picker .trade-panel option { background: #0c1014; color: var(--text); }
+
+.ultimatum-picker .custom-help { margin: 0 0 9px; font-size: 13px; color: var(--muted); }
+.ultimatum-picker .custom-condition-row { margin-bottom: 8px; }
+.ultimatum-picker .remove-condition { flex: none; padding: 4px 9px; color: var(--muted); }
+.ultimatum-picker .add-condition { font-size: 13px; padding: 5px 9px; }

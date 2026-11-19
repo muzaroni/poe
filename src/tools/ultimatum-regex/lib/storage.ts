@@ -1,6 +1,12 @@
 import { modifiers } from "../data/modifiers";
 import { challenges, type Challenge } from "../data/filters";
+export interface CustomCondition {
+  text: string;
+  condition: "include" | "exclude";
+  mode: "literal" | "regex";
+}
 export interface Settings {
+  customConditions: CustomCondition[];
   unwanted: string[];
   wanted: string[];
   match: "any" | "all";
@@ -43,6 +49,7 @@ export function defaults(): Settings {
       .map((m) => m.id),
     wanted: [],
     match: "any",
+    customConditions: [],
     custom: "",
     customCondition: "include",
     customMode: "literal",
@@ -117,6 +124,13 @@ export function restore(storage: Pick<Storage, "getItem">): State {
               s.unwanted.filter((id) => ids.has(id) && !wanted.includes(id)),
             ),
           ],
+          customConditions: Array.isArray(s.customConditions)
+            ? s.customConditions.filter(c => c && typeof c.text === "string").map(c => ({
+                text: c.text,
+                condition: c.condition === "exclude" ? "exclude" : "include",
+                mode: c.mode === "regex" ? "regex" : "literal",
+              }))
+            : [],
           custom: typeof s.custom === "string" ? s.custom : "",
           requiredItem:
             typeof s.requiredItem === "string" ? s.requiredItem : "",
@@ -175,4 +189,9 @@ export function persist(
   } catch {
     return false;
   }
+}
+
+// Keep the original fields as the first row for existing presets and consumers.
+export function customConditions(s: Settings): CustomCondition[] {
+  return [{ text: s.custom, condition: s.customCondition, mode: s.customMode }, ...(s.customConditions ?? [])];
 }

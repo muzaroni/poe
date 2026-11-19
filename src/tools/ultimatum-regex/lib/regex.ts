@@ -1,5 +1,5 @@
 import { modifiers } from "../data/modifiers";
-import type { Settings } from "./storage";
+import { customConditions, type Settings } from "./storage";
 import { modifierFragments, challengeFragments, familyFragments } from "../data/searchFragments";
 export interface Condition {
   label: string;
@@ -9,6 +9,29 @@ export interface Condition {
 }
 export const escapeRegex = (s: string) =>
   s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+// Factor literal alternatives only: typed text stays literal, including punctuation.
+export function compactLiterals(values: string[]): string {
+  const words = [...new Set(values)].filter(word => !values.some(other => other !== word && word.includes(other)));
+  const factor = (parts: string[]): string => {
+    if (parts.length === 1) return escapeRegex(parts[0]);
+    let length = 0;
+    while (parts.every(part => part[length] !== undefined && part[length] === parts[0][length])) length++;
+    if (length) {
+      const rest = factor(parts.map(part => part.slice(length)));
+      return escapeRegex(parts[0].slice(0, length)) + (rest.includes("|") ? `(${rest})` : rest);
+    }
+    if (parts.every(part => part.length === 1))
+      return `[${parts.map(part => escapeRegex(part).replace(/-/g, "\\-")).join("")}]`;
+    const groups = new Map<string, string[]>();
+    for (const part of parts) groups.set(part[0], [...(groups.get(part[0]) ?? []), part]);
+    return [...groups.values()].map(group => group.length > 1 ? factor(group) : escapeRegex(group[0])).join("|");
+  };
+  if (!words.length) return "";
+  const original = words.map(escapeRegex).join("|");
+  const compact = factor(words);
+  return compact.length < original.length ? compact : original;
+}
 
 // Only factor exact, known tier-label patterns. Future tooltip-based patterns
 // stay untouched. Whole-family prefixes cover all known tiers; subsets keep
@@ -126,13 +149,15 @@ export function generate(s: Settings) {
     warnings.push(
       "Conflicting selections: the same tier is wanted and unwanted.",
     );
-  if (s.custom.trim())
+  customConditions(s).forEach((custom, index) => {
+    if (!custom.text.trim()) return;
     conditions.push({
-      label: "Custom condition",
-      pattern: s.customMode === "literal" ? escapeRegex(s.custom) : s.custom,
-      negative: s.customCondition === "exclude",
+      label: `Custom condition ${index + 1}`,
+      pattern: custom.mode === "literal" ? escapeRegex(custom.text) : custom.text,
+      negative: custom.condition === "exclude",
       group: "custom",
     });
+  });
   if (s.requiredItem.trim())
     conditions.push({
       label: `Required Item: ${s.requiredItem.trim()}`,
@@ -157,24 +182,29 @@ export function generate(s: Settings) {
     warnings.push("Unverified: confirm against actual item text in-game.");
   const terms: string[] = [];
   const searchTerms: { pattern: string; negative: boolean }[] = [];
-  const pack = (cs: Condition[], negative: boolean) => {
-    if (cs.length) {
-      const pattern = compactPatterns(cs)
+  const pack = (cs: Condition[], negative: boolean, patterns = compactPatterns(cs)) => {
+    if (patterns.length) {
+      const pattern = patterns
         .map((p) => p.replace(/^!/, "[!]"))
         .join("|");
       searchTerms.push({ pattern, negative });
       terms.push(`"${negative ? "!" : ""}${pattern}"`);
     }
   };
-  pack(
-    conditions.filter((c) => c.group === "unwanted"),
-    true,
-  );
+  const literalExclusions = customConditions(s).filter(c => c.text.trim() && c.condition === "exclude" && c.mode === "literal");
+  const merged = new Set<Condition>();
+  const unwanted = conditions.filter(c => c.group === "unwanted");
+  if (literalExclusions.length > 1) {
+    const literals = new Set(literalExclusions.map(c => escapeRegex(c.text)));
+    const extra = conditions.filter(c => c.negative && (c.group === "filter" || (c.group === "custom" && literals.has(c.pattern))));
+    extra.forEach(c => merged.add(c));
+    pack(unwanted, true, [...compactPatterns(unwanted), compactLiterals(literalExclusions.map(c => c.text)), ...extra.filter(c => c.group === "filter").map(c => c.pattern)]);
+  } else pack(unwanted, true);
   const wanted = conditions.filter((c) => c.group === "wanted");
   if (s.match === "any") pack(wanted, false);
   else wanted.forEach((c) => pack([c], false));
   conditions
-    .filter((c) => c.group === "custom" || c.group === "filter")
+    .filter((c) => (c.group === "custom" || c.group === "filter") && !merged.has(c))
     .forEach((c) => pack([c], c.negative));
   const invalid = warnings.some((w) => !w.startsWith("Unverified:"));
   const query = invalid ? "" : terms.join(" ");

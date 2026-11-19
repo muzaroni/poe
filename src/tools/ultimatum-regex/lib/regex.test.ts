@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { modifiers } from "../data/modifiers";
 import { defaults, initial, toggle, persist, restore, KEY } from "./storage";
-import { generate, simulate, escapeRegex } from "./regex";
+import { generate, simulate, escapeRegex, compactLiterals } from "./regex";
 import screenshotFixture from "../data/fixtures/divine-altar-screenshot.json";
 const id = (name: string) => modifiers.find((m) => m.name === name)!.id;
 const empty = () => ({ ...defaults(), wanted: [], unwanted: [] });
@@ -400,5 +400,56 @@ describe("compact item and challenge filters", () => {
           const settings = { ...empty(), challenge, challengeNot };
           expect(simulate(settings, `Challenge: ${candidate}\nRequires Sacrifice: Divine Orb x1\n${modifiers.map(m => m.name).join("\n")}`).highlight).toBe(challengeNot ? candidate !== challenge : candidate === challenge);
         }
+  });
+});
+
+describe("multiple custom conditions", () => {
+  it("applies both exclusions, supports exact quantities with regex, and keeps inclusions required", () => {
+    const s = { ...empty(), custom: "ce: divine orb x1$", customCondition: "exclude" as const, customMode: "regex" as const,
+      customConditions: [{ text: "ce: divine orb x7$", condition: "exclude" as const, mode: "regex" as const }, { text: "altar", condition: "include" as const, mode: "literal" as const }] };
+    for (const amount of [1, 7, 10, 70, 3])
+      expect(simulate(s, `Requires Sacrifice: Divine Orb x${amount}\nChallenge: Protect the Altar`).highlight).toBe(![1, 7].includes(amount));
+    expect(simulate(s, "Requires Sacrifice: Divine Orb x3\nChallenge: Survive").highlight).toBe(false);
+    expect(generate({ ...s, customConditions: [...s.customConditions, { text: "[", condition: "exclude", mode: "regex" }] }).invalid).toBe(true);
+  });
+  it("restores old custom fields and persists additional rows independently", () => {
+    const state = initial();
+    state.presets[0].settings.custom = "original";
+    const old = JSON.parse(JSON.stringify(state));
+    delete old.presets[0].settings.customConditions;
+    expect(restore({ getItem: () => JSON.stringify(old) })).toEqual(state);
+    state.presets[0].settings.customConditions = [{ text: "extra", condition: "exclude", mode: "literal" }];
+    expect(restore({ getItem: () => JSON.stringify(state) })).toEqual(state);
+  });
+});
+
+describe("automatic plain-text exclusion compression", () => {
+  it("combines the user's quantity exclusions with unwanted modifiers and challenge", () => {
+    const settings = { ...defaults(), requiredItem: "Divine Orb", challenge: "Stand in the Stone Circles" as const, challengeNot: true,
+      custom: "ce: divine orb x1", customCondition: "exclude" as const,
+      customConditions: [{ text: "ce: divine orb x7", condition: "exclude" as const, mode: "literal" as const }] };
+    const query = generate(settings).query;
+    expect(query).toBe('"!^stalking|^ruin i[iv]|recovery ii$|drought|ce: divine orb x[17]|circles" "ce: divine"');
+    for (const amount of [1, 7, 3, 10, 70]) {
+      const text = `Requires Sacrifice: Divine Orb x${amount}\nChallenge: Protect the Altar`;
+      expect(simulate(settings, text).highlight).toBe(![1, 7, 10, 70].includes(amount));
+    }
+  });
+  it("preserves literal OR semantics, including punctuation, duplicates and substring overlaps", () => {
+    for (const values of [["foo1", "foo7"], ["abc1", "abc2", "xyz"], ["a-b", "a]b", "a^b", "a\\b"], ["a.b", "a*b", "a+b"], ["foo", "foobar", "foo"], ["First", "Other"]]) {
+      const pattern = compactLiterals(values);
+      const regex = new RegExp(pattern, "i");
+      expect(pattern.length).toBeLessThanOrEqual(values.map(escapeRegex).join("|").length);
+      for (const text of [...values, ...values.map(v => `prefix ${v.toUpperCase()} suffix`), "unrelated", "foo3", "aab", "abc3", "xyzabc"])
+        expect(regex.test(text), `${values.join(",")} -> ${pattern}: ${text}`).toBe(values.some(v => new RegExp(escapeRegex(v), "i").test(text)));
+    }
+  });
+  it("leaves positive conditions required and advanced regex untouched", () => {
+    const settings = { ...empty(), custom: "foo1", customCondition: "exclude" as const,
+      customConditions: [{ text: "foo7", condition: "exclude" as const, mode: "literal" as const }, { text: "^bar$", condition: "include" as const, mode: "regex" as const }] };
+    expect(generate(settings).query).toBe('"!foo[17]" "^bar$"');
+    expect(simulate(settings, "bar").highlight).toBe(true);
+    expect(simulate(settings, "bar\nfoo7").highlight).toBe(false);
+    expect(simulate(settings, "other").highlight).toBe(false);
   });
 });

@@ -1,5 +1,5 @@
 import { modifiers } from "../data/modifiers";
-import type { Settings } from "./storage";
+import { customConditions, type Settings } from "./storage";
 
 export const challengeOptions: Record<string, string> = {
   "Defeat Waves of Enemies": "Exterminate",
@@ -31,7 +31,7 @@ export function buildTradeQueries(s: Settings) {
   const notices: string[] = [];
   if (!s.tradeLeague.trim())
     errors.push("Enter a league for the trade search.");
-  if (s.custom.trim())
+  if (customConditions(s).some(c => c.text.trim()))
     errors.push(
       "Clear Custom text/regex to get a trade link. PoE Trade cannot apply custom conditions.",
     );
